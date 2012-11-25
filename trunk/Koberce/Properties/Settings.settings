@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Koberce.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DbName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\arena.db</Value>
+    </Setting>
+    <Setting Name="AutoBackup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BackupDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\DbBackup</Value>
+    </Setting>
+    <Setting Name="ScannerServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://ftp.globalkoberce.sk/</Value>
+    </Setting>
+    <Setting Name="WebServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.globalkoberce.sk/</Value>
+    </Setting>
+    <Setting Name="PriceCoef" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="WebParam" Type="System.String" Scope="User">
+      <Value Profile="(Default)">?Code=XXX</Value>
+    </Setting>
+    <Setting Name="Ptcomm" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PtcommDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PtcommCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/comport:1 /ptaddr:A /destdir:C:\\scanner\\Upload\\ /exit /upload:ARENA.TXT,INVENTOR.TXT,SOLD.TXT</Value>
+    </Setting>
+    <Setting Name="FtpLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FtpPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
