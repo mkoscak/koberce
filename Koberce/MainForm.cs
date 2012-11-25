@@ -13,6 +13,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Diagnostics;
 using System.Net;
+using System.Threading;
 
 namespace Koberce
 {
@@ -28,6 +29,7 @@ namespace Koberce
     public partial class MainForm : Form
     {
         private DBProvider db;  // databazovy provider
+        private string DateTimeFormat = "yyyy-MM-dd";
 
         private CustomDataGridView DataGrid
         {
@@ -314,7 +316,7 @@ namespace Koberce
                         return;
 
                     columnName = string.Format("CAST({0} as integer)", columnName);
-                } 
+                }
                 else if (text.Contains('<'))
                 {
                     op = " < ";
@@ -339,6 +341,20 @@ namespace Koberce
             }
         }
 
+        private void AddFilterDate(StringBuilder sb, string text, string columnName, string op)
+        {
+            if (text != null && text.Trim().Length > 0)
+            {
+                if (text.Trim().Length == 0)
+                    return;
+
+                if (sb.Length > 0)
+                    sb.AppendFormat(" AND ");
+
+                sb.AppendFormat(" {0} {1} \"{2}\" ", columnName, op, text);
+            }
+        }
+
         private string GetFilter()
         {
             StringBuilder sb = new StringBuilder();
@@ -349,7 +365,10 @@ namespace Koberce
                 AddFilter(sb, txtFilName.Text, "ITEMTITLE");
                 AddFilter(sb, txtFilCountry.Text, "COUNTRY");
                 AddFilter(sb, txtFilSupplier.Text, "SUPPLIER");
-                AddFilter(sb, txtFilDate.Text, "DATE");
+                if (dtDateFrom.Checked)
+                    AddFilterDate(sb, dtDateFrom.Value.ToString(DateTimeFormat), "DATE", ">=");
+                if (dtDateTo.Checked)
+                    AddFilterDate(sb, dtDateTo.Value.ToString(DateTimeFormat), "DATE", "<=");
                 AddFilter(sb, txtFilMvDate.Text, "MVDATE");
                 AddFilter(sb, txtQuantity.Text, "QUANTITY");
                 AddFilter(sb, txtFilInv.Text, "INVOICE");
@@ -363,7 +382,10 @@ namespace Koberce
                 AddFilter(sb, textFilCountrySold.Text, "COUNTRY");
                 AddFilter(sb, textFilSupSold.Text, "SUPPLIER");
                 AddFilter(sb, textFilPriceSold.Text, "VK_NETTO");
-                AddFilter(sb, textFilSellDateSold.Text, "SELLDATE");
+                if (dtSellDateFrom.Checked)
+                    AddFilterDate(sb, dtSellDateFrom.Value.ToString(DateTimeFormat), "SELLDATE", ">=");
+                if (dtSellDateTo.Checked)
+                    AddFilterDate(sb, dtSellDateTo.Value.ToString(DateTimeFormat), "SELLDATE", "<=");
                 AddFilter(sb, txtFilSellPrice.Text, "SELLPRICE");
             }
             else
@@ -373,7 +395,10 @@ namespace Koberce
                     AddFilter(sb, txtFilInvName.Text, "ITEMTITLE");
                     AddFilter(sb, txtFilInvCountry.Text, "COUNTRY");
                     AddFilter(sb, txtFilInvSup.Text, "SUPPLIER");
-                    AddFilter(sb, txtFilInvDate.Text, "DATE");
+                    if (dtInvDateFrom.Checked)
+                        AddFilterDate(sb, dtInvDateFrom.Value.ToString(DateTimeFormat), "DATE", ">=");
+                    if (dtInvDateTo.Checked)
+                        AddFilterDate(sb, dtInvDateTo.Value.ToString(DateTimeFormat), "DATE", "<=");
                     AddFilter(sb, txtFilInvmvDate.Text, "MVDATE");
                     AddFilter(sb, txtFilInvQuantity.Text, "QUANTITY");
                     AddFilter(sb, txtFilInvInvoice.Text, "INVOICE");
@@ -390,15 +415,18 @@ namespace Koberce
 
         private void RefreshFilter(object sender, EventArgs e)
         {
-            TextBox tb = sender as TextBox;
-            if (tb.Text == null || tb.Text.Length == 0)
-                tb.BackColor = Color.White;
-            else
+            if (sender is TextBox)
             {
-                if (tb.Text.Contains('!'))
-                    tb.BackColor = Color.OrangeRed;
+                TextBox tb = sender as TextBox;
+                if (tb.Text == null || tb.Text.Length == 0)
+                    tb.BackColor = Color.White;
                 else
-                    tb.BackColor = Color.YellowGreen;
+                {
+                    if (tb.Text.Contains('!'))
+                        tb.BackColor = Color.OrangeRed;
+                    else
+                        tb.BackColor = Color.YellowGreen;
+                }
             }
 
             RefreshItems();
@@ -884,7 +912,8 @@ namespace Koberce
                 txtFilName.Text = string.Empty;
                 txtFilCountry.Text = string.Empty;
                 txtFilSupplier.Text = string.Empty;
-                txtFilDate.Text = string.Empty;
+                dtDateFrom.Checked = false;
+                dtDateTo.Checked = false;
                 txtFilMvDate.Text = string.Empty;
                 txtQuantity.Text = string.Empty;
                 txtFilInv.Text = string.Empty;
@@ -898,7 +927,8 @@ namespace Koberce
                 textFilCountrySold.Text = string.Empty;
                 textFilSupSold.Text = string.Empty;
                 textFilPriceSold.Text = string.Empty;
-                textFilSellDateSold.Text = string.Empty;
+                dtSellDateFrom.Checked = false;
+                dtSellDateTo.Checked = false;
                 txtFilSellPrice.Text = string.Empty;
             }
             else
@@ -908,12 +938,15 @@ namespace Koberce
                 txtFilInvName.Text = string.Empty;
                 txtFilInvCountry.Text = string.Empty;
                 txtFilInvSup.Text = string.Empty;
-                txtFilInvDate.Text = string.Empty;
+                dtInvDateFrom.Checked = false;
+                dtInvDateTo.Checked = false;
                 txtFilInvmvDate.Text = string.Empty;
                 txtFilInvQuantity.Text = string.Empty;
                 txtFilInvInvoice.Text = string.Empty;
                 txtFilInvMaterial.Text = string.Empty;
             }
+
+            RefreshItems();
         }
 
         List<string> MissingInMain = new List<string>();
@@ -1002,7 +1035,7 @@ namespace Koberce
 
             proc.WaitForExit();
 
-            if (MessageBox.Show(this, "Do you want to import SOLD and INVENTORY data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //if (MessageBox.Show(this, "Do you want to import SOLD and INVENTORY data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 ImportScannerData();
 
             RefreshItems();
@@ -1010,27 +1043,19 @@ namespace Koberce
 
         private void ImportScannerData()
         {
-            var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\SOLD.TXT");
-            if (lines != null && (lines.Length% 3) == 0)
+            if (MessageBox.Show(this, "Do you want to import SOLD data?", "Import SOLD", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                for (int i = 0; i < lines.Length; i+=3)
-                {
-                    var code = lines[i+0];
-                    var sellDate = lines[i+1];
-                    var sellPrice = lines[i+2];
-
-                    db.SoldItem(code, sellDate, sellPrice);
-                }
+                WaitForm wf = new WaitForm(db, OperationType.Sold);
+                wf.ShowDialog(this);
             }
 
-            var linesInv = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\INVENTOR.TXT");
-            if (linesInv != null)
+            if (MessageBox.Show(this, "Do you want to import INVENTORY data?", "Import INVENTORY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                for (int i = 0; i < linesInv.Length; i++)
-                {
-                    db.InventoryItem(linesInv[i]);
-                }
+                WaitForm wf = new WaitForm(db, OperationType.Inventory);
+                wf.ShowDialog(this);
             }
+
+            this.Focus();
         }
     }
 
