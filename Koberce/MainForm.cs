@@ -580,11 +580,19 @@ namespace Koberce
             var login = Properties.Settings.Default.FtpLogin;
             var passwd = Properties.Settings.Default.FtpPassword;
 
-            bw.ReportProgress(0, "Uploading SOLD..");
-            uploadFile(server, soldName, login, passwd);
-            bw.ReportProgress(50, "Uploading INVENTORY..");
-            uploadFile(server, inventoryName, login, passwd);
-            bw.ReportProgress(100, "Done.");
+            try
+            {
+                bw.ReportProgress(0, "Uploading SOLD..");
+                uploadFile(server, soldName, login, passwd);
+                bw.ReportProgress(50, "Uploading INVENTORY..");
+                uploadFile(server, inventoryName, login, passwd);
+                bw.ReportProgress(100, "Done.");
+            }
+            catch (Exception ex)
+            {
+                Invoke(new Action(() => MessageBox.Show(this, "Error while uploading from " + server + ": " + ex.ToString(), "Download from server", MessageBoxButtons.OK, MessageBoxIcon.Error)));
+                e.Cancel = true;
+            }
         }
 
         private void btnToolDownload_Click(object sender, EventArgs e)
@@ -606,13 +614,19 @@ namespace Koberce
             var login = Properties.Settings.Default.FtpLogin;
             var passwd = Properties.Settings.Default.FtpPassword;
 
-            bw.ReportProgress(0, "Downloading SOLD..");
-            downloadFile(server, "SOLD.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
-            bw.ReportProgress(50, "Downloading INVENTORY..");
-            downloadFile(server, "INVENTOR.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
-            //bw.ReportProgress(66, "Importing data..");
-            //ImportScannerData();
-            //bw.ReportProgress(100, "Done.");
+            try
+            {
+                bw.ReportProgress(0, "Downloading SOLD..");
+                downloadFile(server, "SOLD.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
+            
+                bw.ReportProgress(50, "Downloading INVENTORY..");
+                downloadFile(server, "INVENTOR.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
+            }
+            catch (Exception ex)
+            {
+                Invoke(new Action(() => MessageBox.Show(this, "Error while downloading from " + server + ": " + ex.ToString(), "Download from server", MessageBoxButtons.OK, MessageBoxIcon.Error)));
+                e.Cancel = true;
+            }
         }
 
         private void btnSetSold_Click(object sender, EventArgs e)
@@ -1031,9 +1045,17 @@ namespace Koberce
             proc.StartInfo.Arguments = args;
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
-            proc.Start();
+            try
+            {
+                proc.Start();
 
-            proc.WaitForExit();
+                proc.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Exception occured: "+ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             //if (MessageBox.Show(this, "Do you want to import SOLD and INVENTORY data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 ImportScannerData();

@@ -51,17 +51,21 @@ namespace Koberce
 
         void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            bool doPostProcess = true;
+
             if (e.Cancelled == true)
             {
                 MessageBox.Show(this, "Operation canceled!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Visible = false;
                 Close();
+                doPostProcess = false;
             }
             else if (e.Error != null)
             {
                 MessageBox.Show(this, "Error occured!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Visible = false;
                 Close();
+                doPostProcess = false;
             }
             else
             {
@@ -71,7 +75,7 @@ namespace Koberce
                 Close();
             }
 
-            if (PostAction != null)
+            if (PostAction != null && doPostProcess)
                 PostAction();
         }
 
