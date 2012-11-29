@@ -591,7 +591,7 @@ namespace Koberce
         {
             try
             {
-                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, RefreshItems, null, false, true);
+                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, ImportScannerData, null, false, true);
                 p.StartWorker();
             }
             catch (Exception ex)
@@ -608,11 +608,11 @@ namespace Koberce
 
             bw.ReportProgress(0, "Downloading SOLD..");
             downloadFile(server, "SOLD.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
-            bw.ReportProgress(33, "Downloading INVENTORY..");
+            bw.ReportProgress(50, "Downloading INVENTORY..");
             downloadFile(server, "INVENTOR.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
-            bw.ReportProgress(66, "Importing data..");
-            ImportScannerData();
-            bw.ReportProgress(100, "Done.");
+            //bw.ReportProgress(66, "Importing data..");
+            //ImportScannerData();
+            //bw.ReportProgress(100, "Done.");
         }
 
         private void btnSetSold_Click(object sender, EventArgs e)
@@ -1043,6 +1043,9 @@ namespace Koberce
 
         private void ImportScannerData()
         {
+            if (InvokeRequired)
+                Invoke(new Action(ImportScannerData));
+
             if (MessageBox.Show(this, "Do you want to import SOLD data?", "Import SOLD", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 WaitForm wf = new WaitForm(db, OperationType.Sold);
@@ -1055,6 +1058,7 @@ namespace Koberce
                 wf.ShowDialog(this);
             }
 
+            RefreshItems();
             this.Focus();
         }
     }
