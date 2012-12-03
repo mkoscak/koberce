@@ -41,6 +41,11 @@
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnSetSold = new System.Windows.Forms.Button();
             this.grpFilter = new System.Windows.Forms.GroupBox();
+            this.txtFilSupplierNr = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.dtDateTo = new System.Windows.Forms.DateTimePicker();
+            this.label32 = new System.Windows.Forms.Label();
+            this.dtDateFrom = new System.Windows.Forms.DateTimePicker();
             this.btnClearFilter = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -72,6 +77,9 @@
             this.lblSoldAll = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtSellDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtSellDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnSoldClearFil = new System.Windows.Forms.Button();
             this.txtFilSellPrice = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -97,6 +105,10 @@
             this.lblInvAllCount = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dtInvDateTo = new System.Windows.Forms.DateTimePicker();
+            this.label34 = new System.Windows.Forms.Label();
+            this.dtInvDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label35 = new System.Windows.Forms.Label();
             this.btnInvCLearFil = new System.Windows.Forms.Button();
             this.txtFilInvQuantity = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -161,21 +173,15 @@
             this.btnToolExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolSettings = new System.Windows.Forms.ToolStripButton();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dtSellDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtSellDateTo = new System.Windows.Forms.DateTimePicker();
-            this.dtDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtDateTo = new System.Windows.Forms.DateTimePicker();
-            this.label32 = new System.Windows.Forms.Label();
-            this.dtInvDateTo = new System.Windows.Forms.DateTimePicker();
-            this.label34 = new System.Windows.Forms.Label();
-            this.dtInvDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.label35 = new System.Windows.Forms.Label();
+            this.txtFilSupNrSold = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridInventory = new Koberce.CustomDataGridView();
             this.gridBatch = new Koberce.CustomDataGridView();
             this.gridQueryRes = new Koberce.CustomDataGridView();
+            this.txtFilInvSupNr = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -346,6 +352,8 @@
             // 
             this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Controls.Add(this.txtFilSupplierNr);
+            this.grpFilter.Controls.Add(this.label27);
             this.grpFilter.Controls.Add(this.dtDateTo);
             this.grpFilter.Controls.Add(this.label32);
             this.grpFilter.Controls.Add(this.dtDateFrom);
@@ -373,6 +381,54 @@
             this.grpFilter.TabIndex = 8;
             this.grpFilter.TabStop = false;
             this.grpFilter.Text = "Filter";
+            // 
+            // txtFilSupplierNr
+            // 
+            this.txtFilSupplierNr.Location = new System.Drawing.Point(465, 43);
+            this.txtFilSupplierNr.Name = "txtFilSupplierNr";
+            this.txtFilSupplierNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSupplierNr.TabIndex = 23;
+            this.txtFilSupplierNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(397, 47);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Supplier Nr.";
+            // 
+            // dtDateTo
+            // 
+            this.dtDateTo.Checked = false;
+            this.dtDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateTo.Location = new System.Drawing.Point(246, 43);
+            this.dtDateTo.Name = "dtDateTo";
+            this.dtDateTo.ShowCheckBox = true;
+            this.dtDateTo.Size = new System.Drawing.Size(116, 20);
+            this.dtDateTo.TabIndex = 21;
+            this.dtDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(198, 47);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(42, 13);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Date to";
+            // 
+            // dtDateFrom
+            // 
+            this.dtDateFrom.Checked = false;
+            this.dtDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateFrom.Location = new System.Drawing.Point(66, 43);
+            this.dtDateFrom.Name = "dtDateFrom";
+            this.dtDateFrom.ShowCheckBox = true;
+            this.dtDateFrom.Size = new System.Drawing.Size(123, 20);
+            this.dtDateFrom.TabIndex = 19;
+            this.dtDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
             // 
             // btnClearFilter
             // 
@@ -685,6 +741,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtFilSupNrSold);
+            this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.dtSellDateTo);
             this.groupBox1.Controls.Add(this.dtSellDateFrom);
             this.groupBox1.Controls.Add(this.label18);
@@ -708,6 +766,37 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
+            // 
+            // dtSellDateTo
+            // 
+            this.dtSellDateTo.Checked = false;
+            this.dtSellDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtSellDateTo.Location = new System.Drawing.Point(270, 42);
+            this.dtSellDateTo.Name = "dtSellDateTo";
+            this.dtSellDateTo.ShowCheckBox = true;
+            this.dtSellDateTo.Size = new System.Drawing.Size(109, 20);
+            this.dtSellDateTo.TabIndex = 23;
+            this.dtSellDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // dtSellDateFrom
+            // 
+            this.dtSellDateFrom.Checked = false;
+            this.dtSellDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtSellDateFrom.Location = new System.Drawing.Point(83, 43);
+            this.dtSellDateFrom.Name = "dtSellDateFrom";
+            this.dtSellDateFrom.ShowCheckBox = true;
+            this.dtSellDateFrom.Size = new System.Drawing.Size(115, 20);
+            this.dtSellDateFrom.TabIndex = 22;
+            this.dtSellDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(204, 46);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 13);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Sell date to";
             // 
             // btnSoldClearFil
             // 
@@ -959,6 +1048,8 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.txtFilInvSupNr);
+            this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.dtInvDateTo);
             this.groupBox5.Controls.Add(this.label34);
             this.groupBox5.Controls.Add(this.dtInvDateFrom);
@@ -986,6 +1077,46 @@
             this.groupBox5.TabIndex = 18;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Filter";
+            // 
+            // dtInvDateTo
+            // 
+            this.dtInvDateTo.Checked = false;
+            this.dtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInvDateTo.Location = new System.Drawing.Point(233, 43);
+            this.dtInvDateTo.Name = "dtInvDateTo";
+            this.dtInvDateTo.ShowCheckBox = true;
+            this.dtInvDateTo.Size = new System.Drawing.Size(107, 20);
+            this.dtInvDateTo.TabIndex = 25;
+            this.dtInvDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(185, 47);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(42, 13);
+            this.label34.TabIndex = 24;
+            this.label34.Text = "Date to";
+            // 
+            // dtInvDateFrom
+            // 
+            this.dtInvDateFrom.Checked = false;
+            this.dtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInvDateFrom.Location = new System.Drawing.Point(66, 43);
+            this.dtInvDateFrom.Name = "dtInvDateFrom";
+            this.dtInvDateFrom.ShowCheckBox = true;
+            this.dtInvDateFrom.Size = new System.Drawing.Size(113, 20);
+            this.dtInvDateFrom.TabIndex = 23;
+            this.dtInvDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 47);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(53, 13);
+            this.label35.TabIndex = 22;
+            this.label35.Text = "Date from";
             // 
             // btnInvCLearFil
             // 
@@ -1664,107 +1795,22 @@
             this.btnToolSettings.Text = "Settings";
             this.btnToolSettings.Click += new System.EventHandler(this.btnToolSettings_Click);
             // 
-            // label18
+            // txtFilSupNrSold
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(204, 46);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 13);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "Sell date to";
+            this.txtFilSupNrSold.Location = new System.Drawing.Point(463, 42);
+            this.txtFilSupNrSold.Name = "txtFilSupNrSold";
+            this.txtFilSupNrSold.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSupNrSold.TabIndex = 25;
+            this.txtFilSupNrSold.TextChanged += new System.EventHandler(this.RefreshFilter);
             // 
-            // dtSellDateFrom
+            // label36
             // 
-            this.dtSellDateFrom.Checked = false;
-            this.dtSellDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtSellDateFrom.Location = new System.Drawing.Point(83, 43);
-            this.dtSellDateFrom.Name = "dtSellDateFrom";
-            this.dtSellDateFrom.ShowCheckBox = true;
-            this.dtSellDateFrom.Size = new System.Drawing.Size(115, 20);
-            this.dtSellDateFrom.TabIndex = 22;
-            this.dtSellDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // dtSellDateTo
-            // 
-            this.dtSellDateTo.Checked = false;
-            this.dtSellDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtSellDateTo.Location = new System.Drawing.Point(270, 42);
-            this.dtSellDateTo.Name = "dtSellDateTo";
-            this.dtSellDateTo.ShowCheckBox = true;
-            this.dtSellDateTo.Size = new System.Drawing.Size(109, 20);
-            this.dtSellDateTo.TabIndex = 23;
-            this.dtSellDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // dtDateFrom
-            // 
-            this.dtDateFrom.Checked = false;
-            this.dtDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDateFrom.Location = new System.Drawing.Point(66, 43);
-            this.dtDateFrom.Name = "dtDateFrom";
-            this.dtDateFrom.ShowCheckBox = true;
-            this.dtDateFrom.Size = new System.Drawing.Size(123, 20);
-            this.dtDateFrom.TabIndex = 19;
-            this.dtDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // dtDateTo
-            // 
-            this.dtDateTo.Checked = false;
-            this.dtDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDateTo.Location = new System.Drawing.Point(246, 43);
-            this.dtDateTo.Name = "dtDateTo";
-            this.dtDateTo.ShowCheckBox = true;
-            this.dtDateTo.Size = new System.Drawing.Size(116, 20);
-            this.dtDateTo.TabIndex = 21;
-            this.dtDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(198, 47);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(42, 13);
-            this.label32.TabIndex = 20;
-            this.label32.Text = "Date to";
-            // 
-            // dtInvDateTo
-            // 
-            this.dtInvDateTo.Checked = false;
-            this.dtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInvDateTo.Location = new System.Drawing.Point(233, 43);
-            this.dtInvDateTo.Name = "dtInvDateTo";
-            this.dtInvDateTo.ShowCheckBox = true;
-            this.dtInvDateTo.Size = new System.Drawing.Size(107, 20);
-            this.dtInvDateTo.TabIndex = 25;
-            this.dtInvDateTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(185, 47);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(42, 13);
-            this.label34.TabIndex = 24;
-            this.label34.Text = "Date to";
-            // 
-            // dtInvDateFrom
-            // 
-            this.dtInvDateFrom.Checked = false;
-            this.dtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInvDateFrom.Location = new System.Drawing.Point(66, 43);
-            this.dtInvDateFrom.Name = "dtInvDateFrom";
-            this.dtInvDateFrom.ShowCheckBox = true;
-            this.dtInvDateFrom.Size = new System.Drawing.Size(113, 20);
-            this.dtInvDateFrom.TabIndex = 23;
-            this.dtInvDateFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 47);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 13);
-            this.label35.TabIndex = 22;
-            this.label35.Text = "Date from";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(395, 45);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(62, 13);
+            this.label36.TabIndex = 24;
+            this.label36.Text = "Supplier Nr.";
             // 
             // Grid
             // 
@@ -1842,6 +1888,23 @@
             this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
             this.gridQueryRes.TabIndex = 5;
             this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // txtFilInvSupNr
+            // 
+            this.txtFilInvSupNr.Location = new System.Drawing.Point(465, 43);
+            this.txtFilInvSupNr.Name = "txtFilInvSupNr";
+            this.txtFilInvSupNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilInvSupNr.TabIndex = 27;
+            this.txtFilInvSupNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(397, 46);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 13);
+            this.label37.TabIndex = 26;
+            this.label37.Text = "Supplier Nr.";
             // 
             // MainForm
             // 
@@ -2041,6 +2104,12 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DateTimePicker dtInvDateFrom;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtFilSupplierNr;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtFilSupNrSold;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtFilInvSupNr;
+        private System.Windows.Forms.Label label37;
     }
 }
 

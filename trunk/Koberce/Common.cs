@@ -14,8 +14,11 @@ namespace Koberce
 {
     class Common
     {
+        static string[] SoldCols = new string[] { "selldate", "supplier_nr", "itemtitle", "supplier", "length", "width", "ek_netto", "area", "vk_netto" };
         static string ExportFileName;
         static string ExportTitle;
+        static bool IsSold;
+        static int SoldOffset;
         public static void ExportDataGrid(object ds, string fileName)
         {
             if (ds == null)
@@ -32,13 +35,29 @@ namespace Koberce
             if (ExportFileName.EndsWith(".xlsx") == false)
                 ExportFileName = ExportFileName + ".xlsx";
 
+            IsSold = false;
+            SoldOffset = 0;
+            if (fileName.ToLower().Contains("sold"))
+            {
+                IsSold = true;
+                SoldOffset = 1;
+            }
+
             Progress p = new Progress(0, 100, "Export", "Preparing..", DoExport, null, ds, true, true);
             p.StartWorker();
         }
 
         public static void DoExport(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
+            if (!(userData is DataTable))
+                return;
+
             var dt = userData as DataTable;
+            List<int> indices = new List<int>();
+
+            for (int i = 0; i < dt.Columns.Count; i++)
+                if ((IsSold && SoldCols.Contains(dt.Columns[i].ColumnName.ToLower())) || (!IsSold))
+                    indices.Add(i);
 
             ExcelPackage ep = new ExcelPackage();
             var ws = ep.Workbook.Worksheets.Add(ExportTitle);
@@ -49,19 +68,32 @@ namespace Koberce
             ws.Cells[1, 1].Style.Fill.BackgroundColor.SetColor(Color.GreenYellow);
             ws.Cells[1, 1, 1, dt.Columns.Count].Merge = true;
 
-            for (int i = 0; i < dt.Columns.Count; i++)
+            for (int i = 0; i < indices.Count; i++)
             {
-                ws.Cells[2, i + 1].Value = dt.Columns[i].ColumnName;
-                ws.Cells[2, i + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                ws.Cells[2, i + 1].Style.Fill.BackgroundColor.SetColor(Color.Green);
-                ws.Cells[2, i + 1].Style.Font.Color.SetColor(Color.White);
+                // poradove cislo
+                if (IsSold && i == 0)
+                {
+                    ws.Cells[2, 1].Value = "Nr.";
+                    ws.Cells[2, 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    ws.Cells[2, 1].Style.Fill.BackgroundColor.SetColor(Color.Green);
+                    ws.Cells[2, 1].Style.Font.Color.SetColor(Color.White);
+                }
+
+                ws.Cells[2, i + 1 + SoldOffset].Value = dt.Columns[indices[i]].ColumnName;
+                ws.Cells[2, i + 1 + SoldOffset].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[2, i + 1 + SoldOffset].Style.Fill.BackgroundColor.SetColor(Color.Green);
+                ws.Cells[2, i + 1 + SoldOffset].Style.Font.Color.SetColor(Color.White);
             }
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                for (int j = 0; j < dt.Columns.Count; j++)
+                // poradove cislo
+                if (IsSold)
+                    ws.Cells[3 + i, 1].Value = i + 1;
+
+                for (int j = 0; j < indices.Count; j++)
                 {
-                    ws.Cells[3 + i, j + 1].Value = dt.Rows[i].ItemArray[j];
+                    ws.Cells[3 + i, j + 1 + SoldOffset].Value = dt.Rows[i].ItemArray[indices[j]];
                 }
 
                 if (bw.CancellationPending == true)
