@@ -203,7 +203,7 @@ namespace Koberce
                 ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.INVENTORY], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as integer )* cast(B.width as integer) as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else
                 ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
 
@@ -365,6 +365,7 @@ namespace Koberce
                 AddFilter(sb, txtFilName.Text, "ITEMTITLE");
                 AddFilter(sb, txtFilCountry.Text, "COUNTRY");
                 AddFilter(sb, txtFilSupplier.Text, "SUPPLIER");
+                AddFilter(sb, txtFilSupplierNr.Text, "SUPPLIER_NR");
                 if (dtDateFrom.Checked)
                     AddFilterDate(sb, dtDateFrom.Value.ToString(DateTimeFormat), "DATE", ">=");
                 if (dtDateTo.Checked)
@@ -381,6 +382,7 @@ namespace Koberce
                 AddFilter(sb, textFilNameSold.Text, "ITEMTITLE");
                 AddFilter(sb, textFilCountrySold.Text, "COUNTRY");
                 AddFilter(sb, textFilSupSold.Text, "SUPPLIER");
+                AddFilter(sb, txtFilSupNrSold.Text, "SUPPLIER_NR");
                 AddFilter(sb, textFilPriceSold.Text, "VK_NETTO");
                 if (dtSellDateFrom.Checked)
                     AddFilterDate(sb, dtSellDateFrom.Value.ToString(DateTimeFormat), "SELLDATE", ">=");
@@ -395,6 +397,7 @@ namespace Koberce
                     AddFilter(sb, txtFilInvName.Text, "ITEMTITLE");
                     AddFilter(sb, txtFilInvCountry.Text, "COUNTRY");
                     AddFilter(sb, txtFilInvSup.Text, "SUPPLIER");
+                    AddFilter(sb, txtFilInvSupNr.Text, "SUPPLIER_NR");
                     if (dtInvDateFrom.Checked)
                         AddFilterDate(sb, dtInvDateFrom.Value.ToString(DateTimeFormat), "DATE", ">=");
                     if (dtInvDateTo.Checked)

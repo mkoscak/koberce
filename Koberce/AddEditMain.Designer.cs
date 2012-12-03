@@ -167,7 +167,6 @@
             // 
             this.txtVKNetto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVKNetto.Enabled = false;
             this.txtVKNetto.Location = new System.Drawing.Point(108, 273);
             this.txtVKNetto.Name = "txtVKNetto";
             this.txtVKNetto.Size = new System.Drawing.Size(320, 20);
@@ -187,7 +186,6 @@
             // 
             this.txtEKNetto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEKNetto.Enabled = false;
             this.txtEKNetto.Location = new System.Drawing.Point(108, 215);
             this.txtEKNetto.Name = "txtEKNetto";
             this.txtEKNetto.Size = new System.Drawing.Size(320, 20);
