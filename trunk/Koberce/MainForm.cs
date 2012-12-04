@@ -203,7 +203,7 @@ namespace Koberce
                 ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.INVENTORY], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as integer )* cast(B.width as integer) as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else
                 ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
 
@@ -214,6 +214,41 @@ namespace Koberce
 
             LabelAll.Text = ds.Tables[0].Rows.Count.ToString();
             LabelSelected.Text = GetSelectedRowCount().ToString();
+            if (tabControl1.SelectedIndex == (int)TABS.SOLD)
+                lblSellPriceSum.Text = GetSellSum(ds.Tables[0]).ToString();
+        }
+
+        double GetSellSum(DataTable table)
+        {
+            double ret = 0;
+
+            int index = -1;
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                if (table.Columns[i].ColumnName.ToLower() == "sellprice")
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index == -1)
+                return ret;
+
+            for (int j = 0; j < table.Rows.Count; j++)
+            {
+                try
+                {
+                    double val = double.Parse(table.Rows[j][index].ToString());
+
+                    ret += val;
+                }
+                catch (Exception)
+                {
+                }
+            }
+
+            return ret;
         }
 
         // decode text data

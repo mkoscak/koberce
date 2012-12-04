@@ -93,7 +93,21 @@ namespace Koberce
 
                 for (int j = 0; j < indices.Count; j++)
                 {
-                    ws.Cells[3 + i, j + 1 + SoldOffset].Value = dt.Rows[i].ItemArray[indices[j]];
+                    try
+                    {
+                        if (IsSold && dt.Columns[indices[j]].ColumnName.ToLower() == "vk_netto")
+                        {
+                            ws.Cells[3 + i, j + 1 + SoldOffset].Formula= string.Format("F{0}*G{0}/10000*H{0}", i+3);
+                            continue;
+                        }
+
+                        double val = double.Parse(dt.Rows[i].ItemArray[indices[j]].ToString());
+                        ws.Cells[3 + i, j + 1 + SoldOffset].Value = val;
+                    }
+                    catch (Exception)
+                    {
+                        ws.Cells[3 + i, j + 1 + SoldOffset].Value = dt.Rows[i].ItemArray[indices[j]];
+                    }
                 }
 
                 if (bw.CancellationPending == true)
@@ -102,6 +116,25 @@ namespace Koberce
                     break;
                 }
                 bw.ReportProgress((int)(((double)(i + 1.0) / dt.Rows.Count) * 100.0));
+            }
+
+            if (IsSold)
+            {
+                int row = 3 + dt.Rows.Count;
+                ws.Cells[row, 8].Value = "Sum:";
+                ws.Cells[row, 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, 8].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, 8].Style.Font.Color.SetColor(Color.DarkBlue);
+
+                ws.Cells[row, 9].Formula = "SUM(I3:I"+(row-1)+")";
+                ws.Cells[row, 9].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, 9].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, 9].Style.Font.Color.SetColor(Color.DarkBlue);
+
+                ws.Cells[row, 10].Formula = "SUM(J3:J" + (row - 1) + ")";
+                ws.Cells[row, 10].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, 10].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, 10].Style.Font.Color.SetColor(Color.DarkBlue);
             }
 
             ep.SaveAs(new FileInfo(ExportFileName));
