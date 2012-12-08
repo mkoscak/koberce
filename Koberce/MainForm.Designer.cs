@@ -83,6 +83,10 @@
             this.lblSoldAll = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFilSoldLength = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtFilSoldWidth = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.txtFilSupNrSold = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.dtSellDateTo = new System.Windows.Forms.DateTimePicker();
@@ -113,6 +117,10 @@
             this.lblInvAllCount = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtFilInvLength = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtFilInvWidth = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.txtFilInvSupNr = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.dtInvDateTo = new System.Windows.Forms.DateTimePicker();
@@ -183,19 +191,49 @@
             this.btnToolExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolSettings = new System.Windows.Forms.ToolStripButton();
-            this.txtFilSoldLength = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtFilSoldWidth = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
+            this.tabSK = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtFilSKLength = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtFilSKWidth = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txtFilSKSupplierNr = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.dtpFilSKSellTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilSKSellFrom = new System.Windows.Forms.DateTimePicker();
+            this.label54 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtFilSKSellPrice = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.txtFilSKVK = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtFilSKSupplier = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtFilSKCountry = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtFilSKTitle = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtFilSKCode = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
+            this.gridFromSK = new Koberce.CustomDataGridView();
             this.gridInventory = new Koberce.CustomDataGridView();
             this.gridBatch = new Koberce.CustomDataGridView();
             this.gridQueryRes = new Koberce.CustomDataGridView();
-            this.txtFilInvLength = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtFilInvWidth = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -211,8 +249,12 @@
             this.tabExecQuery.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.MainToolbar.SuspendLayout();
+            this.tabSK.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
@@ -225,6 +267,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabViewAll);
             this.tabControl1.Controls.Add(this.tabSold);
+            this.tabControl1.Controls.Add(this.tabSK);
             this.tabControl1.Controls.Add(this.tabInventory);
             this.tabControl1.Controls.Add(this.tabbatch);
             this.tabControl1.Controls.Add(this.tabExecQuery);
@@ -844,6 +887,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
             // 
+            // txtFilSoldLength
+            // 
+            this.txtFilSoldLength.Location = new System.Drawing.Point(630, 42);
+            this.txtFilSoldLength.Name = "txtFilSoldLength";
+            this.txtFilSoldLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSoldLength.TabIndex = 31;
+            this.txtFilSoldLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(589, 45);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(34, 13);
+            this.label41.TabIndex = 30;
+            this.label41.Text = "Legth";
+            // 
+            // txtFilSoldWidth
+            // 
+            this.txtFilSoldWidth.Location = new System.Drawing.Point(759, 42);
+            this.txtFilSoldWidth.Name = "txtFilSoldWidth";
+            this.txtFilSoldWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSoldWidth.TabIndex = 29;
+            this.txtFilSoldWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(718, 45);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(35, 13);
+            this.label42.TabIndex = 28;
+            this.label42.Text = "Width";
+            // 
             // txtFilSupNrSold
             // 
             this.txtFilSupNrSold.Location = new System.Drawing.Point(463, 42);
@@ -1175,6 +1252,40 @@
             this.groupBox5.TabIndex = 18;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Filter";
+            // 
+            // txtFilInvLength
+            // 
+            this.txtFilInvLength.Location = new System.Drawing.Point(625, 42);
+            this.txtFilInvLength.Name = "txtFilInvLength";
+            this.txtFilInvLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvLength.TabIndex = 35;
+            this.txtFilInvLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(584, 45);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(34, 13);
+            this.label43.TabIndex = 34;
+            this.label43.Text = "Legth";
+            // 
+            // txtFilInvWidth
+            // 
+            this.txtFilInvWidth.Location = new System.Drawing.Point(754, 42);
+            this.txtFilInvWidth.Name = "txtFilInvWidth";
+            this.txtFilInvWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvWidth.TabIndex = 33;
+            this.txtFilInvWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(713, 45);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(35, 13);
+            this.label44.TabIndex = 32;
+            this.label44.Text = "Width";
             // 
             // txtFilInvSupNr
             // 
@@ -1910,39 +2021,399 @@
             this.btnToolSettings.Text = "Settings";
             this.btnToolSettings.Click += new System.EventHandler(this.btnToolSettings_Click);
             // 
-            // txtFilSoldLength
+            // tabSK
             // 
-            this.txtFilSoldLength.Location = new System.Drawing.Point(630, 42);
-            this.txtFilSoldLength.Name = "txtFilSoldLength";
-            this.txtFilSoldLength.Size = new System.Drawing.Size(71, 20);
-            this.txtFilSoldLength.TabIndex = 31;
-            this.txtFilSoldLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            this.tabSK.Controls.Add(this.button1);
+            this.tabSK.Controls.Add(this.button2);
+            this.tabSK.Controls.Add(this.groupBox8);
+            this.tabSK.Controls.Add(this.groupBox9);
+            this.tabSK.Controls.Add(this.button4);
+            this.tabSK.Controls.Add(this.button5);
+            this.tabSK.Controls.Add(this.button6);
+            this.tabSK.Controls.Add(this.gridFromSK);
+            this.tabSK.Location = new System.Drawing.Point(4, 22);
+            this.tabSK.Name = "tabSK";
+            this.tabSK.Size = new System.Drawing.Size(1285, 646);
+            this.tabSK.TabIndex = 6;
+            this.tabSK.Text = "from SK";
+            this.tabSK.UseVisualStyleBackColor = true;
             // 
-            // label41
+            // button1
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(589, 45);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(34, 13);
-            this.label41.TabIndex = 30;
-            this.label41.Text = "Legth";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.button1.Location = new System.Drawing.Point(253, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 58);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "&Info";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnInfo_Click);
             // 
-            // txtFilSoldWidth
+            // button2
             // 
-            this.txtFilSoldWidth.Location = new System.Drawing.Point(759, 42);
-            this.txtFilSoldWidth.Name = "txtFilSoldWidth";
-            this.txtFilSoldWidth.Size = new System.Drawing.Size(71, 20);
-            this.txtFilSoldWidth.TabIndex = 29;
-            this.txtFilSoldWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Image = global::Koberce.Properties.Resources.paper_pencil_48;
+            this.button2.Location = new System.Drawing.Point(959, 582);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 58);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "E&dit selected";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // label42
+            // groupBox8
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(718, 45);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(35, 13);
-            this.label42.TabIndex = 28;
-            this.label42.Text = "Width";
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.label45);
+            this.groupBox8.Controls.Add(this.label46);
+            this.groupBox8.Controls.Add(this.label47);
+            this.groupBox8.Controls.Add(this.label48);
+            this.groupBox8.Controls.Add(this.label49);
+            this.groupBox8.Controls.Add(this.label50);
+            this.groupBox8.Location = new System.Drawing.Point(7, 536);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1269, 40);
+            this.groupBox8.TabIndex = 27;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Items";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label45.Location = new System.Drawing.Point(403, 16);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(13, 13);
+            this.label45.TabIndex = 5;
+            this.label45.Text = "0";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(324, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(73, 13);
+            this.label46.TabIndex = 4;
+            this.label46.Text = "SellPrice sum:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label47.Location = new System.Drawing.Point(238, 16);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(13, 13);
+            this.label47.TabIndex = 3;
+            this.label47.Text = "0";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(150, 16);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(82, 13);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "Selected items: ";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label49.Location = new System.Drawing.Point(63, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(13, 13);
+            this.label49.TabIndex = 1;
+            this.label49.Text = "0";
+            // 
+            // label50
+            // 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(6, 16);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(51, 13);
+            this.label50.TabIndex = 0;
+            this.label50.Text = "All items: ";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.txtFilSKLength);
+            this.groupBox9.Controls.Add(this.label51);
+            this.groupBox9.Controls.Add(this.txtFilSKWidth);
+            this.groupBox9.Controls.Add(this.label52);
+            this.groupBox9.Controls.Add(this.txtFilSKSupplierNr);
+            this.groupBox9.Controls.Add(this.label53);
+            this.groupBox9.Controls.Add(this.dtpFilSKSellTo);
+            this.groupBox9.Controls.Add(this.dtpFilSKSellFrom);
+            this.groupBox9.Controls.Add(this.label54);
+            this.groupBox9.Controls.Add(this.button3);
+            this.groupBox9.Controls.Add(this.txtFilSKSellPrice);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.txtFilSKVK);
+            this.groupBox9.Controls.Add(this.label57);
+            this.groupBox9.Controls.Add(this.txtFilSKSupplier);
+            this.groupBox9.Controls.Add(this.label58);
+            this.groupBox9.Controls.Add(this.txtFilSKCountry);
+            this.groupBox9.Controls.Add(this.label59);
+            this.groupBox9.Controls.Add(this.txtFilSKTitle);
+            this.groupBox9.Controls.Add(this.label60);
+            this.groupBox9.Controls.Add(this.txtFilSKCode);
+            this.groupBox9.Controls.Add(this.label61);
+            this.groupBox9.Location = new System.Drawing.Point(7, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1269, 73);
+            this.groupBox9.TabIndex = 25;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Filter";
+            // 
+            // txtFilSKLength
+            // 
+            this.txtFilSKLength.Location = new System.Drawing.Point(630, 42);
+            this.txtFilSKLength.Name = "txtFilSKLength";
+            this.txtFilSKLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKLength.TabIndex = 31;
+            this.txtFilSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(589, 45);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(34, 13);
+            this.label51.TabIndex = 30;
+            this.label51.Text = "Legth";
+            // 
+            // txtFilSKWidth
+            // 
+            this.txtFilSKWidth.Location = new System.Drawing.Point(759, 42);
+            this.txtFilSKWidth.Name = "txtFilSKWidth";
+            this.txtFilSKWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKWidth.TabIndex = 29;
+            this.txtFilSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(718, 45);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(35, 13);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "Width";
+            // 
+            // txtFilSKSupplierNr
+            // 
+            this.txtFilSKSupplierNr.Location = new System.Drawing.Point(463, 42);
+            this.txtFilSKSupplierNr.Name = "txtFilSKSupplierNr";
+            this.txtFilSKSupplierNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKSupplierNr.TabIndex = 25;
+            this.txtFilSKSupplierNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(395, 45);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(62, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "Supplier Nr.";
+            // 
+            // dtpFilSKSellTo
+            // 
+            this.dtpFilSKSellTo.Checked = false;
+            this.dtpFilSKSellTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFilSKSellTo.Location = new System.Drawing.Point(270, 42);
+            this.dtpFilSKSellTo.Name = "dtpFilSKSellTo";
+            this.dtpFilSKSellTo.ShowCheckBox = true;
+            this.dtpFilSKSellTo.Size = new System.Drawing.Size(109, 20);
+            this.dtpFilSKSellTo.TabIndex = 23;
+            this.dtpFilSKSellTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // dtpFilSKSellFrom
+            // 
+            this.dtpFilSKSellFrom.Checked = false;
+            this.dtpFilSKSellFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFilSKSellFrom.Location = new System.Drawing.Point(83, 43);
+            this.dtpFilSKSellFrom.Name = "dtpFilSKSellFrom";
+            this.dtpFilSKSellFrom.ShowCheckBox = true;
+            this.dtpFilSKSellFrom.Size = new System.Drawing.Size(115, 20);
+            this.dtpFilSKSellFrom.TabIndex = 22;
+            this.dtpFilSKSellFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(204, 46);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(60, 13);
+            this.label54.TabIndex = 20;
+            this.label54.Text = "Sell date to";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(1185, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 24);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "&Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // txtFilSKSellPrice
+            // 
+            this.txtFilSKSellPrice.Location = new System.Drawing.Point(760, 16);
+            this.txtFilSKSellPrice.Name = "txtFilSKSellPrice";
+            this.txtFilSKSellPrice.Size = new System.Drawing.Size(70, 20);
+            this.txtFilSKSellPrice.TabIndex = 13;
+            this.txtFilSKSellPrice.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(704, 20);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(50, 13);
+            this.label55.TabIndex = 12;
+            this.label55.Text = "Sell price";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(6, 46);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(71, 13);
+            this.label56.TabIndex = 10;
+            this.label56.Text = "Sell date from";
+            // 
+            // txtFilSKVK
+            // 
+            this.txtFilSKVK.Location = new System.Drawing.Point(628, 16);
+            this.txtFilSKVK.Name = "txtFilSKVK";
+            this.txtFilSKVK.Size = new System.Drawing.Size(70, 20);
+            this.txtFilSKVK.TabIndex = 9;
+            this.txtFilSKVK.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(569, 20);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(53, 13);
+            this.label57.TabIndex = 8;
+            this.label57.Text = "VK_Netto";
+            // 
+            // txtFilSKSupplier
+            // 
+            this.txtFilSKSupplier.Location = new System.Drawing.Point(463, 17);
+            this.txtFilSKSupplier.Name = "txtFilSKSupplier";
+            this.txtFilSKSupplier.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKSupplier.TabIndex = 7;
+            this.txtFilSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(412, 20);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(45, 13);
+            this.label58.TabIndex = 6;
+            this.label58.Text = "Supplier";
+            // 
+            // txtFilSKCountry
+            // 
+            this.txtFilSKCountry.Location = new System.Drawing.Point(306, 17);
+            this.txtFilSKCountry.Name = "txtFilSKCountry";
+            this.txtFilSKCountry.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKCountry.TabIndex = 5;
+            this.txtFilSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(257, 20);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(43, 13);
+            this.label59.TabIndex = 4;
+            this.label59.Text = "Country";
+            // 
+            // txtFilSKTitle
+            // 
+            this.txtFilSKTitle.Location = new System.Drawing.Point(151, 17);
+            this.txtFilSKTitle.Name = "txtFilSKTitle";
+            this.txtFilSKTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKTitle.TabIndex = 3;
+            this.txtFilSKTitle.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(100, 20);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(46, 13);
+            this.label60.TabIndex = 2;
+            this.label60.Text = "Item title";
+            // 
+            // txtFilSKCode
+            // 
+            this.txtFilSKCode.Location = new System.Drawing.Point(44, 17);
+            this.txtFilSKCode.Name = "txtFilSKCode";
+            this.txtFilSKCode.Size = new System.Drawing.Size(50, 20);
+            this.txtFilSKCode.TabIndex = 1;
+            this.txtFilSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(6, 20);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(32, 13);
+            this.label61.TabIndex = 0;
+            this.label61.Text = "Code";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.button4.Location = new System.Drawing.Point(131, 582);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 58);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "&Export";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.button5.Location = new System.Drawing.Point(1122, 582);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(157, 58);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "&Remove selected";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(6, 582);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(119, 58);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "&Refresh";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Grid
             // 
@@ -1975,6 +2446,20 @@
             this.gridSell.TabIndex = 13;
             this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            // 
+            // gridFromSK
+            // 
+            this.gridFromSK.AllowUserToAddRows = false;
+            this.gridFromSK.AllowUserToDeleteRows = false;
+            this.gridFromSK.AllowUserToOrderColumns = true;
+            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
+            this.gridFromSK.Name = "gridFromSK";
+            this.gridFromSK.Size = new System.Drawing.Size(1273, 445);
+            this.gridFromSK.TabIndex = 23;
             // 
             // gridInventory
             // 
@@ -2021,40 +2506,6 @@
             this.gridQueryRes.TabIndex = 5;
             this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
-            // txtFilInvLength
-            // 
-            this.txtFilInvLength.Location = new System.Drawing.Point(625, 42);
-            this.txtFilInvLength.Name = "txtFilInvLength";
-            this.txtFilInvLength.Size = new System.Drawing.Size(71, 20);
-            this.txtFilInvLength.TabIndex = 35;
-            this.txtFilInvLength.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(584, 45);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(34, 13);
-            this.label43.TabIndex = 34;
-            this.label43.Text = "Legth";
-            // 
-            // txtFilInvWidth
-            // 
-            this.txtFilInvWidth.Location = new System.Drawing.Point(754, 42);
-            this.txtFilInvWidth.Name = "txtFilInvWidth";
-            this.txtFilInvWidth.Size = new System.Drawing.Size(71, 20);
-            this.txtFilInvWidth.TabIndex = 33;
-            this.txtFilInvWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(713, 45);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(35, 13);
-            this.label44.TabIndex = 32;
-            this.label44.Text = "Width";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2094,8 +2545,14 @@
             this.groupBox7.PerformLayout();
             this.MainToolbar.ResumeLayout(false);
             this.MainToolbar.PerformLayout();
+            this.tabSK.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
@@ -2273,6 +2730,44 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtFilInvWidth;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TabPage tabSK;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox txtFilSKLength;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txtFilSKWidth;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox txtFilSKSupplierNr;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.DateTimePicker dtpFilSKSellTo;
+        private System.Windows.Forms.DateTimePicker dtpFilSKSellFrom;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtFilSKSellPrice;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox txtFilSKVK;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txtFilSKSupplier;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox txtFilSKCountry;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox txtFilSKTitle;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox txtFilSKCode;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private CustomDataGridView gridFromSK;
     }
 }
 

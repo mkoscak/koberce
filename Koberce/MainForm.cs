@@ -21,6 +21,7 @@ namespace Koberce
     {
         MAIN,
         SOLD,
+        FROM_SK,
         INVENTORY,
         BATCH,
         CUSTOMQUERY
@@ -39,6 +40,8 @@ namespace Koberce
                     return Grid;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return gridSell;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                    return gridFromSK;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return gridInventory;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
@@ -738,6 +741,7 @@ namespace Koberce
             btnToolEdit.Enabled = false;
             btnToolRemove.Enabled = false;
             btnToolExport.Enabled = false;
+            bool refresh = false;
 
             switch (tabControl1.SelectedIndex)
             {
@@ -746,17 +750,27 @@ namespace Koberce
                     btnToolEdit.Enabled = true;
                     btnToolRemove.Enabled = true;
                     btnToolExport.Enabled = true;
+                    refresh = true;
                     break;
 
                 case (int)TABS.SOLD: // sold
                     btnToolEdit.Enabled = true;
                     btnToolRemove.Enabled = true;
                     btnToolExport.Enabled = true;
+                    refresh = true;
+                    break;
+
+                case (int)TABS.FROM_SK: // fromSK
+                    btnToolEdit.Enabled = true;
+                    btnToolRemove.Enabled = true;
+                    btnToolExport.Enabled = true;
+                    refresh = true;
                     break;
 
                 case (int)TABS.INVENTORY: // inventory
                     btnToolRemove.Enabled = true;
                     btnToolExport.Enabled = true;
+                    refresh = true;
                     break;
 
                 case (int)TABS.CUSTOMQUERY: // query
@@ -767,7 +781,7 @@ namespace Koberce
                     break;
             }
 
-            if (tabControl1.SelectedIndex == 0 || tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 2)
+            if (refresh)
                 RefreshItems();
         }
 
@@ -909,6 +923,10 @@ namespace Koberce
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_sold{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
 
+                case (int)TABS.FROM_SK:
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_fromSK{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    break;
+
                 case (int)TABS.INVENTORY:
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_inventory{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
@@ -994,6 +1012,21 @@ namespace Koberce
                 dtSellDateFrom.Checked = false;
                 dtSellDateTo.Checked = false;
                 txtFilSellPrice.Text = string.Empty;
+            }
+            else 
+            if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+            {
+                txtFilSKCode.Text = string.Empty;
+                txtFilSKCountry.Text = string.Empty;
+                txtFilSKLength.Text = string.Empty;
+                txtFilSKSellPrice.Text = string.Empty;
+                txtFilSKSupplier.Text = string.Empty;
+                txtFilSKSupplierNr.Text = string.Empty;
+                txtFilSKTitle.Text = string.Empty;
+                txtFilSKVK.Text = string.Empty;
+                txtFilSKWidth.Text = string.Empty;
+                dtpFilSKSellFrom.Checked = false;
+                dtpFilSKSellTo.Checked = false;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
