@@ -13,7 +13,7 @@ namespace Koberce
         private SQLiteDataAdapter DB;
         private string DbName = @".\arena.db";
         
-        public static string[] TableNames = new string[] { "arena", "sold" , "inventory"};
+        public static string[] TableNames = new string[] { "arena", "sold", "fromSK" , "inventory"};
 
         public DBProvider(string dbName)
         {
