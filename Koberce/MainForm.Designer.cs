@@ -41,6 +41,10 @@
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnSetSold = new System.Windows.Forms.Button();
             this.grpFilter = new System.Windows.Forms.GroupBox();
+            this.txtFilLength = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtFilWidth = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.txtFilSupplierNr = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.dtDateTo = new System.Windows.Forms.DateTimePicker();
@@ -68,11 +72,12 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnRemoveSel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.Grid = new Koberce.CustomDataGridView();
             this.tabSold = new System.Windows.Forms.TabPage();
             this.btnSoldIfo = new System.Windows.Forms.Button();
             this.btnEditSold = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblSellPriceSum = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.lblSoldSel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblSoldAll = new System.Windows.Forms.Label();
@@ -100,7 +105,6 @@
             this.btnExportSold = new System.Windows.Forms.Button();
             this.btnDelSold = new System.Windows.Forms.Button();
             this.btnRefreshSold = new System.Windows.Forms.Button();
-            this.gridSell = new Koberce.CustomDataGridView();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.btnStartInventory = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -136,7 +140,6 @@
             this.btnInvInfo = new System.Windows.Forms.Button();
             this.btnInvRemove = new System.Windows.Forms.Button();
             this.btnInvRefresh = new System.Windows.Forms.Button();
-            this.gridInventory = new Koberce.CustomDataGridView();
             this.tabbatch = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBatchSelCount = new System.Windows.Forms.Label();
@@ -146,7 +149,6 @@
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.btnDecode = new System.Windows.Forms.Button();
             this.btnStartBatch = new System.Windows.Forms.Button();
-            this.gridBatch = new Koberce.CustomDataGridView();
             this.tabExecQuery = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblQuerySelCount = new System.Windows.Forms.Label();
@@ -164,7 +166,6 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnExportQuery = new System.Windows.Forms.Button();
             this.lblQueryInfo = new System.Windows.Forms.Label();
-            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
             this.btnPreviousTab = new System.Windows.Forms.ToolStripButton();
             this.btnNextTab = new System.Windows.Forms.ToolStripButton();
@@ -182,35 +183,46 @@
             this.btnToolExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolSettings = new System.Windows.Forms.ToolStripButton();
-            this.lblSellPriceSum = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.txtFilSoldLength = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtFilSoldWidth = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.Grid = new Koberce.CustomDataGridView();
+            this.gridSell = new Koberce.CustomDataGridView();
+            this.gridInventory = new Koberce.CustomDataGridView();
+            this.gridBatch = new Koberce.CustomDataGridView();
+            this.gridQueryRes = new Koberce.CustomDataGridView();
+            this.txtFilInvLength = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtFilInvWidth = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.tabSold.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
             this.tabInventory.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             this.tabbatch.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
             this.tabExecQuery.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
             this.MainToolbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabViewAll);
             this.tabControl1.Controls.Add(this.tabSold);
             this.tabControl1.Controls.Add(this.tabInventory);
@@ -259,8 +271,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lblSelCount);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.lblAllCount);
@@ -352,8 +364,12 @@
             // 
             // grpFilter
             // 
-            this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Controls.Add(this.txtFilLength);
+            this.grpFilter.Controls.Add(this.label40);
+            this.grpFilter.Controls.Add(this.txtFilWidth);
+            this.grpFilter.Controls.Add(this.label38);
             this.grpFilter.Controls.Add(this.txtFilSupplierNr);
             this.grpFilter.Controls.Add(this.label27);
             this.grpFilter.Controls.Add(this.dtDateTo);
@@ -383,6 +399,40 @@
             this.grpFilter.TabIndex = 8;
             this.grpFilter.TabStop = false;
             this.grpFilter.Text = "Filter";
+            // 
+            // txtFilLength
+            // 
+            this.txtFilLength.Location = new System.Drawing.Point(621, 42);
+            this.txtFilLength.Name = "txtFilLength";
+            this.txtFilLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilLength.TabIndex = 27;
+            this.txtFilLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(580, 45);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(34, 13);
+            this.label40.TabIndex = 26;
+            this.label40.Text = "Legth";
+            // 
+            // txtFilWidth
+            // 
+            this.txtFilWidth.Location = new System.Drawing.Point(750, 42);
+            this.txtFilWidth.Name = "txtFilWidth";
+            this.txtFilWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilWidth.TabIndex = 25;
+            this.txtFilWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(709, 45);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(35, 13);
+            this.label38.TabIndex = 24;
+            this.label38.Text = "Width";
             // 
             // txtFilSupplierNr
             // 
@@ -642,22 +692,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // Grid
-            // 
-            this.Grid.AllowUserToAddRows = false;
-            this.Grid.AllowUserToDeleteRows = false;
-            this.Grid.AllowUserToOrderColumns = true;
-            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(6, 86);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(1273, 444);
-            this.Grid.TabIndex = 4;
-            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabSold
             // 
             this.tabSold.Controls.Add(this.btnSoldIfo);
@@ -703,8 +737,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lblSellPriceSum);
             this.groupBox3.Controls.Add(this.label39);
             this.groupBox3.Controls.Add(this.lblSoldSel);
@@ -717,6 +751,25 @@
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Items";
+            // 
+            // lblSellPriceSum
+            // 
+            this.lblSellPriceSum.AutoSize = true;
+            this.lblSellPriceSum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblSellPriceSum.Location = new System.Drawing.Point(403, 16);
+            this.lblSellPriceSum.Name = "lblSellPriceSum";
+            this.lblSellPriceSum.Size = new System.Drawing.Size(13, 13);
+            this.lblSellPriceSum.TabIndex = 5;
+            this.lblSellPriceSum.Text = "0";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(324, 16);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(73, 13);
+            this.label39.TabIndex = 4;
+            this.label39.Text = "SellPrice sum:";
             // 
             // lblSoldSel
             // 
@@ -759,8 +812,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtFilSoldLength);
+            this.groupBox1.Controls.Add(this.label41);
+            this.groupBox1.Controls.Add(this.txtFilSoldWidth);
+            this.groupBox1.Controls.Add(this.label42);
             this.groupBox1.Controls.Add(this.txtFilSupNrSold);
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.dtSellDateTo);
@@ -997,22 +1054,6 @@
             this.btnRefreshSold.UseVisualStyleBackColor = true;
             this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridSell
-            // 
-            this.gridSell.AllowUserToAddRows = false;
-            this.gridSell.AllowUserToDeleteRows = false;
-            this.gridSell.AllowUserToOrderColumns = true;
-            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSell.Location = new System.Drawing.Point(6, 85);
-            this.gridSell.Name = "gridSell";
-            this.gridSell.Size = new System.Drawing.Size(1273, 445);
-            this.gridSell.TabIndex = 13;
-            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabInventory
             // 
             this.tabInventory.Controls.Add(this.btnStartInventory);
@@ -1045,8 +1086,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.lblInvSelCount);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.lblInvAllCount);
@@ -1099,8 +1140,12 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.txtFilInvLength);
+            this.groupBox5.Controls.Add(this.label43);
+            this.groupBox5.Controls.Add(this.txtFilInvWidth);
+            this.groupBox5.Controls.Add(this.label44);
             this.groupBox5.Controls.Add(this.txtFilInvSupNr);
             this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.dtInvDateTo);
@@ -1388,21 +1433,6 @@
             this.btnInvRefresh.UseVisualStyleBackColor = true;
             this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridInventory
-            // 
-            this.gridInventory.AllowUserToAddRows = false;
-            this.gridInventory.AllowUserToDeleteRows = false;
-            this.gridInventory.AllowUserToOrderColumns = true;
-            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventory.Location = new System.Drawing.Point(6, 85);
-            this.gridInventory.Name = "gridInventory";
-            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
-            this.gridInventory.TabIndex = 14;
-            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabbatch
             // 
             this.tabbatch.Controls.Add(this.groupBox6);
@@ -1419,8 +1449,8 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.lblBatchSelCount);
             this.groupBox6.Controls.Add(this.lblBatchItemCount);
             this.groupBox6.Controls.Add(this.label21);
@@ -1474,8 +1504,8 @@
             // 
             // txtBatch
             // 
-            this.txtBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBatch.Location = new System.Drawing.Point(170, 3);
             this.txtBatch.MaxLength = 65535;
             this.txtBatch.Multiline = true;
@@ -1508,21 +1538,6 @@
             this.btnStartBatch.UseVisualStyleBackColor = true;
             this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
             // 
-            // gridBatch
-            // 
-            this.gridBatch.AllowUserToAddRows = false;
-            this.gridBatch.AllowUserToDeleteRows = false;
-            this.gridBatch.AllowUserToOrderColumns = true;
-            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBatch.Location = new System.Drawing.Point(170, 318);
-            this.gridBatch.Name = "gridBatch";
-            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
-            this.gridBatch.TabIndex = 2;
-            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabExecQuery
             // 
             this.tabExecQuery.Controls.Add(this.groupBox7);
@@ -1547,8 +1562,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.lblQuerySelCount);
             this.groupBox7.Controls.Add(this.lblQueryResCount);
             this.groupBox7.Controls.Add(this.label33);
@@ -1687,8 +1702,8 @@
             // 
             // txtQuery
             // 
-            this.txtQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuery.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtQuery.Location = new System.Drawing.Point(170, 35);
             this.txtQuery.MaxLength = 65535;
@@ -1722,23 +1737,8 @@
             this.lblQueryInfo.Size = new System.Drawing.Size(157, 97);
             this.lblQueryInfo.TabIndex = 6;
             this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
-                "Q";
+    "Q";
             this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // gridQueryRes
-            // 
-            this.gridQueryRes.AllowUserToAddRows = false;
-            this.gridQueryRes.AllowUserToDeleteRows = false;
-            this.gridQueryRes.AllowUserToOrderColumns = true;
-            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
-            this.gridQueryRes.Name = "gridQueryRes";
-            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
-            this.gridQueryRes.TabIndex = 5;
-            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainToolbar
             // 
@@ -1910,24 +1910,150 @@
             this.btnToolSettings.Text = "Settings";
             this.btnToolSettings.Click += new System.EventHandler(this.btnToolSettings_Click);
             // 
-            // lblSellPriceSum
+            // txtFilSoldLength
             // 
-            this.lblSellPriceSum.AutoSize = true;
-            this.lblSellPriceSum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblSellPriceSum.Location = new System.Drawing.Point(403, 16);
-            this.lblSellPriceSum.Name = "lblSellPriceSum";
-            this.lblSellPriceSum.Size = new System.Drawing.Size(13, 13);
-            this.lblSellPriceSum.TabIndex = 5;
-            this.lblSellPriceSum.Text = "0";
+            this.txtFilSoldLength.Location = new System.Drawing.Point(630, 42);
+            this.txtFilSoldLength.Name = "txtFilSoldLength";
+            this.txtFilSoldLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSoldLength.TabIndex = 31;
+            this.txtFilSoldLength.TextChanged += new System.EventHandler(this.RefreshFilter);
             // 
-            // label39
+            // label41
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(324, 16);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(73, 13);
-            this.label39.TabIndex = 4;
-            this.label39.Text = "SellPrice sum:";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(589, 45);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(34, 13);
+            this.label41.TabIndex = 30;
+            this.label41.Text = "Legth";
+            // 
+            // txtFilSoldWidth
+            // 
+            this.txtFilSoldWidth.Location = new System.Drawing.Point(759, 42);
+            this.txtFilSoldWidth.Name = "txtFilSoldWidth";
+            this.txtFilSoldWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSoldWidth.TabIndex = 29;
+            this.txtFilSoldWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(718, 45);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(35, 13);
+            this.label42.TabIndex = 28;
+            this.label42.Text = "Width";
+            // 
+            // Grid
+            // 
+            this.Grid.AllowUserToAddRows = false;
+            this.Grid.AllowUserToDeleteRows = false;
+            this.Grid.AllowUserToOrderColumns = true;
+            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(6, 86);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(1273, 444);
+            this.Grid.TabIndex = 4;
+            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            // 
+            // gridSell
+            // 
+            this.gridSell.AllowUserToAddRows = false;
+            this.gridSell.AllowUserToDeleteRows = false;
+            this.gridSell.AllowUserToOrderColumns = true;
+            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSell.Location = new System.Drawing.Point(6, 85);
+            this.gridSell.Name = "gridSell";
+            this.gridSell.Size = new System.Drawing.Size(1273, 445);
+            this.gridSell.TabIndex = 13;
+            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            // 
+            // gridInventory
+            // 
+            this.gridInventory.AllowUserToAddRows = false;
+            this.gridInventory.AllowUserToDeleteRows = false;
+            this.gridInventory.AllowUserToOrderColumns = true;
+            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInventory.Location = new System.Drawing.Point(6, 85);
+            this.gridInventory.Name = "gridInventory";
+            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
+            this.gridInventory.TabIndex = 14;
+            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridBatch
+            // 
+            this.gridBatch.AllowUserToAddRows = false;
+            this.gridBatch.AllowUserToDeleteRows = false;
+            this.gridBatch.AllowUserToOrderColumns = true;
+            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBatch.Location = new System.Drawing.Point(170, 318);
+            this.gridBatch.Name = "gridBatch";
+            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
+            this.gridBatch.TabIndex = 2;
+            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridQueryRes
+            // 
+            this.gridQueryRes.AllowUserToAddRows = false;
+            this.gridQueryRes.AllowUserToDeleteRows = false;
+            this.gridQueryRes.AllowUserToOrderColumns = true;
+            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
+            this.gridQueryRes.Name = "gridQueryRes";
+            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
+            this.gridQueryRes.TabIndex = 5;
+            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // txtFilInvLength
+            // 
+            this.txtFilInvLength.Location = new System.Drawing.Point(625, 42);
+            this.txtFilInvLength.Name = "txtFilInvLength";
+            this.txtFilInvLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvLength.TabIndex = 35;
+            this.txtFilInvLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(584, 45);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(34, 13);
+            this.label43.TabIndex = 34;
+            this.label43.Text = "Legth";
+            // 
+            // txtFilInvWidth
+            // 
+            this.txtFilInvWidth.Location = new System.Drawing.Point(754, 42);
+            this.txtFilInvWidth.Name = "txtFilInvWidth";
+            this.txtFilInvWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvWidth.TabIndex = 33;
+            this.txtFilInvWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(713, 45);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(35, 13);
+            this.label44.TabIndex = 32;
+            this.label44.Text = "Width";
             // 
             // MainForm
             // 
@@ -1948,31 +2074,31 @@
             this.groupBox2.PerformLayout();
             this.grpFilter.ResumeLayout(false);
             this.grpFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.tabSold.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             this.tabbatch.ResumeLayout(false);
             this.tabbatch.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
             this.tabExecQuery.ResumeLayout(false);
             this.tabExecQuery.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
             this.MainToolbar.ResumeLayout(false);
             this.MainToolbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2135,6 +2261,18 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label lblSellPriceSum;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtFilLength;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtFilWidth;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtFilSoldLength;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txtFilSoldWidth;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtFilInvLength;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtFilInvWidth;
+        private System.Windows.Forms.Label label44;
     }
 }
 
