@@ -21,6 +21,8 @@ namespace Koberce
             this.db = db;
 
             InitializeComponent();
+
+            this.Text += " "+opType.ToString();
         }
 
         void ImportSold()
@@ -68,6 +70,11 @@ namespace Koberce
                 case OperationType.Inventory:
                     ImportInventory();
                     break;
+
+                case OperationType.fromSK:
+                    // TODO import fromSK.txt
+                    break;
+
                 default:
                     break;
             }
@@ -79,6 +86,7 @@ namespace Koberce
     public enum OperationType
     {
         Sold,
-        Inventory
+        Inventory,
+        fromSK
     }
 }

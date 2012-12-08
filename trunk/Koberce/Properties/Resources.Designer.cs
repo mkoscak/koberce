@@ -163,6 +163,16 @@ namespace Koberce.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_import_icon {
+            get {
+                object obj = ResourceManager.GetObject("file-import-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info_icon {
             get {
                 object obj = ResourceManager.GetObject("info-icon", resourceCulture);
