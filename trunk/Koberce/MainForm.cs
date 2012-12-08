@@ -343,6 +343,9 @@ namespace Koberce
                 {
                     op = " > ";
                     text = text.Replace(">", "");
+                    if (text.Contains('='))
+                        op = " >= ";
+                    text = text.Replace("=", "");
                     perc = "";
                     quotes = "";
 
@@ -356,6 +359,9 @@ namespace Koberce
                 {
                     op = " < ";
                     text = text.Replace("<", "");
+                    if (text.Contains('='))
+                        op = " <= ";
+                    text = text.Replace("=", "");
                     perc = "";
                     quotes = "";
 
@@ -409,6 +415,8 @@ namespace Koberce
                 AddFilter(sb, txtQuantity.Text, "QUANTITY");
                 AddFilter(sb, txtFilInv.Text, "INVOICE");
                 AddFilter(sb, txtFilMat.Text, "MATERIAL");
+                AddFilter(sb, txtFilLength.Text, "LENGTH");
+                AddFilter(sb, txtFilWidth.Text, "WIDTH");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SOLD)
@@ -424,6 +432,8 @@ namespace Koberce
                 if (dtSellDateTo.Checked)
                     AddFilterDate(sb, dtSellDateTo.Value.ToString(DateTimeFormat), "SELLDATE", "<=");
                 AddFilter(sb, txtFilSellPrice.Text, "SELLPRICE");
+                AddFilter(sb, txtFilSoldLength.Text, "LENGTH");
+                AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -441,6 +451,8 @@ namespace Koberce
                     AddFilter(sb, txtFilInvQuantity.Text, "QUANTITY");
                     AddFilter(sb, txtFilInvInvoice.Text, "INVOICE");
                     AddFilter(sb, txtFilInvMaterial.Text, "MATERIAL");
+                    AddFilter(sb, txtFilInvLength.Text, "LENGTH");
+                    AddFilter(sb, txtFilInvWidth.Text, "WIDTH");
                 }
 
             if (sb.Length == 0)
