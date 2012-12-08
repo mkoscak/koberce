@@ -205,6 +205,7 @@
     <None Include="Resources\checklist-icon.png" />
     <Content Include="Resources\Earth-Download-icon.png" />
     <Content Include="Resources\Earth-Upload-icon.png" />
+    <None Include="Resources\file-import-icon.png" />
     <Content Include="Resources\floppy_disk_48.png" />
     <Content Include="Resources\globe_48.png" />
     <None Include="Resources\newspaper_48.png" />

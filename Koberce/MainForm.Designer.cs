@@ -31,15 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabViewAll = new System.Windows.Forms.TabPage();
-            this.btnAddInventory = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSelCount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblAllCount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnExportMain = new System.Windows.Forms.Button();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.btnSetSold = new System.Windows.Forms.Button();
             this.grpFilter = new System.Windows.Forms.GroupBox();
             this.txtFilLength = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -68,13 +64,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFilCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAddNew = new System.Windows.Forms.Button();
-            this.btnRemoveSel = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.tabSold = new System.Windows.Forms.TabPage();
-            this.btnSoldIfo = new System.Windows.Forms.Button();
-            this.btnEditSold = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblSellPriceSum = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -106,11 +96,39 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textFilCodeSold = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnExportSold = new System.Windows.Forms.Button();
-            this.btnDelSold = new System.Windows.Forms.Button();
-            this.btnRefreshSold = new System.Windows.Forms.Button();
+            this.tabSK = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtFilSKLength = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtFilSKWidth = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txtFilSKSupplierNr = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.dtpFilSKSellTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilSKSellFrom = new System.Windows.Forms.DateTimePicker();
+            this.label54 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtFilSKSellPrice = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.txtFilSKVK = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtFilSKSupplier = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtFilSKCountry = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtFilSKTitle = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtFilSKCode = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
             this.tabInventory = new System.Windows.Forms.TabPage();
-            this.btnStartInventory = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblInvSelCount = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -144,10 +162,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txtFilInvCode = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.btnInvExport = new System.Windows.Forms.Button();
-            this.btnInvInfo = new System.Windows.Forms.Button();
-            this.btnInvRemove = new System.Windows.Forms.Button();
-            this.btnInvRefresh = new System.Windows.Forms.Button();
             this.tabbatch = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBatchSelCount = new System.Windows.Forms.Label();
@@ -155,8 +169,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.lblBatchCount = new System.Windows.Forms.Label();
             this.txtBatch = new System.Windows.Forms.TextBox();
-            this.btnDecode = new System.Windows.Forms.Button();
-            this.btnStartBatch = new System.Windows.Forms.Button();
             this.tabExecQuery = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblQuerySelCount = new System.Windows.Forms.Label();
@@ -172,62 +184,60 @@
             this.btnExecNonQuery = new System.Windows.Forms.Button();
             this.btnExecute = new System.Windows.Forms.Button();
             this.txtQuery = new System.Windows.Forms.TextBox();
-            this.btnExportQuery = new System.Windows.Forms.Button();
-            this.lblQueryInfo = new System.Windows.Forms.Label();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPreviousTab = new System.Windows.Forms.ToolStripButton();
             this.btnNextTab = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolRefresh = new System.Windows.Forms.ToolStripButton();
             this.btnToolExport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolNew = new System.Windows.Forms.ToolStripButton();
             this.btnToolEdit = new System.Windows.Forms.ToolStripButton();
             this.btnToolRemove = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolScanner = new System.Windows.Forms.ToolStripButton();
-            this.btnToolUpload = new System.Windows.Forms.ToolStripButton();
-            this.btnToolDownload = new System.Windows.Forms.ToolStripButton();
+            this.btnToolStripUpload = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnUploadSold = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUploadInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUploadFromSK = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolExit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnToolSettings = new System.Windows.Forms.ToolStripButton();
-            this.tabSK = new System.Windows.Forms.TabPage();
+            this.btnToolStripDownload = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnDownloadSold = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDownloadInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDownloadFromSK = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnToolStripImport = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnAddInventory = new System.Windows.Forms.Button();
+            this.btnExportMain = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
+            this.btnSetSold = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnRemoveSel = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSoldIfo = new System.Windows.Forms.Button();
+            this.btnEditSold = new System.Windows.Forms.Button();
+            this.btnExportSold = new System.Windows.Forms.Button();
+            this.btnDelSold = new System.Windows.Forms.Button();
+            this.btnRefreshSold = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.txtFilSKLength = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.txtFilSKWidth = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.txtFilSKSupplierNr = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.dtpFilSKSellTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpFilSKSellFrom = new System.Windows.Forms.DateTimePicker();
-            this.label54 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtFilSKSellPrice = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.txtFilSKVK = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.txtFilSKSupplier = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.txtFilSKCountry = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.txtFilSKTitle = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.txtFilSKCode = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnStartInventory = new System.Windows.Forms.Button();
+            this.btnInvExport = new System.Windows.Forms.Button();
+            this.btnInvInfo = new System.Windows.Forms.Button();
+            this.btnInvRemove = new System.Windows.Forms.Button();
+            this.btnInvRefresh = new System.Windows.Forms.Button();
+            this.btnDecode = new System.Windows.Forms.Button();
+            this.btnStartBatch = new System.Windows.Forms.Button();
+            this.btnExportQuery = new System.Windows.Forms.Button();
+            this.lblQueryInfo = new System.Windows.Forms.Label();
+            this.btnImportSold = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportFromSK = new System.Windows.Forms.ToolStripMenuItem();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridFromSK = new Koberce.CustomDataGridView();
@@ -241,6 +251,9 @@
             this.tabSold.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabSK.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabInventory.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -249,9 +262,6 @@
             this.tabExecQuery.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.MainToolbar.SuspendLayout();
-            this.tabSK.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
@@ -298,19 +308,6 @@
             this.tabViewAll.TabIndex = 1;
             this.tabViewAll.Text = "Database";
             this.tabViewAll.UseVisualStyleBackColor = true;
-            // 
-            // btnAddInventory
-            // 
-            this.btnAddInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddInventory.Image = global::Koberce.Properties.Resources.checklist_icon;
-            this.btnAddInventory.Location = new System.Drawing.Point(497, 582);
-            this.btnAddInventory.Name = "btnAddInventory";
-            this.btnAddInventory.Size = new System.Drawing.Size(122, 58);
-            this.btnAddInventory.TabIndex = 13;
-            this.btnAddInventory.Text = "Add to in&ventory";
-            this.btnAddInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddInventory.UseVisualStyleBackColor = true;
-            this.btnAddInventory.Click += new System.EventHandler(this.btnAddInventory_Click);
             // 
             // groupBox2
             // 
@@ -365,45 +362,6 @@
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "All items: ";
-            // 
-            // btnExportMain
-            // 
-            this.btnExportMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportMain.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
-            this.btnExportMain.Location = new System.Drawing.Point(131, 582);
-            this.btnExportMain.Name = "btnExportMain";
-            this.btnExportMain.Size = new System.Drawing.Size(116, 58);
-            this.btnExportMain.TabIndex = 11;
-            this.btnExportMain.Text = "&Export";
-            this.btnExportMain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportMain.UseVisualStyleBackColor = true;
-            this.btnExportMain.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnInfo
-            // 
-            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInfo.Image = global::Koberce.Properties.Resources.newspaper_48;
-            this.btnInfo.Location = new System.Drawing.Point(253, 582);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(116, 58);
-            this.btnInfo.TabIndex = 10;
-            this.btnInfo.Text = "&Info";
-            this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // btnSetSold
-            // 
-            this.btnSetSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSetSold.Image = global::Koberce.Properties.Resources.box_download_48;
-            this.btnSetSold.Location = new System.Drawing.Point(375, 582);
-            this.btnSetSold.Name = "btnSetSold";
-            this.btnSetSold.Size = new System.Drawing.Size(116, 58);
-            this.btnSetSold.TabIndex = 9;
-            this.btnSetSold.Text = "&Set sold";
-            this.btnSetSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSetSold.UseVisualStyleBackColor = true;
-            this.btnSetSold.Click += new System.EventHandler(this.btnSetSold_Click);
             // 
             // grpFilter
             // 
@@ -682,59 +640,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Code";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Image = global::Koberce.Properties.Resources.paper_pencil_48;
-            this.btnUpdate.Location = new System.Drawing.Point(959, 582);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(157, 58);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "E&dit selected";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAddNew
-            // 
-            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.Image = global::Koberce.Properties.Resources.paper_48;
-            this.btnAddNew.Location = new System.Drawing.Point(796, 582);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(157, 58);
-            this.btnAddNew.TabIndex = 6;
-            this.btnAddNew.Text = "&New item";
-            this.btnAddNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddNew.UseVisualStyleBackColor = true;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
-            // 
-            // btnRemoveSel
-            // 
-            this.btnRemoveSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveSel.Image = global::Koberce.Properties.Resources.cancel_48;
-            this.btnRemoveSel.Location = new System.Drawing.Point(1122, 582);
-            this.btnRemoveSel.Name = "btnRemoveSel";
-            this.btnRemoveSel.Size = new System.Drawing.Size(157, 58);
-            this.btnRemoveSel.TabIndex = 5;
-            this.btnRemoveSel.Text = "&Remove selected";
-            this.btnRemoveSel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemoveSel.UseVisualStyleBackColor = true;
-            this.btnRemoveSel.Click += new System.EventHandler(this.btnRemoveSel_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRefresh.Image = global::Koberce.Properties.Resources.refresh_icon;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(6, 582);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(119, 58);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "&Refresh";
-            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // tabSold
             // 
             this.tabSold.Controls.Add(this.btnSoldIfo);
@@ -751,32 +656,6 @@
             this.tabSold.TabIndex = 3;
             this.tabSold.Text = "Sold items";
             this.tabSold.UseVisualStyleBackColor = true;
-            // 
-            // btnSoldIfo
-            // 
-            this.btnSoldIfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSoldIfo.Image = global::Koberce.Properties.Resources.newspaper_48;
-            this.btnSoldIfo.Location = new System.Drawing.Point(253, 582);
-            this.btnSoldIfo.Name = "btnSoldIfo";
-            this.btnSoldIfo.Size = new System.Drawing.Size(116, 58);
-            this.btnSoldIfo.TabIndex = 21;
-            this.btnSoldIfo.Text = "&Info";
-            this.btnSoldIfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSoldIfo.UseVisualStyleBackColor = true;
-            this.btnSoldIfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // btnEditSold
-            // 
-            this.btnEditSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditSold.Image = global::Koberce.Properties.Resources.paper_pencil_48;
-            this.btnEditSold.Location = new System.Drawing.Point(959, 582);
-            this.btnEditSold.Name = "btnEditSold";
-            this.btnEditSold.Size = new System.Drawing.Size(157, 58);
-            this.btnEditSold.TabIndex = 20;
-            this.btnEditSold.Text = "E&dit selected";
-            this.btnEditSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditSold.UseVisualStyleBackColor = true;
-            this.btnEditSold.Click += new System.EventHandler(this.btnEditSold_Click);
             // 
             // groupBox3
             // 
@@ -1091,45 +970,335 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Code";
             // 
-            // btnExportSold
+            // tabSK
             // 
-            this.btnExportSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportSold.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
-            this.btnExportSold.Location = new System.Drawing.Point(131, 582);
-            this.btnExportSold.Name = "btnExportSold";
-            this.btnExportSold.Size = new System.Drawing.Size(116, 58);
-            this.btnExportSold.TabIndex = 18;
-            this.btnExportSold.Text = "&Export";
-            this.btnExportSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportSold.UseVisualStyleBackColor = true;
-            this.btnExportSold.Click += new System.EventHandler(this.btnExport_Click);
+            this.tabSK.Controls.Add(this.button1);
+            this.tabSK.Controls.Add(this.button2);
+            this.tabSK.Controls.Add(this.groupBox8);
+            this.tabSK.Controls.Add(this.groupBox9);
+            this.tabSK.Controls.Add(this.button4);
+            this.tabSK.Controls.Add(this.button5);
+            this.tabSK.Controls.Add(this.button6);
+            this.tabSK.Controls.Add(this.gridFromSK);
+            this.tabSK.Location = new System.Drawing.Point(4, 22);
+            this.tabSK.Name = "tabSK";
+            this.tabSK.Size = new System.Drawing.Size(1285, 646);
+            this.tabSK.TabIndex = 6;
+            this.tabSK.Text = "from SK";
+            this.tabSK.UseVisualStyleBackColor = true;
             // 
-            // btnDelSold
+            // groupBox8
             // 
-            this.btnDelSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelSold.Image = global::Koberce.Properties.Resources.cancel_48;
-            this.btnDelSold.Location = new System.Drawing.Point(1122, 582);
-            this.btnDelSold.Name = "btnDelSold";
-            this.btnDelSold.Size = new System.Drawing.Size(157, 58);
-            this.btnDelSold.TabIndex = 14;
-            this.btnDelSold.Text = "&Remove selected";
-            this.btnDelSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelSold.UseVisualStyleBackColor = true;
-            this.btnDelSold.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.label45);
+            this.groupBox8.Controls.Add(this.label46);
+            this.groupBox8.Controls.Add(this.label47);
+            this.groupBox8.Controls.Add(this.label48);
+            this.groupBox8.Controls.Add(this.label49);
+            this.groupBox8.Controls.Add(this.label50);
+            this.groupBox8.Location = new System.Drawing.Point(7, 536);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1269, 40);
+            this.groupBox8.TabIndex = 27;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Items";
             // 
-            // btnRefreshSold
+            // label45
             // 
-            this.btnRefreshSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRefreshSold.Image = global::Koberce.Properties.Resources.refresh_icon;
-            this.btnRefreshSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshSold.Location = new System.Drawing.Point(6, 582);
-            this.btnRefreshSold.Name = "btnRefreshSold";
-            this.btnRefreshSold.Size = new System.Drawing.Size(119, 58);
-            this.btnRefreshSold.TabIndex = 12;
-            this.btnRefreshSold.Text = "&Refresh";
-            this.btnRefreshSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRefreshSold.UseVisualStyleBackColor = true;
-            this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label45.Location = new System.Drawing.Point(403, 16);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(13, 13);
+            this.label45.TabIndex = 5;
+            this.label45.Text = "0";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(324, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(73, 13);
+            this.label46.TabIndex = 4;
+            this.label46.Text = "SellPrice sum:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label47.Location = new System.Drawing.Point(238, 16);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(13, 13);
+            this.label47.TabIndex = 3;
+            this.label47.Text = "0";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(150, 16);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(82, 13);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "Selected items: ";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label49.Location = new System.Drawing.Point(63, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(13, 13);
+            this.label49.TabIndex = 1;
+            this.label49.Text = "0";
+            // 
+            // label50
+            // 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(6, 16);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(51, 13);
+            this.label50.TabIndex = 0;
+            this.label50.Text = "All items: ";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.txtFilSKLength);
+            this.groupBox9.Controls.Add(this.label51);
+            this.groupBox9.Controls.Add(this.txtFilSKWidth);
+            this.groupBox9.Controls.Add(this.label52);
+            this.groupBox9.Controls.Add(this.txtFilSKSupplierNr);
+            this.groupBox9.Controls.Add(this.label53);
+            this.groupBox9.Controls.Add(this.dtpFilSKSellTo);
+            this.groupBox9.Controls.Add(this.dtpFilSKSellFrom);
+            this.groupBox9.Controls.Add(this.label54);
+            this.groupBox9.Controls.Add(this.button3);
+            this.groupBox9.Controls.Add(this.txtFilSKSellPrice);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.txtFilSKVK);
+            this.groupBox9.Controls.Add(this.label57);
+            this.groupBox9.Controls.Add(this.txtFilSKSupplier);
+            this.groupBox9.Controls.Add(this.label58);
+            this.groupBox9.Controls.Add(this.txtFilSKCountry);
+            this.groupBox9.Controls.Add(this.label59);
+            this.groupBox9.Controls.Add(this.txtFilSKTitle);
+            this.groupBox9.Controls.Add(this.label60);
+            this.groupBox9.Controls.Add(this.txtFilSKCode);
+            this.groupBox9.Controls.Add(this.label61);
+            this.groupBox9.Location = new System.Drawing.Point(7, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1269, 73);
+            this.groupBox9.TabIndex = 25;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Filter";
+            // 
+            // txtFilSKLength
+            // 
+            this.txtFilSKLength.Location = new System.Drawing.Point(630, 42);
+            this.txtFilSKLength.Name = "txtFilSKLength";
+            this.txtFilSKLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKLength.TabIndex = 31;
+            this.txtFilSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(589, 45);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(34, 13);
+            this.label51.TabIndex = 30;
+            this.label51.Text = "Legth";
+            // 
+            // txtFilSKWidth
+            // 
+            this.txtFilSKWidth.Location = new System.Drawing.Point(759, 42);
+            this.txtFilSKWidth.Name = "txtFilSKWidth";
+            this.txtFilSKWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKWidth.TabIndex = 29;
+            this.txtFilSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(718, 45);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(35, 13);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "Width";
+            // 
+            // txtFilSKSupplierNr
+            // 
+            this.txtFilSKSupplierNr.Location = new System.Drawing.Point(463, 42);
+            this.txtFilSKSupplierNr.Name = "txtFilSKSupplierNr";
+            this.txtFilSKSupplierNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKSupplierNr.TabIndex = 25;
+            this.txtFilSKSupplierNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(395, 45);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(62, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "Supplier Nr.";
+            // 
+            // dtpFilSKSellTo
+            // 
+            this.dtpFilSKSellTo.Checked = false;
+            this.dtpFilSKSellTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFilSKSellTo.Location = new System.Drawing.Point(270, 42);
+            this.dtpFilSKSellTo.Name = "dtpFilSKSellTo";
+            this.dtpFilSKSellTo.ShowCheckBox = true;
+            this.dtpFilSKSellTo.Size = new System.Drawing.Size(109, 20);
+            this.dtpFilSKSellTo.TabIndex = 23;
+            this.dtpFilSKSellTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // dtpFilSKSellFrom
+            // 
+            this.dtpFilSKSellFrom.Checked = false;
+            this.dtpFilSKSellFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFilSKSellFrom.Location = new System.Drawing.Point(83, 43);
+            this.dtpFilSKSellFrom.Name = "dtpFilSKSellFrom";
+            this.dtpFilSKSellFrom.ShowCheckBox = true;
+            this.dtpFilSKSellFrom.Size = new System.Drawing.Size(115, 20);
+            this.dtpFilSKSellFrom.TabIndex = 22;
+            this.dtpFilSKSellFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(204, 46);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(60, 13);
+            this.label54.TabIndex = 20;
+            this.label54.Text = "Sell date to";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(1185, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 24);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "&Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // txtFilSKSellPrice
+            // 
+            this.txtFilSKSellPrice.Location = new System.Drawing.Point(760, 16);
+            this.txtFilSKSellPrice.Name = "txtFilSKSellPrice";
+            this.txtFilSKSellPrice.Size = new System.Drawing.Size(70, 20);
+            this.txtFilSKSellPrice.TabIndex = 13;
+            this.txtFilSKSellPrice.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(704, 20);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(50, 13);
+            this.label55.TabIndex = 12;
+            this.label55.Text = "Sell price";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(6, 46);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(71, 13);
+            this.label56.TabIndex = 10;
+            this.label56.Text = "Sell date from";
+            // 
+            // txtFilSKVK
+            // 
+            this.txtFilSKVK.Location = new System.Drawing.Point(628, 16);
+            this.txtFilSKVK.Name = "txtFilSKVK";
+            this.txtFilSKVK.Size = new System.Drawing.Size(70, 20);
+            this.txtFilSKVK.TabIndex = 9;
+            this.txtFilSKVK.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(569, 20);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(53, 13);
+            this.label57.TabIndex = 8;
+            this.label57.Text = "VK_Netto";
+            // 
+            // txtFilSKSupplier
+            // 
+            this.txtFilSKSupplier.Location = new System.Drawing.Point(463, 17);
+            this.txtFilSKSupplier.Name = "txtFilSKSupplier";
+            this.txtFilSKSupplier.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKSupplier.TabIndex = 7;
+            this.txtFilSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(412, 20);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(45, 13);
+            this.label58.TabIndex = 6;
+            this.label58.Text = "Supplier";
+            // 
+            // txtFilSKCountry
+            // 
+            this.txtFilSKCountry.Location = new System.Drawing.Point(306, 17);
+            this.txtFilSKCountry.Name = "txtFilSKCountry";
+            this.txtFilSKCountry.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKCountry.TabIndex = 5;
+            this.txtFilSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(257, 20);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(43, 13);
+            this.label59.TabIndex = 4;
+            this.label59.Text = "Country";
+            // 
+            // txtFilSKTitle
+            // 
+            this.txtFilSKTitle.Location = new System.Drawing.Point(151, 17);
+            this.txtFilSKTitle.Name = "txtFilSKTitle";
+            this.txtFilSKTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtFilSKTitle.TabIndex = 3;
+            this.txtFilSKTitle.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(100, 20);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(46, 13);
+            this.label60.TabIndex = 2;
+            this.label60.Text = "Item title";
+            // 
+            // txtFilSKCode
+            // 
+            this.txtFilSKCode.Location = new System.Drawing.Point(44, 17);
+            this.txtFilSKCode.Name = "txtFilSKCode";
+            this.txtFilSKCode.Size = new System.Drawing.Size(50, 20);
+            this.txtFilSKCode.TabIndex = 1;
+            this.txtFilSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(6, 20);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(32, 13);
+            this.label61.TabIndex = 0;
+            this.label61.Text = "Code";
             // 
             // tabInventory
             // 
@@ -1147,19 +1316,6 @@
             this.tabInventory.TabIndex = 4;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
-            // 
-            // btnStartInventory
-            // 
-            this.btnStartInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnStartInventory.Image = global::Koberce.Properties.Resources.checklist_icon;
-            this.btnStartInventory.Location = new System.Drawing.Point(375, 582);
-            this.btnStartInventory.Name = "btnStartInventory";
-            this.btnStartInventory.Size = new System.Drawing.Size(122, 58);
-            this.btnStartInventory.TabIndex = 23;
-            this.btnStartInventory.Text = "Start in&ventory";
-            this.btnStartInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStartInventory.UseVisualStyleBackColor = true;
-            this.btnStartInventory.Click += new System.EventHandler(this.btnStartInventory_Click);
             // 
             // groupBox4
             // 
@@ -1491,59 +1647,6 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "Code";
             // 
-            // btnInvExport
-            // 
-            this.btnInvExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInvExport.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
-            this.btnInvExport.Location = new System.Drawing.Point(131, 582);
-            this.btnInvExport.Name = "btnInvExport";
-            this.btnInvExport.Size = new System.Drawing.Size(116, 58);
-            this.btnInvExport.TabIndex = 21;
-            this.btnInvExport.Text = "&Export";
-            this.btnInvExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInvExport.UseVisualStyleBackColor = true;
-            this.btnInvExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnInvInfo
-            // 
-            this.btnInvInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInvInfo.Image = global::Koberce.Properties.Resources.newspaper_48;
-            this.btnInvInfo.Location = new System.Drawing.Point(253, 582);
-            this.btnInvInfo.Name = "btnInvInfo";
-            this.btnInvInfo.Size = new System.Drawing.Size(116, 58);
-            this.btnInvInfo.TabIndex = 20;
-            this.btnInvInfo.Text = "&Info";
-            this.btnInvInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInvInfo.UseVisualStyleBackColor = true;
-            this.btnInvInfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // btnInvRemove
-            // 
-            this.btnInvRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInvRemove.Image = global::Koberce.Properties.Resources.cancel_48;
-            this.btnInvRemove.Location = new System.Drawing.Point(1122, 582);
-            this.btnInvRemove.Name = "btnInvRemove";
-            this.btnInvRemove.Size = new System.Drawing.Size(157, 58);
-            this.btnInvRemove.TabIndex = 15;
-            this.btnInvRemove.Text = "&Remove selected";
-            this.btnInvRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInvRemove.UseVisualStyleBackColor = true;
-            this.btnInvRemove.Click += new System.EventHandler(this.btnRemoveSel_Click);
-            // 
-            // btnInvRefresh
-            // 
-            this.btnInvRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInvRefresh.Image = global::Koberce.Properties.Resources.refresh_icon;
-            this.btnInvRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInvRefresh.Location = new System.Drawing.Point(6, 582);
-            this.btnInvRefresh.Name = "btnInvRefresh";
-            this.btnInvRefresh.Size = new System.Drawing.Size(119, 58);
-            this.btnInvRefresh.TabIndex = 13;
-            this.btnInvRefresh.Text = "&Refresh";
-            this.btnInvRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInvRefresh.UseVisualStyleBackColor = true;
-            this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // tabbatch
             // 
             this.tabbatch.Controls.Add(this.groupBox6);
@@ -1624,30 +1727,6 @@
             this.txtBatch.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBatch.Size = new System.Drawing.Size(1112, 309);
             this.txtBatch.TabIndex = 0;
-            // 
-            // btnDecode
-            // 
-            this.btnDecode.Image = global::Koberce.Properties.Resources.Activity_Monitor_icon;
-            this.btnDecode.Location = new System.Drawing.Point(3, 3);
-            this.btnDecode.Name = "btnDecode";
-            this.btnDecode.Size = new System.Drawing.Size(161, 56);
-            this.btnDecode.TabIndex = 3;
-            this.btnDecode.Text = "&Decode data";
-            this.btnDecode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDecode.UseVisualStyleBackColor = true;
-            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click);
-            // 
-            // btnStartBatch
-            // 
-            this.btnStartBatch.Image = global::Koberce.Properties.Resources.system_database_add_icon;
-            this.btnStartBatch.Location = new System.Drawing.Point(3, 318);
-            this.btnStartBatch.Name = "btnStartBatch";
-            this.btnStartBatch.Size = new System.Drawing.Size(161, 56);
-            this.btnStartBatch.TabIndex = 1;
-            this.btnStartBatch.Text = "&Start inserting";
-            this.btnStartBatch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStartBatch.UseVisualStyleBackColor = true;
-            this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
             // 
             // tabExecQuery
             // 
@@ -1825,32 +1904,6 @@
             this.txtQuery.TabIndex = 3;
             this.txtQuery.Text = "select * from arena order by code desc";
             // 
-            // btnExportQuery
-            // 
-            this.btnExportQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportQuery.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
-            this.btnExportQuery.Location = new System.Drawing.Point(1166, 588);
-            this.btnExportQuery.Name = "btnExportQuery";
-            this.btnExportQuery.Size = new System.Drawing.Size(116, 58);
-            this.btnExportQuery.TabIndex = 14;
-            this.btnExportQuery.Text = "&Export";
-            this.btnExportQuery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportQuery.UseVisualStyleBackColor = true;
-            this.btnExportQuery.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // lblQueryInfo
-            // 
-            this.lblQueryInfo.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblQueryInfo.Image = global::Koberce.Properties.Resources.info_icon;
-            this.lblQueryInfo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblQueryInfo.Location = new System.Drawing.Point(7, 6);
-            this.lblQueryInfo.Name = "lblQueryInfo";
-            this.lblQueryInfo.Size = new System.Drawing.Size(157, 97);
-            this.lblQueryInfo.TabIndex = 6;
-            this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
-    "Q";
-            this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // MainToolbar
             // 
             this.MainToolbar.ImageScalingSize = new System.Drawing.Size(48, 48);
@@ -1866,16 +1919,38 @@
             this.btnToolRemove,
             this.toolStripSeparator3,
             this.btnToolScanner,
-            this.btnToolUpload,
-            this.btnToolDownload,
+            this.btnToolStripUpload,
             this.btnToolExit,
             this.toolStripSeparator5,
-            this.btnToolSettings});
+            this.btnToolSettings,
+            this.btnToolStripDownload,
+            this.btnToolStripImport});
             this.MainToolbar.Location = new System.Drawing.Point(0, 0);
             this.MainToolbar.Name = "MainToolbar";
             this.MainToolbar.Size = new System.Drawing.Size(1293, 55);
             this.MainToolbar.TabIndex = 6;
             this.MainToolbar.Text = "Toolbar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 55);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 55);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 55);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 55);
             // 
             // btnPreviousTab
             // 
@@ -1898,11 +1973,6 @@
             this.btnNextTab.ToolTipText = "Next Tab";
             this.btnNextTab.Click += new System.EventHandler(this.btnNextTab_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 55);
-            // 
             // btnToolRefresh
             // 
             this.btnToolRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1922,11 +1992,6 @@
             this.btnToolExport.Size = new System.Drawing.Size(52, 52);
             this.btnToolExport.Text = "Export to excel";
             this.btnToolExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 55);
             // 
             // btnToolNew
             // 
@@ -1958,11 +2023,6 @@
             this.btnToolRemove.Text = "Remove selected";
             this.btnToolRemove.Click += new System.EventHandler(this.btnToolRemove_Click);
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 55);
-            // 
             // btnToolScanner
             // 
             this.btnToolScanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1973,25 +2033,43 @@
             this.btnToolScanner.Text = "Download data from scanner";
             this.btnToolScanner.Click += new System.EventHandler(this.btnToolScanner_Click);
             // 
-            // btnToolUpload
+            // btnToolStripUpload
             // 
-            this.btnToolUpload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnToolUpload.Image = global::Koberce.Properties.Resources.Earth_Upload_icon;
-            this.btnToolUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnToolUpload.Name = "btnToolUpload";
-            this.btnToolUpload.Size = new System.Drawing.Size(52, 52);
-            this.btnToolUpload.Text = "Upload data to server";
-            this.btnToolUpload.Click += new System.EventHandler(this.btnToolUpload_Click);
+            this.btnToolStripUpload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnToolStripUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnUploadSold,
+            this.btnUploadInventory,
+            this.btnUploadFromSK});
+            this.btnToolStripUpload.Image = global::Koberce.Properties.Resources.Earth_Upload_icon;
+            this.btnToolStripUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnToolStripUpload.Name = "btnToolStripUpload";
+            this.btnToolStripUpload.Size = new System.Drawing.Size(61, 52);
+            this.btnToolStripUpload.Text = "toolStripDropDownButton1";
+            this.btnToolStripUpload.ToolTipText = "Upload data to server";
             // 
-            // btnToolDownload
+            // btnUploadSold
             // 
-            this.btnToolDownload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnToolDownload.Image = global::Koberce.Properties.Resources.Earth_Download_icon;
-            this.btnToolDownload.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnToolDownload.Name = "btnToolDownload";
-            this.btnToolDownload.Size = new System.Drawing.Size(52, 52);
-            this.btnToolDownload.Text = "Download data from server";
-            this.btnToolDownload.Click += new System.EventHandler(this.btnToolDownload_Click);
+            this.btnUploadSold.Name = "btnUploadSold";
+            this.btnUploadSold.Size = new System.Drawing.Size(124, 22);
+            this.btnUploadSold.Tag = "SOLD.TXT";
+            this.btnUploadSold.Text = "Sold";
+            this.btnUploadSold.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnUploadInventory
+            // 
+            this.btnUploadInventory.Name = "btnUploadInventory";
+            this.btnUploadInventory.Size = new System.Drawing.Size(124, 22);
+            this.btnUploadInventory.Tag = "INVENTOR.TXT";
+            this.btnUploadInventory.Text = "Inventory";
+            this.btnUploadInventory.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnUploadFromSK
+            // 
+            this.btnUploadFromSK.Name = "btnUploadFromSK";
+            this.btnUploadFromSK.Size = new System.Drawing.Size(124, 22);
+            this.btnUploadFromSK.Tag = "FROMSK.TXT";
+            this.btnUploadFromSK.Text = "fromSK";
+            this.btnUploadFromSK.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnToolExit
             // 
@@ -2004,12 +2082,6 @@
             this.btnToolExit.Text = "Exit";
             this.btnToolExit.Click += new System.EventHandler(this.btnToolExit_Click);
             // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 55);
-            // 
             // btnToolSettings
             // 
             this.btnToolSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -2021,22 +2093,228 @@
             this.btnToolSettings.Text = "Settings";
             this.btnToolSettings.Click += new System.EventHandler(this.btnToolSettings_Click);
             // 
-            // tabSK
+            // btnToolStripDownload
             // 
-            this.tabSK.Controls.Add(this.button1);
-            this.tabSK.Controls.Add(this.button2);
-            this.tabSK.Controls.Add(this.groupBox8);
-            this.tabSK.Controls.Add(this.groupBox9);
-            this.tabSK.Controls.Add(this.button4);
-            this.tabSK.Controls.Add(this.button5);
-            this.tabSK.Controls.Add(this.button6);
-            this.tabSK.Controls.Add(this.gridFromSK);
-            this.tabSK.Location = new System.Drawing.Point(4, 22);
-            this.tabSK.Name = "tabSK";
-            this.tabSK.Size = new System.Drawing.Size(1285, 646);
-            this.tabSK.TabIndex = 6;
-            this.tabSK.Text = "from SK";
-            this.tabSK.UseVisualStyleBackColor = true;
+            this.btnToolStripDownload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnToolStripDownload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDownloadSold,
+            this.btnDownloadInventory,
+            this.btnDownloadFromSK});
+            this.btnToolStripDownload.Image = global::Koberce.Properties.Resources.Earth_Download_icon;
+            this.btnToolStripDownload.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnToolStripDownload.Name = "btnToolStripDownload";
+            this.btnToolStripDownload.Size = new System.Drawing.Size(61, 52);
+            this.btnToolStripDownload.Text = "toolStripDropDownButton1";
+            this.btnToolStripDownload.ToolTipText = "Download data from server";
+            // 
+            // btnDownloadSold
+            // 
+            this.btnDownloadSold.Name = "btnDownloadSold";
+            this.btnDownloadSold.Size = new System.Drawing.Size(124, 22);
+            this.btnDownloadSold.Tag = "SOLD.TXT";
+            this.btnDownloadSold.Text = "Sold";
+            this.btnDownloadSold.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // btnDownloadInventory
+            // 
+            this.btnDownloadInventory.Name = "btnDownloadInventory";
+            this.btnDownloadInventory.Size = new System.Drawing.Size(124, 22);
+            this.btnDownloadInventory.Tag = "INVENTOR.TXT";
+            this.btnDownloadInventory.Text = "Inventory";
+            this.btnDownloadInventory.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // btnDownloadFromSK
+            // 
+            this.btnDownloadFromSK.Name = "btnDownloadFromSK";
+            this.btnDownloadFromSK.Size = new System.Drawing.Size(124, 22);
+            this.btnDownloadFromSK.Tag = "FROMSK.TXT";
+            this.btnDownloadFromSK.Text = "fromSK";
+            this.btnDownloadFromSK.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // btnToolStripImport
+            // 
+            this.btnToolStripImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnToolStripImport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnImportSold,
+            this.btnImportInventory,
+            this.btnImportFromSK});
+            this.btnToolStripImport.Image = global::Koberce.Properties.Resources.file_import_icon;
+            this.btnToolStripImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnToolStripImport.Name = "btnToolStripImport";
+            this.btnToolStripImport.Size = new System.Drawing.Size(61, 52);
+            this.btnToolStripImport.Text = "Import files";
+            this.btnToolStripImport.ToolTipText = "Import downloaded data into application";
+            // 
+            // btnAddInventory
+            // 
+            this.btnAddInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddInventory.Image = global::Koberce.Properties.Resources.checklist_icon;
+            this.btnAddInventory.Location = new System.Drawing.Point(497, 582);
+            this.btnAddInventory.Name = "btnAddInventory";
+            this.btnAddInventory.Size = new System.Drawing.Size(122, 58);
+            this.btnAddInventory.TabIndex = 13;
+            this.btnAddInventory.Text = "Add to in&ventory";
+            this.btnAddInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddInventory.UseVisualStyleBackColor = true;
+            this.btnAddInventory.Click += new System.EventHandler(this.btnAddInventory_Click);
+            // 
+            // btnExportMain
+            // 
+            this.btnExportMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportMain.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.btnExportMain.Location = new System.Drawing.Point(131, 582);
+            this.btnExportMain.Name = "btnExportMain";
+            this.btnExportMain.Size = new System.Drawing.Size(116, 58);
+            this.btnExportMain.TabIndex = 11;
+            this.btnExportMain.Text = "&Export";
+            this.btnExportMain.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportMain.UseVisualStyleBackColor = true;
+            this.btnExportMain.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInfo.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.btnInfo.Location = new System.Drawing.Point(253, 582);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(116, 58);
+            this.btnInfo.TabIndex = 10;
+            this.btnInfo.Text = "&Info";
+            this.btnInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // btnSetSold
+            // 
+            this.btnSetSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSetSold.Image = global::Koberce.Properties.Resources.box_download_48;
+            this.btnSetSold.Location = new System.Drawing.Point(375, 582);
+            this.btnSetSold.Name = "btnSetSold";
+            this.btnSetSold.Size = new System.Drawing.Size(116, 58);
+            this.btnSetSold.TabIndex = 9;
+            this.btnSetSold.Text = "&Set sold";
+            this.btnSetSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetSold.UseVisualStyleBackColor = true;
+            this.btnSetSold.Click += new System.EventHandler(this.btnSetSold_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Image = global::Koberce.Properties.Resources.paper_pencil_48;
+            this.btnUpdate.Location = new System.Drawing.Point(959, 582);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(157, 58);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "E&dit selected";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNew.Image = global::Koberce.Properties.Resources.paper_48;
+            this.btnAddNew.Location = new System.Drawing.Point(796, 582);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(157, 58);
+            this.btnAddNew.TabIndex = 6;
+            this.btnAddNew.Text = "&New item";
+            this.btnAddNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // btnRemoveSel
+            // 
+            this.btnRemoveSel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemoveSel.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.btnRemoveSel.Location = new System.Drawing.Point(1122, 582);
+            this.btnRemoveSel.Name = "btnRemoveSel";
+            this.btnRemoveSel.Size = new System.Drawing.Size(157, 58);
+            this.btnRemoveSel.TabIndex = 5;
+            this.btnRemoveSel.Text = "&Remove selected";
+            this.btnRemoveSel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemoveSel.UseVisualStyleBackColor = true;
+            this.btnRemoveSel.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefresh.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(6, 582);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(119, 58);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnSoldIfo
+            // 
+            this.btnSoldIfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSoldIfo.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.btnSoldIfo.Location = new System.Drawing.Point(253, 582);
+            this.btnSoldIfo.Name = "btnSoldIfo";
+            this.btnSoldIfo.Size = new System.Drawing.Size(116, 58);
+            this.btnSoldIfo.TabIndex = 21;
+            this.btnSoldIfo.Text = "&Info";
+            this.btnSoldIfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSoldIfo.UseVisualStyleBackColor = true;
+            this.btnSoldIfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // btnEditSold
+            // 
+            this.btnEditSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditSold.Image = global::Koberce.Properties.Resources.paper_pencil_48;
+            this.btnEditSold.Location = new System.Drawing.Point(959, 582);
+            this.btnEditSold.Name = "btnEditSold";
+            this.btnEditSold.Size = new System.Drawing.Size(157, 58);
+            this.btnEditSold.TabIndex = 20;
+            this.btnEditSold.Text = "E&dit selected";
+            this.btnEditSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditSold.UseVisualStyleBackColor = true;
+            this.btnEditSold.Click += new System.EventHandler(this.btnEditSold_Click);
+            // 
+            // btnExportSold
+            // 
+            this.btnExportSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportSold.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.btnExportSold.Location = new System.Drawing.Point(131, 582);
+            this.btnExportSold.Name = "btnExportSold";
+            this.btnExportSold.Size = new System.Drawing.Size(116, 58);
+            this.btnExportSold.TabIndex = 18;
+            this.btnExportSold.Text = "&Export";
+            this.btnExportSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportSold.UseVisualStyleBackColor = true;
+            this.btnExportSold.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnDelSold
+            // 
+            this.btnDelSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelSold.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.btnDelSold.Location = new System.Drawing.Point(1122, 582);
+            this.btnDelSold.Name = "btnDelSold";
+            this.btnDelSold.Size = new System.Drawing.Size(157, 58);
+            this.btnDelSold.TabIndex = 14;
+            this.btnDelSold.Text = "&Remove selected";
+            this.btnDelSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelSold.UseVisualStyleBackColor = true;
+            this.btnDelSold.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            // 
+            // btnRefreshSold
+            // 
+            this.btnRefreshSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefreshSold.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.btnRefreshSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshSold.Location = new System.Drawing.Point(6, 582);
+            this.btnRefreshSold.Name = "btnRefreshSold";
+            this.btnRefreshSold.Size = new System.Drawing.Size(119, 58);
+            this.btnRefreshSold.TabIndex = 12;
+            this.btnRefreshSold.Text = "&Refresh";
+            this.btnRefreshSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefreshSold.UseVisualStyleBackColor = true;
+            this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // button1
             // 
@@ -2062,319 +2340,6 @@
             this.button2.Text = "E&dit selected";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.label45);
-            this.groupBox8.Controls.Add(this.label46);
-            this.groupBox8.Controls.Add(this.label47);
-            this.groupBox8.Controls.Add(this.label48);
-            this.groupBox8.Controls.Add(this.label49);
-            this.groupBox8.Controls.Add(this.label50);
-            this.groupBox8.Location = new System.Drawing.Point(7, 536);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1269, 40);
-            this.groupBox8.TabIndex = 27;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Items";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label45.Location = new System.Drawing.Point(403, 16);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(13, 13);
-            this.label45.TabIndex = 5;
-            this.label45.Text = "0";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(324, 16);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(73, 13);
-            this.label46.TabIndex = 4;
-            this.label46.Text = "SellPrice sum:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label47.Location = new System.Drawing.Point(238, 16);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(13, 13);
-            this.label47.TabIndex = 3;
-            this.label47.Text = "0";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(150, 16);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(82, 13);
-            this.label48.TabIndex = 2;
-            this.label48.Text = "Selected items: ";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label49.Location = new System.Drawing.Point(63, 16);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(13, 13);
-            this.label49.TabIndex = 1;
-            this.label49.Text = "0";
-            // 
-            // label50
-            // 
-            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 16);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(51, 13);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "All items: ";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox9.Controls.Add(this.txtFilSKLength);
-            this.groupBox9.Controls.Add(this.label51);
-            this.groupBox9.Controls.Add(this.txtFilSKWidth);
-            this.groupBox9.Controls.Add(this.label52);
-            this.groupBox9.Controls.Add(this.txtFilSKSupplierNr);
-            this.groupBox9.Controls.Add(this.label53);
-            this.groupBox9.Controls.Add(this.dtpFilSKSellTo);
-            this.groupBox9.Controls.Add(this.dtpFilSKSellFrom);
-            this.groupBox9.Controls.Add(this.label54);
-            this.groupBox9.Controls.Add(this.button3);
-            this.groupBox9.Controls.Add(this.txtFilSKSellPrice);
-            this.groupBox9.Controls.Add(this.label55);
-            this.groupBox9.Controls.Add(this.label56);
-            this.groupBox9.Controls.Add(this.txtFilSKVK);
-            this.groupBox9.Controls.Add(this.label57);
-            this.groupBox9.Controls.Add(this.txtFilSKSupplier);
-            this.groupBox9.Controls.Add(this.label58);
-            this.groupBox9.Controls.Add(this.txtFilSKCountry);
-            this.groupBox9.Controls.Add(this.label59);
-            this.groupBox9.Controls.Add(this.txtFilSKTitle);
-            this.groupBox9.Controls.Add(this.label60);
-            this.groupBox9.Controls.Add(this.txtFilSKCode);
-            this.groupBox9.Controls.Add(this.label61);
-            this.groupBox9.Location = new System.Drawing.Point(7, 6);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(1269, 73);
-            this.groupBox9.TabIndex = 25;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Filter";
-            // 
-            // txtFilSKLength
-            // 
-            this.txtFilSKLength.Location = new System.Drawing.Point(630, 42);
-            this.txtFilSKLength.Name = "txtFilSKLength";
-            this.txtFilSKLength.Size = new System.Drawing.Size(71, 20);
-            this.txtFilSKLength.TabIndex = 31;
-            this.txtFilSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(589, 45);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(34, 13);
-            this.label51.TabIndex = 30;
-            this.label51.Text = "Legth";
-            // 
-            // txtFilSKWidth
-            // 
-            this.txtFilSKWidth.Location = new System.Drawing.Point(759, 42);
-            this.txtFilSKWidth.Name = "txtFilSKWidth";
-            this.txtFilSKWidth.Size = new System.Drawing.Size(71, 20);
-            this.txtFilSKWidth.TabIndex = 29;
-            this.txtFilSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(718, 45);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(35, 13);
-            this.label52.TabIndex = 28;
-            this.label52.Text = "Width";
-            // 
-            // txtFilSKSupplierNr
-            // 
-            this.txtFilSKSupplierNr.Location = new System.Drawing.Point(463, 42);
-            this.txtFilSKSupplierNr.Name = "txtFilSKSupplierNr";
-            this.txtFilSKSupplierNr.Size = new System.Drawing.Size(100, 20);
-            this.txtFilSKSupplierNr.TabIndex = 25;
-            this.txtFilSKSupplierNr.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(395, 45);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(62, 13);
-            this.label53.TabIndex = 24;
-            this.label53.Text = "Supplier Nr.";
-            // 
-            // dtpFilSKSellTo
-            // 
-            this.dtpFilSKSellTo.Checked = false;
-            this.dtpFilSKSellTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFilSKSellTo.Location = new System.Drawing.Point(270, 42);
-            this.dtpFilSKSellTo.Name = "dtpFilSKSellTo";
-            this.dtpFilSKSellTo.ShowCheckBox = true;
-            this.dtpFilSKSellTo.Size = new System.Drawing.Size(109, 20);
-            this.dtpFilSKSellTo.TabIndex = 23;
-            this.dtpFilSKSellTo.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // dtpFilSKSellFrom
-            // 
-            this.dtpFilSKSellFrom.Checked = false;
-            this.dtpFilSKSellFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFilSKSellFrom.Location = new System.Drawing.Point(83, 43);
-            this.dtpFilSKSellFrom.Name = "dtpFilSKSellFrom";
-            this.dtpFilSKSellFrom.ShowCheckBox = true;
-            this.dtpFilSKSellFrom.Size = new System.Drawing.Size(115, 20);
-            this.dtpFilSKSellFrom.TabIndex = 22;
-            this.dtpFilSKSellFrom.ValueChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(204, 46);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(60, 13);
-            this.label54.TabIndex = 20;
-            this.label54.Text = "Sell date to";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(1185, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 24);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "&Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnClearFilter_Click);
-            // 
-            // txtFilSKSellPrice
-            // 
-            this.txtFilSKSellPrice.Location = new System.Drawing.Point(760, 16);
-            this.txtFilSKSellPrice.Name = "txtFilSKSellPrice";
-            this.txtFilSKSellPrice.Size = new System.Drawing.Size(70, 20);
-            this.txtFilSKSellPrice.TabIndex = 13;
-            this.txtFilSKSellPrice.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(704, 20);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(50, 13);
-            this.label55.TabIndex = 12;
-            this.label55.Text = "Sell price";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(6, 46);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(71, 13);
-            this.label56.TabIndex = 10;
-            this.label56.Text = "Sell date from";
-            // 
-            // txtFilSKVK
-            // 
-            this.txtFilSKVK.Location = new System.Drawing.Point(628, 16);
-            this.txtFilSKVK.Name = "txtFilSKVK";
-            this.txtFilSKVK.Size = new System.Drawing.Size(70, 20);
-            this.txtFilSKVK.TabIndex = 9;
-            this.txtFilSKVK.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(569, 20);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(53, 13);
-            this.label57.TabIndex = 8;
-            this.label57.Text = "VK_Netto";
-            // 
-            // txtFilSKSupplier
-            // 
-            this.txtFilSKSupplier.Location = new System.Drawing.Point(463, 17);
-            this.txtFilSKSupplier.Name = "txtFilSKSupplier";
-            this.txtFilSKSupplier.Size = new System.Drawing.Size(100, 20);
-            this.txtFilSKSupplier.TabIndex = 7;
-            this.txtFilSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(412, 20);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(45, 13);
-            this.label58.TabIndex = 6;
-            this.label58.Text = "Supplier";
-            // 
-            // txtFilSKCountry
-            // 
-            this.txtFilSKCountry.Location = new System.Drawing.Point(306, 17);
-            this.txtFilSKCountry.Name = "txtFilSKCountry";
-            this.txtFilSKCountry.Size = new System.Drawing.Size(100, 20);
-            this.txtFilSKCountry.TabIndex = 5;
-            this.txtFilSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(257, 20);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(43, 13);
-            this.label59.TabIndex = 4;
-            this.label59.Text = "Country";
-            // 
-            // txtFilSKTitle
-            // 
-            this.txtFilSKTitle.Location = new System.Drawing.Point(151, 17);
-            this.txtFilSKTitle.Name = "txtFilSKTitle";
-            this.txtFilSKTitle.Size = new System.Drawing.Size(100, 20);
-            this.txtFilSKTitle.TabIndex = 3;
-            this.txtFilSKTitle.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(100, 20);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(46, 13);
-            this.label60.TabIndex = 2;
-            this.label60.Text = "Item title";
-            // 
-            // txtFilSKCode
-            // 
-            this.txtFilSKCode.Location = new System.Drawing.Point(44, 17);
-            this.txtFilSKCode.Name = "txtFilSKCode";
-            this.txtFilSKCode.Size = new System.Drawing.Size(50, 20);
-            this.txtFilSKCode.TabIndex = 1;
-            this.txtFilSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(6, 20);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(32, 13);
-            this.label61.TabIndex = 0;
-            this.label61.Text = "Code";
             // 
             // button4
             // 
@@ -2414,6 +2379,145 @@
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnStartInventory
+            // 
+            this.btnStartInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnStartInventory.Image = global::Koberce.Properties.Resources.checklist_icon;
+            this.btnStartInventory.Location = new System.Drawing.Point(375, 582);
+            this.btnStartInventory.Name = "btnStartInventory";
+            this.btnStartInventory.Size = new System.Drawing.Size(122, 58);
+            this.btnStartInventory.TabIndex = 23;
+            this.btnStartInventory.Text = "Start in&ventory";
+            this.btnStartInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStartInventory.UseVisualStyleBackColor = true;
+            this.btnStartInventory.Click += new System.EventHandler(this.btnStartInventory_Click);
+            // 
+            // btnInvExport
+            // 
+            this.btnInvExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInvExport.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.btnInvExport.Location = new System.Drawing.Point(131, 582);
+            this.btnInvExport.Name = "btnInvExport";
+            this.btnInvExport.Size = new System.Drawing.Size(116, 58);
+            this.btnInvExport.TabIndex = 21;
+            this.btnInvExport.Text = "&Export";
+            this.btnInvExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvExport.UseVisualStyleBackColor = true;
+            this.btnInvExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnInvInfo
+            // 
+            this.btnInvInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInvInfo.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.btnInvInfo.Location = new System.Drawing.Point(253, 582);
+            this.btnInvInfo.Name = "btnInvInfo";
+            this.btnInvInfo.Size = new System.Drawing.Size(116, 58);
+            this.btnInvInfo.TabIndex = 20;
+            this.btnInvInfo.Text = "&Info";
+            this.btnInvInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvInfo.UseVisualStyleBackColor = true;
+            this.btnInvInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // btnInvRemove
+            // 
+            this.btnInvRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInvRemove.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.btnInvRemove.Location = new System.Drawing.Point(1122, 582);
+            this.btnInvRemove.Name = "btnInvRemove";
+            this.btnInvRemove.Size = new System.Drawing.Size(157, 58);
+            this.btnInvRemove.TabIndex = 15;
+            this.btnInvRemove.Text = "&Remove selected";
+            this.btnInvRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvRemove.UseVisualStyleBackColor = true;
+            this.btnInvRemove.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            // 
+            // btnInvRefresh
+            // 
+            this.btnInvRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInvRefresh.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.btnInvRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInvRefresh.Location = new System.Drawing.Point(6, 582);
+            this.btnInvRefresh.Name = "btnInvRefresh";
+            this.btnInvRefresh.Size = new System.Drawing.Size(119, 58);
+            this.btnInvRefresh.TabIndex = 13;
+            this.btnInvRefresh.Text = "&Refresh";
+            this.btnInvRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInvRefresh.UseVisualStyleBackColor = true;
+            this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnDecode
+            // 
+            this.btnDecode.Image = global::Koberce.Properties.Resources.Activity_Monitor_icon;
+            this.btnDecode.Location = new System.Drawing.Point(3, 3);
+            this.btnDecode.Name = "btnDecode";
+            this.btnDecode.Size = new System.Drawing.Size(161, 56);
+            this.btnDecode.TabIndex = 3;
+            this.btnDecode.Text = "&Decode data";
+            this.btnDecode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDecode.UseVisualStyleBackColor = true;
+            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click);
+            // 
+            // btnStartBatch
+            // 
+            this.btnStartBatch.Image = global::Koberce.Properties.Resources.system_database_add_icon;
+            this.btnStartBatch.Location = new System.Drawing.Point(3, 318);
+            this.btnStartBatch.Name = "btnStartBatch";
+            this.btnStartBatch.Size = new System.Drawing.Size(161, 56);
+            this.btnStartBatch.TabIndex = 1;
+            this.btnStartBatch.Text = "&Start inserting";
+            this.btnStartBatch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStartBatch.UseVisualStyleBackColor = true;
+            this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
+            // 
+            // btnExportQuery
+            // 
+            this.btnExportQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportQuery.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.btnExportQuery.Location = new System.Drawing.Point(1166, 588);
+            this.btnExportQuery.Name = "btnExportQuery";
+            this.btnExportQuery.Size = new System.Drawing.Size(116, 58);
+            this.btnExportQuery.TabIndex = 14;
+            this.btnExportQuery.Text = "&Export";
+            this.btnExportQuery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportQuery.UseVisualStyleBackColor = true;
+            this.btnExportQuery.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // lblQueryInfo
+            // 
+            this.lblQueryInfo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblQueryInfo.Image = global::Koberce.Properties.Resources.info_icon;
+            this.lblQueryInfo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblQueryInfo.Location = new System.Drawing.Point(7, 6);
+            this.lblQueryInfo.Name = "lblQueryInfo";
+            this.lblQueryInfo.Size = new System.Drawing.Size(157, 97);
+            this.lblQueryInfo.TabIndex = 6;
+            this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
+    "Q";
+            this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // btnImportSold
+            // 
+            this.btnImportSold.Name = "btnImportSold";
+            this.btnImportSold.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSold.Tag = "";
+            this.btnImportSold.Text = "Sold";
+            this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
+            // 
+            // btnImportInventory
+            // 
+            this.btnImportInventory.Name = "btnImportInventory";
+            this.btnImportInventory.Size = new System.Drawing.Size(152, 22);
+            this.btnImportInventory.Tag = "";
+            this.btnImportInventory.Text = "Inventory";
+            this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
+            // 
+            // btnImportFromSK
+            // 
+            this.btnImportFromSK.Name = "btnImportFromSK";
+            this.btnImportFromSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportFromSK.Text = "fromSK";
+            this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
             // 
             // Grid
             // 
@@ -2530,6 +2634,11 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabSK.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.tabInventory.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -2545,11 +2654,6 @@
             this.groupBox7.PerformLayout();
             this.MainToolbar.ResumeLayout(false);
             this.MainToolbar.PerformLayout();
-            this.tabSK.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
@@ -2592,8 +2696,6 @@
         private System.Windows.Forms.ToolStripButton btnToolEdit;
         private System.Windows.Forms.ToolStripButton btnToolRemove;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton btnToolUpload;
-        private System.Windows.Forms.ToolStripButton btnToolDownload;
         private System.Windows.Forms.TabPage tabExecQuery;
         private System.Windows.Forms.Button btnExecute;
         private System.Windows.Forms.TextBox txtQuery;
@@ -2768,6 +2870,18 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private CustomDataGridView gridFromSK;
+        private System.Windows.Forms.ToolStripDropDownButton btnToolStripUpload;
+        private System.Windows.Forms.ToolStripMenuItem btnUploadSold;
+        private System.Windows.Forms.ToolStripMenuItem btnUploadInventory;
+        private System.Windows.Forms.ToolStripMenuItem btnUploadFromSK;
+        private System.Windows.Forms.ToolStripDropDownButton btnToolStripDownload;
+        private System.Windows.Forms.ToolStripMenuItem btnDownloadSold;
+        private System.Windows.Forms.ToolStripMenuItem btnDownloadInventory;
+        private System.Windows.Forms.ToolStripMenuItem btnDownloadFromSK;
+        private System.Windows.Forms.ToolStripDropDownButton btnToolStripImport;
+        private System.Windows.Forms.ToolStripMenuItem btnImportSold;
+        private System.Windows.Forms.ToolStripMenuItem btnImportInventory;
+        private System.Windows.Forms.ToolStripMenuItem btnImportFromSK;
     }
 }
 

@@ -612,52 +612,23 @@ namespace Koberce
             response.Close();
         }
 
-        private void btnToolUpload_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Progress p = new Progress(0, 100, "Upload scanner files..", "Connecting..", doUpload, RefreshItems, null, false, true);
-                p.StartWorker();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, "Upload failed: " + ex.ToString(), "Upload files", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public void doUpload(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
-            var soldName = Properties.Settings.Default.PtcommDir + "\\SOLD.TXT";
-            var inventoryName = Properties.Settings.Default.PtcommDir + "\\INVENTOR.TXT";
+            var soldName = Properties.Settings.Default.PtcommDir + "\\"+userData.ToString();
             var server = Properties.Settings.Default.ScannerServer;
             var login = Properties.Settings.Default.FtpLogin;
             var passwd = Properties.Settings.Default.FtpPassword;
 
             try
             {
-                bw.ReportProgress(0, "Uploading SOLD..");
+                bw.ReportProgress(0, "Uploading " + userData.ToString() + "..");
                 uploadFile(server, soldName, login, passwd);
-                bw.ReportProgress(50, "Uploading INVENTORY..");
-                uploadFile(server, inventoryName, login, passwd);
                 bw.ReportProgress(100, "Done.");
             }
             catch (Exception ex)
             {
                 Invoke(new Action(() => MessageBox.Show(this, "Error while uploading from " + server + ": " + ex.ToString(), "Download from server", MessageBoxButtons.OK, MessageBoxIcon.Error)));
                 e.Cancel = true;
-            }
-        }
-
-        private void btnToolDownload_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, ImportScannerData, null, false, true);
-                p.StartWorker();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, "Download failed: " + ex.ToString(), "Download files", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -669,11 +640,8 @@ namespace Koberce
 
             try
             {
-                bw.ReportProgress(0, "Downloading SOLD..");
-                downloadFile(server, "SOLD.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
-            
-                bw.ReportProgress(50, "Downloading INVENTORY..");
-                downloadFile(server, "INVENTOR.TXT", login, passwd, Properties.Settings.Default.PtcommDir);
+                bw.ReportProgress(0, "Downloading " + userData.ToString() + "..");
+                downloadFile(server, userData.ToString(), login, passwd, Properties.Settings.Default.PtcommDir);
             }
             catch (Exception ex)
             {
@@ -1141,30 +1109,108 @@ namespace Koberce
             }
 
             //if (MessageBox.Show(this, "Do you want to import SOLD and INVENTORY data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                ImportScannerData();
+                //ImportScannerData();
 
             RefreshItems();
         }
 
+        private OperationType CurrOpType = OperationType.Sold;
         private void ImportScannerData()
         {
             if (InvokeRequired)
                 Invoke(new Action(ImportScannerData));
 
-            if (MessageBox.Show(this, "Do you want to import SOLD data?", "Import SOLD", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //if (MessageBox.Show(this, "Do you want to import " + CurrOpType.ToString() + " data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                WaitForm wf = new WaitForm(db, OperationType.Sold);
-                wf.ShowDialog(this);
-            }
-
-            if (MessageBox.Show(this, "Do you want to import INVENTORY data?", "Import INVENTORY", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                WaitForm wf = new WaitForm(db, OperationType.Inventory);
+                WaitForm wf = new WaitForm(db, CurrOpType);
                 wf.ShowDialog(this);
             }
 
             RefreshItems();
             this.Focus();
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            if (!(sender is ToolStripItem))
+            {
+                MessageBox.Show(this, "Upload must be started from toolbar by selecting subitem of 'Upload' button!", "Upload files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } 
+            
+            try
+            {
+                Progress p = new Progress(0, 100, "Upload scanner files..", "Connecting..", doUpload, RefreshItems, (sender as ToolStripItem).Tag, false, true);
+                p.StartWorker();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Upload failed: " + ex.ToString(), "Upload files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            if (!(sender is ToolStripItem))
+            {
+                MessageBox.Show(this, "Download must be started from toolbar by selecting subitem of 'Download' button!", "Download files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, null, (sender as ToolStripItem).Tag, false, true);
+                p.StartWorker();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Download failed: " + ex.ToString(), "Download files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnImportSold_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.Sold;
+                ImportScannerData();
+
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnImportInventory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.Inventory;
+                ImportScannerData();
+
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnImportFromSK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.fromSK;
+                ImportScannerData();
+
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 
