@@ -44,6 +44,14 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
+        public void FromSKItem(string code, string sellDate, string sellPrice)
+        {
+            var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
+            ExecuteNonQuery(command);
+            command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[2], code, sellDate, sellPrice);
+            ExecuteNonQuery(command);
+        }
+
         public void InventoryItem(string code)
         {
             var command = string.Format("insert or replace into {0} (code) values (\"{1}\")", DBProvider.TableNames[2], code);

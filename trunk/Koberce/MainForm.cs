@@ -66,6 +66,8 @@ namespace Koberce
                     return lblAllCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return lblSoldAll;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                    return lblFromSKAll;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvAllCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
@@ -90,6 +92,8 @@ namespace Koberce
                     return lblSelCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return lblSoldSel;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                    return lblFromSKSel;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvSelCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
@@ -207,6 +211,9 @@ namespace Koberce
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
+            else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
+                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.FROM_SK], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else
                 ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
 
@@ -437,6 +444,23 @@ namespace Koberce
                 AddFilter(sb, txtFilSellPrice.Text, "SELLPRICE");
                 AddFilter(sb, txtFilSoldLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
+            }
+            else
+                if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+            {
+                AddFilter(sb, txtFilSKCode.Text, "A.CODE");
+                AddFilter(sb, txtFilSKTitle.Text, "ITEMTITLE");
+                AddFilter(sb, txtFilSKCountry.Text, "COUNTRY");
+                AddFilter(sb, txtFilSKSupplier.Text, "SUPPLIER");
+                AddFilter(sb, txtFilSKSupplierNr.Text, "SUPPLIER_NR");
+                AddFilter(sb, txtFilSKVK.Text, "VK_NETTO");
+                if (dtpFilSKSellFrom.Checked)
+                    AddFilterDate(sb, dtpFilSKSellFrom.Value.ToString(DateTimeFormat), "SELLDATE", ">=");
+                if (dtpFilSKSellTo.Checked)
+                    AddFilterDate(sb, dtpFilSKSellTo.Value.ToString(DateTimeFormat), "SELLDATE", "<=");
+                AddFilter(sb, txtFilSKSellPrice.Text, "SELLPRICE");
+                AddFilter(sb, txtFilSKLength.Text, "LENGTH");
+                AddFilter(sb, txtFilSKWidth.Text, "WIDTH");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)

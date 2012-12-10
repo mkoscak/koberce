@@ -72,7 +72,7 @@ namespace Koberce
                     break;
 
                 case OperationType.fromSK:
-                    // TODO import fromSK.txt
+                    ImportFromSK();
                     break;
 
                 default:
@@ -80,6 +80,26 @@ namespace Koberce
             }
 
             Close();
+        }
+
+        private void ImportFromSK()
+        {
+            var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\FROMSK.TXT");
+            if (lines != null && (lines.Length % 3) == 0)
+            {
+                for (int i = 0; i < lines.Length; i += 3)
+                {
+                    var code = lines[i + 0];
+                    var sellDate = lines[i + 1];
+                    var sellPrice = lines[i + 2];
+
+                    var tmp = sellDate.Split('/');
+                    if (tmp.Length == 3)
+                        sellDate = string.Format("{0}-{1}-{2}", tmp[2], tmp[1], tmp[0]);
+
+                    db.FromSKItem(code, sellDate, sellPrice);
+                }
+            }
         }
     }
 
