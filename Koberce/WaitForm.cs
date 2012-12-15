@@ -84,20 +84,13 @@ namespace Koberce
 
         private void ImportFromSK()
         {
-            var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\FROMSK.TXT");
-            if (lines != null && (lines.Length % 3) == 0)
+            var linesInv = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\SK.TXT");
+            
+            if (linesInv != null)
             {
-                for (int i = 0; i < lines.Length; i += 3)
+                for (int i = 0; i < linesInv.Length; i++)
                 {
-                    var code = lines[i + 0];
-                    var sellDate = lines[i + 1];
-                    var sellPrice = lines[i + 2];
-
-                    var tmp = sellDate.Split('/');
-                    if (tmp.Length == 3)
-                        sellDate = string.Format("{0}-{1}-{2}", tmp[2], tmp[1], tmp[0]);
-
-                    db.FromSKItem(code, sellDate, sellPrice);
+                    db.FromSKItem(linesInv[i]);
                 }
             }
         }

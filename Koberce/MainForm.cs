@@ -213,7 +213,7 @@ namespace Koberce
                 ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
                 // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.FROM_SK], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.FROM_SK], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else
                 ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
 
@@ -454,11 +454,11 @@ namespace Koberce
                 AddFilter(sb, txtFilSKSupplier.Text, "SUPPLIER");
                 AddFilter(sb, txtFilSKSupplierNr.Text, "SUPPLIER_NR");
                 AddFilter(sb, txtFilSKVK.Text, "VK_NETTO");
-                if (dtpFilSKSellFrom.Checked)
+                /*if (dtpFilSKSellFrom.Checked)
                     AddFilterDate(sb, dtpFilSKSellFrom.Value.ToString(DateTimeFormat), "SELLDATE", ">=");
                 if (dtpFilSKSellTo.Checked)
                     AddFilterDate(sb, dtpFilSKSellTo.Value.ToString(DateTimeFormat), "SELLDATE", "<=");
-                AddFilter(sb, txtFilSKSellPrice.Text, "SELLPRICE");
+                AddFilter(sb, txtFilSKSellPrice.Text, "SELLPRICE");*/
                 AddFilter(sb, txtFilSKLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSKWidth.Text, "WIDTH");
             }
@@ -1011,14 +1011,14 @@ namespace Koberce
                 txtFilSKCode.Text = string.Empty;
                 txtFilSKCountry.Text = string.Empty;
                 txtFilSKLength.Text = string.Empty;
-                txtFilSKSellPrice.Text = string.Empty;
+                //txtFilSKSellPrice.Text = string.Empty;
                 txtFilSKSupplier.Text = string.Empty;
                 txtFilSKSupplierNr.Text = string.Empty;
                 txtFilSKTitle.Text = string.Empty;
                 txtFilSKVK.Text = string.Empty;
                 txtFilSKWidth.Text = string.Empty;
-                dtpFilSKSellFrom.Checked = false;
-                dtpFilSKSellTo.Checked = false;
+                //dtpFilSKSellFrom.Checked = false;
+                //dtpFilSKSellTo.Checked = false;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
