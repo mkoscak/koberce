@@ -718,6 +718,24 @@ namespace Koberce
 
                 db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day), item.VkNetto);
 
+                var web = Properties.Settings.Default.WebServer;
+                if (!web.EndsWith("/"))
+                    web = "/" + web;
+                var param = "pages/stiahni-z-predaja.html?id=XXX";
+                if (param.StartsWith("/"))
+                    param = param.TrimStart('/');
+                if (param.Contains("XXX"))
+                    param = param.Replace("XXX", codes[0]);
+                try
+                {
+                    Process.Start(web+param);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Exception occured: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (bw.CancellationPending == true)
                 {
                     e.Cancel = true;
@@ -871,7 +889,7 @@ namespace Koberce
 
             var web = Properties.Settings.Default.WebServer;
             if (!web.EndsWith("/"))
-                web = "/" + web;
+                web = web + "/";
             var param = Properties.Settings.Default.WebParam;
             if (param.StartsWith("/"))
                 param = param.TrimStart('/');
