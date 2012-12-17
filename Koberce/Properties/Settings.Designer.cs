@@ -61,7 +61,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ftp://ftp.globalkoberce.sk/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ftp://ftp.drivehq.com/")]
         public string ScannerServer {
             get {
                 return ((string)(this["ScannerServer"]));
@@ -97,7 +97,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("?Code=XXX")]
+        [global::System.Configuration.DefaultSettingValueAttribute("pages/getproduct.html?id=XXX")]
         public string WebParam {
             get {
                 return ((string)(this["WebParam"]));
@@ -109,7 +109,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ptcomm.exe")]
         public string Ptcomm {
             get {
                 return ((string)(this["Ptcomm"]));
@@ -121,7 +121,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\scanner\\upload")]
         public string PtcommDir {
             get {
                 return ((string)(this["PtcommDir"]));
@@ -133,8 +133,8 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/comport:1 /ptaddr:A /destdir:C:\\\\scanner\\\\Upload\\\\ /exit /upload:ARENA.TXT,INVEN" +
-            "TOR.TXT,SOLD.TXT")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/comport:1 /ptaddr:A /destdir:C:\\\\scanner\\\\Upload\\\\ /exit /upload:SK.TXT,INVENTOR" +
+            ".TXT,SOLD.TXT")]
         public string PtcommCommand {
             get {
                 return ((string)(this["PtcommCommand"]));
@@ -146,7 +146,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mizu")]
         public string FtpLogin {
             get {
                 return ((string)(this["FtpLogin"]));
@@ -158,7 +158,7 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("nepoviem")]
         public string FtpPassword {
             get {
                 return ((string)(this["FtpPassword"]));
