@@ -12,7 +12,7 @@
       <Value Profile="(Default)">.\DbBackup</Value>
     </Setting>
     <Setting Name="ScannerServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ftp://ftp.globalkoberce.sk/</Value>
+      <Value Profile="(Default)">ftp://ftp.drivehq.com/</Value>
     </Setting>
     <Setting Name="WebServer" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://www.globalkoberce.sk/</Value>
@@ -21,22 +21,22 @@
       <Value Profile="(Default)">12</Value>
     </Setting>
     <Setting Name="WebParam" Type="System.String" Scope="User">
-      <Value Profile="(Default)">?Code=XXX</Value>
+      <Value Profile="(Default)">pages/getproduct.html?id=XXX</Value>
     </Setting>
     <Setting Name="Ptcomm" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">ptcomm.exe</Value>
     </Setting>
     <Setting Name="PtcommDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">c:\scanner\upload</Value>
     </Setting>
     <Setting Name="PtcommCommand" Type="System.String" Scope="User">
-      <Value Profile="(Default)">/comport:1 /ptaddr:A /destdir:C:\\scanner\\Upload\\ /exit /upload:ARENA.TXT,INVENTOR.TXT,SOLD.TXT</Value>
+      <Value Profile="(Default)">/comport:1 /ptaddr:A /destdir:C:\\scanner\\Upload\\ /exit /upload:SK.TXT,INVENTOR.TXT,SOLD.TXT</Value>
     </Setting>
     <Setting Name="FtpLogin" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">mizu</Value>
     </Setting>
     <Setting Name="FtpPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">nepoviem</Value>
     </Setting>
   </Settings>
 </SettingsFile>
