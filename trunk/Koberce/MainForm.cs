@@ -720,7 +720,7 @@ namespace Koberce
 
                 var web = Properties.Settings.Default.WebServer;
                 if (!web.EndsWith("/"))
-                    web = "/" + web;
+                    web += "/";
                 var param = "pages/stiahni-z-predaja.html?id=XXX";
                 if (param.StartsWith("/"))
                     param = param.TrimStart('/');
