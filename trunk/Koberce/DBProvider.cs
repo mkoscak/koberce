@@ -13,7 +13,7 @@ namespace Koberce
         private SQLiteDataAdapter DB;
         private string DbName = @".\arena.db";
         
-        public static string[] TableNames = new string[] { "arena", "sold", "fromSK" , "inventory"};
+        public static string[] TableNames = new string[] { "arena", "sold", "SK", "fromSK" , "inventory"};
 
         public DBProvider(string dbName)
         {
@@ -44,7 +44,7 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
-        public void FromSKItem(string code)
+        public void SKItem(string code)
         {
             var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
             ExecuteNonQuery(command);
@@ -52,9 +52,17 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
+        public void FromSKItem(string code)
+        {
+            var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
+            ExecuteNonQuery(command);
+            command = string.Format("insert or replace into {0} (code) values (\"{1}\")", DBProvider.TableNames[3], code);
+            ExecuteNonQuery(command);
+        }
+
         public void InventoryItem(string code)
         {
-            var command = string.Format("insert or replace into {0} (code) values (\"{1}\")", DBProvider.TableNames[3], code);
+            var command = string.Format("insert or replace into {0} (code) values (\"{1}\")", DBProvider.TableNames[4], code);
             ExecuteNonQuery(command);
         }
 

@@ -133,8 +133,8 @@ namespace Koberce.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/comport:1 /ptaddr:A /destdir:C:\\\\scanner\\\\Upload\\\\ /exit /upload:SK.TXT,INVENTOR" +
-            ".TXT,SOLD.TXT")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/comport:1 /ptaddr:A /destdir:C:\\\\scanner\\\\Upload\\\\ /exit /upload:SK.TXT,FROMSK.T" +
+            "XT,INVENTOR.TXT,SOLD.TXT")]
         public string PtcommCommand {
             get {
                 return ((string)(this["PtcommCommand"]));

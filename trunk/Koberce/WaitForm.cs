@@ -71,6 +71,10 @@ namespace Koberce
                     ImportInventory();
                     break;
 
+                case OperationType.SK:
+                    ImportSK();
+                    break;
+
                 case OperationType.fromSK:
                     ImportFromSK();
                     break;
@@ -84,13 +88,26 @@ namespace Koberce
 
         private void ImportFromSK()
         {
+            var linesInv = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\FROMSK.TXT");
+
+            if (linesInv != null)
+            {
+                for (int i = 0; i < linesInv.Length; i++)
+                {
+                    db.FromSKItem(linesInv[i]);
+                }
+            }
+        }
+
+        private void ImportSK()
+        {
             var linesInv = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\SK.TXT");
             
             if (linesInv != null)
             {
                 for (int i = 0; i < linesInv.Length; i++)
                 {
-                    db.FromSKItem(linesInv[i]);
+                    db.SKItem(linesInv[i]);
                 }
             }
         }
@@ -100,6 +117,7 @@ namespace Koberce
     {
         Sold,
         Inventory,
+        SK,
         fromSK
     }
 }
