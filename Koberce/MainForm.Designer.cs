@@ -72,7 +72,6 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnRemoveSel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.Grid = new Koberce.CustomDataGridView();
             this.tabSold = new System.Windows.Forms.TabPage();
             this.btnSoldIfo = new System.Windows.Forms.Button();
             this.btnEditSold = new System.Windows.Forms.Button();
@@ -110,14 +109,13 @@
             this.btnExportSold = new System.Windows.Forms.Button();
             this.btnDelSold = new System.Windows.Forms.Button();
             this.btnRefreshSold = new System.Windows.Forms.Button();
-            this.gridSell = new Koberce.CustomDataGridView();
             this.tabSK = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lblFromSKSel = new System.Windows.Forms.Label();
+            this.lblSKSel = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.lblFromSKAll = new System.Windows.Forms.Label();
+            this.lblSKAll = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.txtFilSKLength = new System.Windows.Forms.TextBox();
@@ -140,7 +138,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.gridFromSK = new Koberce.CustomDataGridView();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.btnStartInventory = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -180,7 +177,6 @@
             this.btnInvInfo = new System.Windows.Forms.Button();
             this.btnInvRemove = new System.Windows.Forms.Button();
             this.btnInvRefresh = new System.Windows.Forms.Button();
-            this.gridInventory = new Koberce.CustomDataGridView();
             this.tabbatch = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBatchSelCount = new System.Windows.Forms.Label();
@@ -190,7 +186,6 @@
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.btnDecode = new System.Windows.Forms.Button();
             this.btnStartBatch = new System.Windows.Forms.Button();
-            this.gridBatch = new Koberce.CustomDataGridView();
             this.tabExecQuery = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblQuerySelCount = new System.Windows.Forms.Label();
@@ -208,7 +203,6 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnExportQuery = new System.Windows.Forms.Button();
             this.lblQueryInfo = new System.Windows.Forms.Label();
-            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
             this.btnPreviousTab = new System.Windows.Forms.ToolStripButton();
             this.btnNextTab = new System.Windows.Forms.ToolStripButton();
@@ -235,31 +229,72 @@
             this.btnToolStripImport = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnImportSold = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportSK = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabFromSK = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblFromSKSel = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.lblFromSKAll = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.txtFilFSKLength = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtFilFSKWidth = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtFilFSKSupNr = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.btnFromSKClear = new System.Windows.Forms.Button();
+            this.txtFilFSKVKNetto = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.txtFilFSKSupplier = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.txtFilFSKCountry = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.txtFilFSKName = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtFilFSKCode = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.btnImportFromSK = new System.Windows.Forms.ToolStripMenuItem();
+            this.Grid = new Koberce.CustomDataGridView();
+            this.gridSell = new Koberce.CustomDataGridView();
+            this.gridSK = new Koberce.CustomDataGridView();
+            this.gridFromSK = new Koberce.CustomDataGridView();
+            this.gridInventory = new Koberce.CustomDataGridView();
+            this.gridBatch = new Koberce.CustomDataGridView();
+            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.tabSold.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
             this.tabSK.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
             this.tabInventory.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             this.tabbatch.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
             this.tabExecQuery.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
             this.MainToolbar.SuspendLayout();
+            this.tabFromSK.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -270,6 +305,7 @@
             this.tabControl1.Controls.Add(this.tabViewAll);
             this.tabControl1.Controls.Add(this.tabSold);
             this.tabControl1.Controls.Add(this.tabSK);
+            this.tabControl1.Controls.Add(this.tabFromSK);
             this.tabControl1.Controls.Add(this.tabInventory);
             this.tabControl1.Controls.Add(this.tabbatch);
             this.tabControl1.Controls.Add(this.tabExecQuery);
@@ -737,22 +773,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // Grid
-            // 
-            this.Grid.AllowUserToAddRows = false;
-            this.Grid.AllowUserToDeleteRows = false;
-            this.Grid.AllowUserToOrderColumns = true;
-            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(6, 86);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(1273, 444);
-            this.Grid.TabIndex = 4;
-            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            // 
             // tabSold
             // 
             this.tabSold.Controls.Add(this.btnSoldIfo);
@@ -1149,22 +1169,6 @@
             this.btnRefreshSold.UseVisualStyleBackColor = true;
             this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridSell
-            // 
-            this.gridSell.AllowUserToAddRows = false;
-            this.gridSell.AllowUserToDeleteRows = false;
-            this.gridSell.AllowUserToOrderColumns = true;
-            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSell.Location = new System.Drawing.Point(6, 85);
-            this.gridSell.Name = "gridSell";
-            this.gridSell.Size = new System.Drawing.Size(1273, 445);
-            this.gridSell.TabIndex = 13;
-            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            // 
             // tabSK
             // 
             this.tabSK.Controls.Add(this.button1);
@@ -1174,12 +1178,12 @@
             this.tabSK.Controls.Add(this.button4);
             this.tabSK.Controls.Add(this.button5);
             this.tabSK.Controls.Add(this.button6);
-            this.tabSK.Controls.Add(this.gridFromSK);
+            this.tabSK.Controls.Add(this.gridSK);
             this.tabSK.Location = new System.Drawing.Point(4, 22);
             this.tabSK.Name = "tabSK";
             this.tabSK.Size = new System.Drawing.Size(1285, 646);
             this.tabSK.TabIndex = 6;
-            this.tabSK.Text = "from SK";
+            this.tabSK.Text = "SK";
             this.tabSK.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -1212,9 +1216,9 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.lblFromSKSel);
+            this.groupBox8.Controls.Add(this.lblSKSel);
             this.groupBox8.Controls.Add(this.label48);
-            this.groupBox8.Controls.Add(this.lblFromSKAll);
+            this.groupBox8.Controls.Add(this.lblSKAll);
             this.groupBox8.Controls.Add(this.label50);
             this.groupBox8.Location = new System.Drawing.Point(7, 536);
             this.groupBox8.Name = "groupBox8";
@@ -1223,15 +1227,15 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Items";
             // 
-            // lblFromSKSel
+            // lblSKSel
             // 
-            this.lblFromSKSel.AutoSize = true;
-            this.lblFromSKSel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFromSKSel.Location = new System.Drawing.Point(238, 16);
-            this.lblFromSKSel.Name = "lblFromSKSel";
-            this.lblFromSKSel.Size = new System.Drawing.Size(13, 13);
-            this.lblFromSKSel.TabIndex = 3;
-            this.lblFromSKSel.Text = "0";
+            this.lblSKSel.AutoSize = true;
+            this.lblSKSel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblSKSel.Location = new System.Drawing.Point(238, 16);
+            this.lblSKSel.Name = "lblSKSel";
+            this.lblSKSel.Size = new System.Drawing.Size(13, 13);
+            this.lblSKSel.TabIndex = 3;
+            this.lblSKSel.Text = "0";
             // 
             // label48
             // 
@@ -1242,15 +1246,15 @@
             this.label48.TabIndex = 2;
             this.label48.Text = "Selected items: ";
             // 
-            // lblFromSKAll
+            // lblSKAll
             // 
-            this.lblFromSKAll.AutoSize = true;
-            this.lblFromSKAll.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFromSKAll.Location = new System.Drawing.Point(63, 16);
-            this.lblFromSKAll.Name = "lblFromSKAll";
-            this.lblFromSKAll.Size = new System.Drawing.Size(13, 13);
-            this.lblFromSKAll.TabIndex = 1;
-            this.lblFromSKAll.Text = "0";
+            this.lblSKAll.AutoSize = true;
+            this.lblSKAll.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblSKAll.Location = new System.Drawing.Point(63, 16);
+            this.lblSKAll.Name = "lblSKAll";
+            this.lblSKAll.Size = new System.Drawing.Size(13, 13);
+            this.lblSKAll.TabIndex = 1;
+            this.lblSKAll.Text = "0";
             // 
             // label50
             // 
@@ -1476,21 +1480,6 @@
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // gridFromSK
-            // 
-            this.gridFromSK.AllowUserToAddRows = false;
-            this.gridFromSK.AllowUserToDeleteRows = false;
-            this.gridFromSK.AllowUserToOrderColumns = true;
-            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
-            this.gridFromSK.Name = "gridFromSK";
-            this.gridFromSK.Size = new System.Drawing.Size(1273, 445);
-            this.gridFromSK.TabIndex = 23;
-            this.gridFromSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // tabInventory
             // 
@@ -1905,21 +1894,6 @@
             this.btnInvRefresh.UseVisualStyleBackColor = true;
             this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridInventory
-            // 
-            this.gridInventory.AllowUserToAddRows = false;
-            this.gridInventory.AllowUserToDeleteRows = false;
-            this.gridInventory.AllowUserToOrderColumns = true;
-            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventory.Location = new System.Drawing.Point(6, 85);
-            this.gridInventory.Name = "gridInventory";
-            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
-            this.gridInventory.TabIndex = 14;
-            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabbatch
             // 
             this.tabbatch.Controls.Add(this.groupBox6);
@@ -2024,21 +1998,6 @@
             this.btnStartBatch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStartBatch.UseVisualStyleBackColor = true;
             this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
-            // 
-            // gridBatch
-            // 
-            this.gridBatch.AllowUserToAddRows = false;
-            this.gridBatch.AllowUserToDeleteRows = false;
-            this.gridBatch.AllowUserToOrderColumns = true;
-            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBatch.Location = new System.Drawing.Point(170, 318);
-            this.gridBatch.Name = "gridBatch";
-            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
-            this.gridBatch.TabIndex = 2;
-            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // tabExecQuery
             // 
@@ -2241,21 +2200,6 @@
             this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
     "Q";
             this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // gridQueryRes
-            // 
-            this.gridQueryRes.AllowUserToAddRows = false;
-            this.gridQueryRes.AllowUserToDeleteRows = false;
-            this.gridQueryRes.AllowUserToOrderColumns = true;
-            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
-            this.gridQueryRes.Name = "gridQueryRes";
-            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
-            this.gridQueryRes.TabIndex = 5;
-            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainToolbar
             // 
@@ -2490,6 +2434,7 @@
             this.btnToolStripImport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnImportSold,
             this.btnImportInventory,
+            this.btnImportSK,
             this.btnImportFromSK});
             this.btnToolStripImport.Image = global::Koberce.Properties.Resources.file_import_icon;
             this.btnToolStripImport.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -2501,7 +2446,7 @@
             // btnImportSold
             // 
             this.btnImportSold.Name = "btnImportSold";
-            this.btnImportSold.Size = new System.Drawing.Size(124, 22);
+            this.btnImportSold.Size = new System.Drawing.Size(152, 22);
             this.btnImportSold.Tag = "";
             this.btnImportSold.Text = "Sold";
             this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
@@ -2509,17 +2454,442 @@
             // btnImportInventory
             // 
             this.btnImportInventory.Name = "btnImportInventory";
-            this.btnImportInventory.Size = new System.Drawing.Size(124, 22);
+            this.btnImportInventory.Size = new System.Drawing.Size(152, 22);
             this.btnImportInventory.Tag = "";
             this.btnImportInventory.Text = "Inventory";
             this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
             // 
+            // btnImportSK
+            // 
+            this.btnImportSK.Name = "btnImportSK";
+            this.btnImportSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSK.Text = "SK";
+            this.btnImportSK.Click += new System.EventHandler(this.btnImportSK_Click);
+            // 
+            // tabFromSK
+            // 
+            this.tabFromSK.Controls.Add(this.button7);
+            this.tabFromSK.Controls.Add(this.button8);
+            this.tabFromSK.Controls.Add(this.groupBox10);
+            this.tabFromSK.Controls.Add(this.groupBox11);
+            this.tabFromSK.Controls.Add(this.button10);
+            this.tabFromSK.Controls.Add(this.button11);
+            this.tabFromSK.Controls.Add(this.button12);
+            this.tabFromSK.Controls.Add(this.gridFromSK);
+            this.tabFromSK.Location = new System.Drawing.Point(4, 22);
+            this.tabFromSK.Name = "tabFromSK";
+            this.tabFromSK.Size = new System.Drawing.Size(1285, 646);
+            this.tabFromSK.TabIndex = 7;
+            this.tabFromSK.Text = "From SK";
+            this.tabFromSK.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.button7.Location = new System.Drawing.Point(253, 582);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(116, 58);
+            this.button7.TabIndex = 37;
+            this.button7.Text = "&Info";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Enabled = false;
+            this.button8.Image = global::Koberce.Properties.Resources.paper_pencil_48;
+            this.button8.Location = new System.Drawing.Point(959, 582);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(157, 58);
+            this.button8.TabIndex = 36;
+            this.button8.Text = "E&dit selected";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.Controls.Add(this.lblFromSKSel);
+            this.groupBox10.Controls.Add(this.label46);
+            this.groupBox10.Controls.Add(this.lblFromSKAll);
+            this.groupBox10.Controls.Add(this.label49);
+            this.groupBox10.Location = new System.Drawing.Point(7, 536);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1269, 40);
+            this.groupBox10.TabIndex = 35;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Items";
+            // 
+            // lblFromSKSel
+            // 
+            this.lblFromSKSel.AutoSize = true;
+            this.lblFromSKSel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblFromSKSel.Location = new System.Drawing.Point(238, 16);
+            this.lblFromSKSel.Name = "lblFromSKSel";
+            this.lblFromSKSel.Size = new System.Drawing.Size(13, 13);
+            this.lblFromSKSel.TabIndex = 3;
+            this.lblFromSKSel.Text = "0";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(150, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(82, 13);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Selected items: ";
+            // 
+            // lblFromSKAll
+            // 
+            this.lblFromSKAll.AutoSize = true;
+            this.lblFromSKAll.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblFromSKAll.Location = new System.Drawing.Point(63, 16);
+            this.lblFromSKAll.Name = "lblFromSKAll";
+            this.lblFromSKAll.Size = new System.Drawing.Size(13, 13);
+            this.lblFromSKAll.TabIndex = 1;
+            this.lblFromSKAll.Text = "0";
+            // 
+            // label49
+            // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(6, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(51, 13);
+            this.label49.TabIndex = 0;
+            this.label49.Text = "All items: ";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.txtFilFSKLength);
+            this.groupBox11.Controls.Add(this.label54);
+            this.groupBox11.Controls.Add(this.txtFilFSKWidth);
+            this.groupBox11.Controls.Add(this.label55);
+            this.groupBox11.Controls.Add(this.txtFilFSKSupNr);
+            this.groupBox11.Controls.Add(this.label56);
+            this.groupBox11.Controls.Add(this.btnFromSKClear);
+            this.groupBox11.Controls.Add(this.txtFilFSKVKNetto);
+            this.groupBox11.Controls.Add(this.label62);
+            this.groupBox11.Controls.Add(this.txtFilFSKSupplier);
+            this.groupBox11.Controls.Add(this.label63);
+            this.groupBox11.Controls.Add(this.txtFilFSKCountry);
+            this.groupBox11.Controls.Add(this.label64);
+            this.groupBox11.Controls.Add(this.txtFilFSKName);
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.txtFilFSKCode);
+            this.groupBox11.Controls.Add(this.label66);
+            this.groupBox11.Location = new System.Drawing.Point(7, 6);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(1269, 73);
+            this.groupBox11.TabIndex = 33;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Filter";
+            // 
+            // txtFilFSKLength
+            // 
+            this.txtFilFSKLength.Location = new System.Drawing.Point(229, 43);
+            this.txtFilFSKLength.Name = "txtFilFSKLength";
+            this.txtFilFSKLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKLength.TabIndex = 31;
+            this.txtFilFSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(191, 46);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(34, 13);
+            this.label54.TabIndex = 30;
+            this.label54.Text = "Legth";
+            // 
+            // txtFilFSKWidth
+            // 
+            this.txtFilFSKWidth.Location = new System.Drawing.Point(753, 17);
+            this.txtFilFSKWidth.Name = "txtFilFSKWidth";
+            this.txtFilFSKWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKWidth.TabIndex = 29;
+            this.txtFilFSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(711, 20);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(35, 13);
+            this.label55.TabIndex = 28;
+            this.label55.Text = "Width";
+            // 
+            // txtFilFSKSupNr
+            // 
+            this.txtFilFSKSupNr.Location = new System.Drawing.Point(76, 43);
+            this.txtFilFSKSupNr.Name = "txtFilFSKSupNr";
+            this.txtFilFSKSupNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKSupNr.TabIndex = 25;
+            this.txtFilFSKSupNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(8, 46);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(62, 13);
+            this.label56.TabIndex = 24;
+            this.label56.Text = "Supplier Nr.";
+            // 
+            // btnFromSKClear
+            // 
+            this.btnFromSKClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFromSKClear.Location = new System.Drawing.Point(1185, 13);
+            this.btnFromSKClear.Name = "btnFromSKClear";
+            this.btnFromSKClear.Size = new System.Drawing.Size(78, 24);
+            this.btnFromSKClear.TabIndex = 19;
+            this.btnFromSKClear.Text = "&Clear";
+            this.btnFromSKClear.UseVisualStyleBackColor = true;
+            this.btnFromSKClear.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // txtFilFSKVKNetto
+            // 
+            this.txtFilFSKVKNetto.Location = new System.Drawing.Point(628, 16);
+            this.txtFilFSKVKNetto.Name = "txtFilFSKVKNetto";
+            this.txtFilFSKVKNetto.Size = new System.Drawing.Size(70, 20);
+            this.txtFilFSKVKNetto.TabIndex = 9;
+            this.txtFilFSKVKNetto.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(569, 20);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(53, 13);
+            this.label62.TabIndex = 8;
+            this.label62.Text = "VK_Netto";
+            // 
+            // txtFilFSKSupplier
+            // 
+            this.txtFilFSKSupplier.Location = new System.Drawing.Point(463, 17);
+            this.txtFilFSKSupplier.Name = "txtFilFSKSupplier";
+            this.txtFilFSKSupplier.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKSupplier.TabIndex = 7;
+            this.txtFilFSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(412, 20);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(45, 13);
+            this.label63.TabIndex = 6;
+            this.label63.Text = "Supplier";
+            // 
+            // txtFilFSKCountry
+            // 
+            this.txtFilFSKCountry.Location = new System.Drawing.Point(306, 17);
+            this.txtFilFSKCountry.Name = "txtFilFSKCountry";
+            this.txtFilFSKCountry.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKCountry.TabIndex = 5;
+            this.txtFilFSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(257, 20);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(43, 13);
+            this.label64.TabIndex = 4;
+            this.label64.Text = "Country";
+            // 
+            // txtFilFSKName
+            // 
+            this.txtFilFSKName.Location = new System.Drawing.Point(151, 17);
+            this.txtFilFSKName.Name = "txtFilFSKName";
+            this.txtFilFSKName.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKName.TabIndex = 3;
+            this.txtFilFSKName.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(100, 20);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(46, 13);
+            this.label65.TabIndex = 2;
+            this.label65.Text = "Item title";
+            // 
+            // txtFilFSKCode
+            // 
+            this.txtFilFSKCode.Location = new System.Drawing.Point(44, 17);
+            this.txtFilFSKCode.Name = "txtFilFSKCode";
+            this.txtFilFSKCode.Size = new System.Drawing.Size(50, 20);
+            this.txtFilFSKCode.TabIndex = 1;
+            this.txtFilFSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(6, 20);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(32, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Code";
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button10.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.button10.Location = new System.Drawing.Point(131, 582);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(116, 58);
+            this.button10.TabIndex = 34;
+            this.button10.Text = "&Export";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.button11.Location = new System.Drawing.Point(1122, 582);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(157, 58);
+            this.button11.TabIndex = 32;
+            this.button11.Text = "&Remove selected";
+            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button12.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(6, 582);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(119, 58);
+            this.button12.TabIndex = 30;
+            this.button12.Text = "&Refresh";
+            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // btnImportFromSK
             // 
             this.btnImportFromSK.Name = "btnImportFromSK";
-            this.btnImportFromSK.Size = new System.Drawing.Size(124, 22);
+            this.btnImportFromSK.Size = new System.Drawing.Size(152, 22);
             this.btnImportFromSK.Text = "fromSK";
             this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
+            // 
+            // Grid
+            // 
+            this.Grid.AllowUserToAddRows = false;
+            this.Grid.AllowUserToDeleteRows = false;
+            this.Grid.AllowUserToOrderColumns = true;
+            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(6, 86);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(1273, 444);
+            this.Grid.TabIndex = 4;
+            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            // 
+            // gridSell
+            // 
+            this.gridSell.AllowUserToAddRows = false;
+            this.gridSell.AllowUserToDeleteRows = false;
+            this.gridSell.AllowUserToOrderColumns = true;
+            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSell.Location = new System.Drawing.Point(6, 85);
+            this.gridSell.Name = "gridSell";
+            this.gridSell.Size = new System.Drawing.Size(1273, 445);
+            this.gridSell.TabIndex = 13;
+            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            // 
+            // gridSK
+            // 
+            this.gridSK.AllowUserToAddRows = false;
+            this.gridSK.AllowUserToDeleteRows = false;
+            this.gridSK.AllowUserToOrderColumns = true;
+            this.gridSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSK.Location = new System.Drawing.Point(6, 85);
+            this.gridSK.Name = "gridSK";
+            this.gridSK.Size = new System.Drawing.Size(1273, 445);
+            this.gridSK.TabIndex = 23;
+            this.gridSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridFromSK
+            // 
+            this.gridFromSK.AllowUserToAddRows = false;
+            this.gridFromSK.AllowUserToDeleteRows = false;
+            this.gridFromSK.AllowUserToOrderColumns = true;
+            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
+            this.gridFromSK.Name = "gridFromSK";
+            this.gridFromSK.Size = new System.Drawing.Size(1273, 445);
+            this.gridFromSK.TabIndex = 31;
+            // 
+            // gridInventory
+            // 
+            this.gridInventory.AllowUserToAddRows = false;
+            this.gridInventory.AllowUserToDeleteRows = false;
+            this.gridInventory.AllowUserToOrderColumns = true;
+            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInventory.Location = new System.Drawing.Point(6, 85);
+            this.gridInventory.Name = "gridInventory";
+            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
+            this.gridInventory.TabIndex = 14;
+            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridBatch
+            // 
+            this.gridBatch.AllowUserToAddRows = false;
+            this.gridBatch.AllowUserToDeleteRows = false;
+            this.gridBatch.AllowUserToOrderColumns = true;
+            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBatch.Location = new System.Drawing.Point(170, 318);
+            this.gridBatch.Name = "gridBatch";
+            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
+            this.gridBatch.TabIndex = 2;
+            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridQueryRes
+            // 
+            this.gridQueryRes.AllowUserToAddRows = false;
+            this.gridQueryRes.AllowUserToDeleteRows = false;
+            this.gridQueryRes.AllowUserToOrderColumns = true;
+            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
+            this.gridQueryRes.Name = "gridQueryRes";
+            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
+            this.gridQueryRes.TabIndex = 5;
+            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainForm
             // 
@@ -2540,37 +2910,43 @@
             this.groupBox2.PerformLayout();
             this.grpFilter.ResumeLayout(false);
             this.grpFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.tabSold.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
             this.tabSK.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             this.tabbatch.ResumeLayout(false);
             this.tabbatch.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
             this.tabExecQuery.ResumeLayout(false);
             this.tabExecQuery.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
             this.MainToolbar.ResumeLayout(false);
             this.MainToolbar.PerformLayout();
+            this.tabFromSK.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2747,9 +3123,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Label lblFromSKSel;
+        private System.Windows.Forms.Label lblSKSel;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label lblFromSKAll;
+        private System.Windows.Forms.Label lblSKAll;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox txtFilSKLength;
@@ -2772,7 +3148,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private CustomDataGridView gridFromSK;
+        private CustomDataGridView gridSK;
         private System.Windows.Forms.ToolStripDropDownButton btnToolStripUpload;
         private System.Windows.Forms.ToolStripMenuItem btnUploadSold;
         private System.Windows.Forms.ToolStripMenuItem btnUploadInventory;
@@ -2784,6 +3160,37 @@
         private System.Windows.Forms.ToolStripDropDownButton btnToolStripImport;
         private System.Windows.Forms.ToolStripMenuItem btnImportSold;
         private System.Windows.Forms.ToolStripMenuItem btnImportInventory;
+        private System.Windows.Forms.ToolStripMenuItem btnImportSK;
+        private System.Windows.Forms.TabPage tabFromSK;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Label lblFromSKSel;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label lblFromSKAll;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox txtFilFSKLength;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox txtFilFSKWidth;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txtFilFSKSupNr;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Button btnFromSKClear;
+        private System.Windows.Forms.TextBox txtFilFSKVKNetto;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox txtFilFSKSupplier;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox txtFilFSKCountry;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox txtFilFSKName;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox txtFilFSKCode;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private CustomDataGridView gridFromSK;
         private System.Windows.Forms.ToolStripMenuItem btnImportFromSK;
     }
 }

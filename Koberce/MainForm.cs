@@ -21,7 +21,8 @@ namespace Koberce
     {
         MAIN,
         SOLD,
-        FROM_SK,
+        SK,
+        FROMSK,
         INVENTORY,
         BATCH,
         CUSTOMQUERY
@@ -40,7 +41,9 @@ namespace Koberce
                     return Grid;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return gridSell;
-                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                else if (tabControl1.SelectedIndex == (int)TABS.SK)
+                    return gridSK;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
                     return gridFromSK;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return gridInventory;
@@ -66,7 +69,9 @@ namespace Koberce
                     return lblAllCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return lblSoldAll;
-                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                else if (tabControl1.SelectedIndex == (int)TABS.SK)
+                    return lblSKAll;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
                     return lblFromSKAll;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvAllCount;
@@ -92,7 +97,9 @@ namespace Koberce
                     return lblSelCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                     return lblSoldSel;
-                else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                else if (tabControl1.SelectedIndex == (int)TABS.SK)
+                    return lblSKSel;
+                else if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
                     return lblFromSKSel;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvSelCount;
@@ -211,9 +218,9 @@ namespace Koberce
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
-            else if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+            else if (tabControl1.SelectedIndex == (int)TABS.SK || tabControl1.SelectedIndex == (int)TABS.FROMSK)
                 // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.FROM_SK], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[tabControl1.SelectedIndex], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else
                 ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
 
@@ -446,7 +453,7 @@ namespace Koberce
                 AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
             }
             else
-                if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+                if (tabControl1.SelectedIndex == (int)TABS.SK)
             {
                 AddFilter(sb, txtFilSKCode.Text, "A.CODE");
                 AddFilter(sb, txtFilSKTitle.Text, "ITEMTITLE");
@@ -462,6 +469,18 @@ namespace Koberce
                 AddFilter(sb, txtFilSKLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSKWidth.Text, "WIDTH");
             }
+            else
+                if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
+                {
+                    AddFilter(sb, txtFilFSKCode.Text, "A.CODE");
+                    AddFilter(sb, txtFilFSKName.Text, "ITEMTITLE");
+                    AddFilter(sb, txtFilFSKCountry.Text, "COUNTRY");
+                    AddFilter(sb, txtFilFSKSupplier.Text, "SUPPLIER");
+                    AddFilter(sb, txtFilFSKSupNr.Text, "SUPPLIER_NR");
+                    AddFilter(sb, txtFilFSKVKNetto.Text, "VK_NETTO");
+                    AddFilter(sb, txtFilFSKLength.Text, "LENGTH");
+                    AddFilter(sb, txtFilFSKWidth.Text, "WIDTH");
+                }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                 {
@@ -770,8 +789,13 @@ namespace Koberce
                     refresh = true;
                     break;
 
-                case (int)TABS.FROM_SK: // fromSK
-                    btnToolEdit.Enabled = true;
+                case (int)TABS.SK: // SK
+                    btnToolRemove.Enabled = true;
+                    btnToolExport.Enabled = true;
+                    refresh = true;
+                    break;
+
+                case (int)TABS.FROMSK: // FROMSK
                     btnToolRemove.Enabled = true;
                     btnToolExport.Enabled = true;
                     refresh = true;
@@ -933,7 +957,11 @@ namespace Koberce
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_sold{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
 
-                case (int)TABS.FROM_SK:
+                case (int)TABS.SK:
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_SK{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    break;
+
+                case (int)TABS.FROMSK:
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_fromSK{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
 
@@ -1024,7 +1052,7 @@ namespace Koberce
                 txtFilSellPrice.Text = string.Empty;
             }
             else 
-            if (tabControl1.SelectedIndex == (int)TABS.FROM_SK)
+            if (tabControl1.SelectedIndex == (int)TABS.SK)
             {
                 txtFilSKCode.Text = string.Empty;
                 txtFilSKCountry.Text = string.Empty;
@@ -1037,6 +1065,18 @@ namespace Koberce
                 txtFilSKWidth.Text = string.Empty;
                 //dtpFilSKSellFrom.Checked = false;
                 //dtpFilSKSellTo.Checked = false;
+            }
+            else
+            if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
+            {
+                txtFilFSKCode.Text = string.Empty;
+                txtFilFSKCountry.Text = string.Empty;
+                txtFilFSKLength.Text = string.Empty;
+                txtFilFSKSupplier.Text = string.Empty;
+                txtFilFSKSupNr.Text = string.Empty;
+                txtFilFSKName.Text = string.Empty;
+                txtFilFSKVKNetto.Text = string.Empty;
+                txtFilFSKWidth.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -1245,6 +1285,21 @@ namespace Koberce
             try
             {
                 CurrOpType = OperationType.fromSK;
+                ImportScannerData();
+
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnImportSK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.SK;
                 ImportScannerData();
 
                 MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
