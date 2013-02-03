@@ -1181,7 +1181,11 @@ namespace Koberce
             try
             {
                 proc.Start();
+                proc.WaitForExit();
 
+                // zmazanie suborov zo skenera
+                proc.StartInfo.Arguments = "comport:1 /ptaddr:A /exit /delete:FROMSK.TXT,SK.TXT,INVENTOR.TXT,SOLD.TXT";
+                proc.Start();
                 proc.WaitForExit();
             }
             catch (Exception ex)
@@ -1308,6 +1312,23 @@ namespace Koberce
             {
                 MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var codes = GetSelectedCodes();
+            if (codes == null || codes.Length == 0)
+            {
+                MessageBox.Show(this, "Select some item first!", "Item info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var item = db.GetItem(codes[0]);
+            //new PrintDoc(item).Print();
+
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            ppd.Document = new PrintDoc(item);
+            ppd.Show();
         }
     }
 
