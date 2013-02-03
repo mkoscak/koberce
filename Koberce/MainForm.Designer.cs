@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabViewAll = new System.Windows.Forms.TabPage();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnAddInventory = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblSelCount = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnRemoveSel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.Grid = new Koberce.CustomDataGridView();
             this.tabSold = new System.Windows.Forms.TabPage();
             this.btnSoldIfo = new System.Windows.Forms.Button();
             this.btnEditSold = new System.Windows.Forms.Button();
@@ -109,6 +111,7 @@
             this.btnExportSold = new System.Windows.Forms.Button();
             this.btnDelSold = new System.Windows.Forms.Button();
             this.btnRefreshSold = new System.Windows.Forms.Button();
+            this.gridSell = new Koberce.CustomDataGridView();
             this.tabSK = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -138,6 +141,37 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.gridSK = new Koberce.CustomDataGridView();
+            this.tabFromSK = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblFromSKSel = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.lblFromSKAll = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.txtFilFSKLength = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtFilFSKWidth = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtFilFSKSupNr = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.btnFromSKClear = new System.Windows.Forms.Button();
+            this.txtFilFSKVKNetto = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.txtFilFSKSupplier = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.txtFilFSKCountry = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.txtFilFSKName = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtFilFSKCode = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.gridFromSK = new Koberce.CustomDataGridView();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.btnStartInventory = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -177,6 +211,7 @@
             this.btnInvInfo = new System.Windows.Forms.Button();
             this.btnInvRemove = new System.Windows.Forms.Button();
             this.btnInvRefresh = new System.Windows.Forms.Button();
+            this.gridInventory = new Koberce.CustomDataGridView();
             this.tabbatch = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBatchSelCount = new System.Windows.Forms.Label();
@@ -186,6 +221,7 @@
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.btnDecode = new System.Windows.Forms.Button();
             this.btnStartBatch = new System.Windows.Forms.Button();
+            this.gridBatch = new Koberce.CustomDataGridView();
             this.tabExecQuery = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblQuerySelCount = new System.Windows.Forms.Label();
@@ -203,6 +239,7 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnExportQuery = new System.Windows.Forms.Button();
             this.lblQueryInfo = new System.Windows.Forms.Label();
+            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
             this.btnPreviousTab = new System.Windows.Forms.ToolStripButton();
             this.btnNextTab = new System.Windows.Forms.ToolStripButton();
@@ -218,6 +255,7 @@
             this.btnToolStripUpload = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnUploadSold = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUploadInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUploadSK = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUploadFromSK = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -225,83 +263,48 @@
             this.btnToolStripDownload = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnDownloadSold = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDownloadInventory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDownloadSK = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDownloadFromSK = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolStripImport = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnImportSold = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportSK = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabFromSK = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.lblFromSKSel = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.lblFromSKAll = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.txtFilFSKLength = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtFilFSKWidth = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.txtFilFSKSupNr = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.btnFromSKClear = new System.Windows.Forms.Button();
-            this.txtFilFSKVKNetto = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.txtFilFSKSupplier = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.txtFilFSKCountry = new System.Windows.Forms.TextBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.txtFilFSKName = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.txtFilFSKCode = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.btnImportFromSK = new System.Windows.Forms.ToolStripMenuItem();
-            this.Grid = new Koberce.CustomDataGridView();
-            this.gridSell = new Koberce.CustomDataGridView();
-            this.gridSK = new Koberce.CustomDataGridView();
-            this.gridFromSK = new Koberce.CustomDataGridView();
-            this.gridInventory = new Koberce.CustomDataGridView();
-            this.gridBatch = new Koberce.CustomDataGridView();
-            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.tabSold.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
             this.tabSK.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.tabInventory.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.tabbatch.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.tabExecQuery.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.MainToolbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
             this.tabFromSK.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
+            this.tabInventory.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
+            this.tabbatch.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
+            this.tabExecQuery.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
+            this.MainToolbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabViewAll);
             this.tabControl1.Controls.Add(this.tabSold);
             this.tabControl1.Controls.Add(this.tabSK);
@@ -318,6 +321,7 @@
             // 
             // tabViewAll
             // 
+            this.tabViewAll.Controls.Add(this.btnPrint);
             this.tabViewAll.Controls.Add(this.btnAddInventory);
             this.tabViewAll.Controls.Add(this.groupBox2);
             this.tabViewAll.Controls.Add(this.btnExportMain);
@@ -337,6 +341,18 @@
             this.tabViewAll.Text = "Database";
             this.tabViewAll.UseVisualStyleBackColor = true;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrint.Location = new System.Drawing.Point(624, 582);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(115, 58);
+            this.btnPrint.TabIndex = 14;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Visible = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnAddInventory
             // 
             this.btnAddInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -352,8 +368,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lblSelCount);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.lblAllCount);
@@ -445,8 +461,8 @@
             // 
             // grpFilter
             // 
-            this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grpFilter.Controls.Add(this.txtFilLength);
             this.grpFilter.Controls.Add(this.label40);
             this.grpFilter.Controls.Add(this.txtFilWidth);
@@ -773,6 +789,22 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // Grid
+            // 
+            this.Grid.AllowUserToAddRows = false;
+            this.Grid.AllowUserToDeleteRows = false;
+            this.Grid.AllowUserToOrderColumns = true;
+            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(6, 86);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(1273, 444);
+            this.Grid.TabIndex = 4;
+            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
             // tabSold
             // 
             this.tabSold.Controls.Add(this.btnSoldIfo);
@@ -818,8 +850,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lblSellPriceSum);
             this.groupBox3.Controls.Add(this.label39);
             this.groupBox3.Controls.Add(this.lblSoldSel);
@@ -893,8 +925,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtFilSoldLength);
             this.groupBox1.Controls.Add(this.label41);
             this.groupBox1.Controls.Add(this.txtFilSoldWidth);
@@ -1169,6 +1201,22 @@
             this.btnRefreshSold.UseVisualStyleBackColor = true;
             this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // gridSell
+            // 
+            this.gridSell.AllowUserToAddRows = false;
+            this.gridSell.AllowUserToDeleteRows = false;
+            this.gridSell.AllowUserToOrderColumns = true;
+            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSell.Location = new System.Drawing.Point(6, 85);
+            this.gridSell.Name = "gridSell";
+            this.gridSell.Size = new System.Drawing.Size(1273, 445);
+            this.gridSell.TabIndex = 13;
+            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
             // tabSK
             // 
             this.tabSK.Controls.Add(this.button1);
@@ -1214,8 +1262,8 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.lblSKSel);
             this.groupBox8.Controls.Add(this.label48);
             this.groupBox8.Controls.Add(this.lblSKAll);
@@ -1268,8 +1316,8 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.txtFilSKLength);
             this.groupBox9.Controls.Add(this.label51);
             this.groupBox9.Controls.Add(this.txtFilSKWidth);
@@ -1481,6 +1529,347 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // gridSK
+            // 
+            this.gridSK.AllowUserToAddRows = false;
+            this.gridSK.AllowUserToDeleteRows = false;
+            this.gridSK.AllowUserToOrderColumns = true;
+            this.gridSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSK.Location = new System.Drawing.Point(6, 85);
+            this.gridSK.Name = "gridSK";
+            this.gridSK.Size = new System.Drawing.Size(1273, 445);
+            this.gridSK.TabIndex = 23;
+            this.gridSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // tabFromSK
+            // 
+            this.tabFromSK.Controls.Add(this.button7);
+            this.tabFromSK.Controls.Add(this.button8);
+            this.tabFromSK.Controls.Add(this.groupBox10);
+            this.tabFromSK.Controls.Add(this.groupBox11);
+            this.tabFromSK.Controls.Add(this.button10);
+            this.tabFromSK.Controls.Add(this.button11);
+            this.tabFromSK.Controls.Add(this.button12);
+            this.tabFromSK.Controls.Add(this.gridFromSK);
+            this.tabFromSK.Location = new System.Drawing.Point(4, 22);
+            this.tabFromSK.Name = "tabFromSK";
+            this.tabFromSK.Size = new System.Drawing.Size(1285, 646);
+            this.tabFromSK.TabIndex = 7;
+            this.tabFromSK.Text = "From SK";
+            this.tabFromSK.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.Image = global::Koberce.Properties.Resources.newspaper_48;
+            this.button7.Location = new System.Drawing.Point(253, 582);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(116, 58);
+            this.button7.TabIndex = 37;
+            this.button7.Text = "&Info";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Enabled = false;
+            this.button8.Image = global::Koberce.Properties.Resources.paper_pencil_48;
+            this.button8.Location = new System.Drawing.Point(959, 582);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(157, 58);
+            this.button8.TabIndex = 36;
+            this.button8.Text = "E&dit selected";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox10.Controls.Add(this.lblFromSKSel);
+            this.groupBox10.Controls.Add(this.label46);
+            this.groupBox10.Controls.Add(this.lblFromSKAll);
+            this.groupBox10.Controls.Add(this.label49);
+            this.groupBox10.Location = new System.Drawing.Point(7, 536);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1269, 40);
+            this.groupBox10.TabIndex = 35;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Items";
+            // 
+            // lblFromSKSel
+            // 
+            this.lblFromSKSel.AutoSize = true;
+            this.lblFromSKSel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblFromSKSel.Location = new System.Drawing.Point(238, 16);
+            this.lblFromSKSel.Name = "lblFromSKSel";
+            this.lblFromSKSel.Size = new System.Drawing.Size(13, 13);
+            this.lblFromSKSel.TabIndex = 3;
+            this.lblFromSKSel.Text = "0";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(150, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(82, 13);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Selected items: ";
+            // 
+            // lblFromSKAll
+            // 
+            this.lblFromSKAll.AutoSize = true;
+            this.lblFromSKAll.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblFromSKAll.Location = new System.Drawing.Point(63, 16);
+            this.lblFromSKAll.Name = "lblFromSKAll";
+            this.lblFromSKAll.Size = new System.Drawing.Size(13, 13);
+            this.lblFromSKAll.TabIndex = 1;
+            this.lblFromSKAll.Text = "0";
+            // 
+            // label49
+            // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(6, 16);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(51, 13);
+            this.label49.TabIndex = 0;
+            this.label49.Text = "All items: ";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.txtFilFSKLength);
+            this.groupBox11.Controls.Add(this.label54);
+            this.groupBox11.Controls.Add(this.txtFilFSKWidth);
+            this.groupBox11.Controls.Add(this.label55);
+            this.groupBox11.Controls.Add(this.txtFilFSKSupNr);
+            this.groupBox11.Controls.Add(this.label56);
+            this.groupBox11.Controls.Add(this.btnFromSKClear);
+            this.groupBox11.Controls.Add(this.txtFilFSKVKNetto);
+            this.groupBox11.Controls.Add(this.label62);
+            this.groupBox11.Controls.Add(this.txtFilFSKSupplier);
+            this.groupBox11.Controls.Add(this.label63);
+            this.groupBox11.Controls.Add(this.txtFilFSKCountry);
+            this.groupBox11.Controls.Add(this.label64);
+            this.groupBox11.Controls.Add(this.txtFilFSKName);
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.txtFilFSKCode);
+            this.groupBox11.Controls.Add(this.label66);
+            this.groupBox11.Location = new System.Drawing.Point(7, 6);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(1269, 73);
+            this.groupBox11.TabIndex = 33;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Filter";
+            // 
+            // txtFilFSKLength
+            // 
+            this.txtFilFSKLength.Location = new System.Drawing.Point(229, 43);
+            this.txtFilFSKLength.Name = "txtFilFSKLength";
+            this.txtFilFSKLength.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKLength.TabIndex = 31;
+            this.txtFilFSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(191, 46);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(34, 13);
+            this.label54.TabIndex = 30;
+            this.label54.Text = "Legth";
+            // 
+            // txtFilFSKWidth
+            // 
+            this.txtFilFSKWidth.Location = new System.Drawing.Point(753, 17);
+            this.txtFilFSKWidth.Name = "txtFilFSKWidth";
+            this.txtFilFSKWidth.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKWidth.TabIndex = 29;
+            this.txtFilFSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(711, 20);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(35, 13);
+            this.label55.TabIndex = 28;
+            this.label55.Text = "Width";
+            // 
+            // txtFilFSKSupNr
+            // 
+            this.txtFilFSKSupNr.Location = new System.Drawing.Point(76, 43);
+            this.txtFilFSKSupNr.Name = "txtFilFSKSupNr";
+            this.txtFilFSKSupNr.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKSupNr.TabIndex = 25;
+            this.txtFilFSKSupNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(8, 46);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(62, 13);
+            this.label56.TabIndex = 24;
+            this.label56.Text = "Supplier Nr.";
+            // 
+            // btnFromSKClear
+            // 
+            this.btnFromSKClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFromSKClear.Location = new System.Drawing.Point(1185, 13);
+            this.btnFromSKClear.Name = "btnFromSKClear";
+            this.btnFromSKClear.Size = new System.Drawing.Size(78, 24);
+            this.btnFromSKClear.TabIndex = 19;
+            this.btnFromSKClear.Text = "&Clear";
+            this.btnFromSKClear.UseVisualStyleBackColor = true;
+            this.btnFromSKClear.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // txtFilFSKVKNetto
+            // 
+            this.txtFilFSKVKNetto.Location = new System.Drawing.Point(628, 16);
+            this.txtFilFSKVKNetto.Name = "txtFilFSKVKNetto";
+            this.txtFilFSKVKNetto.Size = new System.Drawing.Size(70, 20);
+            this.txtFilFSKVKNetto.TabIndex = 9;
+            this.txtFilFSKVKNetto.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(569, 20);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(53, 13);
+            this.label62.TabIndex = 8;
+            this.label62.Text = "VK_Netto";
+            // 
+            // txtFilFSKSupplier
+            // 
+            this.txtFilFSKSupplier.Location = new System.Drawing.Point(463, 17);
+            this.txtFilFSKSupplier.Name = "txtFilFSKSupplier";
+            this.txtFilFSKSupplier.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKSupplier.TabIndex = 7;
+            this.txtFilFSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(412, 20);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(45, 13);
+            this.label63.TabIndex = 6;
+            this.label63.Text = "Supplier";
+            // 
+            // txtFilFSKCountry
+            // 
+            this.txtFilFSKCountry.Location = new System.Drawing.Point(306, 17);
+            this.txtFilFSKCountry.Name = "txtFilFSKCountry";
+            this.txtFilFSKCountry.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKCountry.TabIndex = 5;
+            this.txtFilFSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(257, 20);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(43, 13);
+            this.label64.TabIndex = 4;
+            this.label64.Text = "Country";
+            // 
+            // txtFilFSKName
+            // 
+            this.txtFilFSKName.Location = new System.Drawing.Point(151, 17);
+            this.txtFilFSKName.Name = "txtFilFSKName";
+            this.txtFilFSKName.Size = new System.Drawing.Size(100, 20);
+            this.txtFilFSKName.TabIndex = 3;
+            this.txtFilFSKName.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(100, 20);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(46, 13);
+            this.label65.TabIndex = 2;
+            this.label65.Text = "Item title";
+            // 
+            // txtFilFSKCode
+            // 
+            this.txtFilFSKCode.Location = new System.Drawing.Point(44, 17);
+            this.txtFilFSKCode.Name = "txtFilFSKCode";
+            this.txtFilFSKCode.Size = new System.Drawing.Size(50, 20);
+            this.txtFilFSKCode.TabIndex = 1;
+            this.txtFilFSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(6, 20);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(32, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Code";
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button10.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
+            this.button10.Location = new System.Drawing.Point(131, 582);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(116, 58);
+            this.button10.TabIndex = 34;
+            this.button10.Text = "&Export";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Image = global::Koberce.Properties.Resources.cancel_48;
+            this.button11.Location = new System.Drawing.Point(1122, 582);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(157, 58);
+            this.button11.TabIndex = 32;
+            this.button11.Text = "&Remove selected";
+            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.btnRemoveSel_Click);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button12.Image = global::Koberce.Properties.Resources.refresh_icon;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(6, 582);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(119, 58);
+            this.button12.TabIndex = 30;
+            this.button12.Text = "&Refresh";
+            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // gridFromSK
+            // 
+            this.gridFromSK.AllowUserToAddRows = false;
+            this.gridFromSK.AllowUserToDeleteRows = false;
+            this.gridFromSK.AllowUserToOrderColumns = true;
+            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
+            this.gridFromSK.Name = "gridFromSK";
+            this.gridFromSK.Size = new System.Drawing.Size(1273, 445);
+            this.gridFromSK.TabIndex = 31;
+            // 
             // tabInventory
             // 
             this.tabInventory.Controls.Add(this.btnStartInventory);
@@ -1513,8 +1902,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.lblInvSelCount);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.lblInvAllCount);
@@ -1567,8 +1956,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.txtFilInvLength);
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Controls.Add(this.txtFilInvWidth);
@@ -1894,6 +2283,21 @@
             this.btnInvRefresh.UseVisualStyleBackColor = true;
             this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // gridInventory
+            // 
+            this.gridInventory.AllowUserToAddRows = false;
+            this.gridInventory.AllowUserToDeleteRows = false;
+            this.gridInventory.AllowUserToOrderColumns = true;
+            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInventory.Location = new System.Drawing.Point(6, 85);
+            this.gridInventory.Name = "gridInventory";
+            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
+            this.gridInventory.TabIndex = 14;
+            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
             // tabbatch
             // 
             this.tabbatch.Controls.Add(this.groupBox6);
@@ -1910,8 +2314,8 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.lblBatchSelCount);
             this.groupBox6.Controls.Add(this.lblBatchItemCount);
             this.groupBox6.Controls.Add(this.label21);
@@ -1965,8 +2369,8 @@
             // 
             // txtBatch
             // 
-            this.txtBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBatch.Location = new System.Drawing.Point(170, 3);
             this.txtBatch.MaxLength = 65535;
             this.txtBatch.Multiline = true;
@@ -1999,6 +2403,21 @@
             this.btnStartBatch.UseVisualStyleBackColor = true;
             this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
             // 
+            // gridBatch
+            // 
+            this.gridBatch.AllowUserToAddRows = false;
+            this.gridBatch.AllowUserToDeleteRows = false;
+            this.gridBatch.AllowUserToOrderColumns = true;
+            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBatch.Location = new System.Drawing.Point(170, 318);
+            this.gridBatch.Name = "gridBatch";
+            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
+            this.gridBatch.TabIndex = 2;
+            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
             // tabExecQuery
             // 
             this.tabExecQuery.Controls.Add(this.groupBox7);
@@ -2023,8 +2442,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.lblQuerySelCount);
             this.groupBox7.Controls.Add(this.lblQueryResCount);
             this.groupBox7.Controls.Add(this.label33);
@@ -2163,8 +2582,8 @@
             // 
             // txtQuery
             // 
-            this.txtQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuery.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.txtQuery.Location = new System.Drawing.Point(170, 35);
             this.txtQuery.MaxLength = 65535;
@@ -2198,8 +2617,23 @@
             this.lblQueryInfo.Size = new System.Drawing.Size(157, 97);
             this.lblQueryInfo.TabIndex = 6;
             this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
-    "Q";
+                "Q";
             this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // gridQueryRes
+            // 
+            this.gridQueryRes.AllowUserToAddRows = false;
+            this.gridQueryRes.AllowUserToDeleteRows = false;
+            this.gridQueryRes.AllowUserToOrderColumns = true;
+            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
+            this.gridQueryRes.Name = "gridQueryRes";
+            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
+            this.gridQueryRes.TabIndex = 5;
+            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainToolbar
             // 
@@ -2330,6 +2764,7 @@
             this.btnToolStripUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnUploadSold,
             this.btnUploadInventory,
+            this.btnUploadSK,
             this.btnUploadFromSK});
             this.btnToolStripUpload.Image = global::Koberce.Properties.Resources.Earth_Upload_icon;
             this.btnToolStripUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -2354,11 +2789,19 @@
             this.btnUploadInventory.Text = "Inventory";
             this.btnUploadInventory.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // btnUploadSK
+            // 
+            this.btnUploadSK.Name = "btnUploadSK";
+            this.btnUploadSK.Size = new System.Drawing.Size(124, 22);
+            this.btnUploadSK.Tag = "SK.TXT";
+            this.btnUploadSK.Text = "SK";
+            this.btnUploadSK.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // btnUploadFromSK
             // 
             this.btnUploadFromSK.Name = "btnUploadFromSK";
             this.btnUploadFromSK.Size = new System.Drawing.Size(124, 22);
-            this.btnUploadFromSK.Tag = "SK.TXT";
+            this.btnUploadFromSK.Tag = "FROMSK.TXT";
             this.btnUploadFromSK.Text = "fromSK";
             this.btnUploadFromSK.Click += new System.EventHandler(this.btnUpload_Click);
             // 
@@ -2396,6 +2839,7 @@
             this.btnToolStripDownload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDownloadSold,
             this.btnDownloadInventory,
+            this.btnDownloadSK,
             this.btnDownloadFromSK});
             this.btnToolStripDownload.Image = global::Koberce.Properties.Resources.Earth_Download_icon;
             this.btnToolStripDownload.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -2420,11 +2864,19 @@
             this.btnDownloadInventory.Text = "Inventory";
             this.btnDownloadInventory.Click += new System.EventHandler(this.btnDownload_Click);
             // 
+            // btnDownloadSK
+            // 
+            this.btnDownloadSK.Name = "btnDownloadSK";
+            this.btnDownloadSK.Size = new System.Drawing.Size(124, 22);
+            this.btnDownloadSK.Tag = "SK.TXT";
+            this.btnDownloadSK.Text = "SK";
+            this.btnDownloadSK.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // btnDownloadFromSK
             // 
             this.btnDownloadFromSK.Name = "btnDownloadFromSK";
             this.btnDownloadFromSK.Size = new System.Drawing.Size(124, 22);
-            this.btnDownloadFromSK.Tag = "SK.TXT";
+            this.btnDownloadFromSK.Tag = "FROMSK.TXT";
             this.btnDownloadFromSK.Text = "fromSK";
             this.btnDownloadFromSK.Click += new System.EventHandler(this.btnDownload_Click);
             // 
@@ -2446,7 +2898,7 @@
             // btnImportSold
             // 
             this.btnImportSold.Name = "btnImportSold";
-            this.btnImportSold.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSold.Size = new System.Drawing.Size(124, 22);
             this.btnImportSold.Tag = "";
             this.btnImportSold.Text = "Sold";
             this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
@@ -2454,7 +2906,7 @@
             // btnImportInventory
             // 
             this.btnImportInventory.Name = "btnImportInventory";
-            this.btnImportInventory.Size = new System.Drawing.Size(152, 22);
+            this.btnImportInventory.Size = new System.Drawing.Size(124, 22);
             this.btnImportInventory.Tag = "";
             this.btnImportInventory.Text = "Inventory";
             this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
@@ -2462,434 +2914,16 @@
             // btnImportSK
             // 
             this.btnImportSK.Name = "btnImportSK";
-            this.btnImportSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSK.Size = new System.Drawing.Size(124, 22);
             this.btnImportSK.Text = "SK";
             this.btnImportSK.Click += new System.EventHandler(this.btnImportSK_Click);
-            // 
-            // tabFromSK
-            // 
-            this.tabFromSK.Controls.Add(this.button7);
-            this.tabFromSK.Controls.Add(this.button8);
-            this.tabFromSK.Controls.Add(this.groupBox10);
-            this.tabFromSK.Controls.Add(this.groupBox11);
-            this.tabFromSK.Controls.Add(this.button10);
-            this.tabFromSK.Controls.Add(this.button11);
-            this.tabFromSK.Controls.Add(this.button12);
-            this.tabFromSK.Controls.Add(this.gridFromSK);
-            this.tabFromSK.Location = new System.Drawing.Point(4, 22);
-            this.tabFromSK.Name = "tabFromSK";
-            this.tabFromSK.Size = new System.Drawing.Size(1285, 646);
-            this.tabFromSK.TabIndex = 7;
-            this.tabFromSK.Text = "From SK";
-            this.tabFromSK.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.Image = global::Koberce.Properties.Resources.newspaper_48;
-            this.button7.Location = new System.Drawing.Point(253, 582);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(116, 58);
-            this.button7.TabIndex = 37;
-            this.button7.Text = "&Info";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Enabled = false;
-            this.button8.Image = global::Koberce.Properties.Resources.paper_pencil_48;
-            this.button8.Location = new System.Drawing.Point(959, 582);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(157, 58);
-            this.button8.TabIndex = 36;
-            this.button8.Text = "E&dit selected";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox10.Controls.Add(this.lblFromSKSel);
-            this.groupBox10.Controls.Add(this.label46);
-            this.groupBox10.Controls.Add(this.lblFromSKAll);
-            this.groupBox10.Controls.Add(this.label49);
-            this.groupBox10.Location = new System.Drawing.Point(7, 536);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1269, 40);
-            this.groupBox10.TabIndex = 35;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Items";
-            // 
-            // lblFromSKSel
-            // 
-            this.lblFromSKSel.AutoSize = true;
-            this.lblFromSKSel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFromSKSel.Location = new System.Drawing.Point(238, 16);
-            this.lblFromSKSel.Name = "lblFromSKSel";
-            this.lblFromSKSel.Size = new System.Drawing.Size(13, 13);
-            this.lblFromSKSel.TabIndex = 3;
-            this.lblFromSKSel.Text = "0";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(150, 16);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(82, 13);
-            this.label46.TabIndex = 2;
-            this.label46.Text = "Selected items: ";
-            // 
-            // lblFromSKAll
-            // 
-            this.lblFromSKAll.AutoSize = true;
-            this.lblFromSKAll.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblFromSKAll.Location = new System.Drawing.Point(63, 16);
-            this.lblFromSKAll.Name = "lblFromSKAll";
-            this.lblFromSKAll.Size = new System.Drawing.Size(13, 13);
-            this.lblFromSKAll.TabIndex = 1;
-            this.lblFromSKAll.Text = "0";
-            // 
-            // label49
-            // 
-            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(6, 16);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(51, 13);
-            this.label49.TabIndex = 0;
-            this.label49.Text = "All items: ";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox11.Controls.Add(this.txtFilFSKLength);
-            this.groupBox11.Controls.Add(this.label54);
-            this.groupBox11.Controls.Add(this.txtFilFSKWidth);
-            this.groupBox11.Controls.Add(this.label55);
-            this.groupBox11.Controls.Add(this.txtFilFSKSupNr);
-            this.groupBox11.Controls.Add(this.label56);
-            this.groupBox11.Controls.Add(this.btnFromSKClear);
-            this.groupBox11.Controls.Add(this.txtFilFSKVKNetto);
-            this.groupBox11.Controls.Add(this.label62);
-            this.groupBox11.Controls.Add(this.txtFilFSKSupplier);
-            this.groupBox11.Controls.Add(this.label63);
-            this.groupBox11.Controls.Add(this.txtFilFSKCountry);
-            this.groupBox11.Controls.Add(this.label64);
-            this.groupBox11.Controls.Add(this.txtFilFSKName);
-            this.groupBox11.Controls.Add(this.label65);
-            this.groupBox11.Controls.Add(this.txtFilFSKCode);
-            this.groupBox11.Controls.Add(this.label66);
-            this.groupBox11.Location = new System.Drawing.Point(7, 6);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1269, 73);
-            this.groupBox11.TabIndex = 33;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Filter";
-            // 
-            // txtFilFSKLength
-            // 
-            this.txtFilFSKLength.Location = new System.Drawing.Point(229, 43);
-            this.txtFilFSKLength.Name = "txtFilFSKLength";
-            this.txtFilFSKLength.Size = new System.Drawing.Size(71, 20);
-            this.txtFilFSKLength.TabIndex = 31;
-            this.txtFilFSKLength.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(191, 46);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(34, 13);
-            this.label54.TabIndex = 30;
-            this.label54.Text = "Legth";
-            // 
-            // txtFilFSKWidth
-            // 
-            this.txtFilFSKWidth.Location = new System.Drawing.Point(753, 17);
-            this.txtFilFSKWidth.Name = "txtFilFSKWidth";
-            this.txtFilFSKWidth.Size = new System.Drawing.Size(71, 20);
-            this.txtFilFSKWidth.TabIndex = 29;
-            this.txtFilFSKWidth.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(711, 20);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(35, 13);
-            this.label55.TabIndex = 28;
-            this.label55.Text = "Width";
-            // 
-            // txtFilFSKSupNr
-            // 
-            this.txtFilFSKSupNr.Location = new System.Drawing.Point(76, 43);
-            this.txtFilFSKSupNr.Name = "txtFilFSKSupNr";
-            this.txtFilFSKSupNr.Size = new System.Drawing.Size(100, 20);
-            this.txtFilFSKSupNr.TabIndex = 25;
-            this.txtFilFSKSupNr.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(8, 46);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(62, 13);
-            this.label56.TabIndex = 24;
-            this.label56.Text = "Supplier Nr.";
-            // 
-            // btnFromSKClear
-            // 
-            this.btnFromSKClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFromSKClear.Location = new System.Drawing.Point(1185, 13);
-            this.btnFromSKClear.Name = "btnFromSKClear";
-            this.btnFromSKClear.Size = new System.Drawing.Size(78, 24);
-            this.btnFromSKClear.TabIndex = 19;
-            this.btnFromSKClear.Text = "&Clear";
-            this.btnFromSKClear.UseVisualStyleBackColor = true;
-            this.btnFromSKClear.Click += new System.EventHandler(this.btnClearFilter_Click);
-            // 
-            // txtFilFSKVKNetto
-            // 
-            this.txtFilFSKVKNetto.Location = new System.Drawing.Point(628, 16);
-            this.txtFilFSKVKNetto.Name = "txtFilFSKVKNetto";
-            this.txtFilFSKVKNetto.Size = new System.Drawing.Size(70, 20);
-            this.txtFilFSKVKNetto.TabIndex = 9;
-            this.txtFilFSKVKNetto.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(569, 20);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(53, 13);
-            this.label62.TabIndex = 8;
-            this.label62.Text = "VK_Netto";
-            // 
-            // txtFilFSKSupplier
-            // 
-            this.txtFilFSKSupplier.Location = new System.Drawing.Point(463, 17);
-            this.txtFilFSKSupplier.Name = "txtFilFSKSupplier";
-            this.txtFilFSKSupplier.Size = new System.Drawing.Size(100, 20);
-            this.txtFilFSKSupplier.TabIndex = 7;
-            this.txtFilFSKSupplier.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(412, 20);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(45, 13);
-            this.label63.TabIndex = 6;
-            this.label63.Text = "Supplier";
-            // 
-            // txtFilFSKCountry
-            // 
-            this.txtFilFSKCountry.Location = new System.Drawing.Point(306, 17);
-            this.txtFilFSKCountry.Name = "txtFilFSKCountry";
-            this.txtFilFSKCountry.Size = new System.Drawing.Size(100, 20);
-            this.txtFilFSKCountry.TabIndex = 5;
-            this.txtFilFSKCountry.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(257, 20);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(43, 13);
-            this.label64.TabIndex = 4;
-            this.label64.Text = "Country";
-            // 
-            // txtFilFSKName
-            // 
-            this.txtFilFSKName.Location = new System.Drawing.Point(151, 17);
-            this.txtFilFSKName.Name = "txtFilFSKName";
-            this.txtFilFSKName.Size = new System.Drawing.Size(100, 20);
-            this.txtFilFSKName.TabIndex = 3;
-            this.txtFilFSKName.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(100, 20);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(46, 13);
-            this.label65.TabIndex = 2;
-            this.label65.Text = "Item title";
-            // 
-            // txtFilFSKCode
-            // 
-            this.txtFilFSKCode.Location = new System.Drawing.Point(44, 17);
-            this.txtFilFSKCode.Name = "txtFilFSKCode";
-            this.txtFilFSKCode.Size = new System.Drawing.Size(50, 20);
-            this.txtFilFSKCode.TabIndex = 1;
-            this.txtFilFSKCode.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(6, 20);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(32, 13);
-            this.label66.TabIndex = 0;
-            this.label66.Text = "Code";
-            // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button10.Image = global::Koberce.Properties.Resources.xlsx_win_icon;
-            this.button10.Location = new System.Drawing.Point(131, 582);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(116, 58);
-            this.button10.TabIndex = 34;
-            this.button10.Text = "&Export";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Image = global::Koberce.Properties.Resources.cancel_48;
-            this.button11.Location = new System.Drawing.Point(1122, 582);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(157, 58);
-            this.button11.TabIndex = 32;
-            this.button11.Text = "&Remove selected";
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.btnRemoveSel_Click);
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button12.Image = global::Koberce.Properties.Resources.refresh_icon;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(6, 582);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(119, 58);
-            this.button12.TabIndex = 30;
-            this.button12.Text = "&Refresh";
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnImportFromSK
             // 
             this.btnImportFromSK.Name = "btnImportFromSK";
-            this.btnImportFromSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportFromSK.Size = new System.Drawing.Size(124, 22);
             this.btnImportFromSK.Text = "fromSK";
             this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
-            // 
-            // Grid
-            // 
-            this.Grid.AllowUserToAddRows = false;
-            this.Grid.AllowUserToDeleteRows = false;
-            this.Grid.AllowUserToOrderColumns = true;
-            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(6, 86);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(1273, 444);
-            this.Grid.TabIndex = 4;
-            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            // 
-            // gridSell
-            // 
-            this.gridSell.AllowUserToAddRows = false;
-            this.gridSell.AllowUserToDeleteRows = false;
-            this.gridSell.AllowUserToOrderColumns = true;
-            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSell.Location = new System.Drawing.Point(6, 85);
-            this.gridSell.Name = "gridSell";
-            this.gridSell.Size = new System.Drawing.Size(1273, 445);
-            this.gridSell.TabIndex = 13;
-            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            // 
-            // gridSK
-            // 
-            this.gridSK.AllowUserToAddRows = false;
-            this.gridSK.AllowUserToDeleteRows = false;
-            this.gridSK.AllowUserToOrderColumns = true;
-            this.gridSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSK.Location = new System.Drawing.Point(6, 85);
-            this.gridSK.Name = "gridSK";
-            this.gridSK.Size = new System.Drawing.Size(1273, 445);
-            this.gridSK.TabIndex = 23;
-            this.gridSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
-            // gridFromSK
-            // 
-            this.gridFromSK.AllowUserToAddRows = false;
-            this.gridFromSK.AllowUserToDeleteRows = false;
-            this.gridFromSK.AllowUserToOrderColumns = true;
-            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
-            this.gridFromSK.Name = "gridFromSK";
-            this.gridFromSK.Size = new System.Drawing.Size(1273, 445);
-            this.gridFromSK.TabIndex = 31;
-            // 
-            // gridInventory
-            // 
-            this.gridInventory.AllowUserToAddRows = false;
-            this.gridInventory.AllowUserToDeleteRows = false;
-            this.gridInventory.AllowUserToOrderColumns = true;
-            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventory.Location = new System.Drawing.Point(6, 85);
-            this.gridInventory.Name = "gridInventory";
-            this.gridInventory.Size = new System.Drawing.Size(1273, 445);
-            this.gridInventory.TabIndex = 14;
-            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
-            // gridBatch
-            // 
-            this.gridBatch.AllowUserToAddRows = false;
-            this.gridBatch.AllowUserToDeleteRows = false;
-            this.gridBatch.AllowUserToOrderColumns = true;
-            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBatch.Location = new System.Drawing.Point(170, 318);
-            this.gridBatch.Name = "gridBatch";
-            this.gridBatch.Size = new System.Drawing.Size(1112, 277);
-            this.gridBatch.TabIndex = 2;
-            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
-            // gridQueryRes
-            // 
-            this.gridQueryRes.AllowUserToAddRows = false;
-            this.gridQueryRes.AllowUserToDeleteRows = false;
-            this.gridQueryRes.AllowUserToOrderColumns = true;
-            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
-            this.gridQueryRes.Name = "gridQueryRes";
-            this.gridQueryRes.Size = new System.Drawing.Size(1279, 315);
-            this.gridQueryRes.TabIndex = 5;
-            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainForm
             // 
@@ -2910,43 +2944,43 @@
             this.groupBox2.PerformLayout();
             this.grpFilter.ResumeLayout(false);
             this.grpFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.tabSold.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
             this.tabSK.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.tabInventory.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.tabbatch.ResumeLayout(false);
-            this.tabbatch.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.tabExecQuery.ResumeLayout(false);
-            this.tabExecQuery.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.MainToolbar.ResumeLayout(false);
-            this.MainToolbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
             this.tabFromSK.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
+            this.tabInventory.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
+            this.tabbatch.ResumeLayout(false);
+            this.tabbatch.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
+            this.tabExecQuery.ResumeLayout(false);
+            this.tabExecQuery.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
+            this.MainToolbar.ResumeLayout(false);
+            this.MainToolbar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3192,6 +3226,9 @@
         private System.Windows.Forms.Button button12;
         private CustomDataGridView gridFromSK;
         private System.Windows.Forms.ToolStripMenuItem btnImportFromSK;
+        private System.Windows.Forms.ToolStripMenuItem btnUploadSK;
+        private System.Windows.Forms.ToolStripMenuItem btnDownloadSK;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
 
