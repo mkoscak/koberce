@@ -219,6 +219,7 @@
     <Content Include="Resources\paper_content_pencil_48.png" />
     <Content Include="Resources\pencil_48.png" />
     <None Include="Resources\refresh-icon.png" />
+    <None Include="Resources\print-icon.png" />
     <Content Include="Resources\refresh_48.png" />
     <None Include="Resources\scanner.PNG" />
     <None Include="Resources\scanner.bmp" />
