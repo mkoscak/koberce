@@ -11,8 +11,10 @@ namespace Koberce
     {
         DataItem Item { get; set; }
         Font Times14Bold { get; set; }
+        Font Arial11Bold { get; set; }
+        Font Arial14Bold { get; set; }
         Font Times14 { get; set; }
-        Font Arial { get; set; }
+        Font Times18Bold { get; set; }
         Font Code128 { get; set; }
 
         public PrintDoc(DataItem item)
@@ -20,9 +22,11 @@ namespace Koberce
             this.Item = item;
 
             Times14Bold = new Font("Times New Roman", 14, FontStyle.Bold);
+            Arial11Bold = new Font("Arial", 11, FontStyle.Bold);
+            Arial14Bold = new Font("Arial", 14, FontStyle.Bold);
             Times14 = new Font("Times New Roman", 14, FontStyle.Regular);
-            Arial = new Font("Arial", 16);
-            Code128 = new Font("Code 128", 16);
+            Times18Bold = new Font("Times New Roman", 16, FontStyle.Bold);
+            Code128 = new Font("Code 128", 55);
         }
 
         protected override void OnBeginPrint(PrintEventArgs e)
@@ -51,10 +55,14 @@ namespace Koberce
             var format = new StringFormat();
             format.Alignment = StringAlignment.Center;
 
-            e.Graphics.DrawString(Item.Name, Times14Bold, Brushes.Black, new RectangleF(10, 250, r.Width - 20, 50), format);
-            e.Graphics.DrawString(Item.Country, Times14, Brushes.Black, new RectangleF(10, 270, r.Width - 20, 50), format);
-            e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Times14Bold, Brushes.Black, new RectangleF(10, 290, r.Width - 20, 50), format);
-            e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Times14Bold, Brushes.Black, new RectangleF(10, 310, r.Width - 20, 50), format);
+            e.Graphics.DrawString(Item.Name, Times14Bold, Brushes.Black, new RectangleF(10, 260, r.Width - 20, 50), format);
+            e.Graphics.DrawString(Item.Country, Times14, Brushes.Black, new RectangleF(10, 280, r.Width - 20, 50), format);
+            e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Arial14Bold, Brushes.Black, new RectangleF(10, 300, r.Width - 20, 50), format);
+            e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(10, 320, r.Width - 20, 50), format);
+            // ciarovy kod
+            e.Graphics.DrawString(Item.GlobalNumber, Code128, Brushes.Black, new RectangleF(37, 377, r.Width - 20, 150));
+            e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(53, 448, r.Width - 20, 150));
+            e.Graphics.DrawString(string.Format("{2}, {0} x {1}", Item.Length, Item.Width, Item.SupplierNr), Arial11Bold, Brushes.Black, new RectangleF(47, 470, r.Width - 20, 50));
         }
     }
 }
