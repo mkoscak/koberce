@@ -122,7 +122,7 @@ namespace Koberce
                 return;
             int w = int.Parse(txtWidth.Text);
             int l = int.Parse(txtLegnth.Text);
-            double price = double.Parse(txtQMPrice.Text);
+            double price = double.Parse(Common.CleanPrice(txtQMPrice.Text));
 
             txtEKNetto.Text = txtQMPrice.Text;
             txtVKNetto.Text = Math.Round(w * l / 10000.0 * price * Properties.Settings.Default.PriceCoef).ToString();

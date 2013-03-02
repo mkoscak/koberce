@@ -15,6 +15,9 @@ namespace Koberce
         OperationType OpType = OperationType.Sold;
         DBProvider db;
 
+        // ret codes
+        public List<string> ImportedCodes { get; set; }
+
         public WaitForm(DBProvider db, OperationType opType)
         {
             this.OpType = opType;
@@ -27,6 +30,8 @@ namespace Koberce
 
         void ImportSold()
         {
+            ImportedCodes = new List<string>();
+
             var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\SOLD.TXT");
             if (lines != null && (lines.Length % 3) == 0)
             {
@@ -40,7 +45,8 @@ namespace Koberce
                     if (tmp.Length == 3)
                         sellDate = string.Format("{0}-{1}-{2}", tmp[2], tmp[1], tmp[0]);
 
-                    db.SoldItem(code, sellDate, sellPrice);
+                    db.InsertSoldItem(code, sellDate, sellPrice);
+                    ImportedCodes.Add(code);
                 }
             }
         }
