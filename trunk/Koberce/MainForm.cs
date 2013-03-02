@@ -695,11 +695,39 @@ namespace Koberce
 
         private void btnSetSold_Click(object sender, EventArgs e)
         {
-            var codes = GetSelectedCodes();
+            var codesOrig = GetSelectedCodes();
 
-            if (MessageBox.Show(this, string.Format("Do you really want to sold {0} selected item(s)?", codes.Length), "Sold item(s)", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            //odstranime uz predane 
+            List<string> sold = new List<string>();
+            foreach (var code in codesOrig)
+            {
+                var item = db.GetItem(code);
+                if (item.Quantity == "0")
+                    sold.Add(code);
+            }
+            var codes = codesOrig.Where(c => !sold.Contains(c)).ToArray();
+
+            if (codes.Length == 0)
+            {
+                if (MessageBox.Show(this, "All items are already sold, proceed anyway?", "Sold items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+                else
+                    codes = codesOrig;
+            }
+            else if (sold.Count > 0)
+            {
+                if (MessageBox.Show(this, string.Format("There are {0} already sold items, should these items be removed from solding?", sold.Count), "Sold items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    codes = codesOrig;                    
+            }
+
+            if (MessageBox.Show(this, string.Format("Do you really want to sold {0} specified item(s)?", codes.Length), "Sold item(s)", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
+            SoldItems(codes);
+        }
+
+        private void SoldItems(string[] codes)
+        {
             try
             {
                 Progress p = new Progress(0, 100, "Selling items..", "checking..", SoldItems, RefreshItems, codes, true, true);
@@ -715,21 +743,11 @@ namespace Koberce
         {
             var codes = userData as string[];
 
-            //odstranime uz predane 
-            List<string> sold = new List<string>();
-            foreach (var code in codes)
-            {
-                var item = db.GetItem(code);
-                if (item.Quantity == "0")
-                    sold.Add(code);
-            }
-            codes = codes.Where(c => !sold.Contains(c)).ToArray();
-
-            bw.ReportProgress(0, "Setting quantity to 0..");
+            /*bw.ReportProgress(0, "Setting quantity to 0..");
             string command = string.Format("update {0} set quantity = 0 where code in ({1})", DBProvider.TableNames[0], string.Join(",", codes));
-            db.ExecuteNonQuery(command);
+            db.ExecuteNonQuery(command);*/
 
-            //foreach (var code in codes)
+            bw.ReportProgress(0, "Updating..");
             for (int i = 0; i < codes.Length; i++ )
             {
                 var code = codes[i];
@@ -744,7 +762,7 @@ namespace Koberce
                 if (param.StartsWith("/"))
                     param = param.TrimStart('/');
                 if (param.Contains("XXX"))
-                    param = param.Replace("XXX", codes[0]);
+                    param = param.Replace("XXX", "test"/*codes[0]*/);
                 try
                 {
                     Process.Start(web+param);
@@ -1201,19 +1219,24 @@ namespace Koberce
         }
 
         private OperationType CurrOpType = OperationType.Sold;
-        private void ImportScannerData()
+        private List<string> ImportScannerData()
         {
             if (InvokeRequired)
-                Invoke(new Action(ImportScannerData));
+                Invoke((MethodInvoker)delegate
+                {
+                    ImportScannerData();
+                });
 
             //if (MessageBox.Show(this, "Do you want to import " + CurrOpType.ToString() + " data?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
+            //{
                 WaitForm wf = new WaitForm(db, CurrOpType);
                 wf.ShowDialog(this);
-            }
+            //}
 
             RefreshItems();
             this.Focus();
+
+            return wf.ImportedCodes;
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -1259,9 +1282,10 @@ namespace Koberce
             try
             {
                 CurrOpType = OperationType.Sold;
-                ImportScannerData();
-
+                var imported = ImportScannerData();
                 MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                SoldItems(imported.ToArray());
             }
             catch (Exception ex)
             {
@@ -1324,11 +1348,15 @@ namespace Koberce
             }
 
             var item = db.GetItem(codes[0]);
-            //new PrintDoc(item).Print();
-
             PrintPreviewDialog ppd = new PrintPreviewDialog();
             ppd.Document = new PrintDoc(item);
             ppd.Show();
+            /*
+            foreach (var item in codes)
+            {
+                var toprint = db.GetItem(item);
+                new PrintDoc(toprint).Print();
+            }*/
         }
     }
 

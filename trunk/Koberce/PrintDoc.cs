@@ -10,23 +10,26 @@ namespace Koberce
     class PrintDoc : PrintDocument
     {
         DataItem Item { get; set; }
-        Font Times14Bold { get; set; }
-        Font Arial11Bold { get; set; }
-        Font Arial14Bold { get; set; }
-        Font Times14 { get; set; }
-        Font Times18Bold { get; set; }
-        Font Code128 { get; set; }
+        static Font Times14Bold { get; set; }
+        static Font Arial11Bold { get; set; }
+        static Font Arial14Bold { get; set; }
+        static Font Times14 { get; set; }
+        static Font Times18Bold { get; set; }
+        static Font Code128 { get; set; }
 
-        public PrintDoc(DataItem item)
+        static PrintDoc()
         {
-            this.Item = item;
-
             Times14Bold = new Font("Times New Roman", 14, FontStyle.Bold);
             Arial11Bold = new Font("Arial", 11, FontStyle.Bold);
             Arial14Bold = new Font("Arial", 14, FontStyle.Bold);
             Times14 = new Font("Times New Roman", 14, FontStyle.Regular);
             Times18Bold = new Font("Times New Roman", 16, FontStyle.Bold);
             Code128 = new Font("Code 128", 55);
+        }
+
+        public PrintDoc(DataItem item)
+        {
+            this.Item = item;
         }
 
         protected override void OnBeginPrint(PrintEventArgs e)
