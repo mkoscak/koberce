@@ -762,7 +762,11 @@ namespace Koberce
                 if (param.StartsWith("/"))
                     param = param.TrimStart('/');
                 if (param.Contains("XXX"))
-                    param = param.Replace("XXX", "test"/*codes[0]*/);
+#if DEBUG
+                    param = param.Replace("XXX", "test");
+#else
+                    param = param.Replace("XXX", code);
+#endif
                 try
                 {
                     Process.Start(web+param);
