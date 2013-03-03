@@ -14,6 +14,7 @@ using OfficeOpenXml.Style;
 using System.Diagnostics;
 using System.Net;
 using System.Threading;
+using System.Drawing.Printing;
 
 namespace Koberce
 {
@@ -1205,10 +1206,11 @@ namespace Koberce
                 proc.Start();
                 proc.WaitForExit();
 
+                // TODO odkomentovat a najst prikaz na mazanie
                 // zmazanie suborov zo skenera
-                proc.StartInfo.Arguments = "comport:1 /ptaddr:A /exit /delete:FROMSK.TXT,SK.TXT,INVENTOR.TXT,SOLD.TXT";
+                /*proc.StartInfo.Arguments = "comport:1 /ptaddr:A /exit /delete:FROMSK.TXT,SK.TXT,INVENTOR.TXT,SOLD.TXT";
                 proc.Start();
-                proc.WaitForExit();
+                proc.WaitForExit();*/
             }
             catch (Exception ex)
             {
@@ -1351,16 +1353,23 @@ namespace Koberce
                 return;
             }
 
-            var item = db.GetItem(codes[0]);
+            /*var item = db.GetItem(codes[0]);
             PrintPreviewDialog ppd = new PrintPreviewDialog();
             ppd.Document = new PrintDoc(item);
-            ppd.Show();
-            /*
-            foreach (var item in codes)
+            ppd.Show();*/
+
+            PrintDialog pd = new PrintDialog();
+            pd.AllowSelection = true;
+            if (pd.ShowDialog() == DialogResult.OK)
             {
-                var toprint = db.GetItem(item);
-                new PrintDoc(toprint).Print();
-            }*/
+                foreach (var item in codes)
+                {
+                    var toprint = db.GetItem(item);
+                    var pdoc = new PrintDoc(toprint);
+                    pdoc.PrinterSettings = pd.PrinterSettings;
+                    pdoc.Print();
+                }
+            }
         }
     }
 
