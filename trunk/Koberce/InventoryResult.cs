@@ -25,12 +25,12 @@ namespace Koberce
 
         private void btnExportMain_Click(object sender, EventArgs e)
         {
-            Common.ExportDataGrid(gridMissingMain.DataSource, string.Format("inventory_main_missing_{0}", DateTime.Now.ToString("yyyyMMdd")));
+            Common.ExportDataGrid(gridMissingMain.DataSource, string.Format("inventory_main_missing_{0}", DateTime.Now.ToString("yyyyMMdd")), false);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Common.ExportDataGrid(gridMissingInv.DataSource, string.Format("inventory_inv_missing_{0}", DateTime.Now.ToString("yyyyMMdd")));
+            Common.ExportDataGrid(gridMissingInv.DataSource, string.Format("inventory_inv_missing_{0}", DateTime.Now.ToString("yyyyMMdd")), false);
         }
     }
 }

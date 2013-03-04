@@ -20,7 +20,7 @@ namespace Koberce
         static string ExportTitle;
         static bool IsSold;
         static int SoldOffset;
-        public static void ExportDataGrid(object ds, string fileName)
+        public static void ExportDataGrid(object ds, string fileName, bool sold)
         {
             if (ds == null)
                 return;
@@ -38,13 +38,7 @@ namespace Koberce
 
             IsSold = false;
             SoldOffset = 0;
-            if (fileName.ToLower().Contains("sold"))
-            {
-                IsSold = true;
-                SoldOffset = 1;
-            }
-
-            if (fileName.ToLower().Contains("exh"))
+            if (sold)
             {
                 IsSold = true;
                 SoldOffset = 1;
