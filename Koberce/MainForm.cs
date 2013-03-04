@@ -25,6 +25,7 @@ namespace Koberce
         SK,
         FROMSK,
         INVENTORY,
+        EXHIBITIONS,
         BATCH,
         CUSTOMQUERY
     }
@@ -48,6 +49,8 @@ namespace Koberce
                     return gridFromSK;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return gridInventory;
+                else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                    return gridExh;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
                     return gridBatch;
                 else if (tabControl1.SelectedIndex == (int)TABS.CUSTOMQUERY)
@@ -76,6 +79,8 @@ namespace Koberce
                     return lblFromSKAll;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvAllCount;
+                else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                    return lblExhAll;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
                     return lblBatchItemCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.CUSTOMQUERY)
@@ -104,6 +109,8 @@ namespace Koberce
                     return lblFromSKSel;
                 else if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                     return lblInvSelCount;
+                else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                    return lblExhSel;
                 else if (tabControl1.SelectedIndex == (int)TABS.BATCH)
                     return lblBatchSelCount;
                 else if (tabControl1.SelectedIndex == (int)TABS.CUSTOMQUERY)
@@ -208,7 +215,7 @@ namespace Koberce
                 return;
 
             string condition = GetFilter();
-            if (tabControl1.SelectedIndex > (int)TABS.INVENTORY)
+            if (tabControl1.SelectedIndex > (int)TABS.EXHIBITIONS)
                 return;
 
             DataSet ds = null;
@@ -219,6 +226,9 @@ namespace Koberce
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
+            else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                // exh1 ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
+                ds = db.ExecuteQuery(string.Format("select A.CODE, A.EXHIBITIONNAME, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.EXHIBITIONS], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.SK || tabControl1.SelectedIndex == (int)TABS.FROMSK)
                 // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[tabControl1.SelectedIndex], DBProvider.TableNames[(int)TABS.MAIN], condition));
@@ -234,6 +244,8 @@ namespace Koberce
             LabelSelected.Text = GetSelectedRowCount().ToString();
             if (tabControl1.SelectedIndex == (int)TABS.SOLD)
                 lblSellPriceSum.Text = GetSellSum(ds.Tables[0]).ToString();
+            if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                lblExhSum.Text = GetSellSum(ds.Tables[0]).ToString();
         }
 
         double GetSellSum(DataTable table)
@@ -332,7 +344,13 @@ namespace Koberce
             }
             else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
             {
-                EditSold frm = new EditSold(db, DBProvider.TableNames[1], code);
+                EditSold frm = new EditSold(db, DBProvider.TableNames[(int)TABS.SOLD], code, false);
+                if (frm.ShowDialog() == DialogResult.OK)
+                    btnToolRefresh.PerformClick();
+            }
+            else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+            {
+                EditSold frm = new EditSold(db, DBProvider.TableNames[(int)TABS.EXHIBITIONS], code, true);
                 if (frm.ShowDialog() == DialogResult.OK)
                     btnToolRefresh.PerformClick();
             }
@@ -452,6 +470,23 @@ namespace Koberce
                 AddFilter(sb, txtFilSellPrice.Text, "SELLPRICE");
                 AddFilter(sb, txtFilSoldLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
+            }
+            else
+                if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+            {
+                AddFilter(sb, txtExhFilCode.Text, "A.CODE");
+                AddFilter(sb, txtExhFilTitle.Text, "ITEMTITLE");
+                AddFilter(sb, txtExhFilCountry.Text, "COUNTRY");
+                AddFilter(sb, txtexhFilSupplier.Text, "SUPPLIER");
+                AddFilter(sb, txtExhFilSupNr.Text, "SUPPLIER_NR");
+                AddFilter(sb, txtExhFilVKNetto.Text, "VK_NETTO");
+                if (dtpExhFilFrom.Checked)
+                    AddFilterDate(sb, dtpExhFilFrom.Value.ToString(DateTimeFormat), "SELLDATE", ">=");
+                if (dtpExhFilTo.Checked)
+                    AddFilterDate(sb, dtpExhFilTo.Value.ToString(DateTimeFormat), "SELLDATE", "<=");
+                AddFilter(sb, txtExhFilSellPrice.Text, "SELLPRICE");
+                AddFilter(sb, txtExhFilLength.Text, "LENGTH");
+                AddFilter(sb, txtExhFilWidth.Text, "WIDTH");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -812,6 +847,13 @@ namespace Koberce
                     refresh = true;
                     break;
 
+                case (int)TABS.EXHIBITIONS: // EXHIBITIONS
+                    btnToolEdit.Enabled = true;
+                    btnToolRemove.Enabled = true;
+                    btnToolExport.Enabled = true;
+                    refresh = true;
+                    break;
+
                 case (int)TABS.SK: // SK
                     btnToolRemove.Enabled = true;
                     btnToolExport.Enabled = true;
@@ -980,6 +1022,10 @@ namespace Koberce
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_sold{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
 
+                case (int)TABS.EXHIBITIONS:
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_exhibitions{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    break;
+
                 case (int)TABS.SK:
                     Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_SK{0}", DateTime.Now.ToString("yyyyMMdd")));
                     break;
@@ -1073,6 +1119,21 @@ namespace Koberce
                 dtSellDateFrom.Checked = false;
                 dtSellDateTo.Checked = false;
                 txtFilSellPrice.Text = string.Empty;
+            }
+            else
+            if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+            {
+                txtExhFilCode.Text = string.Empty;
+                txtExhFilTitle.Text = string.Empty;
+                txtExhFilCountry.Text = string.Empty;
+                txtexhFilSupplier.Text = string.Empty;
+                txtExhFilVKNetto.Text = string.Empty;
+                txtExhFilSellPrice.Text = string.Empty;
+                dtpExhFilFrom.Checked = false;
+                dtpExhFilTo.Checked = false;
+                txtExhFilSupNr.Text = string.Empty;
+                txtExhFilLength.Text = string.Empty;
+                txtExhFilWidth.Text = string.Empty;
             }
             else 
             if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -1369,6 +1430,103 @@ namespace Koberce
                     pdoc.PrinterSettings = pd.PrinterSettings;
                     pdoc.Print();
                 }
+            }
+        }
+
+        private void btnExhibition_Click(object sender, EventArgs e)
+        {
+            var codesOrig = GetSelectedCodes();
+
+            //odstranime uz predane 
+            List<string> sold = new List<string>();
+            foreach (var code in codesOrig)
+            {
+                var item = db.GetItem(code);
+                if (item.Quantity == "0")
+                    sold.Add(code);
+            }
+            var codes = codesOrig.Where(c => !sold.Contains(c)).ToArray();
+
+            if (codes.Length == 0)
+            {
+                if (MessageBox.Show(this, "All items are already sold/away, proceed anyway?", "Exhibition items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+                else
+                    codes = codesOrig;
+            }
+            else if (sold.Count > 0)
+            {
+                if (MessageBox.Show(this, string.Format("There are {0} already sold/away items, should these items be removed from exhibition?", sold.Count), "Exhibition items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    codes = codesOrig;
+            }
+
+            if (MessageBox.Show(this, string.Format("Do you really want to exhibition {0} specified item(s)?", codes.Length), "Exhibition items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            ExhibitionItems(codes);
+        }
+
+        string CurrentExhibitionName = string.Empty;
+        private void ExhibitionItems(string[] codes)
+        {
+            try
+            {
+                CurrentExhibitionName = string.Empty;
+                TextInputForm frm = new TextInputForm("Enter an exhibition name", "");
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    CurrentExhibitionName = frm.ReturnText;
+
+                    Progress p = new Progress(0, 100, "Exhibition items..", "checking..", ExhibitionItems, RefreshItems, codes, true, true);
+                    p.StartWorker();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.ToString(), "Error while updating!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExhibitionItems(BackgroundWorker bw, DoWorkEventArgs e, object userData)
+        {
+            var codes = userData as string[];
+
+            bw.ReportProgress(0, "Updating..");
+            for (int i = 0; i < codes.Length; i++)
+            {
+                var code = codes[i];
+                var item = db.GetItem(code);
+
+                db.ExhItem(item.GlobalNumber, CurrentExhibitionName, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day), item.VkNetto);
+
+                var web = Properties.Settings.Default.WebServer;
+                if (!web.EndsWith("/"))
+                    web += "/";
+                var param = "pages/stiahni-z-predaja.html?id=XXX";
+                if (param.StartsWith("/"))
+                    param = param.TrimStart('/');
+                if (param.Contains("XXX"))
+#if DEBUG
+                    param = param.Replace("XXX", "test");
+#else
+                    param = param.Replace("XXX", code);
+#endif
+                try
+                {
+                    Process.Start(web + param);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Exception occured: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (bw.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                bw.ReportProgress((int)(((double)(i + 1.0) / codes.Length) * 100.0));
             }
         }
     }

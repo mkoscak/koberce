@@ -130,6 +130,13 @@ namespace Koberce.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ext {
+            get {
+                object obj = ResourceManager.GetObject("ext", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap file_import_icon {
             get {
                 object obj = ResourceManager.GetObject("file-import-icon", resourceCulture);

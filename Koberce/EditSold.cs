@@ -12,12 +12,17 @@ namespace Koberce
     public partial class EditSold : Form
     {
         private DBProvider db;
+        private bool Exhibition { get; set; }
 
-        public EditSold(DBProvider db, string tableName, string code)
+        public EditSold(DBProvider db, string tableName, string code, bool exh)
         {
             InitializeComponent();
             
             this.db = db;
+            this.Exhibition = exh;
+
+            if (!Exhibition)
+                txtExhibition.Enabled = false;
             
             if (code == null)
             {
@@ -25,7 +30,11 @@ namespace Koberce
             }
             else
             {
-                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMTITLE, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE, A.SELLDATE, A.SELLPRICE from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code));
+                string sExh = string.Empty;
+                if (Exhibition)
+                    sExh = ", EXHIBITIONNAME";
+
+                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMTITLE, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE, A.SELLDATE, A.SELLPRICE {3} from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code, sExh));
                 if (ds != null && ds.Tables.Count > 0)
                 {
                     var vals = ds.Tables[0].Rows[0].ItemArray;
@@ -39,6 +48,8 @@ namespace Koberce
                     txtDate.Text = vals[7].ToString();
                     txtSellDate.Text = vals[8].ToString();
                     txtSellPrice.Text = vals[9].ToString();
+                    if (Exhibition)
+                        txtExhibition.Text = vals[10].ToString();
                 }
             }
         }
@@ -47,9 +58,19 @@ namespace Koberce
         {
             try
             {
-                db.UpdateSold(txtCode.Text,
-                        txtSellDate.Text,
-                        txtSellPrice.Text);
+                if (!Exhibition)
+                {
+                    db.UpdateSold(txtCode.Text,
+                            txtSellDate.Text,
+                            txtSellPrice.Text);
+                }
+                else
+                {
+                    db.UpdateExh(txtCode.Text,
+                            txtSellDate.Text,
+                            txtSellPrice.Text,
+                            txtExhibition.Text);
+                }
 
                 MessageBox.Show(this, "Data written succesfully!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
