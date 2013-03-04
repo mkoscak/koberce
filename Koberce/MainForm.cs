@@ -476,6 +476,7 @@ namespace Koberce
             {
                 AddFilter(sb, txtExhFilCode.Text, "A.CODE");
                 AddFilter(sb, txtExhFilTitle.Text, "ITEMTITLE");
+                AddFilter(sb, txtExhFilExName.Text, "EXHIBITIONNAME");
                 AddFilter(sb, txtExhFilCountry.Text, "COUNTRY");
                 AddFilter(sb, txtexhFilSupplier.Text, "SUPPLIER");
                 AddFilter(sb, txtExhFilSupNr.Text, "SUPPLIER_NR");
@@ -789,7 +790,7 @@ namespace Koberce
                 var code = codes[i];
                 var item = db.GetItem(code);
 
-                db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day), item.VkNetto);
+                db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year.ToString("00"), DateTime.Now.Month.ToString("00"), DateTime.Now.Day), item.VkNetto);
 
                 var web = Properties.Settings.Default.WebServer;
                 if (!web.EndsWith("/"))
@@ -1015,31 +1016,31 @@ namespace Koberce
             switch (tabControl1.SelectedIndex)
             {
                 case (int)TABS.MAIN:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_main{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_main{0}", DateTime.Now.ToString("yyyyMMdd")), false);
                     break;
 
                 case (int)TABS.SOLD:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_sold{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_sold{0}", DateTime.Now.ToString("yyyyMMdd")), true);
                     break;
 
                 case (int)TABS.EXHIBITIONS:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_exhibitions{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_exhibitions{0}", DateTime.Now.ToString("yyyyMMdd")), true);
                     break;
 
                 case (int)TABS.SK:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_SK{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_SK{0}", DateTime.Now.ToString("yyyyMMdd")), false);
                     break;
 
                 case (int)TABS.FROMSK:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_fromSK{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_fromSK{0}", DateTime.Now.ToString("yyyyMMdd")), false);
                     break;
 
                 case (int)TABS.INVENTORY:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_inventory{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_inventory{0}", DateTime.Now.ToString("yyyyMMdd")), false);
                     break;
 
                 case (int)TABS.CUSTOMQUERY:
-                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_query{0}", DateTime.Now.ToString("yyyyMMdd")));
+                    Common.ExportDataGrid(DataGrid.DataSource, string.Format("global_query{0}", DateTime.Now.ToString("yyyyMMdd")), false);
                     break;
 
                 default:
@@ -1125,6 +1126,7 @@ namespace Koberce
             {
                 txtExhFilCode.Text = string.Empty;
                 txtExhFilTitle.Text = string.Empty;
+                txtExhFilExName.Text = string.Empty;
                 txtExhFilCountry.Text = string.Empty;
                 txtexhFilSupplier.Text = string.Empty;
                 txtExhFilVKNetto.Text = string.Empty;
@@ -1469,6 +1471,12 @@ namespace Koberce
         string CurrentExhibitionName = string.Empty;
         private void ExhibitionItems(string[] codes)
         {
+            if (codes == null || codes.Length == 0)
+            {
+                MessageBox.Show(this, "No items to import!", "Import exhibitions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             try
             {
                 CurrentExhibitionName = string.Empty;
@@ -1497,7 +1505,7 @@ namespace Koberce
                 var code = codes[i];
                 var item = db.GetItem(code);
 
-                db.ExhItem(item.GlobalNumber, CurrentExhibitionName, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day), item.VkNetto);
+                db.ExhItem(item.GlobalNumber, CurrentExhibitionName, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month.ToString("00"), DateTime.Now.Day.ToString("00")), item.VkNetto);
 
                 var web = Properties.Settings.Default.WebServer;
                 if (!web.EndsWith("/"))
@@ -1527,6 +1535,22 @@ namespace Koberce
                     break;
                 }
                 bw.ReportProgress((int)(((double)(i + 1.0) / codes.Length) * 100.0));
+            }
+        }
+
+        private void btnImportExh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.Exhibitions;
+                var imported = ImportScannerData();
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ExhibitionItems(imported.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

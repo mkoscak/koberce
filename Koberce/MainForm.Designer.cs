@@ -540,6 +540,7 @@
             this.button60 = new System.Windows.Forms.Button();
             this.button61 = new System.Windows.Forms.Button();
             this.button62 = new System.Windows.Forms.Button();
+            this.btnImportExh = new System.Windows.Forms.ToolStripMenuItem();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridSK = new Koberce.CustomDataGridView();
@@ -556,6 +557,8 @@
             this.customDataGridView6 = new Koberce.CustomDataGridView();
             this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.customDataGridView8 = new Koberce.CustomDataGridView();
+            this.txtExhFilExName = new System.Windows.Forms.TextBox();
+            this.label166 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -2666,6 +2669,8 @@
             // 
             this.groupBox27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox27.Controls.Add(this.txtExhFilExName);
+            this.groupBox27.Controls.Add(this.label166);
             this.groupBox27.Controls.Add(this.txtExhFilLength);
             this.groupBox27.Controls.Add(this.label172);
             this.groupBox27.Controls.Add(this.txtExhFilWidth);
@@ -3510,7 +3515,8 @@
             this.btnImportSold,
             this.btnImportInventory,
             this.btnImportSK,
-            this.btnImportFromSK});
+            this.btnImportFromSK,
+            this.btnImportExh});
             this.btnToolStripImport.Image = global::Koberce.Properties.Resources.file_import_icon;
             this.btnToolStripImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnToolStripImport.Name = "btnToolStripImport";
@@ -3521,7 +3527,7 @@
             // btnImportSold
             // 
             this.btnImportSold.Name = "btnImportSold";
-            this.btnImportSold.Size = new System.Drawing.Size(124, 22);
+            this.btnImportSold.Size = new System.Drawing.Size(131, 22);
             this.btnImportSold.Tag = "";
             this.btnImportSold.Text = "Sold";
             this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
@@ -3529,7 +3535,7 @@
             // btnImportInventory
             // 
             this.btnImportInventory.Name = "btnImportInventory";
-            this.btnImportInventory.Size = new System.Drawing.Size(124, 22);
+            this.btnImportInventory.Size = new System.Drawing.Size(131, 22);
             this.btnImportInventory.Tag = "";
             this.btnImportInventory.Text = "Inventory";
             this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
@@ -3537,14 +3543,14 @@
             // btnImportSK
             // 
             this.btnImportSK.Name = "btnImportSK";
-            this.btnImportSK.Size = new System.Drawing.Size(124, 22);
+            this.btnImportSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportSK.Text = "SK";
             this.btnImportSK.Click += new System.EventHandler(this.btnImportSK_Click);
             // 
             // btnImportFromSK
             // 
             this.btnImportFromSK.Name = "btnImportFromSK";
-            this.btnImportFromSK.Size = new System.Drawing.Size(124, 22);
+            this.btnImportFromSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportFromSK.Text = "fromSK";
             this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
             // 
@@ -6024,6 +6030,13 @@
             this.button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button62.UseVisualStyleBackColor = true;
             // 
+            // btnImportExh
+            // 
+            this.btnImportExh.Name = "btnImportExh";
+            this.btnImportExh.Size = new System.Drawing.Size(131, 22);
+            this.btnImportExh.Text = "exhibitions";
+            this.btnImportExh.Click += new System.EventHandler(this.btnImportExh_Click);
+            // 
             // Grid
             // 
             this.Grid.AllowUserToAddRows = false;
@@ -6257,6 +6270,23 @@
             this.customDataGridView8.Name = "customDataGridView8";
             this.customDataGridView8.Size = new System.Drawing.Size(1244, 445);
             this.customDataGridView8.TabIndex = 13;
+            // 
+            // txtExhFilExName
+            // 
+            this.txtExhFilExName.Location = new System.Drawing.Point(925, 16);
+            this.txtExhFilExName.Name = "txtExhFilExName";
+            this.txtExhFilExName.Size = new System.Drawing.Size(107, 20);
+            this.txtExhFilExName.TabIndex = 33;
+            this.txtExhFilExName.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Location = new System.Drawing.Point(838, 19);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(81, 13);
+            this.label166.TabIndex = 32;
+            this.label166.Text = "Exhibition name";
             // 
             // MainForm
             // 
@@ -6899,6 +6929,9 @@
         private System.Windows.Forms.Button button61;
         private System.Windows.Forms.Button button62;
         private CustomDataGridView customDataGridView8;
+        private System.Windows.Forms.ToolStripMenuItem btnImportExh;
+        private System.Windows.Forms.TextBox txtExhFilExName;
+        private System.Windows.Forms.Label label166;
     }
 }
 

@@ -283,6 +283,12 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
+        internal void InsertExhItem(string code, string exhName, string sellDate, string sellPrice)
+        {
+            var command = string.Format("insert or replace into {0} (code,exhibitionname,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\",\"{4}\")", DBProvider.TableNames[5], code, exhName, sellDate, sellPrice);
+            ExecuteNonQuery(command);
+        }
+
         internal void UpdateExh(string p, string p_2, string p_3, string p_4)
         {
             throw new NotImplementedException();

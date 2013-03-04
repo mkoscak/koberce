@@ -51,6 +51,22 @@ namespace Koberce
             }
         }
 
+        void ImportExh()
+        {
+            ImportedCodes = new List<string>();
+
+            var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\EXH.TXT");
+            if (lines != null)
+            {
+                var dt = DateTime.Now;
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    var code = lines[i];
+                    ImportedCodes.Add(code);
+                }
+            }
+        }
+
         void ImportInventory()
         {
             var linesInv = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\INVENTOR.TXT");
@@ -71,6 +87,10 @@ namespace Koberce
             {
                 case OperationType.Sold:
                     ImportSold();
+                    break;
+
+                case OperationType.Exhibitions:
+                    ImportExh();
                     break;
 
                 case OperationType.Inventory:
@@ -124,6 +144,7 @@ namespace Koberce
         Sold,
         Inventory,
         SK,
-        fromSK
+        fromSK,
+        Exhibitions
     }
 }
