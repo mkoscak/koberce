@@ -207,6 +207,13 @@ namespace Koberce.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap sold {
+            get {
+                object obj = ResourceManager.GetObject("sold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap system_database_add_icon {
             get {
                 object obj = ResourceManager.GetObject("system-database-add-icon", resourceCulture);
