@@ -12,8 +12,8 @@ namespace Koberce
     {
         private SQLiteDataAdapter DB;
         private string DbName = @".\arena.db";
-        
-        public static string[] TableNames = new string[] { "arena", "sold", "SK", "fromSK" , "inventory"};
+
+        public static string[] TableNames = new string[] { "arena", "sold", "SK", "fromSK", "inventory", "exh1" };
 
         public DBProvider(string dbName)
         {
@@ -41,6 +41,14 @@ namespace Koberce
             var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
             ExecuteNonQuery(command);
             command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[1], code, sellDate, sellPrice);
+            ExecuteNonQuery(command);
+        }
+
+        public void ExhItem(string code, string exhName, string sellDate, string sellPrice)
+        {
+            var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
+            ExecuteNonQuery(command);
+            command = string.Format("insert or replace into {0} (code,ExhibitionName,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\",\"{4}\")", DBProvider.TableNames[5], code, exhName, sellDate, sellPrice);
             ExecuteNonQuery(command);
         }
 
@@ -273,6 +281,11 @@ namespace Koberce
         {
             var command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[1], code, sellDate, sellPrice);
             ExecuteNonQuery(command);
+        }
+
+        internal void UpdateExh(string p, string p_2, string p_3, string p_4)
+        {
+            throw new NotImplementedException();
         }
     }
 }

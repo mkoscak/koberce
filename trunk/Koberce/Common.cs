@@ -44,6 +44,12 @@ namespace Koberce
                 SoldOffset = 1;
             }
 
+            if (fileName.ToLower().Contains("exh"))
+            {
+                IsSold = true;
+                SoldOffset = 1;
+            }
+
             Progress p = new Progress(0, 100, "Export", "Preparing..", DoExport, null, ds, true, true);
             p.StartWorker();
         }

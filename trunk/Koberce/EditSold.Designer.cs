@@ -51,6 +51,8 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtExhibition = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtItemPrice
@@ -77,7 +79,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(19, 302);
+            this.label18.Location = new System.Drawing.Point(19, 320);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 73;
@@ -209,7 +211,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(223, 297);
+            this.btnOK.Location = new System.Drawing.Point(223, 315);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 78;
@@ -263,11 +265,31 @@
             this.label11.TabIndex = 49;
             this.label11.Text = "Sell date";
             // 
+            // txtExhibition
+            // 
+            this.txtExhibition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtExhibition.Location = new System.Drawing.Point(106, 272);
+            this.txtExhibition.Name = "txtExhibition";
+            this.txtExhibition.Size = new System.Drawing.Size(191, 20);
+            this.txtExhibition.TabIndex = 84;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 275);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 83;
+            this.label9.Text = "Exhibition";
+            // 
             // EditSold
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 327);
+            this.ClientSize = new System.Drawing.Size(315, 345);
+            this.Controls.Add(this.txtExhibition);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtSellPrice);
@@ -326,6 +348,8 @@
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtExhibition;
+        private System.Windows.Forms.Label label9;
 
     }
 }
