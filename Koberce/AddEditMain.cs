@@ -54,6 +54,7 @@ namespace Koberce
                     txtColor.Text = vals[14].ToString();
                     txtMaterial.Text = vals[15].ToString();
                     txtComment.Text = vals[16].ToString();
+                    txtRgNr.Text = vals[18].ToString();
                 }
             }
         }
@@ -80,7 +81,8 @@ namespace Koberce
                             txtInvoice.Text,
                             txtColor.Text,
                             txtMaterial.Text,
-                            txtComment.Text);
+                            txtComment.Text,
+                            txtRgNr.Text);
                 }
                 else
                 {
@@ -100,7 +102,8 @@ namespace Koberce
                             txtInvoice.Text,
                             txtColor.Text,
                             txtMaterial.Text,
-                            txtComment.Text);
+                            txtComment.Text,
+                            txtRgNr.Text);
                 }
 
                 MessageBox.Show(this, "Data written succesfully!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
