@@ -269,7 +269,7 @@ namespace Koberce
             {
                 try
                 {
-                    double val = double.Parse(table.Rows[j][index].ToString());
+                    double val = Common.GetPrice(table.Rows[j][index].ToString());
 
                     ret += val;
                 }
