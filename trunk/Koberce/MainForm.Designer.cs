@@ -42,6 +42,8 @@
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnSetSold = new System.Windows.Forms.Button();
             this.grpFilter = new System.Windows.Forms.GroupBox();
+            this.txtRgNr = new System.Windows.Forms.TextBox();
+            this.label168 = new System.Windows.Forms.Label();
             this.txtFilLength = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.txtFilWidth = new System.Windows.Forms.TextBox();
@@ -545,6 +547,14 @@
             this.button60 = new System.Windows.Forms.Button();
             this.button61 = new System.Windows.Forms.Button();
             this.button62 = new System.Windows.Forms.Button();
+            this.txtFilSoldRgNr = new System.Windows.Forms.TextBox();
+            this.label170 = new System.Windows.Forms.Label();
+            this.txtFilSKRgNr = new System.Windows.Forms.TextBox();
+            this.label183 = new System.Windows.Forms.Label();
+            this.txtFilFromSkRgNr = new System.Windows.Forms.TextBox();
+            this.label184 = new System.Windows.Forms.Label();
+            this.txtFilInvRgNr = new System.Windows.Forms.TextBox();
+            this.label185 = new System.Windows.Forms.Label();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridSK = new Koberce.CustomDataGridView();
@@ -561,6 +571,8 @@
             this.customDataGridView6 = new Koberce.CustomDataGridView();
             this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.customDataGridView8 = new Koberce.CustomDataGridView();
+            this.txtFilExhRgNr = new System.Windows.Forms.TextBox();
+            this.label186 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -789,6 +801,8 @@
             // 
             this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Controls.Add(this.txtRgNr);
+            this.grpFilter.Controls.Add(this.label168);
             this.grpFilter.Controls.Add(this.txtFilLength);
             this.grpFilter.Controls.Add(this.label40);
             this.grpFilter.Controls.Add(this.txtFilWidth);
@@ -822,6 +836,23 @@
             this.grpFilter.TabIndex = 8;
             this.grpFilter.TabStop = false;
             this.grpFilter.Text = "Filter";
+            // 
+            // txtRgNr
+            // 
+            this.txtRgNr.Location = new System.Drawing.Point(871, 42);
+            this.txtRgNr.Name = "txtRgNr";
+            this.txtRgNr.Size = new System.Drawing.Size(80, 20);
+            this.txtRgNr.TabIndex = 29;
+            this.txtRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Location = new System.Drawing.Point(827, 45);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(38, 13);
+            this.label168.TabIndex = 28;
+            this.label168.Text = "Rg-Nr.";
             // 
             // txtFilLength
             // 
@@ -1237,6 +1268,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtFilSoldRgNr);
+            this.groupBox1.Controls.Add(this.label170);
             this.groupBox1.Controls.Add(this.txtFilSoldLength);
             this.groupBox1.Controls.Add(this.label41);
             this.groupBox1.Controls.Add(this.txtFilSoldWidth);
@@ -1280,9 +1313,9 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(589, 45);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(34, 13);
+            this.label41.Size = new System.Drawing.Size(40, 13);
             this.label41.TabIndex = 30;
-            this.label41.Text = "Legth";
+            this.label41.Text = "Length";
             // 
             // txtFilSoldWidth
             // 
@@ -1612,6 +1645,8 @@
             // 
             this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.txtFilSKRgNr);
+            this.groupBox9.Controls.Add(this.label183);
             this.groupBox9.Controls.Add(this.txtFilSKLength);
             this.groupBox9.Controls.Add(this.label51);
             this.groupBox9.Controls.Add(this.txtFilSKWidth);
@@ -1638,7 +1673,7 @@
             // 
             // txtFilSKLength
             // 
-            this.txtFilSKLength.Location = new System.Drawing.Point(229, 43);
+            this.txtFilSKLength.Location = new System.Drawing.Point(237, 43);
             this.txtFilSKLength.Name = "txtFilSKLength";
             this.txtFilSKLength.Size = new System.Drawing.Size(71, 20);
             this.txtFilSKLength.TabIndex = 31;
@@ -1649,9 +1684,9 @@
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(191, 46);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(34, 13);
+            this.label51.Size = new System.Drawing.Size(40, 13);
             this.label51.TabIndex = 30;
-            this.label51.Text = "Legth";
+            this.label51.Text = "Length";
             // 
             // txtFilSKWidth
             // 
@@ -1924,6 +1959,8 @@
             // 
             this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.txtFilFromSkRgNr);
+            this.groupBox11.Controls.Add(this.label184);
             this.groupBox11.Controls.Add(this.txtFilFSKLength);
             this.groupBox11.Controls.Add(this.label54);
             this.groupBox11.Controls.Add(this.txtFilFSKWidth);
@@ -1950,7 +1987,7 @@
             // 
             // txtFilFSKLength
             // 
-            this.txtFilFSKLength.Location = new System.Drawing.Point(229, 43);
+            this.txtFilFSKLength.Location = new System.Drawing.Point(237, 43);
             this.txtFilFSKLength.Name = "txtFilFSKLength";
             this.txtFilFSKLength.Size = new System.Drawing.Size(71, 20);
             this.txtFilFSKLength.TabIndex = 31;
@@ -1961,9 +1998,9 @@
             this.label54.AutoSize = true;
             this.label54.Location = new System.Drawing.Point(191, 46);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(34, 13);
+            this.label54.Size = new System.Drawing.Size(40, 13);
             this.label54.TabIndex = 30;
-            this.label54.Text = "Legth";
+            this.label54.Text = "Length";
             // 
             // txtFilFSKWidth
             // 
@@ -2223,6 +2260,8 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.txtFilInvRgNr);
+            this.groupBox5.Controls.Add(this.label185);
             this.groupBox5.Controls.Add(this.txtFilInvLength);
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Controls.Add(this.txtFilInvWidth);
@@ -2268,11 +2307,11 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(584, 45);
+            this.label43.Location = new System.Drawing.Point(579, 45);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(34, 13);
+            this.label43.Size = new System.Drawing.Size(40, 13);
             this.label43.TabIndex = 34;
-            this.label43.Text = "Legth";
+            this.label43.Text = "Length";
             // 
             // txtFilInvWidth
             // 
@@ -2671,6 +2710,8 @@
             // 
             this.groupBox27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox27.Controls.Add(this.txtFilExhRgNr);
+            this.groupBox27.Controls.Add(this.label186);
             this.groupBox27.Controls.Add(this.txtExhFilExName);
             this.groupBox27.Controls.Add(this.label166);
             this.groupBox27.Controls.Add(this.txtExhFilLength);
@@ -2731,11 +2772,11 @@
             // label172
             // 
             this.label172.AutoSize = true;
-            this.label172.Location = new System.Drawing.Point(643, 46);
+            this.label172.Location = new System.Drawing.Point(638, 46);
             this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(34, 13);
+            this.label172.Size = new System.Drawing.Size(40, 13);
             this.label172.TabIndex = 30;
-            this.label172.Text = "Legth";
+            this.label172.Text = "Length";
             // 
             // txtExhFilWidth
             // 
@@ -6074,6 +6115,74 @@
             this.button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button62.UseVisualStyleBackColor = true;
             // 
+            // txtFilSoldRgNr
+            // 
+            this.txtFilSoldRgNr.Location = new System.Drawing.Point(882, 42);
+            this.txtFilSoldRgNr.Name = "txtFilSoldRgNr";
+            this.txtFilSoldRgNr.Size = new System.Drawing.Size(75, 20);
+            this.txtFilSoldRgNr.TabIndex = 33;
+            this.txtFilSoldRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Location = new System.Drawing.Point(838, 45);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(38, 13);
+            this.label170.TabIndex = 32;
+            this.label170.Text = "Rg-Nr.";
+            // 
+            // txtFilSKRgNr
+            // 
+            this.txtFilSKRgNr.Location = new System.Drawing.Point(358, 43);
+            this.txtFilSKRgNr.Name = "txtFilSKRgNr";
+            this.txtFilSKRgNr.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKRgNr.TabIndex = 33;
+            this.txtFilSKRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label183
+            // 
+            this.label183.AutoSize = true;
+            this.label183.Location = new System.Drawing.Point(314, 46);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(38, 13);
+            this.label183.TabIndex = 32;
+            this.label183.Text = "Rg-Nr.";
+            // 
+            // txtFilFromSkRgNr
+            // 
+            this.txtFilFromSkRgNr.Location = new System.Drawing.Point(358, 43);
+            this.txtFilFromSkRgNr.Name = "txtFilFromSkRgNr";
+            this.txtFilFromSkRgNr.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFromSkRgNr.TabIndex = 33;
+            this.txtFilFromSkRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label184
+            // 
+            this.label184.AutoSize = true;
+            this.label184.Location = new System.Drawing.Point(314, 46);
+            this.label184.Name = "label184";
+            this.label184.Size = new System.Drawing.Size(38, 13);
+            this.label184.TabIndex = 32;
+            this.label184.Text = "Rg-Nr.";
+            // 
+            // txtFilInvRgNr
+            // 
+            this.txtFilInvRgNr.Location = new System.Drawing.Point(875, 42);
+            this.txtFilInvRgNr.Name = "txtFilInvRgNr";
+            this.txtFilInvRgNr.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvRgNr.TabIndex = 37;
+            this.txtFilInvRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label185
+            // 
+            this.label185.AutoSize = true;
+            this.label185.Location = new System.Drawing.Point(831, 45);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(38, 13);
+            this.label185.TabIndex = 36;
+            this.label185.Text = "Rg-Nr.";
+            // 
             // Grid
             // 
             this.Grid.AllowUserToAddRows = false;
@@ -6307,6 +6416,23 @@
             this.customDataGridView8.Name = "customDataGridView8";
             this.customDataGridView8.Size = new System.Drawing.Size(1244, 445);
             this.customDataGridView8.TabIndex = 13;
+            // 
+            // txtFilExhRgNr
+            // 
+            this.txtFilExhRgNr.Location = new System.Drawing.Point(934, 43);
+            this.txtFilExhRgNr.Name = "txtFilExhRgNr";
+            this.txtFilExhRgNr.Size = new System.Drawing.Size(71, 20);
+            this.txtFilExhRgNr.TabIndex = 35;
+            this.txtFilExhRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label186
+            // 
+            this.label186.AutoSize = true;
+            this.label186.Location = new System.Drawing.Point(890, 46);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(38, 13);
+            this.label186.TabIndex = 34;
+            this.label186.Text = "Rg-Nr.";
             // 
             // MainForm
             // 
@@ -6954,6 +7080,18 @@
         private System.Windows.Forms.Label label166;
         private System.Windows.Forms.ToolStripMenuItem btnUploadExh;
         private System.Windows.Forms.ToolStripMenuItem btnDownloadExh;
+        private System.Windows.Forms.TextBox txtRgNr;
+        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.TextBox txtFilSoldRgNr;
+        private System.Windows.Forms.Label label170;
+        private System.Windows.Forms.TextBox txtFilSKRgNr;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.TextBox txtFilFromSkRgNr;
+        private System.Windows.Forms.Label label184;
+        private System.Windows.Forms.TextBox txtFilInvRgNr;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.TextBox txtFilExhRgNr;
+        private System.Windows.Forms.Label label186;
     }
 }
 
