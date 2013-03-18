@@ -103,7 +103,10 @@ namespace Koberce
                         }
 
                         double val = GetPrice(dt.Rows[i].ItemArray[indices[j]].ToString());
-                        ws.Cells[3 + i, j + 1 + SoldOffset].Value = val;
+                        if (double.IsNaN(val))
+                            ws.Cells[3 + i, j + 1 + SoldOffset].Value = dt.Rows[i].ItemArray[indices[j]];
+                        else
+                            ws.Cells[3 + i, j + 1 + SoldOffset].Value = val;
                     }
                     catch (Exception)
                     {
