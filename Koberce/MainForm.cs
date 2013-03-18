@@ -453,6 +453,7 @@ namespace Koberce
                 AddFilter(sb, txtFilMat.Text, "MATERIAL");
                 AddFilter(sb, txtFilLength.Text, "LENGTH");
                 AddFilter(sb, txtFilWidth.Text, "WIDTH");
+                AddFilter(sb, txtRgNr.Text, "RGNR");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SOLD)
@@ -470,6 +471,7 @@ namespace Koberce
                 AddFilter(sb, txtFilSellPrice.Text, "SELLPRICE");
                 AddFilter(sb, txtFilSoldLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
+                AddFilter(sb, txtFilSoldRgNr.Text, "RGNR");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
@@ -488,6 +490,7 @@ namespace Koberce
                 AddFilter(sb, txtExhFilSellPrice.Text, "SELLPRICE");
                 AddFilter(sb, txtExhFilLength.Text, "LENGTH");
                 AddFilter(sb, txtExhFilWidth.Text, "WIDTH");
+                AddFilter(sb, txtFilExhRgNr.Text, "RGNR");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -505,6 +508,7 @@ namespace Koberce
                 AddFilter(sb, txtFilSKSellPrice.Text, "SELLPRICE");*/
                 AddFilter(sb, txtFilSKLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSKWidth.Text, "WIDTH");
+                AddFilter(sb, txtFilSKRgNr.Text, "RGNR");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
@@ -517,6 +521,7 @@ namespace Koberce
                     AddFilter(sb, txtFilFSKVKNetto.Text, "VK_NETTO");
                     AddFilter(sb, txtFilFSKLength.Text, "LENGTH");
                     AddFilter(sb, txtFilFSKWidth.Text, "WIDTH");
+                    AddFilter(sb, txtFilFromSkRgNr.Text, "RGNR");
                 }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -536,6 +541,7 @@ namespace Koberce
                     AddFilter(sb, txtFilInvMaterial.Text, "MATERIAL");
                     AddFilter(sb, txtFilInvLength.Text, "LENGTH");
                     AddFilter(sb, txtFilInvWidth.Text, "WIDTH");
+                    AddFilter(sb, txtFilInvRgNr.Text, "RGNR");
                 }
 
             if (sb.Length == 0)
@@ -1108,6 +1114,7 @@ namespace Koberce
                 txtQuantity.Text = string.Empty;
                 txtFilInv.Text = string.Empty;
                 txtFilMat.Text = string.Empty;
+                txtRgNr.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.SOLD)
@@ -1120,6 +1127,10 @@ namespace Koberce
                 dtSellDateFrom.Checked = false;
                 dtSellDateTo.Checked = false;
                 txtFilSellPrice.Text = string.Empty;
+                txtFilSoldRgNr.Text = string.Empty;
+                txtFilSupNrSold.Text = string.Empty;
+                txtFilSoldLength.Text = string.Empty;
+                txtFilSoldWidth.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
@@ -1136,6 +1147,7 @@ namespace Koberce
                 txtExhFilSupNr.Text = string.Empty;
                 txtExhFilLength.Text = string.Empty;
                 txtExhFilWidth.Text = string.Empty;
+                txtFilExhRgNr.Text = string.Empty;
             }
             else 
             if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -1149,6 +1161,7 @@ namespace Koberce
                 txtFilSKTitle.Text = string.Empty;
                 txtFilSKVK.Text = string.Empty;
                 txtFilSKWidth.Text = string.Empty;
+                txtFilSKRgNr.Text = string.Empty;
                 //dtpFilSKSellFrom.Checked = false;
                 //dtpFilSKSellTo.Checked = false;
             }
@@ -1163,6 +1176,7 @@ namespace Koberce
                 txtFilFSKName.Text = string.Empty;
                 txtFilFSKVKNetto.Text = string.Empty;
                 txtFilFSKWidth.Text = string.Empty;
+                txtFilFromSkRgNr.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -1177,6 +1191,10 @@ namespace Koberce
                 txtFilInvQuantity.Text = string.Empty;
                 txtFilInvInvoice.Text = string.Empty;
                 txtFilInvMaterial.Text = string.Empty;
+                txtFilInvRgNr.Text = string.Empty;
+                txtFilInvSupNr.Text = string.Empty;
+                txtFilInvWidth.Text = string.Empty;
+                txtFilInvLength.Text = string.Empty;
             }
 
             RefreshItems();
