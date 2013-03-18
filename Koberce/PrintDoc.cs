@@ -66,158 +66,141 @@ namespace Koberce
             e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Arial14Bold, Brushes.Black, new RectangleF(10, 300, r.Width - 20, 50), format);
             e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(10, 320, r.Width - 20, 50), format);
             // ciarovy kod
-            //e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(37, 377, r.Width - 20, 150));
-            e.Graphics.DrawString(Item.GlobalNumber, Code128, Brushes.Black, new RectangleF(37, 377, r.Width - 20, 150));
+            e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(17, 377, r.Width - 20, 150));
             e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(53, 448, r.Width - 20, 150));
             e.Graphics.DrawString(string.Format("{2}, {0} x {1}", Item.Length, Item.Width, Item.SupplierNr), Arial11Bold, Brushes.Black, new RectangleF(47, 470, r.Width - 20, 50));
         }
 
-
-        string barCode(string args)
+        /*
+         *	Auteur	:	Joffrey VERDIER
+         *	Date	:	08/2006
+         *	Légal	:	OpenSource © 2007 AVRANCHES
+         * 
+         */
+        string barCode(string chaine)
         {
-            string code128 = "";
+            int ind = 1;
+            int checksum = 0;
+            int mini;
+            int dummy;
+            bool tableB;
+            String code128;
+            int longueur;
+            code128 = "";
+            longueur = chaine.Length;
 
-            int i, z, mini, dummy, checksum = 0;
-            i = 1;
-            if (args.Length > 0)
-            {
-                z = 0;
-                i = 1;
-                while ((i <= args.Length) && (z == 0))
+            if (longueur == 0)
+                Console.WriteLine("\n chaine vide");
+            else
+                for (ind = 0; ind < longueur; ind++)
                 {
-                    if ((args[i - 1] >= (char)32 && args[i - 1] <= (char)125) || args[i - 1] == (char)198)
+                    if ((chaine[ind] < 32) || (chaine[ind] > 126))
                     {
-                        i++;
+                        Console.WriteLine("\n chaine invalide");
+                    }
+                }
+
+            tableB = true;
+            ind = 0;
+
+            while (ind < longueur)
+            {
+                if (tableB == true)
+                {
+                    if ((ind == 0) || (ind + 3 == longueur - 1))
+                        mini = 4;
+                    else
+                        mini = 6;
+
+                    mini = mini - 1;
+
+                    if ((ind + mini) <= longueur - 1)
+                        while (mini >= 0)
+                        {
+                            if ((chaine[ind + mini] < 48) || (chaine[ind + mini] > 57))
+                            {
+                                Console.WriteLine("\n exit");
+                                break;
+                            }
+                            mini = mini - 1;
+                        }
+
+
+                    if (mini < 0)
+                    {
+                        if (ind == 0)
+                            code128 = Char.ToString((char)205);
+                        else
+                            code128 = code128 + Char.ToString((char)199);
+                        tableB = false;
                     }
                     else
                     {
-                        i = 0;
-                        z = 1;
+                        if (ind == 0)
+                            code128 = Char.ToString((char)204);
                     }
                 }
-            }
 
-            bool tableB = true;
-            if (i > 0)
-            {
-                i = 1;
-                while (i <= args.Length)
+                if (tableB == false)
                 {
-                    if (tableB)
-                    {
-                        if (i == 1 || (i + 3) == args.Length)
-                        {
-                            mini = 4;
-                        }
-                        else { mini = 6; }
-                        mini = testNum(mini, args, i);
-                        if (mini < 0)
-                        {
-                            if (i == 1)
-                            {
-                                char ch = (char)210;
-                                code128 = ch.ToString();
-                            }
-                            else { char ch = (char)204; code128 = code128 + ch; }
-                            tableB = false;
-                        }
-                        else
-                        {
-                            if (i == 1) { char ch = (char)209; code128 = ch.ToString(); }
-                        }
-                    }
-                    if (!tableB)
-                    {
-                        mini = 2;
-                        mini = testNum(mini, args, i);
-                        if (mini < 0)
-                        {
-                            string tmp = args.Substring(i - 1, 2);
-                            dummy = myVal(tmp);
-                            if (dummy < 95)
-                            {
-                                dummy = dummy + 32;
-                            }
-                            else
-                            {
-                                dummy = dummy + 105;
-                            }
-                            char ch = (char)dummy;
-                            code128 = code128 + ch;
-                            i = i + 2;
-                        }
-                        else
-                        {
-                            char ch = (char)205;
-                            code128 = code128 + ch;
-                            tableB = true;
-                        }
-                    }
-                    if (tableB)
-                    {
-                        code128 = code128 + args[i - 1];
-                        i++;
-                    }
-                }
-                for (i = 1; i <= code128.Length; i++)
-                {
-                    dummy = code128[i - 1];
-                    if (dummy < 127) dummy = dummy - 32; else dummy -= 105;
-                    if (i == 1)
-                    {
-                        checksum = dummy;
-                    }
-                    checksum = (checksum + (i - 1) * dummy) % 103;
-                }
-                if (checksum < 95)
-                {
-                    checksum += 32;
-                }
-                else
-                    checksum += 100;
-                char ch2 = (char)checksum;
-                char ch1 = (char)211;
-                code128 = code128 + ch2 + ch1;
-            }
-            return code128;
-        }
-
-
-        int testNum(int mini, string chaine, int i)
-        {
-            mini = mini - 1;
-            int y;
-            if ((i + mini) <= chaine.Length)
-            {
-                y = 0;
-                while (mini >= 0 && y == 0)
-                {
-                    if (chaine[i + mini - 1] < (char)48 || chaine[i + mini - 1] > (char)5748)
-                    {
-                        y = 1;
-                        mini = mini + 1;
-                    }
+                    mini = 2;
                     mini = mini - 1;
+                    if (ind + mini < longueur)
+                    {
+                        while (mini >= 0)
+                        {
+                            if (((chaine[ind + mini]) < 48) || ((chaine[ind]) > 57))
+                                break;
+                            mini = mini - 1;
+                        }
+                    }
+                    if (mini < 0)
+                    {
+                        dummy = Int32.Parse(chaine.Substring(ind, 2));
+                        Console.WriteLine("\n  dummy ici : " + dummy);
+
+                        if (dummy < 95)
+                            dummy = dummy + 32;
+                        else
+                            dummy = dummy + 100;
+                        code128 = code128 + (char)(dummy);
+
+                        ind = ind + 2;
+                    }
+                    else
+                    {
+                        code128 = code128 + Char.ToString((char)200);
+                        tableB = true;
+                    }
                 }
-            }
-            return mini;
-        }
-
-
-        int myVal(string chaine)
-        {
-            int j = 1;
-            int chaine2 = 0;
-            while (j <= chaine.Length)
-            {
-                if (char.IsDigit(chaine[j-1]))
+                if (tableB == true)
                 {
-                    chaine2 = chaine2 * 10 + int.Parse(chaine[j - 1].ToString());
-                    j++;
+                    code128 = code128 + chaine[ind];
+                    ind = ind + 1;
                 }
-                else break;
             }
-            return chaine2;
+
+            for (ind = 0; ind <= code128.Length - 1; ind++)
+            {
+                dummy = code128[ind];
+                Console.WriteLine("\n  et voila dummy : " + dummy);
+                if (dummy < 127)
+                    dummy = dummy - 32;
+                else
+                    dummy = dummy - 100;
+                if (ind == 0)
+                    checksum = dummy;
+                checksum = (checksum + (ind) * dummy) % 103;
+            }
+
+            if (checksum < 95)
+                checksum = checksum + 32;
+            else
+                checksum = checksum + 100;
+            code128 = code128 + Char.ToString((char)checksum)
+                    + Char.ToString((char)206);
+
+            return code128;
         }
     }
 }
