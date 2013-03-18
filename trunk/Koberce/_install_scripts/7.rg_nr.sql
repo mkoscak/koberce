@@ -1,0 +1,2 @@
+ALTER TABLE arena
+ADD RgNr TEXT;

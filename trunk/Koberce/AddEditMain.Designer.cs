@@ -67,13 +67,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.txtRgNr = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtQMPrice
             // 
             this.txtQMPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQMPrice.Location = new System.Drawing.Point(108, 499);
+            this.txtQMPrice.Location = new System.Drawing.Point(108, 525);
             this.txtQMPrice.Name = "txtQMPrice";
             this.txtQMPrice.Size = new System.Drawing.Size(320, 20);
             this.txtQMPrice.TabIndex = 75;
@@ -82,7 +84,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(19, 502);
+            this.label21.Location = new System.Drawing.Point(19, 528);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(54, 13);
             this.label21.TabIndex = 74;
@@ -93,7 +95,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(19, 550);
+            this.label18.Location = new System.Drawing.Point(19, 573);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(85, 13);
             this.label18.TabIndex = 73;
@@ -413,7 +415,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(352, 545);
+            this.btnOK.Location = new System.Drawing.Point(352, 568);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 78;
@@ -421,11 +423,31 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // txtRgNr
+            // 
+            this.txtRgNr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRgNr.Location = new System.Drawing.Point(108, 499);
+            this.txtRgNr.Name = "txtRgNr";
+            this.txtRgNr.Size = new System.Drawing.Size(320, 20);
+            this.txtRgNr.TabIndex = 79;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 502);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(38, 13);
+            this.label19.TabIndex = 80;
+            this.label19.Text = "Rg-Nr.";
+            // 
             // AddEditMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 575);
+            this.ClientSize = new System.Drawing.Size(444, 598);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtRgNr);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtQMPrice);
             this.Controls.Add(this.label21);
@@ -516,6 +538,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.TextBox txtRgNr;
+        private System.Windows.Forms.Label label19;
 
     }
 }

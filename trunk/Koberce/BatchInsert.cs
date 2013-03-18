@@ -136,7 +136,8 @@ namespace Koberce
                         "",
                         item.Color,
                         item.Material,
-                        item.Comment);
+                        item.Comment,
+                        item.RgNr);
 
                 if (bw.CancellationPending == true)
                 {
