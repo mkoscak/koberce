@@ -555,6 +555,12 @@
             this.label184 = new System.Windows.Forms.Label();
             this.txtFilInvRgNr = new System.Windows.Forms.TextBox();
             this.label185 = new System.Windows.Forms.Label();
+            this.txtFilExhRgNr = new System.Windows.Forms.TextBox();
+            this.label186 = new System.Windows.Forms.Label();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUploadApp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDownloadApp = new System.Windows.Forms.ToolStripMenuItem();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridSK = new Koberce.CustomDataGridView();
@@ -571,8 +577,6 @@
             this.customDataGridView6 = new Koberce.CustomDataGridView();
             this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.customDataGridView8 = new Koberce.CustomDataGridView();
-            this.txtFilExhRgNr = new System.Windows.Forms.TextBox();
-            this.label186 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -3454,7 +3458,9 @@
             this.btnUploadInventory,
             this.btnUploadSK,
             this.btnUploadFromSK,
-            this.btnUploadExh});
+            this.btnUploadExh,
+            this.toolStripSeparator4,
+            this.btnUploadApp});
             this.btnToolStripUpload.Image = global::Koberce.Properties.Resources.Earth_Upload_icon;
             this.btnToolStripUpload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnToolStripUpload.Name = "btnToolStripUpload";
@@ -3465,7 +3471,7 @@
             // btnUploadSold
             // 
             this.btnUploadSold.Name = "btnUploadSold";
-            this.btnUploadSold.Size = new System.Drawing.Size(131, 22);
+            this.btnUploadSold.Size = new System.Drawing.Size(135, 22);
             this.btnUploadSold.Tag = "SOLD.TXT";
             this.btnUploadSold.Text = "Sold";
             this.btnUploadSold.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3473,7 +3479,7 @@
             // btnUploadInventory
             // 
             this.btnUploadInventory.Name = "btnUploadInventory";
-            this.btnUploadInventory.Size = new System.Drawing.Size(131, 22);
+            this.btnUploadInventory.Size = new System.Drawing.Size(135, 22);
             this.btnUploadInventory.Tag = "INVENTOR.TXT";
             this.btnUploadInventory.Text = "Inventory";
             this.btnUploadInventory.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3481,7 +3487,7 @@
             // btnUploadSK
             // 
             this.btnUploadSK.Name = "btnUploadSK";
-            this.btnUploadSK.Size = new System.Drawing.Size(131, 22);
+            this.btnUploadSK.Size = new System.Drawing.Size(135, 22);
             this.btnUploadSK.Tag = "SK.TXT";
             this.btnUploadSK.Text = "SK";
             this.btnUploadSK.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3489,7 +3495,7 @@
             // btnUploadFromSK
             // 
             this.btnUploadFromSK.Name = "btnUploadFromSK";
-            this.btnUploadFromSK.Size = new System.Drawing.Size(131, 22);
+            this.btnUploadFromSK.Size = new System.Drawing.Size(135, 22);
             this.btnUploadFromSK.Tag = "FROMSK.TXT";
             this.btnUploadFromSK.Text = "fromSK";
             this.btnUploadFromSK.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3497,7 +3503,7 @@
             // btnUploadExh
             // 
             this.btnUploadExh.Name = "btnUploadExh";
-            this.btnUploadExh.Size = new System.Drawing.Size(131, 22);
+            this.btnUploadExh.Size = new System.Drawing.Size(135, 22);
             this.btnUploadExh.Tag = "EXH.TXT";
             this.btnUploadExh.Text = "Exhibitions";
             this.btnUploadExh.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3538,7 +3544,9 @@
             this.btnDownloadInventory,
             this.btnDownloadSK,
             this.btnDownloadFromSK,
-            this.btnDownloadExh});
+            this.btnDownloadExh,
+            this.toolStripSeparator6,
+            this.btnDownloadApp});
             this.btnToolStripDownload.Image = global::Koberce.Properties.Resources.Earth_Download_icon;
             this.btnToolStripDownload.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnToolStripDownload.Name = "btnToolStripDownload";
@@ -3549,7 +3557,7 @@
             // btnDownloadSold
             // 
             this.btnDownloadSold.Name = "btnDownloadSold";
-            this.btnDownloadSold.Size = new System.Drawing.Size(131, 22);
+            this.btnDownloadSold.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadSold.Tag = "SOLD.TXT";
             this.btnDownloadSold.Text = "Sold";
             this.btnDownloadSold.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3557,7 +3565,7 @@
             // btnDownloadInventory
             // 
             this.btnDownloadInventory.Name = "btnDownloadInventory";
-            this.btnDownloadInventory.Size = new System.Drawing.Size(131, 22);
+            this.btnDownloadInventory.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadInventory.Tag = "INVENTOR.TXT";
             this.btnDownloadInventory.Text = "Inventory";
             this.btnDownloadInventory.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3565,7 +3573,7 @@
             // btnDownloadSK
             // 
             this.btnDownloadSK.Name = "btnDownloadSK";
-            this.btnDownloadSK.Size = new System.Drawing.Size(131, 22);
+            this.btnDownloadSK.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadSK.Tag = "SK.TXT";
             this.btnDownloadSK.Text = "SK";
             this.btnDownloadSK.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3573,7 +3581,7 @@
             // btnDownloadFromSK
             // 
             this.btnDownloadFromSK.Name = "btnDownloadFromSK";
-            this.btnDownloadFromSK.Size = new System.Drawing.Size(131, 22);
+            this.btnDownloadFromSK.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadFromSK.Tag = "FROMSK.TXT";
             this.btnDownloadFromSK.Text = "fromSK";
             this.btnDownloadFromSK.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3581,7 +3589,7 @@
             // btnDownloadExh
             // 
             this.btnDownloadExh.Name = "btnDownloadExh";
-            this.btnDownloadExh.Size = new System.Drawing.Size(131, 22);
+            this.btnDownloadExh.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadExh.Tag = "EXH.TXT";
             this.btnDownloadExh.Text = "Exhibitions";
             this.btnDownloadExh.Click += new System.EventHandler(this.btnDownload_Click);
@@ -6183,6 +6191,49 @@
             this.label185.TabIndex = 36;
             this.label185.Text = "Rg-Nr.";
             // 
+            // txtFilExhRgNr
+            // 
+            this.txtFilExhRgNr.Location = new System.Drawing.Point(934, 43);
+            this.txtFilExhRgNr.Name = "txtFilExhRgNr";
+            this.txtFilExhRgNr.Size = new System.Drawing.Size(71, 20);
+            this.txtFilExhRgNr.TabIndex = 35;
+            this.txtFilExhRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label186
+            // 
+            this.label186.AutoSize = true;
+            this.label186.Location = new System.Drawing.Point(890, 46);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(38, 13);
+            this.label186.TabIndex = 34;
+            this.label186.Text = "Rg-Nr.";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(132, 6);
+            // 
+            // btnUploadApp
+            // 
+            this.btnUploadApp.Name = "btnUploadApp";
+            this.btnUploadApp.Size = new System.Drawing.Size(135, 22);
+            this.btnUploadApp.Tag = ".\\Koberce.exe";
+            this.btnUploadApp.Text = "Application";
+            this.btnUploadApp.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(132, 6);
+            // 
+            // btnDownloadApp
+            // 
+            this.btnDownloadApp.Name = "btnDownloadApp";
+            this.btnDownloadApp.Size = new System.Drawing.Size(135, 22);
+            this.btnDownloadApp.Tag = "Koberce.exe";
+            this.btnDownloadApp.Text = "Application";
+            this.btnDownloadApp.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
             // Grid
             // 
             this.Grid.AllowUserToAddRows = false;
@@ -6417,23 +6468,6 @@
             this.customDataGridView8.Size = new System.Drawing.Size(1244, 445);
             this.customDataGridView8.TabIndex = 13;
             // 
-            // txtFilExhRgNr
-            // 
-            this.txtFilExhRgNr.Location = new System.Drawing.Point(934, 43);
-            this.txtFilExhRgNr.Name = "txtFilExhRgNr";
-            this.txtFilExhRgNr.Size = new System.Drawing.Size(71, 20);
-            this.txtFilExhRgNr.TabIndex = 35;
-            this.txtFilExhRgNr.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label186
-            // 
-            this.label186.AutoSize = true;
-            this.label186.Location = new System.Drawing.Point(890, 46);
-            this.label186.Name = "label186";
-            this.label186.Size = new System.Drawing.Size(38, 13);
-            this.label186.TabIndex = 34;
-            this.label186.Text = "Rg-Nr.";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6444,7 +6478,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Global (c) 2012";
+            this.Text = "Global (c) 2012 - v2.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
@@ -7092,6 +7126,10 @@
         private System.Windows.Forms.Label label185;
         private System.Windows.Forms.TextBox txtFilExhRgNr;
         private System.Windows.Forms.Label label186;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem btnUploadApp;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem btnDownloadApp;
     }
 }
 

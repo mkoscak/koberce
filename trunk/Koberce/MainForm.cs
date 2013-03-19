@@ -6,15 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SQLite;
-using System.Globalization;
 using System.IO;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
 using System.Diagnostics;
 using System.Net;
-using System.Threading;
-using System.Drawing.Printing;
 
 namespace Koberce
 {
@@ -688,19 +682,47 @@ namespace Koberce
             request.Credentials = new NetworkCredential(login, password);
 
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-
             Stream responseStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(responseStream);
 
-            File.WriteAllText(destDirectory + "\\" + fileName, reader.ReadToEnd());
+            if (fileName.ToLower().Contains(".exe"))  // binarne
+            {
+                using (FileStream outFile = File.Create(destDirectory + "\\" + fileName))
+                {
+                    CopyStream(responseStream, outFile);
+                    outFile.Close();
+                }
+            }
+            else
+            {
+                using (StreamReader reader = new StreamReader(responseStream))
+                {
+                    File.WriteAllText(destDirectory + "\\" + fileName, reader.ReadToEnd());
+                    reader.Close();
+                }
+            }
 
-            reader.Close();
             response.Close();
+        }
+
+        public static void CopyStream(Stream input, Stream output)
+        {
+            byte[] buffer = new byte[32768];
+            while (true)
+            {
+                int read = input.Read(buffer, 0, buffer.Length);
+                if (read <= 0)
+                    return;
+                output.Write(buffer, 0, read);
+            }
         }
 
         public void doUpload(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
-            var soldName = Properties.Settings.Default.PtcommDir + "\\"+userData.ToString();
+            string file = userData.ToString();
+            if (!file.Contains(":") && !file.StartsWith(".\\"))
+                file = Properties.Settings.Default.PtcommDir + "\\" + userData.ToString();
+            /*else
+                file = zip(file);*/
             var server = Properties.Settings.Default.ScannerServer;
             var login = Properties.Settings.Default.FtpLogin;
             var passwd = Properties.Settings.Default.FtpPassword;
@@ -708,7 +730,7 @@ namespace Koberce
             try
             {
                 bw.ReportProgress(0, "Uploading " + userData.ToString() + "..");
-                uploadFile(server, soldName, login, passwd);
+                uploadFile(server, file, login, passwd);
                 bw.ReportProgress(100, "Done.");
             }
             catch (Exception ex)
@@ -727,7 +749,14 @@ namespace Koberce
             try
             {
                 bw.ReportProgress(0, "Downloading " + userData.ToString() + "..");
-                downloadFile(server, userData.ToString(), login, passwd, Properties.Settings.Default.PtcommDir);
+                
+                var destDir = Properties.Settings.Default.PtcommDir;
+                if (userData.ToString().Contains(".exe"))
+                    destDir = Common.ExtractFolder(Application.ExecutablePath)+"Update";
+                if (!Directory.Exists(destDir))
+                    Directory.CreateDirectory(destDir);
+
+                downloadFile(server, userData.ToString(), login, passwd, destDir);
             }
             catch (Exception ex)
             {
@@ -997,8 +1026,8 @@ namespace Koberce
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show(this, "Do you really want to quit?", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                e.Cancel = true;
+            /*if (MessageBox.Show(this, "Do you really want to quit?", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;*/
         }
 
         private void btnToolSettings_Click(object sender, EventArgs e)
@@ -1336,6 +1365,12 @@ namespace Koberce
             
             try
             {
+                if ((sender as ToolStripItem).Tag.ToString().ToLower().Contains(".exe"))
+                {
+                    if (MessageBox.Show(this, "This operation will upload and replace application on FTP server with the current one (this should be done only by author or administrator!). Continue operation?", "Application update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        return;
+                }
+
                 Progress p = new Progress(0, 100, "Upload scanner files..", "Connecting..", doUpload, RefreshItems, (sender as ToolStripItem).Tag, false, true);
                 p.StartWorker();
             }
@@ -1355,13 +1390,38 @@ namespace Koberce
 
             try
             {
-                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, null, (sender as ToolStripItem).Tag, false, true);
+                bool update = false;
+                var fname = (sender as ToolStripItem).Tag.ToString();
+                if (fname.ToLower().Contains(".exe"))
+                {
+                    if (MessageBox.Show(this, "This operation will download and replace current application with one from the FTP server (this should be the latest version). Continue operation?", "Application update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        return;
+                    update = true;
+                }
+                Action postAction = null;
+                if (update)
+                    postAction = UpdateApplication;
+
+                Progress p = new Progress(0, 100, "Downloading scanner files..", "Connecting..", doDownload, postAction, fname, false, true);
                 p.StartWorker();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(this, "Download failed: " + ex.ToString(), "Download files", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void UpdateApplication()
+        {
+            var srcFile = Common.ExtractFolder(Application.ExecutablePath) + "Update\\Koberce.exe";
+            if (!File.Exists(srcFile))
+            {
+                MessageBox.Show(this, "No file to update!", "Update application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            File.Replace(srcFile, Application.ExecutablePath, Application.ExecutablePath + ".old");
+            Application.Restart();
         }
 
         private void btnImportSold_Click(object sender, EventArgs e)
