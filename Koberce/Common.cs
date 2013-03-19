@@ -181,5 +181,17 @@ namespace Koberce
 
             return strPrice;
         }
+
+        public static string ExtractFolder(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+                return null;
+
+            var i = path.LastIndexOf('\\');
+            if (i == -1)
+                i = path.LastIndexOf('/');
+
+            return path.Substring(0, i + 1);
+        }
     }
 }
