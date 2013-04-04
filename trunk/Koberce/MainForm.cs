@@ -296,7 +296,7 @@ namespace Koberce
             var ds = gridBatch.DataSource as BindingList<DataItem>;
             try
             {
-                BatchInsert.InsertMultiple(ds, db);
+                BatchInsert.InsertMultiple(ds, db, chb5Series.Checked);
             }
             catch (Exception ex)
             {
