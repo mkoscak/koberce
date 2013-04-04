@@ -448,6 +448,7 @@ namespace Koberce
                 AddFilter(sb, txtFilLength.Text, "LENGTH");
                 AddFilter(sb, txtFilWidth.Text, "WIDTH");
                 AddFilter(sb, txtRgNr.Text, "RGNR");
+                AddFilter(sb, txtFilComment.Text, "COMMENT");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SOLD)
@@ -466,6 +467,7 @@ namespace Koberce
                 AddFilter(sb, txtFilSoldLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSoldWidth.Text, "WIDTH");
                 AddFilter(sb, txtFilSoldRgNr.Text, "RGNR");
+                AddFilter(sb, txtFilSoldComment.Text, "COMMENT");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
@@ -485,6 +487,7 @@ namespace Koberce
                 AddFilter(sb, txtExhFilLength.Text, "LENGTH");
                 AddFilter(sb, txtExhFilWidth.Text, "WIDTH");
                 AddFilter(sb, txtFilExhRgNr.Text, "RGNR");
+                AddFilter(sb, txtFilExhComment.Text, "COMMENT");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -503,6 +506,7 @@ namespace Koberce
                 AddFilter(sb, txtFilSKLength.Text, "LENGTH");
                 AddFilter(sb, txtFilSKWidth.Text, "WIDTH");
                 AddFilter(sb, txtFilSKRgNr.Text, "RGNR");
+                AddFilter(sb, txtFilSKComment.Text, "COMMENT");
             }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
@@ -516,6 +520,7 @@ namespace Koberce
                     AddFilter(sb, txtFilFSKLength.Text, "LENGTH");
                     AddFilter(sb, txtFilFSKWidth.Text, "WIDTH");
                     AddFilter(sb, txtFilFromSkRgNr.Text, "RGNR");
+                    AddFilter(sb, txtFilFSKComment.Text, "COMMENT");
                 }
             else
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -536,6 +541,7 @@ namespace Koberce
                     AddFilter(sb, txtFilInvLength.Text, "LENGTH");
                     AddFilter(sb, txtFilInvWidth.Text, "WIDTH");
                     AddFilter(sb, txtFilInvRgNr.Text, "RGNR");
+                    AddFilter(sb, txtFilInvComment.Text, "COMMENT");
                 }
 
             if (sb.Length == 0)
@@ -1118,6 +1124,7 @@ namespace Koberce
                 txtFilInv.Text = string.Empty;
                 txtFilMat.Text = string.Empty;
                 txtRgNr.Text = string.Empty;
+                txtFilComment.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.SOLD)
@@ -1134,6 +1141,7 @@ namespace Koberce
                 txtFilSupNrSold.Text = string.Empty;
                 txtFilSoldLength.Text = string.Empty;
                 txtFilSoldWidth.Text = string.Empty;
+                txtFilSoldComment.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
@@ -1151,6 +1159,7 @@ namespace Koberce
                 txtExhFilLength.Text = string.Empty;
                 txtExhFilWidth.Text = string.Empty;
                 txtFilExhRgNr.Text = string.Empty;
+                txtFilExhComment.Text = string.Empty;
             }
             else 
             if (tabControl1.SelectedIndex == (int)TABS.SK)
@@ -1165,6 +1174,7 @@ namespace Koberce
                 txtFilSKVK.Text = string.Empty;
                 txtFilSKWidth.Text = string.Empty;
                 txtFilSKRgNr.Text = string.Empty;
+                txtFilSKComment.Text = string.Empty;
                 //dtpFilSKSellFrom.Checked = false;
                 //dtpFilSKSellTo.Checked = false;
             }
@@ -1180,6 +1190,7 @@ namespace Koberce
                 txtFilFSKVKNetto.Text = string.Empty;
                 txtFilFSKWidth.Text = string.Empty;
                 txtFilFromSkRgNr.Text = string.Empty;
+                txtFilFSKComment.Text = string.Empty;
             }
             else
             if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
@@ -1198,6 +1209,7 @@ namespace Koberce
                 txtFilInvSupNr.Text = string.Empty;
                 txtFilInvWidth.Text = string.Empty;
                 txtFilInvLength.Text = string.Empty;
+                txtFilInvComment.Text = string.Empty;
             }
 
             RefreshItems();

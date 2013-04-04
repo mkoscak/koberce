@@ -98,7 +98,10 @@ namespace Koberce
                     {
                         if (IsSold && dt.Columns[indices[j]].ColumnName.ToLower() == "vk_netto")
                         {
-                            ws.Cells[3 + i, j + 1 + SoldOffset].Formula= string.Format("F{0}*G{0}/10000*H{0}", i+3);
+                            if (IsSold && !indices.Contains(1))
+                                ws.Cells[3 + i, j + 1 + SoldOffset].Formula = string.Format("E{0}*F{0}/10000*G{0}", i + 3);
+                            else
+                                ws.Cells[3 + i, j + 1 + SoldOffset].Formula = string.Format("F{0}*G{0}/10000*H{0}", i + 3);
                             continue;
                         }
 
@@ -125,20 +128,31 @@ namespace Koberce
             if (IsSold)
             {
                 int row = 3 + dt.Rows.Count;
-                ws.Cells[row, 8].Value = "Sum:";
-                ws.Cells[row, 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                ws.Cells[row, 8].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
-                ws.Cells[row, 8].Style.Font.Color.SetColor(Color.DarkBlue);
+                int col = 8;
+                var F1 = "SUM(I3:I" + (row - 1) + ")";
+                var F2 = "SUM(J3:J" + (row - 1) + ")";
 
-                ws.Cells[row, 9].Formula = "SUM(I3:I"+(row-1)+")";
-                ws.Cells[row, 9].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                ws.Cells[row, 9].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
-                ws.Cells[row, 9].Style.Font.Color.SetColor(Color.DarkBlue);
+                if (IsSold && !indices.Contains(1)) // 1 == selldate
+                {
+                    col = 7;
+                    F1 = "SUM(H3:H" + (row - 1) + ")";
+                    F2 = "SUM(I3:I" + (row - 1) + ")";
+                }
 
-                ws.Cells[row, 10].Formula = "SUM(J3:J" + (row - 1) + ")";
-                ws.Cells[row, 10].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                ws.Cells[row, 10].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
-                ws.Cells[row, 10].Style.Font.Color.SetColor(Color.DarkBlue);
+                ws.Cells[row, col].Value = "Sum:";
+                ws.Cells[row, col].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, col].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, col].Style.Font.Color.SetColor(Color.DarkBlue);
+
+                ws.Cells[row, col + 1].Formula = F1;
+                ws.Cells[row, col + 1].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, col + 1].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, col + 1].Style.Font.Color.SetColor(Color.DarkBlue);
+
+                ws.Cells[row, col + 2].Formula = F2;
+                ws.Cells[row, col + 2].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[row, col + 2].Style.Fill.BackgroundColor.SetColor(Color.Yellow);
+                ws.Cells[row, col + 2].Style.Font.Color.SetColor(Color.DarkBlue);
             }
 
             ep.SaveAs(new FileInfo(ExportFileName));
