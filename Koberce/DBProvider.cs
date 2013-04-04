@@ -44,11 +44,11 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
-        public void ExhItem(string code, string exhName, string sellDate, string sellPrice)
+        public void ExhItem(string code, string exhName)
         {
-            var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
-            ExecuteNonQuery(command);
-            command = string.Format("insert or replace into {0} (code,ExhibitionName,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\",\"{4}\")", DBProvider.TableNames[5], code, exhName, sellDate, sellPrice);
+            //var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
+            //ExecuteNonQuery(command);
+            var command = string.Format("insert or replace into {0} (code,ExhibitionName) values (\"{1}\",\"{2}\")", DBProvider.TableNames[5], code, exhName);
             ExecuteNonQuery(command);
         }
 
@@ -272,7 +272,7 @@ namespace Koberce
 
         public bool ExistsItem(string code, string tableName)
         {
-            var ds = ExecuteQuery(tableName, " where code = " + code, "");
+            var ds = ExecuteQuery(tableName, string.Format(" where code = {0} and valid = 1", code), "");
             if (ds != null && ds.Tables != null && ds.Tables.Count > 0 && ds.Tables[0].Rows != null && ds.Tables[0].Rows.Count > 0)
                 return true;
 
@@ -281,7 +281,11 @@ namespace Koberce
 
         internal void InsertSoldItem(string code, string sellDate, string sellPrice)
         {
+            if (ExistsItem(code, TableNames[1]))
+                return;
+
             var command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[1], code, sellDate, sellPrice);
+
             ExecuteNonQuery(command);
         }
 
@@ -291,9 +295,25 @@ namespace Koberce
             ExecuteNonQuery(command);
         }
 
-        internal void UpdateExh(string p, string p_2, string p_3, string p_4)
+        internal void UpdateExh(string code, string exh)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat(" UPDATE ");
+            sb.AppendFormat(TableNames[5]);
+            sb.AppendFormat(" SET ExhibitionName=\"{0}\"",
+                exh
+                );
+            sb.AppendFormat(" WHERE CODE = \"{0}\"", code);
+
+            string txtSQLQuery = sb.ToString();
+            try
+            {
+                this.ExecuteNonQuery(txtSQLQuery);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

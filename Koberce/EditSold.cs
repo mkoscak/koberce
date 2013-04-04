@@ -23,7 +23,12 @@ namespace Koberce
 
             if (!Exhibition)
                 txtExhibition.Enabled = false;
-            
+            else
+            {
+                txtSellDate.Enabled = false;
+                txtSellPrice.Enabled = false;
+            }
+
             if (code == null)
             {
                 MessageBox.Show(this, "Code is missing!", "Edit sold", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -33,8 +38,10 @@ namespace Koberce
                 string sExh = string.Empty;
                 if (Exhibition)
                     sExh = ", EXHIBITIONNAME";
+                else
+                    sExh = ", A.SELLDATE, A.SELLPRICE";
 
-                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMTITLE, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE, A.SELLDATE, A.SELLPRICE {3} from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code, sExh));
+                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMTITLE, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE {3} from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code, sExh));
                 if (ds != null && ds.Tables.Count > 0)
                 {
                     var vals = ds.Tables[0].Rows[0].ItemArray;
@@ -46,10 +53,13 @@ namespace Koberce
                     txtWidth.Text = vals[5].ToString();
                     txtItemPrice.Text = vals[6].ToString();
                     txtDate.Text = vals[7].ToString();
-                    txtSellDate.Text = vals[8].ToString();
-                    txtSellPrice.Text = vals[9].ToString();
                     if (Exhibition)
-                        txtExhibition.Text = vals[10].ToString();
+                        txtExhibition.Text = vals[8].ToString();
+                    else
+                    {
+                        txtSellDate.Text = vals[8].ToString();
+                        txtSellPrice.Text = vals[9].ToString();
+                    }
                 }
             }
         }
@@ -67,8 +77,6 @@ namespace Koberce
                 else
                 {
                     db.UpdateExh(txtCode.Text,
-                            txtSellDate.Text,
-                            txtSellPrice.Text,
                             txtExhibition.Text);
                 }
 
