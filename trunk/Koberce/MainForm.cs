@@ -221,8 +221,8 @@ namespace Koberce
                 // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
-                // exh1 ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.EXHIBITIONNAME, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.EXHIBITIONS], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                // exh1 ma len kody, nazov vystavy - join na main a vratime len tieto produkty
+                ds = db.ExecuteQuery(string.Format("select A.CODE, A.EXHIBITIONNAME, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.EXHIBITIONS], DBProvider.TableNames[(int)TABS.MAIN], condition));
             else if (tabControl1.SelectedIndex == (int)TABS.SK || tabControl1.SelectedIndex == (int)TABS.FROMSK)
                 // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
                 ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[tabControl1.SelectedIndex], DBProvider.TableNames[(int)TABS.MAIN], condition));
@@ -813,48 +813,22 @@ namespace Koberce
 
         public void SoldItems(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
-            var codes = userData as string[];
-
-            /*bw.ReportProgress(0, "Setting quantity to 0..");
-            string command = string.Format("update {0} set quantity = 0 where code in ({1})", DBProvider.TableNames[0], string.Join(",", codes));
-            db.ExecuteNonQuery(command);*/
+            var items = userData as SoldItem[];
 
             bw.ReportProgress(0, "Updating..");
-            for (int i = 0; i < codes.Length; i++ )
+            for (int i = 0; i < items.Length; i++ )
             {
-                var code = codes[i];
-                var item = db.GetItem(code);
+                var code = items[i].Code;
 
-                db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year.ToString("00"), DateTime.Now.Month.ToString("00"), DateTime.Now.Day), item.VkNetto);
-
-                var web = Properties.Settings.Default.WebServer;
-                if (!web.EndsWith("/"))
-                    web += "/";
-                var param = "pages/stiahni-z-predaja.html?id=XXX";
-                if (param.StartsWith("/"))
-                    param = param.TrimStart('/');
-                if (param.Contains("XXX"))
-#if DEBUG
-                    param = param.Replace("XXX", "test");
-#else
-                    param = param.Replace("XXX", code);
-#endif
-                try
-                {
-                    Process.Start(web+param);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(this, "Exception occured: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year.ToString("00"), DateTime.Now.Month.ToString("00"), DateTime.Now.Day), item.VkNetto);
+                db.SoldItem(items[i].Code, items[i].SettDate, items[i].SellPrice);
 
                 if (bw.CancellationPending == true)
                 {
                     e.Cancel = true;
                     break;
                 }
-                bw.ReportProgress((int)(((double)(i + 1.0) / codes.Length) * 100.0));
+                bw.ReportProgress((int)(((double)(i + 1.0) / items.Length) * 100.0));
             }
         }
 
@@ -1432,7 +1406,7 @@ namespace Koberce
                 var imported = ImportScannerData();
                 MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                SoldItems(imported.ToArray());
+                //SoldItems(imported.ToArray());
             }
             catch (Exception ex)
             {
@@ -1581,31 +1555,8 @@ namespace Koberce
             for (int i = 0; i < codes.Length; i++)
             {
                 var code = codes[i];
-                var item = db.GetItem(code);
 
-                db.ExhItem(item.GlobalNumber, CurrentExhibitionName, string.Format("{0}-{1}-{2}", DateTime.Now.Year, DateTime.Now.Month.ToString("00"), DateTime.Now.Day.ToString("00")), item.VkNetto);
-
-                var web = Properties.Settings.Default.WebServer;
-                if (!web.EndsWith("/"))
-                    web += "/";
-                var param = "pages/stiahni-z-predaja.html?id=XXX";
-                if (param.StartsWith("/"))
-                    param = param.TrimStart('/');
-                if (param.Contains("XXX"))
-#if DEBUG
-                    param = param.Replace("XXX", "test");
-#else
-                    param = param.Replace("XXX", code);
-#endif
-                try
-                {
-                    Process.Start(web + param);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(this, "Exception occured: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                db.ExhItem(code, CurrentExhibitionName);
 
                 if (bw.CancellationPending == true)
                 {
