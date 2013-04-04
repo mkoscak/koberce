@@ -75,7 +75,6 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnRemoveSel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.Grid = new Koberce.CustomDataGridView();
             this.tabSold = new System.Windows.Forms.TabPage();
             this.btnSoldIfo = new System.Windows.Forms.Button();
             this.btnEditSold = new System.Windows.Forms.Button();
@@ -115,7 +114,6 @@
             this.btnExportSold = new System.Windows.Forms.Button();
             this.btnDelSold = new System.Windows.Forms.Button();
             this.btnRefreshSold = new System.Windows.Forms.Button();
-            this.gridSell = new Koberce.CustomDataGridView();
             this.tabSK = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -147,7 +145,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.gridSK = new Koberce.CustomDataGridView();
             this.tabFromSK = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -179,7 +176,6 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.gridFromSK = new Koberce.CustomDataGridView();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.btnStartInventory = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -221,7 +217,6 @@
             this.btnInvInfo = new System.Windows.Forms.Button();
             this.btnInvRemove = new System.Windows.Forms.Button();
             this.btnInvRefresh = new System.Windows.Forms.Button();
-            this.gridInventory = new Koberce.CustomDataGridView();
             this.tabExh1 = new System.Windows.Forms.TabPage();
             this.button63 = new System.Windows.Forms.Button();
             this.button64 = new System.Windows.Forms.Button();
@@ -263,7 +258,6 @@
             this.button66 = new System.Windows.Forms.Button();
             this.button67 = new System.Windows.Forms.Button();
             this.button68 = new System.Windows.Forms.Button();
-            this.gridExh = new Koberce.CustomDataGridView();
             this.tabbatch = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBatchSelCount = new System.Windows.Forms.Label();
@@ -273,7 +267,6 @@
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.btnDecode = new System.Windows.Forms.Button();
             this.btnStartBatch = new System.Windows.Forms.Button();
-            this.gridBatch = new Koberce.CustomDataGridView();
             this.tabExecQuery = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lblQuerySelCount = new System.Windows.Forms.Label();
@@ -291,7 +284,6 @@
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnExportQuery = new System.Windows.Forms.Button();
             this.lblQueryInfo = new System.Windows.Forms.Label();
-            this.gridQueryRes = new Koberce.CustomDataGridView();
             this.MainToolbar = new System.Windows.Forms.ToolStrip();
             this.btnPreviousTab = new System.Windows.Forms.ToolStripButton();
             this.btnNextTab = new System.Windows.Forms.ToolStripButton();
@@ -373,7 +365,6 @@
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
-            this.customDataGridView1 = new Koberce.CustomDataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -411,7 +402,6 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.customDataGridView2 = new Koberce.CustomDataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button28 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
@@ -441,7 +431,6 @@
             this.button31 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
-            this.customDataGridView3 = new Koberce.CustomDataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
@@ -471,7 +460,6 @@
             this.button37 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
-            this.customDataGridView4 = new Koberce.CustomDataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button40 = new System.Windows.Forms.Button();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
@@ -511,7 +499,6 @@
             this.button43 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
             this.button45 = new System.Windows.Forms.Button();
-            this.customDataGridView5 = new Koberce.CustomDataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.label140 = new System.Windows.Forms.Label();
@@ -521,7 +508,6 @@
             this.textBox48 = new System.Windows.Forms.TextBox();
             this.button46 = new System.Windows.Forms.Button();
             this.button47 = new System.Windows.Forms.Button();
-            this.customDataGridView6 = new Koberce.CustomDataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.label144 = new System.Windows.Forms.Label();
@@ -539,7 +525,6 @@
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.button56 = new System.Windows.Forms.Button();
             this.label148 = new System.Windows.Forms.Label();
-            this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.button57 = new System.Windows.Forms.Button();
             this.button58 = new System.Windows.Forms.Button();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
@@ -576,67 +561,94 @@
             this.button60 = new System.Windows.Forms.Button();
             this.button61 = new System.Windows.Forms.Button();
             this.button62 = new System.Windows.Forms.Button();
+            this.txtFilComment = new System.Windows.Forms.TextBox();
+            this.label187 = new System.Windows.Forms.Label();
+            this.txtFilSoldComment = new System.Windows.Forms.TextBox();
+            this.label188 = new System.Windows.Forms.Label();
+            this.txtFilSKComment = new System.Windows.Forms.TextBox();
+            this.label189 = new System.Windows.Forms.Label();
+            this.Grid = new Koberce.CustomDataGridView();
+            this.gridSell = new Koberce.CustomDataGridView();
+            this.gridSK = new Koberce.CustomDataGridView();
+            this.gridFromSK = new Koberce.CustomDataGridView();
+            this.gridInventory = new Koberce.CustomDataGridView();
+            this.gridExh = new Koberce.CustomDataGridView();
+            this.gridBatch = new Koberce.CustomDataGridView();
+            this.gridQueryRes = new Koberce.CustomDataGridView();
+            this.customDataGridView1 = new Koberce.CustomDataGridView();
+            this.customDataGridView2 = new Koberce.CustomDataGridView();
+            this.customDataGridView3 = new Koberce.CustomDataGridView();
+            this.customDataGridView4 = new Koberce.CustomDataGridView();
+            this.customDataGridView5 = new Koberce.CustomDataGridView();
+            this.customDataGridView6 = new Koberce.CustomDataGridView();
+            this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.customDataGridView8 = new Koberce.CustomDataGridView();
+            this.txtFilFSKComment = new System.Windows.Forms.TextBox();
+            this.label190 = new System.Windows.Forms.Label();
+            this.txtFilExhComment = new System.Windows.Forms.TextBox();
+            this.label191 = new System.Windows.Forms.Label();
+            this.txtFilInvComment = new System.Windows.Forms.TextBox();
+            this.label192 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.tabSold.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
             this.tabSK.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
             this.tabFromSK.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
             this.tabInventory.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             this.tabExh1.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.groupBox27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridExh)).BeginInit();
             this.tabbatch.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
             this.tabExecQuery.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
             this.MainToolbar.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView4)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.groupBox21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.groupBox22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView6)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.groupBox23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView7)).BeginInit();
             this.groupBox24.SuspendLayout();
             this.groupBox25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -805,6 +817,8 @@
             // 
             this.grpFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpFilter.Controls.Add(this.txtFilComment);
+            this.grpFilter.Controls.Add(this.label187);
             this.grpFilter.Controls.Add(this.txtRgNr);
             this.grpFilter.Controls.Add(this.label168);
             this.grpFilter.Controls.Add(this.txtFilLength);
@@ -1150,22 +1164,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // Grid
-            // 
-            this.Grid.AllowUserToAddRows = false;
-            this.Grid.AllowUserToDeleteRows = false;
-            this.Grid.AllowUserToOrderColumns = true;
-            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(6, 86);
-            this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(1244, 444);
-            this.Grid.TabIndex = 4;
-            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabSold
             // 
             this.tabSold.Controls.Add(this.btnSoldIfo);
@@ -1288,6 +1286,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtFilSoldComment);
+            this.groupBox1.Controls.Add(this.label188);
             this.groupBox1.Controls.Add(this.txtFilSoldRgNr);
             this.groupBox1.Controls.Add(this.label170);
             this.groupBox1.Controls.Add(this.txtFilSoldLength);
@@ -1581,22 +1581,6 @@
             this.btnRefreshSold.UseVisualStyleBackColor = true;
             this.btnRefreshSold.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridSell
-            // 
-            this.gridSell.AllowUserToAddRows = false;
-            this.gridSell.AllowUserToDeleteRows = false;
-            this.gridSell.AllowUserToOrderColumns = true;
-            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSell.Location = new System.Drawing.Point(6, 85);
-            this.gridSell.Name = "gridSell";
-            this.gridSell.Size = new System.Drawing.Size(1244, 445);
-            this.gridSell.TabIndex = 13;
-            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabSK
             // 
             this.tabSK.Controls.Add(this.button1);
@@ -1698,6 +1682,8 @@
             // 
             this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.txtFilSKComment);
+            this.groupBox9.Controls.Add(this.label189);
             this.groupBox9.Controls.Add(this.txtFilSKRgNr);
             this.groupBox9.Controls.Add(this.label183);
             this.groupBox9.Controls.Add(this.txtFilSKLength);
@@ -1928,21 +1914,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridSK
-            // 
-            this.gridSK.AllowUserToAddRows = false;
-            this.gridSK.AllowUserToDeleteRows = false;
-            this.gridSK.AllowUserToOrderColumns = true;
-            this.gridSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSK.Location = new System.Drawing.Point(6, 85);
-            this.gridSK.Name = "gridSK";
-            this.gridSK.Size = new System.Drawing.Size(1244, 445);
-            this.gridSK.TabIndex = 23;
-            this.gridSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabFromSK
             // 
             this.tabFromSK.Controls.Add(this.button7);
@@ -2044,6 +2015,8 @@
             // 
             this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.txtFilFSKComment);
+            this.groupBox11.Controls.Add(this.label190);
             this.groupBox11.Controls.Add(this.txtFilFromSkRgNr);
             this.groupBox11.Controls.Add(this.label184);
             this.groupBox11.Controls.Add(this.txtFilFSKLength);
@@ -2274,20 +2247,6 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridFromSK
-            // 
-            this.gridFromSK.AllowUserToAddRows = false;
-            this.gridFromSK.AllowUserToDeleteRows = false;
-            this.gridFromSK.AllowUserToOrderColumns = true;
-            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
-            this.gridFromSK.Name = "gridFromSK";
-            this.gridFromSK.Size = new System.Drawing.Size(1244, 445);
-            this.gridFromSK.TabIndex = 31;
-            // 
             // tabInventory
             // 
             this.tabInventory.Controls.Add(this.btnStartInventory);
@@ -2376,6 +2335,8 @@
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.txtFilInvComment);
+            this.groupBox5.Controls.Add(this.label192);
             this.groupBox5.Controls.Add(this.txtFilInvRgNr);
             this.groupBox5.Controls.Add(this.label185);
             this.groupBox5.Controls.Add(this.txtFilInvLength);
@@ -2720,21 +2681,6 @@
             this.btnInvRefresh.UseVisualStyleBackColor = true;
             this.btnInvRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridInventory
-            // 
-            this.gridInventory.AllowUserToAddRows = false;
-            this.gridInventory.AllowUserToDeleteRows = false;
-            this.gridInventory.AllowUserToOrderColumns = true;
-            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventory.Location = new System.Drawing.Point(6, 85);
-            this.gridInventory.Name = "gridInventory";
-            this.gridInventory.Size = new System.Drawing.Size(1244, 445);
-            this.gridInventory.TabIndex = 14;
-            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabExh1
             // 
             this.tabExh1.Controls.Add(this.button63);
@@ -2858,6 +2804,8 @@
             // 
             this.groupBox27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox27.Controls.Add(this.txtFilExhComment);
+            this.groupBox27.Controls.Add(this.label191);
             this.groupBox27.Controls.Add(this.txtFilExhRgNr);
             this.groupBox27.Controls.Add(this.label186);
             this.groupBox27.Controls.Add(this.txtExhFilExName);
@@ -3170,22 +3118,6 @@
             this.button68.UseVisualStyleBackColor = true;
             this.button68.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // gridExh
-            // 
-            this.gridExh.AllowUserToAddRows = false;
-            this.gridExh.AllowUserToDeleteRows = false;
-            this.gridExh.AllowUserToOrderColumns = true;
-            this.gridExh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridExh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridExh.Location = new System.Drawing.Point(6, 85);
-            this.gridExh.Name = "gridExh";
-            this.gridExh.Size = new System.Drawing.Size(1244, 445);
-            this.gridExh.TabIndex = 23;
-            this.gridExh.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
-            this.gridExh.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
-            // 
             // tabbatch
             // 
             this.tabbatch.Controls.Add(this.groupBox6);
@@ -3290,21 +3222,6 @@
             this.btnStartBatch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStartBatch.UseVisualStyleBackColor = true;
             this.btnStartBatch.Click += new System.EventHandler(this.btnStartBatch_Click);
-            // 
-            // gridBatch
-            // 
-            this.gridBatch.AllowUserToAddRows = false;
-            this.gridBatch.AllowUserToDeleteRows = false;
-            this.gridBatch.AllowUserToOrderColumns = true;
-            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridBatch.Location = new System.Drawing.Point(170, 318);
-            this.gridBatch.Name = "gridBatch";
-            this.gridBatch.Size = new System.Drawing.Size(1083, 277);
-            this.gridBatch.TabIndex = 2;
-            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // tabExecQuery
             // 
@@ -3507,21 +3424,6 @@
             this.lblQueryInfo.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
                 "Q";
             this.lblQueryInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // gridQueryRes
-            // 
-            this.gridQueryRes.AllowUserToAddRows = false;
-            this.gridQueryRes.AllowUserToDeleteRows = false;
-            this.gridQueryRes.AllowUserToOrderColumns = true;
-            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
-            this.gridQueryRes.Name = "gridQueryRes";
-            this.gridQueryRes.Size = new System.Drawing.Size(1250, 315);
-            this.gridQueryRes.TabIndex = 5;
-            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
             // 
             // MainToolbar
             // 
@@ -3846,7 +3748,7 @@
             // btnImportSold
             // 
             this.btnImportSold.Name = "btnImportSold";
-            this.btnImportSold.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSold.Size = new System.Drawing.Size(131, 22);
             this.btnImportSold.Tag = "";
             this.btnImportSold.Text = "Sold";
             this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
@@ -3854,7 +3756,7 @@
             // btnImportInventory
             // 
             this.btnImportInventory.Name = "btnImportInventory";
-            this.btnImportInventory.Size = new System.Drawing.Size(152, 22);
+            this.btnImportInventory.Size = new System.Drawing.Size(131, 22);
             this.btnImportInventory.Tag = "";
             this.btnImportInventory.Text = "Inventory";
             this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
@@ -3862,21 +3764,21 @@
             // btnImportSK
             // 
             this.btnImportSK.Name = "btnImportSK";
-            this.btnImportSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportSK.Text = "SK";
             this.btnImportSK.Click += new System.EventHandler(this.btnImportSK_Click);
             // 
             // btnImportFromSK
             // 
             this.btnImportFromSK.Name = "btnImportFromSK";
-            this.btnImportFromSK.Size = new System.Drawing.Size(152, 22);
+            this.btnImportFromSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportFromSK.Text = "fromSK";
             this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
             // 
             // btnImportExh
             // 
             this.btnImportExh.Name = "btnImportExh";
-            this.btnImportExh.Size = new System.Drawing.Size(152, 22);
+            this.btnImportExh.Size = new System.Drawing.Size(131, 22);
             this.btnImportExh.Text = "Exhibitions";
             this.btnImportExh.Click += new System.EventHandler(this.btnImportExh_Click);
             // 
@@ -4327,20 +4229,6 @@
             this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button21.UseVisualStyleBackColor = true;
             // 
-            // customDataGridView1
-            // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.AllowUserToDeleteRows = false;
-            this.customDataGridView1.AllowUserToOrderColumns = true;
-            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView1.Location = new System.Drawing.Point(6, 86);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.Size = new System.Drawing.Size(1244, 444);
-            this.customDataGridView1.TabIndex = 4;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button22);
@@ -4720,20 +4608,6 @@
             this.button27.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button27.UseVisualStyleBackColor = true;
             // 
-            // customDataGridView2
-            // 
-            this.customDataGridView2.AllowUserToAddRows = false;
-            this.customDataGridView2.AllowUserToDeleteRows = false;
-            this.customDataGridView2.AllowUserToOrderColumns = true;
-            this.customDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView2.Location = new System.Drawing.Point(6, 85);
-            this.customDataGridView2.Name = "customDataGridView2";
-            this.customDataGridView2.Size = new System.Drawing.Size(1244, 445);
-            this.customDataGridView2.TabIndex = 13;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button28);
@@ -5033,20 +4907,6 @@
             this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button33.UseVisualStyleBackColor = true;
             // 
-            // customDataGridView3
-            // 
-            this.customDataGridView3.AllowUserToAddRows = false;
-            this.customDataGridView3.AllowUserToDeleteRows = false;
-            this.customDataGridView3.AllowUserToOrderColumns = true;
-            this.customDataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView3.Location = new System.Drawing.Point(6, 85);
-            this.customDataGridView3.Name = "customDataGridView3";
-            this.customDataGridView3.Size = new System.Drawing.Size(1244, 445);
-            this.customDataGridView3.TabIndex = 23;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.button34);
@@ -5345,20 +5205,6 @@
             this.button39.Text = "&Refresh";
             this.button39.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button39.UseVisualStyleBackColor = true;
-            // 
-            // customDataGridView4
-            // 
-            this.customDataGridView4.AllowUserToAddRows = false;
-            this.customDataGridView4.AllowUserToDeleteRows = false;
-            this.customDataGridView4.AllowUserToOrderColumns = true;
-            this.customDataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView4.Location = new System.Drawing.Point(6, 85);
-            this.customDataGridView4.Name = "customDataGridView4";
-            this.customDataGridView4.Size = new System.Drawing.Size(1244, 445);
-            this.customDataGridView4.TabIndex = 31;
             // 
             // tabPage5
             // 
@@ -5754,20 +5600,6 @@
             this.button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button45.UseVisualStyleBackColor = true;
             // 
-            // customDataGridView5
-            // 
-            this.customDataGridView5.AllowUserToAddRows = false;
-            this.customDataGridView5.AllowUserToDeleteRows = false;
-            this.customDataGridView5.AllowUserToOrderColumns = true;
-            this.customDataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView5.Location = new System.Drawing.Point(6, 85);
-            this.customDataGridView5.Name = "customDataGridView5";
-            this.customDataGridView5.Size = new System.Drawing.Size(1244, 445);
-            this.customDataGridView5.TabIndex = 14;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.groupBox22);
@@ -5870,20 +5702,6 @@
             this.button47.Text = "&Start inserting";
             this.button47.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button47.UseVisualStyleBackColor = true;
-            // 
-            // customDataGridView6
-            // 
-            this.customDataGridView6.AllowUserToAddRows = false;
-            this.customDataGridView6.AllowUserToDeleteRows = false;
-            this.customDataGridView6.AllowUserToOrderColumns = true;
-            this.customDataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView6.Location = new System.Drawing.Point(170, 318);
-            this.customDataGridView6.Name = "customDataGridView6";
-            this.customDataGridView6.Size = new System.Drawing.Size(1083, 277);
-            this.customDataGridView6.TabIndex = 2;
             // 
             // tabPage7
             // 
@@ -6077,20 +5895,6 @@
             this.label148.Text = "Select query or command from text window and hit \'Execute query\' or shortcut Alt+" +
                 "Q";
             this.label148.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // customDataGridView7
-            // 
-            this.customDataGridView7.AllowUserToAddRows = false;
-            this.customDataGridView7.AllowUserToDeleteRows = false;
-            this.customDataGridView7.AllowUserToOrderColumns = true;
-            this.customDataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView7.Location = new System.Drawing.Point(3, 267);
-            this.customDataGridView7.Name = "customDataGridView7";
-            this.customDataGridView7.Size = new System.Drawing.Size(1250, 315);
-            this.customDataGridView7.TabIndex = 5;
             // 
             // button57
             // 
@@ -6454,6 +6258,277 @@
             this.button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button62.UseVisualStyleBackColor = true;
             // 
+            // txtFilComment
+            // 
+            this.txtFilComment.Location = new System.Drawing.Point(1020, 42);
+            this.txtFilComment.Name = "txtFilComment";
+            this.txtFilComment.Size = new System.Drawing.Size(80, 20);
+            this.txtFilComment.TabIndex = 31;
+            this.txtFilComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label187
+            // 
+            this.label187.AutoSize = true;
+            this.label187.Location = new System.Drawing.Point(963, 45);
+            this.label187.Name = "label187";
+            this.label187.Size = new System.Drawing.Size(51, 13);
+            this.label187.TabIndex = 30;
+            this.label187.Text = "Comment";
+            // 
+            // txtFilSoldComment
+            // 
+            this.txtFilSoldComment.Location = new System.Drawing.Point(895, 16);
+            this.txtFilSoldComment.Name = "txtFilSoldComment";
+            this.txtFilSoldComment.Size = new System.Drawing.Size(75, 20);
+            this.txtFilSoldComment.TabIndex = 35;
+            this.txtFilSoldComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label188
+            // 
+            this.label188.AutoSize = true;
+            this.label188.Location = new System.Drawing.Point(838, 19);
+            this.label188.Name = "label188";
+            this.label188.Size = new System.Drawing.Size(51, 13);
+            this.label188.TabIndex = 34;
+            this.label188.Text = "Comment";
+            // 
+            // txtFilSKComment
+            // 
+            this.txtFilSKComment.Location = new System.Drawing.Point(492, 43);
+            this.txtFilSKComment.Name = "txtFilSKComment";
+            this.txtFilSKComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilSKComment.TabIndex = 35;
+            this.txtFilSKComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label189
+            // 
+            this.label189.AutoSize = true;
+            this.label189.Location = new System.Drawing.Point(435, 46);
+            this.label189.Name = "label189";
+            this.label189.Size = new System.Drawing.Size(51, 13);
+            this.label189.TabIndex = 34;
+            this.label189.Text = "Comment";
+            // 
+            // Grid
+            // 
+            this.Grid.AllowUserToAddRows = false;
+            this.Grid.AllowUserToDeleteRows = false;
+            this.Grid.AllowUserToOrderColumns = true;
+            this.Grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(6, 86);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(1244, 444);
+            this.Grid.TabIndex = 4;
+            this.Grid.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            this.Grid.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridSell
+            // 
+            this.gridSell.AllowUserToAddRows = false;
+            this.gridSell.AllowUserToDeleteRows = false;
+            this.gridSell.AllowUserToOrderColumns = true;
+            this.gridSell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSell.Location = new System.Drawing.Point(6, 85);
+            this.gridSell.Name = "gridSell";
+            this.gridSell.Size = new System.Drawing.Size(1244, 445);
+            this.gridSell.TabIndex = 13;
+            this.gridSell.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            this.gridSell.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridSK
+            // 
+            this.gridSK.AllowUserToAddRows = false;
+            this.gridSK.AllowUserToDeleteRows = false;
+            this.gridSK.AllowUserToOrderColumns = true;
+            this.gridSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSK.Location = new System.Drawing.Point(6, 85);
+            this.gridSK.Name = "gridSK";
+            this.gridSK.Size = new System.Drawing.Size(1244, 445);
+            this.gridSK.TabIndex = 23;
+            this.gridSK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridFromSK
+            // 
+            this.gridFromSK.AllowUserToAddRows = false;
+            this.gridFromSK.AllowUserToDeleteRows = false;
+            this.gridFromSK.AllowUserToOrderColumns = true;
+            this.gridFromSK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridFromSK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFromSK.Location = new System.Drawing.Point(6, 85);
+            this.gridFromSK.Name = "gridFromSK";
+            this.gridFromSK.Size = new System.Drawing.Size(1244, 445);
+            this.gridFromSK.TabIndex = 31;
+            // 
+            // gridInventory
+            // 
+            this.gridInventory.AllowUserToAddRows = false;
+            this.gridInventory.AllowUserToDeleteRows = false;
+            this.gridInventory.AllowUserToOrderColumns = true;
+            this.gridInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInventory.Location = new System.Drawing.Point(6, 85);
+            this.gridInventory.Name = "gridInventory";
+            this.gridInventory.Size = new System.Drawing.Size(1244, 445);
+            this.gridInventory.TabIndex = 14;
+            this.gridInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridExh
+            // 
+            this.gridExh.AllowUserToAddRows = false;
+            this.gridExh.AllowUserToDeleteRows = false;
+            this.gridExh.AllowUserToOrderColumns = true;
+            this.gridExh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridExh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridExh.Location = new System.Drawing.Point(6, 85);
+            this.gridExh.Name = "gridExh";
+            this.gridExh.Size = new System.Drawing.Size(1244, 445);
+            this.gridExh.TabIndex = 23;
+            this.gridExh.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_CellMouseDoubleClick);
+            this.gridExh.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridBatch
+            // 
+            this.gridBatch.AllowUserToAddRows = false;
+            this.gridBatch.AllowUserToDeleteRows = false;
+            this.gridBatch.AllowUserToOrderColumns = true;
+            this.gridBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridBatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBatch.Location = new System.Drawing.Point(170, 318);
+            this.gridBatch.Name = "gridBatch";
+            this.gridBatch.Size = new System.Drawing.Size(1083, 277);
+            this.gridBatch.TabIndex = 2;
+            this.gridBatch.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // gridQueryRes
+            // 
+            this.gridQueryRes.AllowUserToAddRows = false;
+            this.gridQueryRes.AllowUserToDeleteRows = false;
+            this.gridQueryRes.AllowUserToOrderColumns = true;
+            this.gridQueryRes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridQueryRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQueryRes.Location = new System.Drawing.Point(3, 267);
+            this.gridQueryRes.Name = "gridQueryRes";
+            this.gridQueryRes.Size = new System.Drawing.Size(1250, 315);
+            this.gridQueryRes.TabIndex = 5;
+            this.gridQueryRes.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellEnter);
+            // 
+            // customDataGridView1
+            // 
+            this.customDataGridView1.AllowUserToAddRows = false;
+            this.customDataGridView1.AllowUserToDeleteRows = false;
+            this.customDataGridView1.AllowUserToOrderColumns = true;
+            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView1.Location = new System.Drawing.Point(6, 86);
+            this.customDataGridView1.Name = "customDataGridView1";
+            this.customDataGridView1.Size = new System.Drawing.Size(1244, 444);
+            this.customDataGridView1.TabIndex = 4;
+            // 
+            // customDataGridView2
+            // 
+            this.customDataGridView2.AllowUserToAddRows = false;
+            this.customDataGridView2.AllowUserToDeleteRows = false;
+            this.customDataGridView2.AllowUserToOrderColumns = true;
+            this.customDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView2.Location = new System.Drawing.Point(6, 85);
+            this.customDataGridView2.Name = "customDataGridView2";
+            this.customDataGridView2.Size = new System.Drawing.Size(1244, 445);
+            this.customDataGridView2.TabIndex = 13;
+            // 
+            // customDataGridView3
+            // 
+            this.customDataGridView3.AllowUserToAddRows = false;
+            this.customDataGridView3.AllowUserToDeleteRows = false;
+            this.customDataGridView3.AllowUserToOrderColumns = true;
+            this.customDataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView3.Location = new System.Drawing.Point(6, 85);
+            this.customDataGridView3.Name = "customDataGridView3";
+            this.customDataGridView3.Size = new System.Drawing.Size(1244, 445);
+            this.customDataGridView3.TabIndex = 23;
+            // 
+            // customDataGridView4
+            // 
+            this.customDataGridView4.AllowUserToAddRows = false;
+            this.customDataGridView4.AllowUserToDeleteRows = false;
+            this.customDataGridView4.AllowUserToOrderColumns = true;
+            this.customDataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView4.Location = new System.Drawing.Point(6, 85);
+            this.customDataGridView4.Name = "customDataGridView4";
+            this.customDataGridView4.Size = new System.Drawing.Size(1244, 445);
+            this.customDataGridView4.TabIndex = 31;
+            // 
+            // customDataGridView5
+            // 
+            this.customDataGridView5.AllowUserToAddRows = false;
+            this.customDataGridView5.AllowUserToDeleteRows = false;
+            this.customDataGridView5.AllowUserToOrderColumns = true;
+            this.customDataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView5.Location = new System.Drawing.Point(6, 85);
+            this.customDataGridView5.Name = "customDataGridView5";
+            this.customDataGridView5.Size = new System.Drawing.Size(1244, 445);
+            this.customDataGridView5.TabIndex = 14;
+            // 
+            // customDataGridView6
+            // 
+            this.customDataGridView6.AllowUserToAddRows = false;
+            this.customDataGridView6.AllowUserToDeleteRows = false;
+            this.customDataGridView6.AllowUserToOrderColumns = true;
+            this.customDataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView6.Location = new System.Drawing.Point(170, 318);
+            this.customDataGridView6.Name = "customDataGridView6";
+            this.customDataGridView6.Size = new System.Drawing.Size(1083, 277);
+            this.customDataGridView6.TabIndex = 2;
+            // 
+            // customDataGridView7
+            // 
+            this.customDataGridView7.AllowUserToAddRows = false;
+            this.customDataGridView7.AllowUserToDeleteRows = false;
+            this.customDataGridView7.AllowUserToOrderColumns = true;
+            this.customDataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customDataGridView7.Location = new System.Drawing.Point(3, 267);
+            this.customDataGridView7.Name = "customDataGridView7";
+            this.customDataGridView7.Size = new System.Drawing.Size(1250, 315);
+            this.customDataGridView7.TabIndex = 5;
+            // 
             // customDataGridView8
             // 
             this.customDataGridView8.AllowUserToAddRows = false;
@@ -6467,6 +6542,57 @@
             this.customDataGridView8.Name = "customDataGridView8";
             this.customDataGridView8.Size = new System.Drawing.Size(1244, 445);
             this.customDataGridView8.TabIndex = 13;
+            // 
+            // txtFilFSKComment
+            // 
+            this.txtFilFSKComment.Location = new System.Drawing.Point(492, 43);
+            this.txtFilFSKComment.Name = "txtFilFSKComment";
+            this.txtFilFSKComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKComment.TabIndex = 35;
+            this.txtFilFSKComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label190
+            // 
+            this.label190.AutoSize = true;
+            this.label190.Location = new System.Drawing.Point(435, 46);
+            this.label190.Name = "label190";
+            this.label190.Size = new System.Drawing.Size(51, 13);
+            this.label190.TabIndex = 34;
+            this.label190.Text = "Comment";
+            // 
+            // txtFilExhComment
+            // 
+            this.txtFilExhComment.Location = new System.Drawing.Point(1068, 43);
+            this.txtFilExhComment.Name = "txtFilExhComment";
+            this.txtFilExhComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilExhComment.TabIndex = 37;
+            this.txtFilExhComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label191
+            // 
+            this.label191.AutoSize = true;
+            this.label191.Location = new System.Drawing.Point(1011, 46);
+            this.label191.Name = "label191";
+            this.label191.Size = new System.Drawing.Size(51, 13);
+            this.label191.TabIndex = 36;
+            this.label191.Text = "Comment";
+            // 
+            // txtFilInvComment
+            // 
+            this.txtFilInvComment.Location = new System.Drawing.Point(1017, 42);
+            this.txtFilInvComment.Name = "txtFilInvComment";
+            this.txtFilInvComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvComment.TabIndex = 39;
+            this.txtFilInvComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label192
+            // 
+            this.label192.AutoSize = true;
+            this.label192.Location = new System.Drawing.Point(960, 45);
+            this.label192.Name = "label192";
+            this.label192.Size = new System.Drawing.Size(51, 13);
+            this.label192.TabIndex = 38;
+            this.label192.Text = "Comment";
             // 
             // MainForm
             // 
@@ -6487,47 +6613,39 @@
             this.groupBox2.PerformLayout();
             this.grpFilter.ResumeLayout(false);
             this.grpFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.tabSold.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
             this.tabSK.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
             this.tabFromSK.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             this.tabExh1.ResumeLayout(false);
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
             this.groupBox27.ResumeLayout(false);
             this.groupBox27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridExh)).EndInit();
             this.tabbatch.ResumeLayout(false);
             this.tabbatch.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
             this.tabExecQuery.ResumeLayout(false);
             this.tabExecQuery.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
             this.MainToolbar.ResumeLayout(false);
             this.MainToolbar.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -6535,45 +6653,53 @@
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView4)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             this.groupBox21.ResumeLayout(false);
             this.groupBox21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.groupBox22.ResumeLayout(false);
             this.groupBox22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView6)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView7)).EndInit();
             this.groupBox24.ResumeLayout(false);
             this.groupBox24.PerformLayout();
             this.groupBox25.ResumeLayout(false);
             this.groupBox25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFromSK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBatch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQueryRes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -7130,6 +7256,18 @@
         private System.Windows.Forms.ToolStripMenuItem btnUploadApp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem btnDownloadApp;
+        private System.Windows.Forms.TextBox txtFilComment;
+        private System.Windows.Forms.Label label187;
+        private System.Windows.Forms.TextBox txtFilSoldComment;
+        private System.Windows.Forms.Label label188;
+        private System.Windows.Forms.TextBox txtFilSKComment;
+        private System.Windows.Forms.Label label189;
+        private System.Windows.Forms.TextBox txtFilFSKComment;
+        private System.Windows.Forms.Label label190;
+        private System.Windows.Forms.TextBox txtFilExhComment;
+        private System.Windows.Forms.Label label191;
+        private System.Windows.Forms.TextBox txtFilInvComment;
+        private System.Windows.Forms.Label label192;
     }
 }
 
