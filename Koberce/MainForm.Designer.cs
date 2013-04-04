@@ -567,6 +567,12 @@
             this.label188 = new System.Windows.Forms.Label();
             this.txtFilSKComment = new System.Windows.Forms.TextBox();
             this.label189 = new System.Windows.Forms.Label();
+            this.txtFilFSKComment = new System.Windows.Forms.TextBox();
+            this.label190 = new System.Windows.Forms.Label();
+            this.txtFilExhComment = new System.Windows.Forms.TextBox();
+            this.label191 = new System.Windows.Forms.Label();
+            this.txtFilInvComment = new System.Windows.Forms.TextBox();
+            this.label192 = new System.Windows.Forms.Label();
             this.Grid = new Koberce.CustomDataGridView();
             this.gridSell = new Koberce.CustomDataGridView();
             this.gridSK = new Koberce.CustomDataGridView();
@@ -583,12 +589,7 @@
             this.customDataGridView6 = new Koberce.CustomDataGridView();
             this.customDataGridView7 = new Koberce.CustomDataGridView();
             this.customDataGridView8 = new Koberce.CustomDataGridView();
-            this.txtFilFSKComment = new System.Windows.Forms.TextBox();
-            this.label190 = new System.Windows.Forms.Label();
-            this.txtFilExhComment = new System.Windows.Forms.TextBox();
-            this.label191 = new System.Windows.Forms.Label();
-            this.txtFilInvComment = new System.Windows.Forms.TextBox();
-            this.label192 = new System.Windows.Forms.Label();
+            this.chb5Series = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabViewAll.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -3120,6 +3121,7 @@
             // 
             // tabbatch
             // 
+            this.tabbatch.Controls.Add(this.chb5Series);
             this.tabbatch.Controls.Add(this.groupBox6);
             this.tabbatch.Controls.Add(this.txtBatch);
             this.tabbatch.Controls.Add(this.btnDecode);
@@ -6309,6 +6311,57 @@
             this.label189.TabIndex = 34;
             this.label189.Text = "Comment";
             // 
+            // txtFilFSKComment
+            // 
+            this.txtFilFSKComment.Location = new System.Drawing.Point(492, 43);
+            this.txtFilFSKComment.Name = "txtFilFSKComment";
+            this.txtFilFSKComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilFSKComment.TabIndex = 35;
+            this.txtFilFSKComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label190
+            // 
+            this.label190.AutoSize = true;
+            this.label190.Location = new System.Drawing.Point(435, 46);
+            this.label190.Name = "label190";
+            this.label190.Size = new System.Drawing.Size(51, 13);
+            this.label190.TabIndex = 34;
+            this.label190.Text = "Comment";
+            // 
+            // txtFilExhComment
+            // 
+            this.txtFilExhComment.Location = new System.Drawing.Point(1068, 43);
+            this.txtFilExhComment.Name = "txtFilExhComment";
+            this.txtFilExhComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilExhComment.TabIndex = 37;
+            this.txtFilExhComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label191
+            // 
+            this.label191.AutoSize = true;
+            this.label191.Location = new System.Drawing.Point(1011, 46);
+            this.label191.Name = "label191";
+            this.label191.Size = new System.Drawing.Size(51, 13);
+            this.label191.TabIndex = 36;
+            this.label191.Text = "Comment";
+            // 
+            // txtFilInvComment
+            // 
+            this.txtFilInvComment.Location = new System.Drawing.Point(1017, 42);
+            this.txtFilInvComment.Name = "txtFilInvComment";
+            this.txtFilInvComment.Size = new System.Drawing.Size(71, 20);
+            this.txtFilInvComment.TabIndex = 39;
+            this.txtFilInvComment.TextChanged += new System.EventHandler(this.RefreshFilter);
+            // 
+            // label192
+            // 
+            this.label192.AutoSize = true;
+            this.label192.Location = new System.Drawing.Point(960, 45);
+            this.label192.Name = "label192";
+            this.label192.Size = new System.Drawing.Size(51, 13);
+            this.label192.TabIndex = 38;
+            this.label192.Text = "Comment";
+            // 
             // Grid
             // 
             this.Grid.AllowUserToAddRows = false;
@@ -6543,56 +6596,15 @@
             this.customDataGridView8.Size = new System.Drawing.Size(1244, 445);
             this.customDataGridView8.TabIndex = 13;
             // 
-            // txtFilFSKComment
+            // chb5Series
             // 
-            this.txtFilFSKComment.Location = new System.Drawing.Point(492, 43);
-            this.txtFilFSKComment.Name = "txtFilFSKComment";
-            this.txtFilFSKComment.Size = new System.Drawing.Size(71, 20);
-            this.txtFilFSKComment.TabIndex = 35;
-            this.txtFilFSKComment.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label190
-            // 
-            this.label190.AutoSize = true;
-            this.label190.Location = new System.Drawing.Point(435, 46);
-            this.label190.Name = "label190";
-            this.label190.Size = new System.Drawing.Size(51, 13);
-            this.label190.TabIndex = 34;
-            this.label190.Text = "Comment";
-            // 
-            // txtFilExhComment
-            // 
-            this.txtFilExhComment.Location = new System.Drawing.Point(1068, 43);
-            this.txtFilExhComment.Name = "txtFilExhComment";
-            this.txtFilExhComment.Size = new System.Drawing.Size(71, 20);
-            this.txtFilExhComment.TabIndex = 37;
-            this.txtFilExhComment.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label191
-            // 
-            this.label191.AutoSize = true;
-            this.label191.Location = new System.Drawing.Point(1011, 46);
-            this.label191.Name = "label191";
-            this.label191.Size = new System.Drawing.Size(51, 13);
-            this.label191.TabIndex = 36;
-            this.label191.Text = "Comment";
-            // 
-            // txtFilInvComment
-            // 
-            this.txtFilInvComment.Location = new System.Drawing.Point(1017, 42);
-            this.txtFilInvComment.Name = "txtFilInvComment";
-            this.txtFilInvComment.Size = new System.Drawing.Size(71, 20);
-            this.txtFilInvComment.TabIndex = 39;
-            this.txtFilInvComment.TextChanged += new System.EventHandler(this.RefreshFilter);
-            // 
-            // label192
-            // 
-            this.label192.AutoSize = true;
-            this.label192.Location = new System.Drawing.Point(960, 45);
-            this.label192.Name = "label192";
-            this.label192.Size = new System.Drawing.Size(51, 13);
-            this.label192.TabIndex = 38;
-            this.label192.Text = "Comment";
+            this.chb5Series.AutoSize = true;
+            this.chb5Series.Location = new System.Drawing.Point(7, 385);
+            this.chb5Series.Name = "chb5Series";
+            this.chb5Series.Size = new System.Drawing.Size(62, 17);
+            this.chb5Series.TabIndex = 14;
+            this.chb5Series.Text = "5 series";
+            this.chb5Series.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -7268,6 +7280,7 @@
         private System.Windows.Forms.Label label191;
         private System.Windows.Forms.TextBox txtFilInvComment;
         private System.Windows.Forms.Label label192;
+        private System.Windows.Forms.CheckBox chb5Series;
     }
 }
 

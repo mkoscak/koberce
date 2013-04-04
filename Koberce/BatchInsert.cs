@@ -78,7 +78,7 @@ namespace Koberce
 
         static BindingList<DataItem> DataSource;
         static DBProvider dbProvider;
-        public static void InsertMultiple(BindingList<DataItem> itemsDs, DBProvider db)
+        public static void InsertMultiple(BindingList<DataItem> itemsDs, DBProvider db, bool _5series)
         {
             if (itemsDs == null)
                 return;
@@ -86,13 +86,14 @@ namespace Koberce
             DataSource = itemsDs;
             dbProvider = db;
 
-            Progress p = new Progress(0, 100, "Batch inserting..", "Loading max code", Inserting, null, null, true, true);
+            Progress p = new Progress(0, 100, "Batch inserting..", "Loading max code", Inserting, null, _5series, true, true);
             p.StartWorker();
         }
 
         public static void Inserting(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
-            int maxCode = dbProvider.LoadMaxCode();
+            bool _5series = (bool)userData;
+            int maxCode = dbProvider.LoadMaxCode(_5series);
 
             //foreach (var item in DataSource)
             for (int i = 0; i < DataSource.Count; i++)
@@ -120,7 +121,7 @@ namespace Koberce
 
                 maxCode++;
 
-                dbProvider.Add(item.SupplierNr,
+                dbProvider.Add(false, item.SupplierNr,
                         maxCode.ToString(),
                         item.Name,
                         item.Country,
@@ -147,7 +148,8 @@ namespace Koberce
                 bw.ReportProgress( (int)(((double)(i+1.0) / DataSource.Count) * 100.0));
             }
 
-            dbProvider.ExecuteNonQuery("update last set lastCode = " + maxCode.ToString());
+            if (!_5series)
+                dbProvider.ExecuteNonQuery("update last set lastCode = " + maxCode.ToString());
         }
     }
 }

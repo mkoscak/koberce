@@ -29,7 +29,7 @@ namespace Koberce
             
             if (code == null)
             {
-                txtCode.Text = (db.LoadMaxCode() + 1).ToString();
+                txtCode.Text = (db.LoadMaxCode(false) + 1).ToString();
             }
             else
             {
@@ -65,7 +65,7 @@ namespace Koberce
             {
                 if (mode == EditMode.Add)
                 {
-                    db.Add(txtSupplierNr.Text,
+                    db.Add(true, txtSupplierNr.Text,
                             txtCode.Text,
                             txtName.Text,
                             txtCountry.Text,

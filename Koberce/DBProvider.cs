@@ -115,9 +115,12 @@ namespace Koberce
             return DS;
         }
 
-        public int LoadMaxCode()
+        public int LoadMaxCode(bool _5series)
         {
             var maxCode = ExecuteQuery("last", "", "");
+            if (_5series)
+                maxCode = ExecuteQuery("select max(code) from arena");
+
             var max = maxCode.Tables[0].Rows[0].ItemArray.ElementAt(0).ToString();
 
             int iMax = -1;
@@ -128,11 +131,14 @@ namespace Koberce
             catch (Exception)
             {
             }
-         
+
+            if (_5series && iMax < 500000)
+                iMax = 500000;
+
             return iMax;
         }
 
-        public void Add(string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr)
+        public void Add(bool updateMax, string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat(" INSERT INTO ");
@@ -163,7 +169,8 @@ namespace Koberce
             {
                 this.ExecuteNonQuery(txtSQLQuery);
 
-                ExecuteNonQuery("update last set lastCode = " + code);
+                if (updateMax)
+                    ExecuteNonQuery("update last set lastCode = " + code);
             }
             catch (Exception ex)
             {
