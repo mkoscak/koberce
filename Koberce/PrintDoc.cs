@@ -39,7 +39,7 @@ namespace Koberce
             //DefaultPageSettings.PaperSize = new PaperSize("psize", 354, 512);
 
             // 9.6x13.6cm v palcoch = 3.78x5.35
-            DefaultPageSettings.PaperSize = new PaperSize("psize", 378, 535);
+            DefaultPageSettings.PaperSize = new PaperSize("psize", 345, 495);
         }
 
         protected override void OnPrintPage(PrintPageEventArgs e)
@@ -48,27 +48,33 @@ namespace Koberce
 
             e.Graphics.TranslateTransform(1, 1);
 
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            /*e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;*/
 
             // zobrazenie bitmapy
             var i = new Bitmap("global-label.png");
             Rectangle r = e.PageBounds;
-            //r.Inflate(2, 2);
+            r.Offset(228, 20);
+            int offset = r.Left;
             e.Graphics.DrawImage(i, r);
+
+            // pre text ziadne ficury
+            /*e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.Default;
+            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.Default;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Default;*/
 
             var format = new StringFormat();
             format.Alignment = StringAlignment.Center;
 
-            e.Graphics.DrawString(Item.Name, Times14Bold, Brushes.Black, new RectangleF(10, 260, r.Width - 20, 50), format);
-            e.Graphics.DrawString(Item.Country, Times14, Brushes.Black, new RectangleF(10, 280, r.Width - 20, 50), format);
-            e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Arial14Bold, Brushes.Black, new RectangleF(10, 300, r.Width - 20, 50), format);
-            e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(10, 320, r.Width - 20, 50), format);
+            e.Graphics.DrawString(Item.Name, Times14Bold, Brushes.Black, new RectangleF(offset+10, 260, r.Width - 20, 50), format);
+            e.Graphics.DrawString(Item.Country, Times14, Brushes.Black, new RectangleF(offset + 10, 280, r.Width - 20, 50), format);
+            e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 300, r.Width - 20, 50), format);
+            e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 320, r.Width - 20, 50), format);
             // ciarovy kod
-            e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(17, 377, r.Width - 20, 150));
-            e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(53, 448, r.Width - 20, 150));
-            e.Graphics.DrawString(string.Format("{2}, {0} x {1}", Item.Length, Item.Width, Item.SupplierNr), Arial11Bold, Brushes.Black, new RectangleF(47, 470, r.Width - 20, 50));
+            e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(offset + 17, 377, r.Width - 20, 150));
+            e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(offset + 53, 448, r.Width - 20, 150));
+            e.Graphics.DrawString(string.Format("{2}, {0} x {1}", Item.Length, Item.Width, Item.SupplierNr), Arial11Bold, Brushes.Black, new RectangleF(offset + 47, 470, r.Width - 20, 50));
         }
 
         /*
