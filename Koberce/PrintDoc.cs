@@ -55,7 +55,7 @@ namespace Koberce
             // zobrazenie bitmapy
             var i = new Bitmap("global-label.png");
             Rectangle r = e.PageBounds;
-            r.Offset(228, 20);
+            r.Offset(238, 20);
             int offset = r.Left;
             e.Graphics.DrawImage(i, r);
 
