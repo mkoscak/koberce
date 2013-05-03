@@ -41,6 +41,10 @@
             this.txtDbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtFtpPassword = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFtpLogin = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtWebParam = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtWebServer = new System.Windows.Forms.TextBox();
@@ -59,10 +63,6 @@
             this.btnPtcomm = new System.Windows.Forms.Button();
             this.txtPtcomm = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtFtpLogin = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtFtpPassword = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -217,6 +217,43 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Servers";
+            // 
+            // txtFtpPassword
+            // 
+            this.txtFtpPassword.ForeColor = System.Drawing.Color.Maroon;
+            this.txtFtpPassword.Location = new System.Drawing.Point(392, 50);
+            this.txtFtpPassword.Name = "txtFtpPassword";
+            this.txtFtpPassword.Size = new System.Drawing.Size(177, 20);
+            this.txtFtpPassword.TabIndex = 12;
+            this.txtFtpPassword.UseSystemPasswordChar = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(333, 53);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Password";
+            // 
+            // txtFtpLogin
+            // 
+            this.txtFtpLogin.ForeColor = System.Drawing.Color.Maroon;
+            this.txtFtpLogin.Location = new System.Drawing.Point(151, 50);
+            this.txtFtpLogin.Name = "txtFtpLogin";
+            this.txtFtpLogin.Size = new System.Drawing.Size(158, 20);
+            this.txtFtpLogin.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(112, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Login";
             // 
             // txtWebParam
             // 
@@ -412,43 +449,6 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Path to program";
             // 
-            // txtFtpLogin
-            // 
-            this.txtFtpLogin.ForeColor = System.Drawing.Color.Maroon;
-            this.txtFtpLogin.Location = new System.Drawing.Point(151, 50);
-            this.txtFtpLogin.Name = "txtFtpLogin";
-            this.txtFtpLogin.Size = new System.Drawing.Size(158, 20);
-            this.txtFtpLogin.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(112, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Login";
-            // 
-            // txtFtpPassword
-            // 
-            this.txtFtpPassword.ForeColor = System.Drawing.Color.Maroon;
-            this.txtFtpPassword.Location = new System.Drawing.Point(392, 50);
-            this.txtFtpPassword.Name = "txtFtpPassword";
-            this.txtFtpPassword.Size = new System.Drawing.Size(177, 20);
-            this.txtFtpPassword.TabIndex = 12;
-            this.txtFtpPassword.UseSystemPasswordChar = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(333, 53);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Password";
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,10 +462,12 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "SettingsForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Settings";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SettingsForm_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

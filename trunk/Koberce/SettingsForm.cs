@@ -120,5 +120,11 @@ namespace Koberce
                 txtPtcommDir.Text = fdd.SelectedPath;
             }
         }
+
+        private void SettingsForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+                Close();
+        }
     }
 }

@@ -819,15 +819,13 @@ namespace Koberce
 
         public void SoldItems(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
-            var items = userData as SoldItem[];
+            var items = userData as string[];
 
             bw.ReportProgress(0, "Updating..");
             for (int i = 0; i < items.Length; i++ )
             {
-                var code = items[i].Code;
-
-                //db.SoldItem(item.GlobalNumber, string.Format("{0}-{1}-{2}", DateTime.Now.Year.ToString("00"), DateTime.Now.Month.ToString("00"), DateTime.Now.Day), item.VkNetto);
-                db.SoldItem(items[i].Code, items[i].SettDate, items[i].SellPrice);
+                var item = db.GetItem(items[i]);
+                db.InsertSoldItem(items[i], string.Format("{0}-{1}-{2}", DateTime.Now.Year.ToString("00"), DateTime.Now.Month.ToString("00"), DateTime.Now.Day), item.VkNetto);
 
                 if (bw.CancellationPending == true)
                 {

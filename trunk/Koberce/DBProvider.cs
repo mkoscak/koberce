@@ -36,14 +36,6 @@ namespace Koberce
             return null;
         }
 
-        public void SoldItem(string code, string sellDate, string sellPrice)
-        {
-            var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
-            ExecuteNonQuery(command);
-            command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[1], code, sellDate, sellPrice);
-            ExecuteNonQuery(command);
-        }
-
         public void ExhItem(string code, string exhName)
         {
             //var command = string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
@@ -291,7 +283,8 @@ namespace Koberce
             if (ExistsItem(code, TableNames[1]))
                 return;
 
-            var command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\")", DBProvider.TableNames[1], code, sellDate, sellPrice);
+            var command = string.Format("insert or replace into {0} (code,selldate,sellprice) values (\"{1}\",\"{2}\",\"{3}\");", DBProvider.TableNames[1], code, sellDate, sellPrice);
+            command += string.Format("update {0} set quantity = 0 where code in (\"{1}\")", DBProvider.TableNames[0], code);
 
             ExecuteNonQuery(command);
         }
