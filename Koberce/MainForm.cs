@@ -28,6 +28,7 @@ namespace Koberce
     {
         private DBProvider db;  // databazovy provider
         private string DateTimeFormat = "yyyy-MM-dd";
+        ContextMenuStrip contextSold;
 
         private CustomDataGridView DataGrid
         {
@@ -129,6 +130,19 @@ namespace Koberce
 
             try
             {
+                // inicializacia contextoveho menu pre sold
+                contextSold = new ContextMenuStrip();
+                var r1 = new ToolStripMenuItem("Only local");
+                r1.Click += new EventHandler(SoldLocal);
+                contextSold.Items.Add(r1);
+                var r2 = new ToolStripMenuItem("Only on web");
+                r2.Click += new EventHandler(SoldWeb);
+                contextSold.Items.Add(r2);
+                contextSold.Items.Add(new ToolStripSeparator());
+                var r3 = new ToolStripMenuItem("Local and web");
+                r3.Click += new EventHandler(SoldComplet);
+                contextSold.Items.Add(r3);
+
                 if (Properties.Settings.Default.AutoBackup && MessageBox.Show(this, "Do you want to backup database before any changes?", "Database backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (!Directory.Exists(Properties.Settings.Default.BackupDirectory))
@@ -773,6 +787,12 @@ namespace Koberce
 
         private void btnSetSold_Click(object sender, EventArgs e)
         {
+            (sender as Button).ContextMenuStrip = contextSold;
+            (sender as Button).ContextMenuStrip.Show(Cursor.Position);
+        }
+
+        void SoldLocal(object sender, EventArgs e)
+        {
             var codesOrig = GetSelectedCodes();
 
             //odstranime uz predane 
@@ -795,13 +815,39 @@ namespace Koberce
             else if (sold.Count > 0)
             {
                 if (MessageBox.Show(this, string.Format("There are {0} already sold items, should these items be removed from solding?", sold.Count), "Sold items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                    codes = codesOrig;                    
+                    codes = codesOrig;
             }
 
             if (MessageBox.Show(this, string.Format("Do you really want to sold {0} specified item(s)?", codes.Length), "Sold item(s)", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
             SoldItems(codes);
+        }
+
+        void SoldWeb(object sender, EventArgs e)
+        {
+            var codesOrig = GetSelectedCodes();
+            StringBuilder sb = new StringBuilder();
+
+            var web = Properties.Settings.Default.WebServer;
+            if (!web.EndsWith("/"))
+                web = web + "/";
+            sb.Append(web);
+            sb.Append("pages/stiahni-z-predaja.html?id=");
+            sb.Append(string.Join(";", codesOrig.ToArray()));
+
+            var final = sb.ToString();
+#if DEBUG
+            ;   // v debugu nestahujeme nic!
+#else
+            Process.Start(final);
+#endif
+        }
+
+        void SoldComplet(object sender, EventArgs e)
+        {
+            SoldLocal(sender, e);
+            SoldWeb(sender, e);
         }
 
         private void SoldItems(string[] codes)
