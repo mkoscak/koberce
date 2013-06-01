@@ -30,13 +30,16 @@
       <Value Profile="(Default)">c:\scanner\upload</Value>
     </Setting>
     <Setting Name="PtcommCommand" Type="System.String" Scope="User">
-      <Value Profile="(Default)">/comport:1 /ptaddr:A /destdir:C:\\scanner\\Upload\\ /exit /upload:SK.TXT,FROMSK.TXT,INVENTOR.TXT,SOLD.TXT</Value>
+      <Value Profile="(Default)">/comport:1 /ptaddr:A /destdir:C:\\scanner\\Upload\\ /exit /upload:SK.TXT,FROMSK.TXT,INVENTOR.TXT,SOLD.TXT,EXH.TXT</Value>
     </Setting>
     <Setting Name="FtpLogin" Type="System.String" Scope="User">
       <Value Profile="(Default)">mizu</Value>
     </Setting>
     <Setting Name="FtpPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)">nepoviem</Value>
+    </Setting>
+    <Setting Name="CallUpgrade" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

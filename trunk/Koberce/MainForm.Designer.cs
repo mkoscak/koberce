@@ -6618,6 +6618,7 @@
             this.Name = "MainForm";
             this.Text = "Global (c) 2012 - v2.2.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabViewAll.ResumeLayout(false);
