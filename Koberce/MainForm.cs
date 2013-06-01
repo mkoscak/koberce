@@ -1638,6 +1638,16 @@ namespace Koberce
                 MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.CallUpgrade)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.CallUpgrade = false;
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 
     class CustomDataGridView : DataGridView
