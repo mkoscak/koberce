@@ -19,8 +19,12 @@ namespace Koberce
             table.Columns.Add("Code");
             missingMain.ForEach(s => table.Rows.Add(s));
             gridMissingMain.DataSource = table;
-
-            gridMissingInv.DataSource = db.ExecuteQuery(DBProvider.TableNames[0], string.Format(" where code in ({0})", string.Join(",", missingInv.ToArray())), " order by code desc ").Tables[0];
+            
+            var table2 = db.ExecuteQuery(DBProvider.TableNames[0], string.Format(" where code in ({0})", string.Join(",", missingInv.ToArray())), " order by code desc ").Tables[0];
+            gridMissingInv.DataSource = table2;
+         
+            lblMissingMain.Text = lblMissingMain.Text.Replace("XXX", table.Rows.Count.ToString());
+            lblMissingInv.Text = lblMissingInv.Text.Replace("XXX", table2.Rows.Count.ToString());
         }
 
         private void btnExportMain_Click(object sender, EventArgs e)
