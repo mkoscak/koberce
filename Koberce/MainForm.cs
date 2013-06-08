@@ -444,6 +444,9 @@ namespace Koberce
         {
             StringBuilder sb = new StringBuilder();
 
+            if (!btnTool5Serie.Checked)
+                AddFilter(sb, "< 500000", "A.CODE");
+
             if (tabControl1.SelectedIndex == (int)TABS.MAIN)
             {
                 AddFilter(sb, txtFilCode.Text, "A.CODE");

@@ -241,6 +241,7 @@
     <None Include="Resources\system-database-add-icon.png" />
     <None Include="Resources\sold.png" />
     <Content Include="Resources\usb_48.png" />
+    <None Include="Resources\_5series.png" />
     <None Include="Resources\xlsx-win-icon.png" />
   </ItemGroup>
   <ItemGroup>
