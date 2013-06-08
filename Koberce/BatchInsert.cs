@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
-using System.Globalization;
+using System.Windows.Forms;
 
 namespace Koberce
 {
@@ -35,31 +33,41 @@ namespace Koberce
                 }
                 bw.ReportProgress((int)(((double)(i + 1) / toDecode.Length) * 100.0));
 
-                if (toDecode[i].Trim().Length == 0)
-                    continue;
+                try
+                {
+                    if (toDecode[i].Trim().Length == 0)
+                        continue;
 
-                var l = toDecode[i];
-                if (!l.EndsWith("\t"))
-                    l += "\t";
-                var line = l.Split('\t');
+                    var l = toDecode[i];
+                    if (!l.EndsWith("\t"))
+                        l += "\t";
+                    var line = l.Split('\t');
 
-                DataItem newItem = new DataItem();
-                newItem.Country = line[0];
-                newItem.Name = line[1];
-                newItem.Length = line[2];
-                newItem.Width = line[3];
-                newItem.Color = line[4];
-                newItem.Material = line[5];
-                newItem.Supplier = line[6];
-                newItem.Comment = line[7];
-                newItem.GlobalNumber = line[8];
-                newItem.SupplierNr = line[9];
-                newItem.Invoice = line[10];
-                newItem.QmPrice = line[11];
-                newItem.EuroStuck = line[12];
-                newItem.RgNr = line[13];
+                    DataItem newItem = new DataItem();
+                    newItem.Country = line[0];
+                    newItem.Name = line[1];
+                    newItem.Length = line[2];
+                    newItem.Width = line[3];
+                    newItem.Color = line[4];
+                    newItem.Material = line[5];
+                    newItem.Supplier = line[6];
+                    newItem.Comment = line[7];
+                    newItem.GlobalNumber = line[8];
+                    newItem.SupplierNr = line[9];
+                    newItem.Invoice = line[10];
+                    newItem.QmPrice = line[11];
+                    newItem.EuroStuck = line[12];
+                    if (line.Length > 13)
+                        newItem.RgNr = line[13];
 
-                data.Add(newItem);
+                    data.Add(newItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(null, "Error while decoding in line " + i + Environment.NewLine + ex, "Error while decoding!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    decodedDS = new BindingList<DataItem>();
+                    return;
+                }
             }
 
             decodedDS = new BindingList<DataItem>(data);
