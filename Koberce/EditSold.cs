@@ -98,5 +98,11 @@ namespace Koberce
             if (DialogResult != DialogResult.OK)
                 DialogResult = DialogResult.Cancel;
         }
+
+        private void EditSold_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

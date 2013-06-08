@@ -314,11 +314,13 @@
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "EditSold";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit sold";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditSold_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditSold_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

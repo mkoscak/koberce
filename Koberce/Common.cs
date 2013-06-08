@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Drawing;
@@ -206,6 +205,18 @@ namespace Koberce
                 i = path.LastIndexOf('/');
 
             return path.Substring(0, i + 1);
+        }
+
+        /// <summary>
+        /// Vypocita cenu koberca na zaklade rozmerov a ceny za m2
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="qmPrice"></param>
+        /// <returns></returns>
+        public static double CalcPrice(int width, int length, double qmPrice)
+        {
+            return Math.Round(width * length / 10000.0 * qmPrice * Properties.Settings.Default.PriceCoef);
         }
     }
 }

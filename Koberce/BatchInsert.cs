@@ -25,6 +25,7 @@ namespace Koberce
         {
             var data = new List<DataItem>();
 
+            // zaciname od riadku 1 kvoli nadpisom
             for (int i = 1; i < toDecode.Length; i++)
             {
                 if (bw.CancellationPending == true)
@@ -53,9 +54,10 @@ namespace Koberce
                 newItem.Comment = line[7];
                 newItem.GlobalNumber = line[8];
                 newItem.SupplierNr = line[9];
-                newItem.RgNr = line[10];
+                newItem.Invoice = line[10];
                 newItem.QmPrice = line[11];
                 newItem.EuroStuck = line[12];
+                newItem.RgNr = line[13];
 
                 data.Add(newItem);
             }
@@ -105,19 +107,10 @@ namespace Koberce
 
                 int w = int.Parse(item.Width);
                 int l = int.Parse(item.Length);
-                string sprice = item.QmPrice.Length == 0 ? item.EuroStuck : item.QmPrice;
-                if (sprice.Trim().Length == 0)
-                    sprice = "1";
+                var qmPrice = Common.GetPrice(item.QmPrice);
 
-                string qm = new string(sprice.ToCharArray().Where(c => "1234567890.,".Contains(c)).ToArray());
-                qm = qm.Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-                qm = qm.Replace(",", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-                double price = double.Parse(qm);
-
-                double ek = price;
-                double vk = Math.Round(w * l / 10000.0 * price * Properties.Settings.Default.PriceCoef);
-                if (item.QmPrice.Length == 0)
-                    vk = ek;
+                double ek = qmPrice;
+                double vk = Common.CalcPrice(w, l, qmPrice);
 
                 maxCode++;
 
@@ -134,11 +127,12 @@ namespace Koberce
                         DateToString(DateTime.Now),
                         "No",
                         DateToString(DateTime.Now),
-                        "",
+                        item.Invoice,
                         item.Color,
                         item.Material,
                         item.Comment,
-                        item.RgNr);
+                        item.RgNr,
+                        item.EuroStuck);
 
                 if (bw.CancellationPending == true)
                 {

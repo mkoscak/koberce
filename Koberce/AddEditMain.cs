@@ -82,7 +82,8 @@ namespace Koberce
                             txtColor.Text,
                             txtMaterial.Text,
                             txtComment.Text,
-                            txtRgNr.Text);
+                            txtRgNr.Text,
+                            txtEuroStuck.Text);
                 }
                 else
                 {
@@ -103,7 +104,8 @@ namespace Koberce
                             txtColor.Text,
                             txtMaterial.Text,
                             txtComment.Text,
-                            txtRgNr.Text);
+                            txtRgNr.Text,
+                            txtEuroStuck.Text);
                 }
 
                 MessageBox.Show(this, "Data written succesfully!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -128,7 +130,7 @@ namespace Koberce
             double price = double.Parse(Common.CleanPrice(txtQMPrice.Text));
 
             txtEKNetto.Text = txtQMPrice.Text;
-            txtVKNetto.Text = Math.Round(w * l / 10000.0 * price * Properties.Settings.Default.PriceCoef).ToString();
+            txtVKNetto.Text = Common.CalcPrice(w, l, price).ToString();
         }
 
         private void PriceChanged(object sender, EventArgs e)
@@ -150,6 +152,12 @@ namespace Koberce
         {
             if (DialogResult != DialogResult.OK)
                 DialogResult = DialogResult.Cancel;
+        }
+
+        private void AddEditMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
         }
     }
 }
