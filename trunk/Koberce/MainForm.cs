@@ -1266,7 +1266,11 @@ namespace Koberce
         List<string> MissingInInventory = new List<string>();
         private void btnStartInventory_Click(object sender, EventArgs e)
         {
-            Progress p = new Progress(0, 100, "Inventory checking", "Selecting non sold items", DoInventory, InventoryResult, null, true, false);
+            TextInputForm tiFrm = new TextInputForm("Type a condition to select from main table:", "quantity = 1 and valid = 1 and code < 500000");
+            tiFrm.ShowDialog(this);
+            var cond = tiFrm.ReturnText;
+
+            Progress p = new Progress(0, 100, "Inventory checking", "Selecting non sold items", DoInventory, InventoryResult, cond, true, false);
             p.StartWorker();
         }
 
@@ -1279,7 +1283,9 @@ namespace Koberce
         public void DoInventory(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
             var CODE = "CODE";
-            var ds = db.ExecuteQuery(string.Format("select * from arena where quantity = 1 and valid = 1"));
+
+            var cond = userData.ToString();
+            var ds = db.ExecuteQuery(string.Format("select * from arena where {0}", cond ?? "1 = 1"));
             if (ds == null || ds.Tables == null || ds.Tables.Count == 0)
             {
                 MessageBox.Show(this, "All items are sold! No items found in main table.", "Inventory", MessageBoxButtons.OK, MessageBoxIcon.Information);
