@@ -619,8 +619,11 @@ namespace Koberce
                 string command = string.Format("update {0} set VALID = 0 WHERE code in ( {1} ) ", DBProvider.TableNames[tabControl1.SelectedIndex], string.Join(",", codes));
                 db.ExecuteNonQuery(command);
 
-                command = string.Format("update {0} set QUANTITY = 1 WHERE code in ( {1} ) ", DBProvider.TableNames[(int)TABS.MAIN], string.Join(",", codes));
-                db.ExecuteNonQuery(command);
+                if (tabControl1.SelectedIndex != (int)TABS.INVENTORY)
+                {
+                    command = string.Format("update {0} set QUANTITY = 1 WHERE code in ( {1} ) ", DBProvider.TableNames[(int)TABS.MAIN], string.Join(",", codes));
+                    db.ExecuteNonQuery(command);
+                }
 
                 MessageBox.Show(this, "Data deleted succesfully!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
