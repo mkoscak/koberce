@@ -173,26 +173,26 @@ namespace Koberce
                     StreamReader sr = new StreamReader(name);
                     var content = sr.ReadToEnd().Trim();
 
-                    Queries[i-1] = content;
+                    Queries[i] = content;
 
                     sr.Close();
 
                     Button actualButton = null;
                     switch (i)
                     {
-                        case 1:
+                        case 0:
                             actualButton = btnQuery1;
                             break;
-                        case 2:
+                        case 1:
                             actualButton = btnQuery2;
                             break;
-                        case 3:
+                        case 2:
                             actualButton = btnQuery3;
                             break;
-                        case 4:
+                        case 3:
                             actualButton = btnQuery4;
                             break;
-                        case 5:
+                        case 4:
                             actualButton = btnQuery5;
                             break;
                         default:
