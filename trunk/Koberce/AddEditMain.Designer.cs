@@ -69,6 +69,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtRgNr = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txtEuroStuck = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtQMPrice
@@ -95,7 +97,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(19, 573);
+            this.label18.Location = new System.Drawing.Point(19, 585);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(85, 13);
             this.label18.TabIndex = 73;
@@ -415,7 +417,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(352, 568);
+            this.btnOK.Location = new System.Drawing.Point(352, 580);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 78;
@@ -441,11 +443,31 @@
             this.label19.TabIndex = 80;
             this.label19.Text = "Rg-Nr.";
             // 
+            // txtEuroStuck
+            // 
+            this.txtEuroStuck.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEuroStuck.Location = new System.Drawing.Point(108, 551);
+            this.txtEuroStuck.Name = "txtEuroStuck";
+            this.txtEuroStuck.Size = new System.Drawing.Size(320, 20);
+            this.txtEuroStuck.TabIndex = 82;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(19, 554);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 13);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "Euro / stuck";
+            // 
             // AddEditMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 598);
+            this.ClientSize = new System.Drawing.Size(444, 610);
+            this.Controls.Add(this.txtEuroStuck);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtRgNr);
             this.Controls.Add(this.btnOK);
@@ -488,11 +510,13 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "AddEditMain";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add new";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditMain_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddEditMain_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,6 +564,8 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtRgNr;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtEuroStuck;
+        private System.Windows.Forms.Label label20;
 
     }
 }

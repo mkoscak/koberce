@@ -130,12 +130,12 @@ namespace Koberce
             return iMax;
         }
 
-        public void Add(bool updateMax, string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr)
+        public void Add(bool updateMax, string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr, string euro_stuck)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat(" INSERT INTO ");
             sb.AppendFormat(TableNames[0]);
-            sb.AppendFormat(" (SUPPLIER_NR,CODE,ITEMTITLE,COUNTRY,SUPPLIER,LENGTH,WIDTH,EK_NETTO,QUANTITY,VK_NETTO,DATE,PAID,MVDATE,INVOICE,COLOR,MATERIAL,COMMENT, RGNR) ");
+            sb.AppendFormat(" (SUPPLIER_NR,CODE,ITEMTITLE,COUNTRY,SUPPLIER,LENGTH,WIDTH,EK_NETTO,QUANTITY,VK_NETTO,DATE,PAID,MVDATE,INVOICE,COLOR,MATERIAL,COMMENT,RGNR,EURO_STUCK) ");
             sb.AppendFormat(" VALUES( ");
             sb.AppendFormat("'{0}',", supplier_nb);
             sb.AppendFormat("'{0}',", code);
@@ -154,7 +154,8 @@ namespace Koberce
             sb.AppendFormat("'{0}',", col);
             sb.AppendFormat("'{0}',", material);
             sb.AppendFormat("'{0}',", comment);
-            sb.AppendFormat("'{0}' ", rgNr);
+            sb.AppendFormat("'{0}',", rgNr);
+            sb.AppendFormat("'{0}' ", euro_stuck);
             sb.AppendFormat(" );");
             string txtSQLQuery = sb.ToString();
             try
@@ -170,12 +171,12 @@ namespace Koberce
             }
         }
 
-        public void Update(string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr)
+        public void Update(string supplier_nb, string code, string name, string land, string supplier, int length, int width, string ekNetto, string quantity, string vkNetto, string date, string paid, string mvDate, string invoice, string col, string material, string comment, string rgNr, string euro_stuck)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat(" UPDATE ");
             sb.AppendFormat(TableNames[0]);
-            sb.AppendFormat(" SET SUPPLIER_NR=\"{0}\",ITEMTITLE=\"{1}\",COUNTRY=\"{2}\",SUPPLIER=\"{3}\",LENGTH=\"{4}\",WIDTH=\"{5}\",EK_NETTO=\"{6}\",QUANTITY=\"{7}\",VK_NETTO=\"{8}\",DATE=\"{9}\",PAID=\"{10}\",MVDATE=\"{11}\",INVOICE=\"{12}\",COLOR=\"{13}\",MATERIAL=\"{14}\",COMMENT=\"{15}\",RGNR=\"{16}\" ",
+            sb.AppendFormat(" SET SUPPLIER_NR=\"{0}\",ITEMTITLE=\"{1}\",COUNTRY=\"{2}\",SUPPLIER=\"{3}\",LENGTH=\"{4}\",WIDTH=\"{5}\",EK_NETTO=\"{6}\",QUANTITY=\"{7}\",VK_NETTO=\"{8}\",DATE=\"{9}\",PAID=\"{10}\",MVDATE=\"{11}\",INVOICE=\"{12}\",COLOR=\"{13}\",MATERIAL=\"{14}\",COMMENT=\"{15}\",RGNR=\"{16}\",EURO_STUCK=\"{17}\" ",
                 supplier_nb,
                 name,
                 land,
@@ -192,7 +193,8 @@ namespace Koberce
                 col,
                 material,
                 comment,
-                rgNr
+                rgNr,
+                euro_stuck
                 );
             sb.AppendFormat(" WHERE CODE = \"{0}\"", code);
 
