@@ -84,9 +84,9 @@
             this.lblMissingMain.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblMissingMain.Location = new System.Drawing.Point(3, 9);
             this.lblMissingMain.Name = "lblMissingMain";
-            this.lblMissingMain.Size = new System.Drawing.Size(131, 13);
+            this.lblMissingMain.Size = new System.Drawing.Size(161, 13);
             this.lblMissingMain.TabIndex = 1;
-            this.lblMissingMain.Text = "Items missing in main table";
+            this.lblMissingMain.Text = "Items missing in main table (XXX)";
             // 
             // gridMissingMain
             // 
@@ -133,9 +133,9 @@
             this.lblMissingInv.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblMissingInv.Location = new System.Drawing.Point(3, 9);
             this.lblMissingInv.Name = "lblMissingInv";
-            this.lblMissingInv.Size = new System.Drawing.Size(126, 13);
+            this.lblMissingInv.Size = new System.Drawing.Size(156, 13);
             this.lblMissingInv.TabIndex = 0;
-            this.lblMissingInv.Text = "Items missing in inventory";
+            this.lblMissingInv.Text = "Items missing in inventory (XXX)";
             // 
             // InventoryResult
             // 
