@@ -55,6 +55,7 @@ namespace Koberce
                     txtMaterial.Text = vals[15].ToString();
                     txtComment.Text = vals[16].ToString();
                     txtRgNr.Text = vals[18].ToString();
+                    txtEuroStuck.Text = vals[19].ToString();
                 }
             }
         }
