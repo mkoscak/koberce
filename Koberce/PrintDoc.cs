@@ -56,6 +56,7 @@ namespace Koberce
             var i = new Bitmap("global-label.png");
             Rectangle r = e.PageBounds;
             r.Offset(238, 20);
+            //r.Offset(10, 20);
             int offset = r.Left;
             e.Graphics.DrawImage(i, r);
 
@@ -70,7 +71,12 @@ namespace Koberce
             e.Graphics.DrawString(Item.Name, Times14Bold, Brushes.Black, new RectangleF(offset+10, 260, r.Width - 20, 50), format);
             e.Graphics.DrawString(Item.Country, Times14, Brushes.Black, new RectangleF(offset + 10, 280, r.Width - 20, 50), format);
             e.Graphics.DrawString(string.Format("{0} x {1}", Item.Length, Item.Width), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 300, r.Width - 20, 50), format);
-            e.Graphics.DrawString(string.Format("{0},- {1}", Item.VkNetto, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 320, r.Width - 20, 50), format);
+            
+            // uprava ceny na konci na 9
+            var origPrice = Common.GetPrice(Item.VkNetto);
+            var price = origPrice + (9-(((long)origPrice) % 10));
+
+            e.Graphics.DrawString(string.Format("{0},- {1}", price, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 320, r.Width - 20, 50), format);
             // ciarovy kod
             e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(offset + 17, 377, r.Width - 20, 150));
             e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(offset + 53, 448, r.Width - 20, 150));
