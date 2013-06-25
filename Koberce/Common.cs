@@ -14,7 +14,7 @@ namespace Koberce
 {
     class Common
     {
-        static string[] SoldCols = new string[] { "selldate", "supplier_nr", "itemtitle", "supplier", "length", "width", "ek_netto", "area", "vk_netto" };
+        static string[] SoldCols = new string[] { "selldate", "supplier_nr", "itemtitle", "supplier", "length", "width", "ek_netto", "area"/*, "vk_netto"*/ };
         static string ExportFileName;
         static string ExportTitle;
         static bool IsSold;
@@ -56,7 +56,7 @@ namespace Koberce
             List<int> indices = new List<int>();
 
             for (int i = 0; i < dt.Columns.Count; i++)
-                if ((IsSold && SoldCols.Contains(dt.Columns[i].ColumnName.ToLower())) || (!IsSold))
+                if ( ((IsSold && SoldCols.Contains(dt.Columns[i].ColumnName.ToLower())) || (!IsSold)) && dt.Columns[i].ColumnName.ToLower() != "vk_netto")
                     indices.Add(i);
 
             ExcelPackage ep = new ExcelPackage();
@@ -95,14 +95,14 @@ namespace Koberce
                 {
                     try
                     {
-                        if (IsSold && dt.Columns[indices[j]].ColumnName.ToLower() == "vk_netto")
+                        /*if (IsSold && dt.Columns[indices[j]].ColumnName.ToLower() == "vk_netto")
                         {
                             if (IsSold && !indices.Contains(1))
                                 ws.Cells[3 + i, j + 1 + SoldOffset].Formula = string.Format("E{0}*F{0}/10000*G{0}", i + 3);
                             else
                                 ws.Cells[3 + i, j + 1 + SoldOffset].Formula = string.Format("F{0}*G{0}/10000*H{0}", i + 3);
                             continue;
-                        }
+                        }*/
 
                         double val = GetPrice(dt.Rows[i].ItemArray[indices[j]].ToString());
                         if (double.IsNaN(val))
@@ -127,15 +127,15 @@ namespace Koberce
             if (IsSold)
             {
                 int row = 3 + dt.Rows.Count;
-                int col = 8;
-                var F1 = "SUM(I3:I" + (row - 1) + ")";
-                var F2 = "SUM(J3:J" + (row - 1) + ")";
+                int col = 7;
+                var F1 = "SUM(H3:H" + (row - 1) + ")";
+                var F2 = "SUM(I3:I" + (row - 1) + ")";
 
                 if (IsSold && !indices.Contains(1)) // 1 == selldate
                 {
-                    col = 7;
-                    F1 = "SUM(H3:H" + (row - 1) + ")";
-                    F2 = "SUM(I3:I" + (row - 1) + ")";
+                    col = 6;
+                    F1 = "SUM(G3:G" + (row - 1) + ")";
+                    F2 = "SUM(H3:H" + (row - 1) + ")";
                 }
 
                 ws.Cells[row, col].Value = "Sum:";
