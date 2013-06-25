@@ -3820,7 +3820,7 @@
             // btnUploadSold
             // 
             this.btnUploadSold.Name = "btnUploadSold";
-            this.btnUploadSold.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadSold.Size = new System.Drawing.Size(135, 22);
             this.btnUploadSold.Tag = "SOLD.TXT";
             this.btnUploadSold.Text = "Sold";
             this.btnUploadSold.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3828,7 +3828,7 @@
             // btnUploadInventory
             // 
             this.btnUploadInventory.Name = "btnUploadInventory";
-            this.btnUploadInventory.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadInventory.Size = new System.Drawing.Size(135, 22);
             this.btnUploadInventory.Tag = "INVENTOR.TXT";
             this.btnUploadInventory.Text = "Inventory";
             this.btnUploadInventory.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3836,7 +3836,7 @@
             // btnUploadSK
             // 
             this.btnUploadSK.Name = "btnUploadSK";
-            this.btnUploadSK.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadSK.Size = new System.Drawing.Size(135, 22);
             this.btnUploadSK.Tag = "SK.TXT";
             this.btnUploadSK.Text = "SK";
             this.btnUploadSK.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3844,7 +3844,7 @@
             // btnUploadFromSK
             // 
             this.btnUploadFromSK.Name = "btnUploadFromSK";
-            this.btnUploadFromSK.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadFromSK.Size = new System.Drawing.Size(135, 22);
             this.btnUploadFromSK.Tag = "FROMSK.TXT";
             this.btnUploadFromSK.Text = "fromSK";
             this.btnUploadFromSK.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3852,7 +3852,7 @@
             // btnUploadExh
             // 
             this.btnUploadExh.Name = "btnUploadExh";
-            this.btnUploadExh.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadExh.Size = new System.Drawing.Size(135, 22);
             this.btnUploadExh.Tag = "EXH.TXT";
             this.btnUploadExh.Text = "Exhibitions";
             this.btnUploadExh.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3860,12 +3860,12 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(123, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(132, 6);
             // 
             // btnUploadApp
             // 
             this.btnUploadApp.Name = "btnUploadApp";
-            this.btnUploadApp.Size = new System.Drawing.Size(126, 22);
+            this.btnUploadApp.Size = new System.Drawing.Size(135, 22);
             this.btnUploadApp.Tag = ".\\Koberce.exe";
             this.btnUploadApp.Text = "Application";
             this.btnUploadApp.Click += new System.EventHandler(this.btnUpload_Click);
@@ -3919,7 +3919,7 @@
             // btnDownloadSold
             // 
             this.btnDownloadSold.Name = "btnDownloadSold";
-            this.btnDownloadSold.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadSold.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadSold.Tag = "SOLD.TXT";
             this.btnDownloadSold.Text = "Sold";
             this.btnDownloadSold.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3927,7 +3927,7 @@
             // btnDownloadInventory
             // 
             this.btnDownloadInventory.Name = "btnDownloadInventory";
-            this.btnDownloadInventory.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadInventory.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadInventory.Tag = "INVENTOR.TXT";
             this.btnDownloadInventory.Text = "Inventory";
             this.btnDownloadInventory.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3935,7 +3935,7 @@
             // btnDownloadSK
             // 
             this.btnDownloadSK.Name = "btnDownloadSK";
-            this.btnDownloadSK.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadSK.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadSK.Tag = "SK.TXT";
             this.btnDownloadSK.Text = "SK";
             this.btnDownloadSK.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3943,7 +3943,7 @@
             // btnDownloadFromSK
             // 
             this.btnDownloadFromSK.Name = "btnDownloadFromSK";
-            this.btnDownloadFromSK.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadFromSK.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadFromSK.Tag = "FROMSK.TXT";
             this.btnDownloadFromSK.Text = "fromSK";
             this.btnDownloadFromSK.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3951,7 +3951,7 @@
             // btnDownloadExh
             // 
             this.btnDownloadExh.Name = "btnDownloadExh";
-            this.btnDownloadExh.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadExh.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadExh.Tag = "EXH.TXT";
             this.btnDownloadExh.Text = "Exhibitions";
             this.btnDownloadExh.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3959,12 +3959,12 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(123, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(132, 6);
             // 
             // btnDownloadApp
             // 
             this.btnDownloadApp.Name = "btnDownloadApp";
-            this.btnDownloadApp.Size = new System.Drawing.Size(126, 22);
+            this.btnDownloadApp.Size = new System.Drawing.Size(135, 22);
             this.btnDownloadApp.Tag = "Koberce.exe";
             this.btnDownloadApp.Text = "Application";
             this.btnDownloadApp.Click += new System.EventHandler(this.btnDownload_Click);
@@ -3988,7 +3988,7 @@
             // btnImportSold
             // 
             this.btnImportSold.Name = "btnImportSold";
-            this.btnImportSold.Size = new System.Drawing.Size(125, 22);
+            this.btnImportSold.Size = new System.Drawing.Size(131, 22);
             this.btnImportSold.Tag = "";
             this.btnImportSold.Text = "Sold";
             this.btnImportSold.Click += new System.EventHandler(this.btnImportSold_Click);
@@ -3996,7 +3996,7 @@
             // btnImportInventory
             // 
             this.btnImportInventory.Name = "btnImportInventory";
-            this.btnImportInventory.Size = new System.Drawing.Size(125, 22);
+            this.btnImportInventory.Size = new System.Drawing.Size(131, 22);
             this.btnImportInventory.Tag = "";
             this.btnImportInventory.Text = "Inventory";
             this.btnImportInventory.Click += new System.EventHandler(this.btnImportInventory_Click);
@@ -4004,21 +4004,21 @@
             // btnImportSK
             // 
             this.btnImportSK.Name = "btnImportSK";
-            this.btnImportSK.Size = new System.Drawing.Size(125, 22);
+            this.btnImportSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportSK.Text = "SK";
             this.btnImportSK.Click += new System.EventHandler(this.btnImportSK_Click);
             // 
             // btnImportFromSK
             // 
             this.btnImportFromSK.Name = "btnImportFromSK";
-            this.btnImportFromSK.Size = new System.Drawing.Size(125, 22);
+            this.btnImportFromSK.Size = new System.Drawing.Size(131, 22);
             this.btnImportFromSK.Text = "fromSK";
             this.btnImportFromSK.Click += new System.EventHandler(this.btnImportFromSK_Click);
             // 
             // btnImportExh
             // 
             this.btnImportExh.Name = "btnImportExh";
-            this.btnImportExh.Size = new System.Drawing.Size(125, 22);
+            this.btnImportExh.Size = new System.Drawing.Size(131, 22);
             this.btnImportExh.Text = "Exhibitions";
             this.btnImportExh.Click += new System.EventHandler(this.btnImportExh_Click);
             // 
@@ -6637,7 +6637,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Global (c) 2012 - v2.2.2";
+            this.Text = "Global (c) 2012 - v2.2.3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
