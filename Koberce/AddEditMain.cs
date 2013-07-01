@@ -56,6 +56,14 @@ namespace Koberce
                     txtComment.Text = vals[16].ToString();
                     txtRgNr.Text = vals[18].ToString();
                     txtEuroStuck.Text = vals[19].ToString();
+
+                    try
+                    {
+                        txtQMPrice.Text = Common.CalcQMPrice(int.Parse(txtWidth.Text), int.Parse(txtLegnth.Text), double.Parse(txtVKNetto.Text)).ToString();
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
             }
         }
@@ -130,7 +138,7 @@ namespace Koberce
             int l = int.Parse(txtLegnth.Text);
             double price = double.Parse(Common.CleanPrice(txtQMPrice.Text));
 
-            txtEKNetto.Text = txtQMPrice.Text;
+            //txtEKNetto.Text = txtQMPrice.Text;
             txtVKNetto.Text = Common.CalcPrice(w, l, price).ToString();
         }
 

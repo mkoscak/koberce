@@ -105,8 +105,9 @@ namespace Koberce
                             continue;
                         }*/
 
-                        double val = GetPrice(dt.Rows[i].ItemArray[indices[j]].ToString());
-                        if (double.IsNaN(val))
+                        string strVal = dt.Rows[i].ItemArray[indices[j]].ToString();
+                        double val = GetPrice(strVal);
+                        if (double.IsNaN(val) || !IsDouble(strVal))
                             ws.Cells[3 + i, j + 1 + SoldOffset].Value = dt.Rows[i].ItemArray[indices[j]];
                         else
                             ws.Cells[3 + i, j + 1 + SoldOffset].Value = val;
@@ -177,7 +178,35 @@ namespace Koberce
             return ret;
         }
 
+        public static bool IsDouble(string strPrice)
+        {
+            if (strPrice == null)
+                return false;
+
+            var tmp = CorrectNumber(strPrice);
+
+            try
+            {
+                double.Parse(tmp);
+                return true;
+            }
+            catch (Exception)
+            {
+            }
+
+            return false;
+        }
+
         public static string CleanPrice(string strPrice)
+        {
+            strPrice = CorrectNumber(strPrice);
+
+            strPrice = new string(strPrice.ToCharArray().Where(c => Char.IsDigit(c) || c == ',' || c == '.' || c == '-').ToArray()).Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator).Replace(",", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            return strPrice;
+        }
+
+        private static string CorrectNumber(string strPrice)
         {
             // cena obsahuje aj bodku aj ciarku, napr 1,000.25.. prvy znak vyhodime
             if (strPrice.Contains(',') && strPrice.Contains('.'))
@@ -190,8 +219,6 @@ namespace Koberce
                 else
                     strPrice = strPrice.Replace(".", "");   // odstranime vsetky bodky
             }
-
-            strPrice = new string(strPrice.ToCharArray().Where(c => Char.IsDigit(c) || c == ',' || c == '.' || c == '-').ToArray()).Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator).Replace(",", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
 
             return strPrice;
         }
@@ -218,6 +245,11 @@ namespace Koberce
         public static double CalcPrice(int width, int length, double qmPrice)
         {
             return Math.Round(width * length / 10000.0 * qmPrice * Properties.Settings.Default.PriceCoef);
+        }
+
+        public static double CalcQMPrice(int width, int length, double VK_Netto)
+        {
+            return Math.Round( (VK_Netto * 10000) / (width * length * Properties.Settings.Default.PriceCoef), 2);
         }
     }
 }
