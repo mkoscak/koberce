@@ -21,9 +21,9 @@ namespace Koberce
         public string Material { get; set; }
         public string Supplier { get; set; }
         public string Comment { get; set; }
-        public string GlobalNumber { get; set; }
+        public string Code { get; set; }
         public string SupplierNr { get; set; }
-        public string RgNr { get; set; }
+        public string Info { get; set; }
         public string QmPrice { get; set; }
         public string EuroStuck { get; set; }
 

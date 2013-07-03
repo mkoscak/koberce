@@ -43,7 +43,7 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtEKNetto = new System.Windows.Forms.TextBox();
             this.txtWidth = new System.Windows.Forms.TextBox();
-            this.txtLegnth = new System.Windows.Forms.TextBox();
+            this.txtLength = new System.Windows.Forms.TextBox();
             this.txtSupplier = new System.Windows.Forms.TextBox();
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.txtRgNr = new System.Windows.Forms.TextBox();
+            this.txtInfo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtEuroStuck = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.txtQMPrice.Name = "txtQMPrice";
             this.txtQMPrice.Size = new System.Drawing.Size(320, 20);
             this.txtQMPrice.TabIndex = 75;
-            this.txtQMPrice.TextChanged += new System.EventHandler(this.PriceChanged);
             // 
             // label21
             // 
@@ -203,17 +202,15 @@
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(320, 20);
             this.txtWidth.TabIndex = 62;
-            this.txtWidth.TextChanged += new System.EventHandler(this.WidthChanged);
             // 
-            // txtLegnth
+            // txtLength
             // 
-            this.txtLegnth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtLength.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLegnth.Location = new System.Drawing.Point(108, 157);
-            this.txtLegnth.Name = "txtLegnth";
-            this.txtLegnth.Size = new System.Drawing.Size(320, 20);
-            this.txtLegnth.TabIndex = 61;
-            this.txtLegnth.TextChanged += new System.EventHandler(this.LengthChanged);
+            this.txtLength.Location = new System.Drawing.Point(108, 157);
+            this.txtLength.Name = "txtLength";
+            this.txtLength.Size = new System.Drawing.Size(320, 20);
+            this.txtLength.TabIndex = 61;
             // 
             // txtSupplier
             // 
@@ -425,23 +422,23 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // txtRgNr
+            // txtInfo
             // 
-            this.txtRgNr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRgNr.Location = new System.Drawing.Point(108, 499);
-            this.txtRgNr.Name = "txtRgNr";
-            this.txtRgNr.Size = new System.Drawing.Size(320, 20);
-            this.txtRgNr.TabIndex = 79;
+            this.txtInfo.Location = new System.Drawing.Point(108, 499);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(320, 20);
+            this.txtInfo.TabIndex = 79;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(19, 502);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(38, 13);
+            this.label19.Size = new System.Drawing.Size(25, 13);
             this.label19.TabIndex = 80;
-            this.label19.Text = "Rg-Nr.";
+            this.label19.Text = "Info";
             // 
             // txtEuroStuck
             // 
@@ -469,7 +466,7 @@
             this.Controls.Add(this.txtEuroStuck);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.txtRgNr);
+            this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtQMPrice);
             this.Controls.Add(this.label21);
@@ -485,7 +482,7 @@
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtEKNetto);
             this.Controls.Add(this.txtWidth);
-            this.Controls.Add(this.txtLegnth);
+            this.Controls.Add(this.txtLength);
             this.Controls.Add(this.txtSupplier);
             this.Controls.Add(this.txtCountry);
             this.Controls.Add(this.txtName);
@@ -538,7 +535,7 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtEKNetto;
         private System.Windows.Forms.TextBox txtWidth;
-        private System.Windows.Forms.TextBox txtLegnth;
+        private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.TextBox txtName;
@@ -562,7 +559,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.TextBox txtRgNr;
+        private System.Windows.Forms.TextBox txtInfo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtEuroStuck;
         private System.Windows.Forms.Label label20;

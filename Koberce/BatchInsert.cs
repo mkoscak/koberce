@@ -52,13 +52,13 @@ namespace Koberce
                     newItem.Material = line[5];
                     newItem.Supplier = line[6];
                     newItem.Comment = line[7];
-                    newItem.GlobalNumber = line[8];
+                    newItem.QmPrice = line[8];
                     newItem.SupplierNr = line[9];
                     newItem.Invoice = line[10];
-                    newItem.QmPrice = line[11];
+                    newItem.EkNetto = line[11];
                     newItem.EuroStuck = line[12];
                     if (line.Length > 13)
-                        newItem.RgNr = line[13];
+                        newItem.Info = line[13];
 
                     data.Add(newItem);
                 }
@@ -115,10 +115,10 @@ namespace Koberce
 
                 int w = int.Parse(item.Width);
                 int l = int.Parse(item.Length);
-                var qmPrice = Common.GetPrice(item.QmPrice);
+                var ekPrice = Common.GetPrice(item.EkNetto);
 
-                double ek = qmPrice;
-                double vk = Common.CalcPrice(w, l, qmPrice);
+                double ek = ekPrice;
+                double vk = Common.CalcPrice(w, l, ekPrice);
 
                 maxCode++;
 
@@ -139,8 +139,9 @@ namespace Koberce
                         item.Color,
                         item.Material,
                         item.Comment,
-                        item.RgNr,
-                        item.EuroStuck);
+                        item.Info,
+                        item.EuroStuck,
+                        item.QmPrice);
 
                 if (bw.CancellationPending == true)
                 {

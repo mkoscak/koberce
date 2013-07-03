@@ -37,33 +37,27 @@ namespace Koberce
                 if (ds != null && ds.Tables.Count > 0)
                 {
                     var vals = ds.Tables[0].Rows[0].ItemArray;
-                    txtSupplierNr.Text = vals[0].ToString();
-                    txtCode.Text = vals[1].ToString();
-                    txtName.Text = vals[2].ToString();
-                    txtCountry.Text = vals[3].ToString();
-                    txtSupplier.Text = vals[4].ToString();
-                    txtLegnth.Text = vals[5].ToString();
+
+                    txtCode.Text = vals[0].ToString();
+                    txtName.Text = vals[1].ToString();
+                    txtCountry.Text = vals[2].ToString();
+                    txtSupplier.Text = vals[3].ToString();
+                    txtSupplierNr.Text = vals[4].ToString();
+                    txtLength.Text = vals[5].ToString();
                     txtWidth.Text = vals[6].ToString();
                     txtEKNetto.Text = vals[7].ToString();
-                    txtQuantity.Text = vals[8].ToString();
-                    txtVKNetto.Text = vals[9].ToString();
-                    txtDate.Text = vals[10].ToString();
-                    txtPaid.Text = vals[11].ToString();
+                    txtVKNetto.Text = vals[8].ToString();
+                    txtQuantity.Text = vals[9].ToString();
+                    txtQMPrice.Text = vals[10].ToString();
+                    txtDate.Text = vals[11].ToString();
                     txtMVDate.Text = vals[12].ToString();
                     txtInvoice.Text = vals[13].ToString();
                     txtColor.Text = vals[14].ToString();
                     txtMaterial.Text = vals[15].ToString();
                     txtComment.Text = vals[16].ToString();
-                    txtRgNr.Text = vals[18].ToString();
-                    txtEuroStuck.Text = vals[19].ToString();
-
-                    try
-                    {
-                        txtQMPrice.Text = Common.CalcQMPrice(int.Parse(txtWidth.Text), int.Parse(txtLegnth.Text), double.Parse(txtVKNetto.Text)).ToString();
-                    }
-                    catch (Exception)
-                    {
-                    }
+                    txtInfo.Text = vals[17].ToString();
+                    txtEuroStuck.Text = vals[18].ToString();
+                    txtPaid.Text = vals[19].ToString();
                 }
             }
         }
@@ -79,7 +73,7 @@ namespace Koberce
                             txtName.Text,
                             txtCountry.Text,
                             txtSupplier.Text,
-                            int.Parse(txtLegnth.Text),
+                            int.Parse(txtLength.Text),
                             int.Parse(txtWidth.Text),
                             txtEKNetto.Text,
                             txtQuantity.Text,
@@ -91,8 +85,9 @@ namespace Koberce
                             txtColor.Text,
                             txtMaterial.Text,
                             txtComment.Text,
-                            txtRgNr.Text,
-                            txtEuroStuck.Text);
+                            txtInfo.Text,
+                            txtEuroStuck.Text,
+                            txtQMPrice.Text);
                 }
                 else
                 {
@@ -101,7 +96,7 @@ namespace Koberce
                             txtName.Text,
                             txtCountry.Text,
                             txtSupplier.Text,
-                            int.Parse(txtLegnth.Text),
+                            int.Parse(txtLength.Text),
                             int.Parse(txtWidth.Text),
                             txtEKNetto.Text,
                             txtQuantity.Text,
@@ -113,8 +108,9 @@ namespace Koberce
                             txtColor.Text,
                             txtMaterial.Text,
                             txtComment.Text,
-                            txtRgNr.Text,
-                            txtEuroStuck.Text);
+                            txtInfo.Text,
+                            txtEuroStuck.Text,
+                            txtQMPrice.Text);
                 }
 
                 MessageBox.Show(this, "Data written succesfully!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -128,33 +124,6 @@ namespace Koberce
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
-        }
-
-        private void RecalcPrice()
-        {
-            if (txtWidth.Text.Length == 0 || txtLegnth.Text.Length == 0 || txtQMPrice.Text.Length == 0)
-                return;
-            int w = int.Parse(txtWidth.Text);
-            int l = int.Parse(txtLegnth.Text);
-            double price = double.Parse(Common.CleanPrice(txtQMPrice.Text));
-
-            //txtEKNetto.Text = txtQMPrice.Text;
-            txtVKNetto.Text = Common.CalcPrice(w, l, price).ToString();
-        }
-
-        private void PriceChanged(object sender, EventArgs e)
-        {
-            RecalcPrice();
-        }
-
-        private void LengthChanged(object sender, EventArgs e)
-        {
-            RecalcPrice();
-        }
-
-        private void WidthChanged(object sender, EventArgs e)
-        {
-            RecalcPrice();
         }
 
         private void AddEditMain_FormClosing(object sender, FormClosingEventArgs e)

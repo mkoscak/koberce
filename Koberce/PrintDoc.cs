@@ -78,8 +78,8 @@ namespace Koberce
 
             e.Graphics.DrawString(string.Format("{0},- {1}", price, (char)0x20AC), Arial14Bold, Brushes.Black, new RectangleF(offset + 10, 320, r.Width - 20, 50), format);
             // ciarovy kod
-            e.Graphics.DrawString(barCode(Item.GlobalNumber), Code128, Brushes.Black, new RectangleF(offset + 17, 377, r.Width - 20, 150));
-            e.Graphics.DrawString(string.Format("NR. {0}", Item.GlobalNumber), Times18Bold, Brushes.Black, new RectangleF(offset + 53, 448, r.Width - 20, 150));
+            e.Graphics.DrawString(barCode(Item.Code), Code128, Brushes.Black, new RectangleF(offset + 17, 377, r.Width - 20, 150));
+            e.Graphics.DrawString(string.Format("NR. {0}", Item.Code), Times18Bold, Brushes.Black, new RectangleF(offset + 53, 448, r.Width - 20, 150));
             e.Graphics.DrawString(string.Format("{2}, {0} x {1}", Item.Length, Item.Width, Item.SupplierNr), Arial11Bold, Brushes.Black, new RectangleF(offset + 47, 470, r.Width - 20, 50));
         }
 
