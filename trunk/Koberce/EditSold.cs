@@ -41,7 +41,7 @@ namespace Koberce
                 else
                     sExh = ", A.SELLDATE, A.SELLPRICE";
 
-                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMTITLE, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE {3} from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code, sExh));
+                var ds = db.ExecuteQuery(string.Format("select B.CODE, B.ITEMNAME, B.COUNTRY, B.SUPPLIER, B.LENGTH, B.WIDTH, B.VK_NETTO, B.DATE {3} from {0} A join {1} B on A.CODE = B.CODE where A.code = {2}", tableName, DBProvider.TableNames[(int)TABS.MAIN], code, sExh));
                 if (ds != null && ds.Tables.Count > 0)
                 {
                     var vals = ds.Tables[0].Rows[0].ItemArray;
