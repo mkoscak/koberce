@@ -450,7 +450,7 @@ namespace Koberce
             if (tabControl1.SelectedIndex == (int)TABS.MAIN)
             {
                 AddFilter(sb, txtFilCode.Text, "A.CODE");
-                AddFilter(sb, txtFilName.Text, "ITEMTITLE");
+                AddFilter(sb, txtFilName.Text, "ITEMNAME");
                 AddFilter(sb, txtFilCountry.Text, "COUNTRY");
                 AddFilter(sb, txtFilSupplier.Text, "SUPPLIER");
                 AddFilter(sb, txtFilSupplierNr.Text, "SUPPLIER_NR");
@@ -471,7 +471,7 @@ namespace Koberce
                 if (tabControl1.SelectedIndex == (int)TABS.SOLD)
             {
                 AddFilter(sb, textFilCodeSold.Text, "A.CODE");
-                AddFilter(sb, textFilNameSold.Text, "ITEMTITLE");
+                AddFilter(sb, textFilNameSold.Text, "ITEMNAME");
                 AddFilter(sb, textFilCountrySold.Text, "COUNTRY");
                 AddFilter(sb, textFilSupSold.Text, "SUPPLIER");
                 AddFilter(sb, txtFilSupNrSold.Text, "SUPPLIER_NR");
@@ -490,7 +490,7 @@ namespace Koberce
                 if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
             {
                 AddFilter(sb, txtExhFilCode.Text, "A.CODE");
-                AddFilter(sb, txtExhFilTitle.Text, "ITEMTITLE");
+                AddFilter(sb, txtExhFilTitle.Text, "ITEMNAME");
                 AddFilter(sb, txtExhFilExName.Text, "EXHIBITIONNAME");
                 AddFilter(sb, txtExhFilCountry.Text, "COUNTRY");
                 AddFilter(sb, txtexhFilSupplier.Text, "SUPPLIER");
@@ -510,7 +510,7 @@ namespace Koberce
                 if (tabControl1.SelectedIndex == (int)TABS.SK)
             {
                 AddFilter(sb, txtFilSKCode.Text, "A.CODE");
-                AddFilter(sb, txtFilSKTitle.Text, "ITEMTITLE");
+                AddFilter(sb, txtFilSKTitle.Text, "ITEMNAME");
                 AddFilter(sb, txtFilSKCountry.Text, "COUNTRY");
                 AddFilter(sb, txtFilSKSupplier.Text, "SUPPLIER");
                 AddFilter(sb, txtFilSKSupplierNr.Text, "SUPPLIER_NR");
@@ -529,7 +529,7 @@ namespace Koberce
                 if (tabControl1.SelectedIndex == (int)TABS.FROMSK)
                 {
                     AddFilter(sb, txtFilFSKCode.Text, "A.CODE");
-                    AddFilter(sb, txtFilFSKName.Text, "ITEMTITLE");
+                    AddFilter(sb, txtFilFSKName.Text, "ITEMNAME");
                     AddFilter(sb, txtFilFSKCountry.Text, "COUNTRY");
                     AddFilter(sb, txtFilFSKSupplier.Text, "SUPPLIER");
                     AddFilter(sb, txtFilFSKSupNr.Text, "SUPPLIER_NR");
@@ -543,7 +543,7 @@ namespace Koberce
                 if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
                 {
                     AddFilter(sb, txtFilInvCode.Text, "A.CODE");
-                    AddFilter(sb, txtFilInvName.Text, "ITEMTITLE");
+                    AddFilter(sb, txtFilInvName.Text, "ITEMNAME");
                     AddFilter(sb, txtFilInvCountry.Text, "COUNTRY");
                     AddFilter(sb, txtFilInvSup.Text, "SUPPLIER");
                     AddFilter(sb, txtFilInvSupNr.Text, "SUPPLIER_NR");

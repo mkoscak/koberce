@@ -14,7 +14,7 @@ namespace Koberce
 {
     class Common
     {
-        static string[] SoldCols = new string[] { "selldate", "supplier_nr", "itemtitle", "supplier", "length", "width", "euro_stuck", "area"/*, "vk_netto"*/ };
+        static string[] SoldCols = new string[] { "selldate", "supplier_nr", "ITEMNAME", "supplier", "length", "width", "euro_stuck", "area"/*, "vk_netto"*/ };
         static string ExportFileName;
         static string ExportTitle;
         static bool IsSold;
