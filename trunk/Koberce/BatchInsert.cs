@@ -118,7 +118,7 @@ namespace Koberce
                 var ekPrice = Common.GetPrice(item.EkNetto);
 
                 double ek = ekPrice;
-                double vk = Common.CalcPrice(w, l, ekPrice);
+                double vk = Common.CalcPrice(w, l, ekPrice, Properties.Settings.Default.PriceCoef);
 
                 maxCode++;
 

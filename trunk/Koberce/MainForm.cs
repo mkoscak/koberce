@@ -228,20 +228,27 @@ namespace Koberce
 
             DataSet ds = null;
 
-            if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
-                // inventar ma len kody - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.INVENTORY], DBProvider.TableNames[(int)TABS.MAIN], condition));
-            else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
-                // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
-            else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
-                // exh1 ma len kody, nazov vystavy - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, A.EXHIBITIONNAME, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.EXHIBITIONS], DBProvider.TableNames[(int)TABS.MAIN], condition));
-            else if (tabControl1.SelectedIndex == (int)TABS.SK || tabControl1.SelectedIndex == (int)TABS.FROMSK)
-                // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
-                ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[tabControl1.SelectedIndex], DBProvider.TableNames[(int)TABS.MAIN], condition));
-            else
-                ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
+            try
+            {
+                if (tabControl1.SelectedIndex == (int)TABS.INVENTORY)
+                    // inventar ma len kody - join na main a vratime len tieto produkty
+                    ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.INVENTORY], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                else if (tabControl1.SelectedIndex == (int)TABS.SOLD)
+                    // sold ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
+                    ds = db.ExecuteQuery(string.Format("select A.CODE, A.SELLDATE, A.SELLPRICE, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.SOLD], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                else if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
+                    // exh1 ma len kody, nazov vystavy - join na main a vratime len tieto produkty
+                    ds = db.ExecuteQuery(string.Format("select A.CODE, A.EXHIBITIONNAME, B.*, cast(B.length as real )* cast(B.width as real)/10000 as Area from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[(int)TABS.EXHIBITIONS], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                else if (tabControl1.SelectedIndex == (int)TABS.SK || tabControl1.SelectedIndex == (int)TABS.FROMSK)
+                    // fromsk ma len kody, datum a cenu predaja - join na main a vratime len tieto produkty
+                    ds = db.ExecuteQuery(string.Format("select A.CODE, B.* from {0} A left join {1} B on A.CODE = B.CODE where {2} order by B.CODE desc ", DBProvider.TableNames[tabControl1.SelectedIndex], DBProvider.TableNames[(int)TABS.MAIN], condition));
+                else
+                    ds = db.ExecuteQuery(DBProvider.TableNames[tabControl1.SelectedIndex], " where " + condition, " order by code desc");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Wring filter: "+ex, "Filter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             if (ds == null || ds.Tables == null || ds.Tables.Count == 0)
                 return;
@@ -378,7 +385,23 @@ namespace Koberce
                 string perc =  @"%";
                 string quotes = "\"";
 
-                if (text.Contains('!'))
+                if (text.ToCharArray().Count(c => c == '"') == 1)
+                {
+                    text = text.Replace("\"", "");
+                }
+                else if (text.ToCharArray().Count(c => c == '"') == 2)
+                {
+                    if (text.Contains('!'))
+                    {
+                        op = " <> ";
+                        text = text.Replace("!", "");
+                    }
+                    else
+                        op = " = ";
+                    perc = "";
+                    quotes = "";
+                }
+                else if (text.Contains('!'))
                 {
                     neg = " not ";
                     text = text.Replace("!", "");
@@ -1659,6 +1682,14 @@ namespace Koberce
                 Properties.Settings.Default.CallUpgrade = false;
                 Properties.Settings.Default.Save();
             }
+        }
+
+        private void btnToolRecalc_Click(object sender, EventArgs e)
+        {
+            FrmVKRecalculation frm = new FrmVKRecalculation(GetFilter(), db);
+            frm.ShowDialog(this);
+
+            RefreshItems();
         }
     }
 

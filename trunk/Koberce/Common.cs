@@ -242,14 +242,14 @@ namespace Koberce
         /// <param name="height"></param>
         /// <param name="qmPrice"></param>
         /// <returns></returns>
-        public static double CalcPrice(int width, int length, double qmPrice)
+        public static double CalcPrice(int width, int length, double qmPrice, double coef)
         {
-            return Math.Round(width * length / 10000.0 * qmPrice * Properties.Settings.Default.PriceCoef);
+            return Math.Round(width * length / 10000.0 * qmPrice * coef);
         }
 
-        public static double CalcQMPrice(int width, int length, double VK_Netto)
+        public static double CalcQMPrice(int width, int length, double VK_Netto, double coef)
         {
-            return Math.Round( (VK_Netto * 10000) / (width * length * Properties.Settings.Default.PriceCoef), 2);
+            return Math.Round( (VK_Netto * 10000) / (width * length * coef), 2);
         }
     }
 }
