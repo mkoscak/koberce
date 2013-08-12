@@ -56,7 +56,7 @@ namespace Koberce
             var eq = txtFormula.Text
                 .Replace("Wx", "width")
                 .Replace("Lx", "length")
-                .Replace("Cx", Common.CleanPrice(txtCoef.Text).ToString())
+                .Replace("Cx", Common.CleanPrice(txtCoef.Text).Replace(',', '.'))
                 .Replace("EK", "CAST(ek_netto as INTEGER)")
                 ;
             string update = string.Format("update {0} set vk_netto = ({1}) where code in ( {2} )", DBProvider.TableNames[0], eq, CodesSelector);
