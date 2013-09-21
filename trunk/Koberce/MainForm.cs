@@ -257,43 +257,60 @@ namespace Koberce
 
             LabelAll.Text = ds.Tables[0].Rows.Count.ToString();
             LabelSelected.Text = GetSelectedRowCount().ToString();
+            
+            GetTotals(ds.Tables[0]);
+
+            if (tabControl1.SelectedIndex == (int)TABS.MAIN)
+                lblTotalArea.Text = totalArea.ToString() + " m2";
             if (tabControl1.SelectedIndex == (int)TABS.SOLD)
-                lblSellPriceSum.Text = GetSellSum(ds.Tables[0]).ToString();
+            {
+                lblSellPriceSum.Text = totalSum.ToString();
+                lblTotalAreaSold.Text = totalArea.ToString() + " m2";
+            }
             if (tabControl1.SelectedIndex == (int)TABS.EXHIBITIONS)
-                lblExhSum.Text = GetSellSum(ds.Tables[0]).ToString();
+                lblExhSum.Text = totalSum.ToString();
         }
 
-        double GetSellSum(DataTable table)
+        double totalSum = 0;
+        double totalArea = 0;
+        void GetTotals(DataTable table)
         {
-            double ret = 0;
+            totalSum = 0;
+            totalArea = 0;
 
-            int index = -1;
+            int indexPrice = -1;
+            int indexW = -1;
+            int indexL = -1;
             for (int i = 0; i < table.Columns.Count; i++)
             {
                 if (table.Columns[i].ColumnName.ToLower() == "sellprice")
-                {
-                    index = i;
-                    break;
-                }
+                    indexPrice = i;
+                if (table.Columns[i].ColumnName.ToLower() == "width")
+                    indexW = i;
+                if (table.Columns[i].ColumnName.ToLower() == "length")
+                    indexL = i;
             }
-
-            if (index == -1)
-                return ret;
 
             for (int j = 0; j < table.Rows.Count; j++)
             {
                 try
                 {
-                    double val = Common.GetPrice(table.Rows[j][index].ToString());
+                    if (indexPrice != -1)
+                    {
+                        double val = Common.GetPrice(table.Rows[j][indexPrice].ToString());
+                        totalSum += val;
+                    }
 
-                    ret += val;
+                    int w = int.Parse(table.Rows[j][indexW].ToString());
+                    int l = int.Parse(table.Rows[j][indexL].ToString());
+                    totalArea = totalArea + (w*l);
                 }
                 catch (Exception)
                 {
                 }
             }
-
-            return ret;
+            totalArea /= 10000; // prevod na m2
+            totalArea = Math.Round(totalArea, 2);
         }
 
         // decode text data
