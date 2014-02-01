@@ -641,7 +641,7 @@ namespace Koberce
             }
             codes = codes.Distinct().ToList();
 
-            return codes.Where(c => c.Trim().Length > 0).ToArray();
+            return codes.Where(c => c.Trim().Length > 0).Select(s => "'" + s + "'").ToArray();
         }
 
         // remove selected items
