@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SQLite;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Koberce
 {
@@ -24,7 +25,10 @@ namespace Koberce
         {
             try
             {
-                var sql_con = new SQLiteConnection(@"Data Source=" + Application.StartupPath + "\\" + DbName + "; Version=3;");
+                var ds = DbName;
+                if (!ds.Contains(':'))
+                    ds = Application.StartupPath + "\\" + DbName;
+                var sql_con = new SQLiteConnection(@"Data Source=" + ds + "; Version=3;");
 
                 return sql_con;
             }

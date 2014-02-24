@@ -28,11 +28,11 @@ namespace Koberce
             this.Text += " "+opType.ToString();
         }
 
-        void ImportSold()
+        void ImportSold(string fname)
         {
             ImportedCodes = new List<string>();
 
-            var lines = File.ReadAllLines(Properties.Settings.Default.PtcommDir + @"\SOLD.TXT");
+            var lines = File.ReadAllLines(fname);
             if (lines != null && (lines.Length % 3) == 0)
             {
                 for (int i = 0; i < lines.Length; i += 3)
@@ -49,6 +49,35 @@ namespace Koberce
                     ImportedCodes.Add(code);
                 }
             }
+        }
+
+        private void ImportSoldDB()
+        {
+            var fname = CreateDBSoldTXT();
+            ImportSold(fname);
+        }
+
+        private string CreateDBSoldTXT()
+        {
+            DBProvider dbp = new DBProvider(Properties.Settings.Default.PtcommDir + @"\arena.db");
+            var data = dbp.ExecuteQuery(DBProvider.TableNames[1], " where VALID = 1 ", "");
+            if (data.Tables != null && data.Tables.Count == 1)
+            {
+                var res = new List<string>();
+                foreach (DataRow r in data.Tables[0].Rows)
+                {
+                    res.Add(r[0].ToString());
+                    res.Add(r[1].ToString());
+                    res.Add(r[2].ToString());
+                }
+
+                var ret = Properties.Settings.Default.PtcommDir + @"\DBSOLD.TXT";
+                File.WriteAllLines(ret, res.ToArray());
+
+                return ret;
+            }
+
+            return null;
         }
 
         void ImportExh()
@@ -86,7 +115,7 @@ namespace Koberce
             switch (OpType)
             {
                 case OperationType.Sold:
-                    ImportSold();
+                    ImportSold(Properties.Settings.Default.PtcommDir + @"\SOLD.TXT");
                     break;
 
                 case OperationType.Exhibitions:
@@ -103,6 +132,10 @@ namespace Koberce
 
                 case OperationType.fromSK:
                     ImportFromSK();
+                    break;
+
+                case OperationType.SoldDB:
+                    ImportSoldDB();
                     break;
 
                 default:
@@ -145,6 +178,7 @@ namespace Koberce
         Inventory,
         SK,
         fromSK,
-        Exhibitions
+        Exhibitions,
+        SoldDB
     }
 }
