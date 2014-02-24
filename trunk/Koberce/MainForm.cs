@@ -750,7 +750,7 @@ namespace Koberce
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
             Stream responseStream = response.GetResponseStream();
 
-            if (fileName.ToLower().Contains(".exe"))  // binarne
+            if (fileName.ToLower().Contains(".exe") || fileName.ToLower().Contains("arena.db"))  // binarne
             {
                 using (FileStream outFile = File.Create(destDirectory + "\\" + fileName))
                 {
@@ -785,7 +785,9 @@ namespace Koberce
         public void doUpload(BackgroundWorker bw, DoWorkEventArgs e, object userData)
         {
             string file = userData.ToString();
-            if (!file.Contains(":") && !file.StartsWith(".\\"))
+            if (file == "DB")
+                file = "arena.db";
+            else if (!file.Contains(":") && !file.StartsWith(".\\"))
                 file = Properties.Settings.Default.PtcommDir + "\\" + userData.ToString();
             /*else
                 file = zip(file);*/
@@ -1511,6 +1513,22 @@ namespace Koberce
             try
             {
                 CurrOpType = OperationType.Sold;
+                var imported = ImportScannerData();
+                MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //SoldItems(imported.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Import failed: " + ex.ToString(), "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnImportSoldDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrOpType = OperationType.SoldDB;
                 var imported = ImportScannerData();
                 MessageBox.Show(this, "Import successfull!", "Import file(s)", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
